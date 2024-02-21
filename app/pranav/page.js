@@ -1,3 +1,4 @@
+import Dropdown from "@/components/Dropdown";
 import Icon from "@/components/Icon";
 
 export default function Pranav() {
@@ -14,6 +15,7 @@ export default function Pranav() {
 			<br />
 			<input placeholder="Input Text" />
 			<Icon name="add" className="text-white-600" />
+			<Dropdown items={["Hi", "bye", "cya"]} />
 		</div>
 	);
 }

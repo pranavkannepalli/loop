@@ -4,7 +4,7 @@ import { createContext, useState } from "react";
 
 const LoopContext = createContext(null);
 
-const states = ["Washington", "Texas", "New York"];
+const states = ["NY", "TX", "WA"];
 
 const LoopContextProvider = ({ children }) => {
 	const [userData, changeData] = useState({ state: states[0], hometype: null, low: 0, high: 100, priorities: ["Cutting down on bills", "Lowering my footprint", "Becoming self-sufficient"] });
@@ -33,9 +33,15 @@ const LoopContextProvider = ({ children }) => {
 		});
 	};
 
-	const changeDataField = ({ data, field }) => {
+	const changeHomeType = (data) => {
 		let n = { ...userData };
-		n[field] = data;
+		n.hometype = data;
+		changeData(n);
+	};
+
+	const changeState = (data) => {
+		let n = { ...userData };
+		n.state = data;
 		changeData(n);
 	};
 
@@ -46,7 +52,8 @@ const LoopContextProvider = ({ children }) => {
 		changeItems,
 		addItem,
 		removeItem,
-		changeDataField,
+		changeHomeType,
+		changeState,
 	};
 
 	return <LoopContext.Provider value={data}>{children}</LoopContext.Provider>;
