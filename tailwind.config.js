@@ -49,7 +49,7 @@ module.exports = {
 		},
 		extend: {
 			boxShadow: {
-				card: "0px 8px 32px 0px rgba(0 0 0 0.12)",
+				card: "0px 8px 32px 0px rgba(0 0 0 / 0.12)",
 			},
 			screens: {
 				sm: "450px",

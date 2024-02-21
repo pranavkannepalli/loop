@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { LoopContextProvider } from "@/components/LoopContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,10 +13,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
-				<Navbar />
-				{children}
-			</body>
+			<LoopContextProvider>
+				<body className={inter.className}>
+					<Navbar />
+					{children}
+				</body>
+			</LoopContextProvider>
 		</html>
 	);
 }
