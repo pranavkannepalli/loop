@@ -1,9 +1,15 @@
 import HomeCard from "@/components/HomeCard";
 
+// TODO: make selectors for price, priorities, and type
+// TODO: responsify
+// TODO: fill in with actual data/symbols
+// TODO: use React Context to store data
+// TODO: use motion divs to add animations (even at the cost of render time)
+
 export default function Home() {
 	return (
 		<main className="layout">
-			<div className="flex flex-col md:flex-row h-[calc(100vh-100px)] justify-center items-center my-4">
+			<div className="flex flex-col md:flex-row h-[100vh] justify-center items-center my-4">
 				<div className="md:flex-1">
 					<h1 className="leading-none">
 						Helping you help <span className="bg-green-600">both</span> your homes.
