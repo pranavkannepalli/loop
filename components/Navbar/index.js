@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Navbar() {
 	return (
-		<nav className="bg-white-100 layout rounded-[20px]">
+		<nav className="bg-white-100 layout rounded-[20px] !my-2">
 			<div className="!py-5 grid grid-cols-5">
 				<h4>Loop</h4>
 				<div className="flex flex-row gap-4 items-center justify-center col-span-3">
