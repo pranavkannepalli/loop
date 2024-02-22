@@ -41,6 +41,7 @@ module.exports = {
 			},
 			error: "#F56565",
 			correct: "#48BB78",
+			transparent: "transparent"
 		},
 		fontFamily: {
 			sync: ["Syncopate", "sans-serif"],

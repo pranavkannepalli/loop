@@ -4,15 +4,16 @@ import { motion } from "framer-motion";
 import { useContext, useState } from "react";
 import Icon from "../Icon";
 import LoopContext from "../LoopContext";
+import classNames from "@/hooks/classnames";
 
 const Dropdown = ({ placeholder = "Select an item", items = [], onClick = (value) => {} }) => {
 	const [open, setOpen] = useState(false);
 	const [selected, changeSelected] = useState(placeholder);
 
 	return (
-		<div className="flex-1 flex items-center justify-center bg-white">
-			<motion.div animate={open ? "open" : "closed"} className="relative">
-				<button onClick={() => setOpen((pv) => !pv)} className="flex items-center gap-2 px-3 py-2 rounded-md text-indigo-50 bg-indigo-500 hover:bg-indigo-500 transition-colors">
+		<div className="flex grow items-center justify-center bg-white !c">
+			<motion.div animate={open ? "open" : "closed"} className="relative flex flex-row flex-1">
+				<button onClick={() => setOpen((pv) => !pv)} className="flex-1 flex items-center justify-between gap-2 px-3 rounded-md text-indigo-50 bg-indigo-500 hover:bg-indigo-500 transition-colors">
 					<span className="font-medium text-sm">{selected}</span>
 					<motion.span variants={iconVariants}>
 						<Icon name="down" />
@@ -22,8 +23,8 @@ const Dropdown = ({ placeholder = "Select an item", items = [], onClick = (value
 				<motion.ul
 					initial={wrapperVariants.closed}
 					variants={wrapperVariants}
-					style={{ originY: "top", translateX: "-50%" }}
-					className="flex flex-col gap-2 p-2 rounded-lg bg-white shadow-xl absolute top-[120%] left-[50%] w-48 overflow-hidden"
+					style={{ originY: "top" }}
+					className="flex flex-col rounded-lg bg-white-100 outline outline-1 outline-white-300 shadow-xl absolute top-[150%] right-0 w-48 overflow-hidden z-50"
 				>
 					{items.map((value, index) => (
 						<Option
@@ -32,6 +33,7 @@ const Dropdown = ({ placeholder = "Select an item", items = [], onClick = (value
 								changeSelected(value);
 								setOpen(false);
 							}}
+							selected={selected == value}
 							text={value}
 							key={index}
 						/>
@@ -47,14 +49,19 @@ const StateSelector = () => {
 	return <Dropdown placeholder={userData.state} onClick={changeState} items={["NY", "TX", "WA"]} />;
 };
 
-const Option = ({ text, onClick = () => {} }) => {
+const Option = ({ selected, text, onClick = () => {} }) => {
 	return (
 		<motion.li
 			variants={itemVariants}
 			onClick={onClick}
-			className="flex items-center gap-2 w-full p-2 text-xs font-medium whitespace-nowrap rounded-md hover:bg-indigo-100 text-slate-700 hover:text-indigo-500 transition-colors cursor-pointer"
+			className={classNames(`flex items-center justify-between w-full px-[16px] py-[12px] 
+						text-xs font-medium whitespace-nowrap 
+						hover:bg-white-200 text-slate-700
+						hover:text-indigo-500 transition-colors 
+						cursor-pointer`, !selected ? undefined: "bg-white-200")}
 		>
-			<span>{text}</span>
+			<p className={selected ? "font-[600]": undefined}>{text}</p>
+			{selected && <Icon name="check" size={20} />}
 		</motion.li>
 	);
 };
