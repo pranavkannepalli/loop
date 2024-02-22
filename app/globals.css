@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Krona+One&family=Syncopate:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -70,9 +70,6 @@ input {
 	font-size: 16px;
 	font-family: "Krona One", sans-serif;
 	font-weight: normal;
-	padding: 12px 16px;
-	border-radius: 8px;
-	@apply bg-none text-white-600 placeholder:text-white-400 border-white-300 border-solid border hover:border-white-400 hover:text-white-400 focus:text-white-600 focus:border-green-700 active:border-white-400 active:text-white-600 focus:invalid:border-error focus:invalid:text-white-600;
 }
 
 p {
