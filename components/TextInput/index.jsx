@@ -1,6 +1,6 @@
 import classNames from "@/hooks/classnames"
 
-export default function TextInput({ size="small", hasInput=true, value, onChange, prefix=null, suffix = null, ...props}) {
+export default function TextInput({ size="small", hasInput=true, prefix=null, suffix = null, ...props}) {
     return (
         <div className={classNames(`flex gap-[16px] items-center 
                         px-[16px]
