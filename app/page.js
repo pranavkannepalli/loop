@@ -14,16 +14,17 @@ import PrioritiesReorder from "@/components/PrioritiesReorder";
 export default function Home() {
 	return (
 		<main className="layout">
-			<div className="flex flex-col h-[100vh] justify-center items-center my-4">
-				<div className="">
+			<div className="flex flex-col h-[100vh] justify-center items-center my-4 text-center gap-[20px]">
+				<div className="flex flex-col w-full">
 					<h1 className="leading-none">
 						Helping you help <span className="bg-green-600">both</span> your homes.
-						<div className="flex flex-row gap-[20px]">
+						<div className="flex flex-row gap-[20px] w-full items-center justify-center">
 							<TextInput suffix={<StateSelector />} size="large" placeholder="FIND A SOLUTION" />
 							<Button>Search</Button>
 						</div>
 					</h1>
 				</div>
+				<div>Scrolly scrolly thing here</div>
 			</div>
 			<div className="flex flex-col text-center my-4">
 				<h2 className="my-8">

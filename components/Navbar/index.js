@@ -6,7 +6,7 @@ export default function Navbar() {
 	return (
 		<div className="absolute w-full flex flex-col items-center justify-center">
 			<nav className="bg-white-100 rounded-[20px] shadow-card w-full layout">
-				<div className="!py-5 grid grid-cols-5">
+				<div className="!py-5 grid grid-cols-5 items-center">
 					<h4>Loop</h4>
 					<div className="flex flex-row gap-4 items-center justify-center col-span-3">
 						<Link href="Dashboard">Dashboard</Link>
