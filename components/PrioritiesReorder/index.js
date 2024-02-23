@@ -40,7 +40,7 @@ const Priority = ({ item }) => {
 			<div className={`rounded-[20px] ${itemDetails[item].color} p-[16px] pr-[32px] flex flex-row items-center justify-between`}>
 				<div className="flex flex-row items-center gap-[5px]">
 					<Icon name={itemDetails[item].icon} />
-					{item}
+					<p className="font-krona uppercase">{item}</p>
 				</div>
 				<div
 					style={{ touchAction: "none" }}
@@ -48,6 +48,7 @@ const Priority = ({ item }) => {
 						console.log("Dragging");
 						controls.start(e);
 					}}
+					className="cursor-grabbing"
 				>
 					<Icon name="grab" />
 				</div>
