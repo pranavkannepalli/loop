@@ -1,5 +1,6 @@
 import Dropdown from "@/components/Dropdown";
 import Icon from "@/components/Icon";
+import PrioritiesReorder from "@/components/PrioritiesReorder";
 import TextInput from "@/components/TextInput";
 
 export default function Pranav() {
@@ -17,12 +18,8 @@ export default function Pranav() {
 			<input placeholder="Input Text" />
 			<Icon name="add" className="text-white-600" />
 			<Dropdown items={["Hi", "bye", "cya"]} />
-			<TextInput 
-				prefix={<Icon name="add" size={20}/>} 
-				suffix={<Dropdown items={["Hi", "bye", "cya"]} />}
-				placeholder="First Name"
-				size="large"	
-			/>
+			<TextInput prefix={<Icon name="add" size={20} />} suffix={<Dropdown items={["Hi", "bye", "cya"]} />} placeholder="First Name" size="large" />
+			<PrioritiesReorder />
 		</div>
 	);
 }

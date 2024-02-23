@@ -45,6 +45,12 @@ const LoopContextProvider = ({ children }) => {
 		changeData(n);
 	};
 
+	const changePriorities = (data) => {
+		let n = { ...userData };
+		n.priorities = data;
+		changeData(n);
+	};
+
 	const data = {
 		userData,
 		items,
@@ -54,6 +60,7 @@ const LoopContextProvider = ({ children }) => {
 		removeItem,
 		changeHomeType,
 		changeState,
+		changePriorities,
 	};
 
 	return <LoopContext.Provider value={data}>{children}</LoopContext.Provider>;
