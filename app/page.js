@@ -3,6 +3,7 @@ import Button from "@/components/Button";
 import { StateSelector } from "@/components/Dropdown";
 import TextInput from "@/components/TextInput";
 import BudgetSelector from "@/components/BudgetSelector";
+import PrioritiesReorder from "@/components/PrioritiesReorder";
 
 // TODO: make selectors for price, priorities, and type
 // TODO: responsify
@@ -36,7 +37,7 @@ export default function Home() {
 				<HomeCard svg="multi-family" color="bg-yellow-500" borderColor="outline-yellow-700" name="Multi-Family Home" description="Condos and multi-family homes" />
 				<HomeCard svg="apartment" color="bg-purple-500" borderColor="outline-purple-700" name="Individual Home" description="Individual homes and town homes" />
 			</div>
-			<div className="flex flex-row gap-[20px]">
+			<div className="flex flex-col md:flex-row gap-[20px]">
 				<div className="flex-1">
 					<div className="my-4">
 						<h4 className="text-left my-2 text-white-400">Select State</h4>
@@ -47,7 +48,10 @@ export default function Home() {
 						<BudgetSelector />
 					</div>
 				</div>
-				<div className="flex-1"></div>
+				<div className="flex-1">
+					<h4 className="text-left my-2 text-white-400">Priorities</h4>
+					<PrioritiesReorder />
+				</div>
 			</div>
 		</main>
 	);

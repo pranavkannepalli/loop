@@ -7,7 +7,7 @@ const LoopContext = createContext(null);
 const states = ["NY", "TX", "WA"];
 
 const LoopContextProvider = ({ children }) => {
-	const [userData, changeData] = useState({ state: states[0], hometype: null, low: 0, high: 100, priorities: ["Cutting down on bills", "Lowering my footprint", "Becoming self-sufficient"] });
+	const [userData, changeData] = useState({ state: states[0], hometype: null, low: 0, high: 100, priorities: ["Cutting Down on Bills", "Lowering my Footprint", "Becoming Self-Sufficient"] });
 	const [items, changeItems] = useState({});
 
 	const addItem = (itemName) => {
