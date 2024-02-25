@@ -9,6 +9,7 @@ import HomeText from "@/components/HomeText";
 import HomeSolutionCard from "@/components/HomeSolutionCard";
 import HomeCarousel from "@/components/HomeSolutionCard/carousel";
 import TagLine from "@/components/Tagline";
+import SectorFilters from "@/components/SectorFilters";
 
 // TODO: make selectors for price, priorities, and type
 // TODO: responsify
@@ -16,7 +17,7 @@ import TagLine from "@/components/Tagline";
 // TODO: use React Context to store data
 // TODO: use motion divs to add animations (even at the cost of render time)
 
-export default function Home() {	
+export default function Home() {
 	return (
 		<main>
 			<section className="flex flex-col box-border h-[100vh] items-center my-4">
@@ -45,7 +46,7 @@ export default function Home() {
 						<h4 className="text-left text-white-400">Select State</h4>
 						<TextInput hasInput={false} suffix={<StateSelector />} />
 					</div>
-					<div >
+					<div>
 						<h4 className="text-left my-2 text-white-400">Select Budget</h4>
 						<BudgetSelector />
 					</div>
@@ -57,7 +58,12 @@ export default function Home() {
 			</div>
 			<div className="!pt-6 layout">
 				<h4 className="pb-6">View your Recommendations</h4>
-				<BasicList />
+				<SectorFilters />
+				<BasicList slice size={6} />
+			</div>
+			<div className="layout relative top-[-300px] h-[300px] bg-white-200 flex flex-col items-center justify-center gap-[20px]">
+				<h1>Want to see more?</h1>
+				<Button>GO TO SOLUTIONS</Button>
 			</div>
 		</main>
 	);

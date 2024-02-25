@@ -11,9 +11,12 @@ const Dropdown = ({ placeholder = "Select an item", items = [], onClick = (value
 	const [selected, changeSelected] = useState(placeholder);
 
 	return (
-		<div className="flex grow items-center justify-center bg-white !c">
+		<div className="flex items-center justify-center bg-white !c">
 			<motion.div animate={open ? "open" : "closed"} className="relative flex flex-row flex-1">
-				<button onClick={() => setOpen((pv) => !pv)} className="flex-1 flex items-center justify-between gap-2 px-3 rounded-md text-indigo-50 bg-indigo-500 hover:bg-indigo-500 transition-colors">
+				<button
+					onClick={() => setOpen((pv) => !pv)}
+					className="flex-1 flex items-center justify-between gap-2 px-3 rounded-md text-indigo-50 bg-indigo-500 hover:bg-indigo-500 transition-colors"
+				>
 					<span className="font-medium text-sm">{selected}</span>
 					<motion.span variants={iconVariants}>
 						<Icon name="down" />
@@ -54,13 +57,16 @@ const Option = ({ selected, text, onClick = () => {} }) => {
 		<motion.li
 			variants={itemVariants}
 			onClick={onClick}
-			className={classNames(`flex items-center justify-between w-full px-[16px] py-[12px] 
+			className={classNames(
+				`flex items-center justify-between w-full px-[16px] py-[12px] 
 						text-xs font-medium whitespace-nowrap 
 						hover:bg-white-200 text-slate-700
 						hover:text-indigo-500 transition-colors 
-						cursor-pointer`, !selected ? undefined: "bg-white-200")}
+						cursor-pointer`,
+				!selected ? undefined : "bg-white-200"
+			)}
 		>
-			<p className={selected ? "font-[600]": undefined}>{text}</p>
+			<p className={selected ? "font-[600]" : undefined}>{text}</p>
 			{selected && <Icon name="check" size={20} />}
 		</motion.li>
 	);

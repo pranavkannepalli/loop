@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useState } from "react";
+import solutions from "@/app/solutions";
 
 const LoopContext = createContext(null);
 
@@ -72,10 +73,10 @@ const LoopContextProvider = ({ children }) => {
 		changeData(n);
 	};
 
-	const filterSort = (data = []) => {
-		let n = data.filter((val) => filterStates[val.type]);
+	const filterSort = () => {
+		let n = solutions.filter((val) => filterStates[val.type]);
 		if (n.length == 0) {
-			return data;
+			return solutions;
 		} else {
 			return n;
 		}
