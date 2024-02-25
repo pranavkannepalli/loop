@@ -25,7 +25,7 @@ export default function BudgetSelector() {
 		return () => {
 			window.removeEventListener("resize", updateWidth);
 		};
-	}, []);
+	}, [maxPos]);
 
 	useMotionValueEvent(maxPos, "change", () => {
 		barWidth.set(maxPos.get() - minPos.get() + 20);
@@ -80,6 +80,8 @@ export default function BudgetSelector() {
 				<p className="button min-w-[50px] text-center">TO</p>
 				<TextInput
 					value={Math.round(max)}
+					type="number"
+                    min={0}
 					onChange={(e) => {
 						changeMax(Math.max(min, Math.min(e.target.value, 100000)));
 						maxPos.set((Math.max(min, Math.min(e.target.value, 100000)) * totalWidth) / 100000);
