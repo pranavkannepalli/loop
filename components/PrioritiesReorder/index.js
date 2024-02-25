@@ -37,7 +37,7 @@ let itemDetails = {
 
 const Priority = ({ item }) => {
 	return (
-		<Reorder.Item value={item}>
+		<Reorder.Item value={item}  dragConstraints={{top: -50, bottom: 50}} >
 			<div className={`rounded-[20px] ${itemDetails[item].color} p-[16px] pr-[32px] flex flex-row items-center justify-between cursor-grabbing`}>
 				<div className="flex flex-row items-center gap-[5px]">
 					<Icon name={itemDetails[item].icon} size={20} className={itemDetails[item].iconColor}/>

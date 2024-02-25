@@ -8,6 +8,7 @@ import BasicList from "@/components/SectorFilters/basicList";
 import HomeText from "@/components/HomeText";
 import HomeSolutionCard from "@/components/HomeSolutionCard";
 import HomeCarousel from "@/components/HomeSolutionCard/carousel";
+import TagLine from "@/components/Tagline";
 
 // TODO: make selectors for price, priorities, and type
 // TODO: responsify
@@ -29,9 +30,7 @@ export default function Home() {
 				<HomeCarousel />
 			</section>
 			<section className=" layout flex flex-col text-center my-4">
-				<h2 className="my-24">
-					Helping you find solutions Across All <span className="bg-purple-600">Sectors</span> and all <span className="bg-green-600">Buildings</span>
-				</h2>
+				<TagLine value="Helping you find solutions Across All Sectors and all buildings" />
 				<h3 className="text-left my-2">Set Up Your Profile</h3>
 				<h4 className="text-left my-2 text-white-400">Select Home</h4>
 			</section>
