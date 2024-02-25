@@ -4,15 +4,17 @@ import Image from "next/image";
 
 export default function Navbar() {
 	return (
-		<div className="absolute w-full flex flex-col items-center justify-center">
+		<div className="absolute w-full flex flex-col items-center justify-center top-[20px]">
 			<nav className="bg-white-100 rounded-[20px] shadow-card w-full layout">
-				<div className="!py-5 grid grid-cols-5">
-					<h4>Loop</h4>
+				<div className="!py-5 grid grid-cols-5 items-center">
+					<Link href="/">
+						<h4>Loop</h4>
+					</Link>
 					<div className="flex flex-row gap-4 items-center justify-center col-span-3">
-						<Link href="Dashboard">Dashboard</Link>
-						<Link href="Solutions">Solutions</Link>
-						<Link href="Blog">Blog</Link>
-						<Link href="Login">Login</Link>
+						<Link href="/dashboard">Dashboard</Link>
+						<Link href="/solutions">Solutions</Link>
+						<Link href="/blog">Blog</Link>
+						<Link href="/login">Login</Link>
 					</div>
 					<div className="flex justify-end h-full items-center gap-[5px]">
 						<Icon name="search" />

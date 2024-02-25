@@ -1,4 +1,4 @@
-import classNames from "@/hooks/classnames"
+import classNames from "@/hooks/classnames";
 
 export default function TextInput({ size="small", hasInput=true, prefix=null, suffix = null, ...props}) {
     return (
