@@ -4,6 +4,7 @@ import Button from "@/components/Button";
 import SectorFilters from "@/components/SectorFilters";
 import ResultsText from "@/components/SectorFilters/resultsText";
 import BasicList from "@/components/SectorFilters/basicList";
+import Filter from "@/components/Filter";
 
 export default function Solutions() {
 	return (
@@ -15,8 +16,11 @@ export default function Solutions() {
 			<SectorFilters />
 			<div className="flex flex-row justify-between items-center">
 				<ResultsText />
-				<div className="py-[12px] px-[16px] rounded-[8px] border border-white-300">
-					<StateSelector />
+				<div className="flex flex-row gap-[5px]">
+					<Filter />
+					<div className="py-[12px] px-[16px] rounded-[8px] border border-white-300 flex items-center justify-center">
+						<StateSelector />
+					</div>
 				</div>
 			</div>
 			<div className="mt-[20px]">
