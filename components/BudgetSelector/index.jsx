@@ -15,11 +15,6 @@ export default function BudgetSelector() {
 	const inputRef = useRef(null);
 	const { changeLow, changeHigh } = useContext(LoopContext);
 
-	useEffect(() => {
-		changeLow(min);
-		changeHigh(max);
-	}, [min, max, changeLow, changeHigh]);
-
 	useLayoutEffect(() => {
 		const updateWidth = () => {
 			let newWidth = inputRef.current ? inputRef.current.offsetWidth - 40 : 100;
@@ -37,11 +32,13 @@ export default function BudgetSelector() {
 	useMotionValueEvent(maxPos, "change", () => {
 		barWidth.set(maxPos.get() - minPos.get() + 20);
 		changeMax(() => (100000 * maxPos.get()) / totalWidth);
+		changeHigh((100000 * maxPos.get()) / totalWidth);
 	});
 
 	useMotionValueEvent(minPos, "change", () => {
 		barWidth.set(maxPos.get() - minPos.get() + 20);
 		changeMin(() => (100000 * minPos.get()) / totalWidth);
+		changeLow(() => (100000 * minPos.get()) / totalWidth);
 	});
 
 	return (

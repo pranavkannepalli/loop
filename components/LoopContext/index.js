@@ -72,10 +72,20 @@ const LoopContextProvider = ({ children }) => {
 		changeData(n);
 	};
 
+	const filterSort = (data = []) => {
+		let n = data.filter((val) => filterStates[val.type]);
+		if (n.length == 0) {
+			return data;
+		} else {
+			return n;
+		}
+	};
+
 	const data = {
 		userData,
 		items,
 		filterStates,
+		filterSort,
 		changeData,
 		changeItems,
 		addItem,
