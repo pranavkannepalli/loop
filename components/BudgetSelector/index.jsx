@@ -1,8 +1,9 @@
 "use client";
 
-import { useLayoutEffect, useRef, useState } from "react";
+import { useContext, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { motion, useMotionValue, useMotionValueEvent, useTransform } from "framer-motion";
 import TextInput from "../TextInput";
+import LoopContext from "../LoopContext";
 
 export default function BudgetSelector() {
 	const [min, changeMin] = useState(0);
@@ -12,6 +13,12 @@ export default function BudgetSelector() {
 	const [totalWidth, changeTotalWidth] = useState(100);
 	const [max, changeMax] = useState((100000 * maxPos.get()) / totalWidth);
 	const inputRef = useRef(null);
+	const { changeLow, changeHigh } = useContext(LoopContext);
+
+	useEffect(() => {
+		changeLow(min);
+		changeHigh(max);
+	}, [min, max, changeLow, changeHigh]);
 
 	useLayoutEffect(() => {
 		const updateWidth = () => {
@@ -50,7 +57,7 @@ export default function BudgetSelector() {
 					drag="x"
 					dragMomentum={false}
 					onDragEnd={() => changeMin(() => (100000 * minPos.get()) / totalWidth)}
-					className="z-10 w-[20px] h-[20px] border border-[3px] border-yellow-600 bg-white-200 rounded-[10px]"
+					className="z-10 w-[20px] h-[20px] border-[3px] border-yellow-600 bg-white-200 rounded-[10px]"
 				/>
 				<motion.div
 					style={{ x: maxPos }}
@@ -60,7 +67,7 @@ export default function BudgetSelector() {
 					drag="x"
 					dragMomentum={false}
 					onDragEnd={() => changeMax(() => (100000 * maxPos.get()) / totalWidth)}
-					className="z-10 w-[20px] h-[20px] border border-[3px] border-yellow-600 bg-white-200 rounded-[10px]"
+					className="z-10 w-[20px] h-[20px] border-[3px] border-yellow-600 bg-white-200 rounded-[10px]"
 				/>
 			</div>
 			<div className="flex-1 flex justify-between mt-1">
@@ -81,7 +88,7 @@ export default function BudgetSelector() {
 				<TextInput
 					value={Math.round(max)}
 					type="number"
-                    min={0}
+					min={0}
 					onChange={(e) => {
 						changeMax(Math.max(min, Math.min(e.target.value, 100000)));
 						maxPos.set((Math.max(min, Math.min(e.target.value, 100000)) * totalWidth) / 100000);

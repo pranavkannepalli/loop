@@ -8,6 +8,15 @@ const states = ["NY", "TX", "WA"];
 
 const LoopContextProvider = ({ children }) => {
 	const [userData, changeData] = useState({ state: states[0], hometype: null, low: 0, high: 100, priorities: ["Cutting Down on Bills", "Lowering my Footprint", "Becoming Self-Sufficient"] });
+
+	const [filterStates, changeFilterStates] = useState({
+		water: false,
+		electricity: false,
+		transportation: false,
+		heating: false,
+		waste: false,
+	});
+
 	const [items, changeItems] = useState({});
 
 	const addItem = (itemName) => {
@@ -51,9 +60,22 @@ const LoopContextProvider = ({ children }) => {
 		changeData(n);
 	};
 
+	const changeLow = (data) => {
+		let n = { ...userData };
+		n.low = data;
+		changeData(n);
+	};
+
+	const changeHigh = (data) => {
+		let n = { ...userData };
+		n.high = data;
+		changeData(n);
+	};
+
 	const data = {
 		userData,
 		items,
+		filterStates,
 		changeData,
 		changeItems,
 		addItem,
@@ -61,6 +83,9 @@ const LoopContextProvider = ({ children }) => {
 		changeHomeType,
 		changeState,
 		changePriorities,
+		changeLow,
+		changeHigh,
+		changeFilterStates,
 	};
 
 	return <LoopContext.Provider value={data}>{children}</LoopContext.Provider>;
