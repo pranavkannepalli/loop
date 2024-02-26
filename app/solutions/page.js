@@ -1,17 +1,16 @@
 import TextInput from "@/components/TextInput";
 import { StateSelector } from "@/components/Dropdown";
-import Button from "@/components/Button";
 import SectorFilters from "@/components/SectorFilters";
 import ResultsText from "@/components/SectorFilters/resultsText";
 import BasicList from "@/components/SectorFilters/basicList";
 import Filter from "@/components/Filter";
+import Search from "@/components/Search";
 
 export default function Solutions() {
 	return (
 		<div className="layout !mt-[125px] flex flex-col">
 			<div className="flex flex-row gap-[20px] mb-[20px]">
-				<TextInput suffix={<StateSelector />} size="large" placeholder="FIND A SOLUTION" />
-				<Button>Search</Button>
+				<Search />
 			</div>
 			<SectorFilters />
 			<div className="flex flex-row justify-between items-center">

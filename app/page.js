@@ -6,16 +6,12 @@ import BudgetSelector from "@/components/BudgetSelector";
 import PrioritiesReorder from "@/components/PrioritiesReorder";
 import BasicList from "@/components/SectorFilters/basicList";
 import HomeText from "@/components/HomeText";
-import HomeSolutionCard from "@/components/HomeSolutionCard";
 import HomeCarousel from "@/components/HomeSolutionCard/carousel";
 import TagLine from "@/components/Tagline";
 import SectorFilters from "@/components/SectorFilters";
-
-// TODO: make selectors for price, priorities, and type
-// TODO: responsify
-// TODO: fill in with actual data/symbols
-// TODO: use React Context to store data
-// TODO: use motion divs to add animations (even at the cost of render time)
+import SeeMore from "@/components/SeeMoreOverlay";
+import Search from "@/components/Search";
+import SolutionsButton from "@/components/SolutionsButton";
 
 export default function Home() {
 	return (
@@ -24,8 +20,8 @@ export default function Home() {
 				<div className="flex flex-col gap-[10px] flex-1 justify-center items-stretch layout">
 					<HomeText />
 					<div className="flex flex-row gap-[20px]">
-						<TextInput suffix={<StateSelector />} size="large" placeholder="FIND A SOLUTION" />
-						<Button>Search</Button>
+						<Search />
+						<SolutionsButton>Search</SolutionsButton>
 					</div>
 				</div>
 				<HomeCarousel />
@@ -59,12 +55,9 @@ export default function Home() {
 			<div className="!pt-6 layout">
 				<h4 className="pb-6">View your Recommendations</h4>
 				<SectorFilters />
-				<BasicList slice size={6} />
+				<BasicList nosearch slice size={6} />
 			</div>
-			<div className="layout relative top-[-300px] h-[300px] bg-white-200 flex flex-col items-center justify-center gap-[20px]">
-				<h1>Want to see more?</h1>
-				<Button>GO TO SOLUTIONS</Button>
-			</div>
+			<SeeMore />
 		</main>
 	);
 }
