@@ -1,6 +1,36 @@
 const solutions = {
 	NY: [
 		{
+			// Alt text for the image
+			alt: "Solar Panels on a Independent Home",
+
+			// Preferably as numbers, i'll fix it
+			gov: "$1K",
+			utility: "$5K",
+			price: "~$18K",
+
+			// On a scale from 1 to 5
+			setup: 3,
+
+			// Image link
+			image: "/solutions/solar_panel.jpg",
+
+			// Name of the solution
+			title: "Solar Panels",
+
+			// Some interesting stats
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
+
+			// Description of the solution
+			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+
+			// Type of solution (one of the five we chose before)
+			type: "electricity",
+		},
+		{
 			alt: "Solar Panels on a Independent Home",
 			gov: "$1K",
 			utility: "$5K",
@@ -8,6 +38,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "electricity",
 		},
@@ -19,17 +53,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
-			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
-			type: "electricity",
-		},
-		{
-			alt: "Solar Panels on a Independent Home",
-			gov: "$1K",
-			utility: "$5K",
-			price: "~$18K",
-			setup: 3,
-			image: "/solutions/solar_panel.jpg",
-			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "water",
 		},
@@ -41,6 +68,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "water",
 		},
@@ -52,6 +83,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "waste",
 		},
@@ -63,6 +98,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "waste",
 		},
@@ -74,6 +113,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "heating",
 		},
@@ -85,6 +128,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "transportation",
 		},
@@ -98,6 +145,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "electricity",
 		},
@@ -109,6 +160,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "electricity",
 		},
@@ -120,6 +175,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "water",
 		},
@@ -131,6 +190,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "water",
 		},
@@ -142,6 +205,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "waste",
 		},
@@ -153,6 +220,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "waste",
 		},
@@ -164,6 +235,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "heating",
 		},
@@ -175,6 +250,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "transportation",
 		},
@@ -188,6 +267,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "electricity",
 		},
@@ -199,6 +282,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "electricity",
 		},
@@ -210,6 +297,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "water",
 		},
@@ -221,6 +312,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "water",
 		},
@@ -232,6 +327,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "waste",
 		},
@@ -243,6 +342,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "waste",
 		},
@@ -254,6 +357,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "heating",
 		},
@@ -265,6 +372,10 @@ const solutions = {
 			setup: 3,
 			image: "/solutions/solar_panel.jpg",
 			title: "Solar Panels",
+			stats: [
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
+			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 			type: "transportation",
 		},
