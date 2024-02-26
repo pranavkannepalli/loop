@@ -8,7 +8,7 @@ const LoopContext = createContext(null);
 const states = ["NY", "TX", "WA"];
 
 const LoopContextProvider = ({ children }) => {
-	const [userData, changeData] = useState({ state: states[0], hometype: null, low: 0, high: 100, priorities: ["Cutting Down on Bills", "Lowering my Footprint", "Becoming Self-Sufficient"] });
+	const [userData, changeData] = useState({ state: states[0], hometype: "Apartment", low: 0, high: 100, priorities: ["Cutting Down on Bills", "Lowering my Footprint", "Becoming Self-Sufficient"] });
 	const [query, changeQuery] = useState("");
 
 	const [filterStates, changeFilterStates] = useState({
@@ -19,22 +19,23 @@ const LoopContextProvider = ({ children }) => {
 		waste: false,
 	});
 
-	const [items, changeItems] = useState({});
+	const [inProgress, changeInProgress] = useState({});
+	const [watchlist, changeWatchlist] = useState([]);
 
 	const addItem = (itemName) => {
-		let item = items[itemName] ?? { stage: 0 };
+		let item = inProgress[itemName] ?? { stage: 0 };
 		item.stage++;
-		changeItems((prev) => {
+		changeInProgress((prev) => {
 			prev[itemName] = item;
 			return { ...prev };
 		});
-		console.log(items);
+		console.log(inProgress);
 	};
 
 	const removeItem = (itemName) => {
-		let item = items[itemName] ?? { stage: 0 };
+		let item = inProgress[itemName] ?? { stage: 0 };
 		item.stage--;
-		changeItems((prev) => {
+		changeInProgress((prev) => {
 			if (item.stage == 0) {
 				delete prev[itemName];
 			} else {
@@ -42,6 +43,21 @@ const LoopContextProvider = ({ children }) => {
 			}
 			return { ...prev };
 		});
+	};
+
+	const addWatchlist = (solution) => {
+		let item = watchlist.slice();
+		item.push(solution);
+		changeWatchlist(item);
+	};
+
+	const removeWatchlist = (solution) => {
+		let item = watchlist.slice();
+		let index = item.indexOf(solution);
+		if (index > -1) {
+			item.splice(index, 1);
+		}
+		changeWatchlist(item);
 	};
 
 	const changeHomeType = (data) => {
@@ -90,12 +106,14 @@ const LoopContextProvider = ({ children }) => {
 
 	const data = {
 		userData,
-		items,
+		inProgress,
 		filterStates,
 		query,
+		addWatchlist,
+		removeWatchlist,
 		filterSort,
 		changeData,
-		changeItems,
+		changeInProgress,
 		addItem,
 		removeItem,
 		changeHomeType,

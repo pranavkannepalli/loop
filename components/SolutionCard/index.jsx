@@ -16,7 +16,7 @@ export default function SolutionCard({ title, gov, utility, price, setup, image,
 			<div className="flex flex-col gap-3 bg-white-200 p-[20px]">
 				<div className="flex justify-between">
 					<h6>{title}</h6>
-					<h6>{price}</h6>
+					<h6>~${price / 1000}k</h6>
 				</div>
 				<div className="flex justify-between">
 					<div>
@@ -24,11 +24,11 @@ export default function SolutionCard({ title, gov, utility, price, setup, image,
 						<div className="flex gap-[20px]">
 							<div className="flex items-center gap-[10px] text-green-700">
 								<Icon name="company" />
-								<p className="caption">{utility}</p>
+								<p className="caption">~${utility / 1000}K</p>
 							</div>
 							<div className="flex items-center gap-[10px] text-green-700">
 								<Icon name="government" />
-								<p className="caption">{gov}</p>
+								<p className="caption">~${gov / 1000}K</p>
 							</div>
 						</div>
 					</div>

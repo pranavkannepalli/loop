@@ -27,6 +27,9 @@ const solutions = {
 			// Description of the solution
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
 
+			// Applicable home types
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+
 			// Type of solution (one of the five we chose before)
 			type: "electricity",
 		},
@@ -43,6 +46,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "electricity",
 		},
 		{
@@ -58,6 +62,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "water",
 		},
 		{
@@ -73,6 +78,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "water",
 		},
 		{
@@ -88,6 +94,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "waste",
 		},
 		{
@@ -103,6 +110,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "waste",
 		},
 		{
@@ -118,6 +126,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "heating",
 		},
 		{
@@ -133,6 +142,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "transportation",
 		},
 	],
@@ -150,6 +160,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "electricity",
 		},
 		{
@@ -165,6 +176,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "electricity",
 		},
 		{
@@ -180,6 +192,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "water",
 		},
 		{
@@ -195,6 +208,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "water",
 		},
 		{
@@ -210,6 +224,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "waste",
 		},
 		{
@@ -225,6 +240,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "waste",
 		},
 		{
@@ -240,6 +256,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "heating",
 		},
 		{
@@ -255,6 +272,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "transportation",
 		},
 	],
@@ -272,6 +290,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "electricity",
 		},
 		{
@@ -287,6 +306,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "electricity",
 		},
 		{
@@ -302,6 +322,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "water",
 		},
 		{
@@ -317,6 +338,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "water",
 		},
 		{
@@ -332,6 +354,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "waste",
 		},
 		{
@@ -347,6 +370,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "waste",
 		},
 		{
@@ -362,6 +386,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "heating",
 		},
 		{
@@ -377,6 +402,7 @@ const solutions = {
 				{ data: 200, units: "lbs/kwh", description: "CO2 prevented from emissions" },
 			],
 			description: "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
+			hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
 			type: "transportation",
 		},
 	],
