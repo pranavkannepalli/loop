@@ -75,11 +75,11 @@ const LoopContextProvider = ({ children }) => {
 	};
 
 	const filterSort = (nosearch = false) => {
-		var n = solutions;
+		var n = solutions[userData.state];
 		n = n.filter((val) => filterStates[val.type]);
 		console.log(n);
 		if (n.length == 0) {
-			n = solutions;
+			n = solutions[userData.state];
 		}
 		if (!nosearch) {
 			n = n.filter((item) => item.title.toLowerCase().includes(query.toLowerCase()));

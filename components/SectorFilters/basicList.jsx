@@ -7,12 +7,12 @@ import LoopContext from "../LoopContext";
 import solutions from "@/app/solutions";
 
 export default function BasicList({ nosearch = false, slice = false, size = 3 }) {
-	const { query, filterSort } = useContext(LoopContext);
+	const { userData, query, filterSort } = useContext(LoopContext);
 
-	const [subset, setSubset] = useState(solutions);
+	const [subset, setSubset] = useState(solutions["NY"]);
 	useEffect(() => {
 		setSubset(slice ? filterSort(nosearch).slice(0, size) : filterSort(nosearch));
-	}, [filterSort, setSubset, slice, size, nosearch, query]);
+	}, [filterSort, setSubset, slice, size, nosearch, query, userData]);
 
 	if (subset.length != 0) {
 		return (
