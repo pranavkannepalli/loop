@@ -6,6 +6,7 @@ import { useEffect, useState, useContext } from "react";
 import LoopContext from "@/components/LoopContext";
 import Icon from "@/components/Icon";
 import classNames from "@/hooks/classnames";
+import Button from "@/components/Button";
 
 const filterData = {
 	water: {
@@ -63,7 +64,7 @@ export default function Solution({ params }) {
 			<main>
 				<section className="layout box-border h-[100vh] items-center my-4 w-full">
 					<div className="flex flex-row items-center justify-center h-[100vh] w-full">
-						<div className="w-full text-left flex flex-col gap-[10px]">
+						<div className="w-full text-left flex flex-col items-start gap-[10px]">
 							<div
 								className={classNames(
 									"*:transition-all *:duration-200 transition-all duration-200 inline-flex gap-[10px] items-center px-[20px] py-[10px] rounded-full w-fit",
@@ -90,6 +91,7 @@ export default function Solution({ params }) {
 									</div>
 								))}
 							</div>
+							<Button prefix={<Icon name="add" size={20}/> }>Add to Watchlist</Button>
 						</div>
 						<div className="w-full">Hi</div>
 					</div>
