@@ -84,6 +84,12 @@ a {
 	font-size: clamp(12px, 1.1vw, 16px);
 }
 
+.button {
+	font-family: "Krona One", sans-serif;
+	font-weight: bold;
+	font-size: clamp(12px, 1.1vw, 16px);
+}
+
 .layout {
 	max-width: min(1440px, 100vw);
 	margin: 0 auto;
