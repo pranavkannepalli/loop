@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Children } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Icon from "../Icon";
+import classNames from "@/hooks/classnames";
 
-const Accordion = ({ question, answers }) => {
+const Accordion = ({ question, children }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const itemVariants = {
@@ -52,20 +54,18 @@ const Accordion = ({ question, answers }) => {
 	};
 
 	return (
-		<motion.div>
+		<motion.div className="bg-white-100 p-[20px] rounded-[8px] cursor-pointer flex flex-col" onClick={() => setIsOpen(!isOpen)}>
 			<AnimatePresence>
-				<motion.div
-					key="question"
-					className="rounded-tr-md relative z-20  rounded-br-md shadow-sm px-1 py-2 bg-blue-200 cursor-pointer font-open border-l-2 border-yellow-500"
-					onClick={() => setIsOpen(!isOpen)}
-				>
-					<motion.div className="text-gray-800 font-bold ml-1">{question}</motion.div>
+				<motion.div key="question" className="flex flex-row justify-between">
+					<motion.h6 className="text-gray-800 font-bold ml-1">{question}</motion.h6>
+					<motion.div className={classNames(isOpen ? "rotate-180" : "rotate-0", "*:transition-all *:duration-500 transition-all")}>
+						<Icon name="down" />
+					</motion.div>
 				</motion.div>
-
 				<motion.div initial="initial" animate="animate" exit="exit" variants={variants}>
 					{isOpen &&
-						answers.map((val, ind) => (
-							<motion.div variants={itemVariants} key={ind} className="p-2 text-lg text-white-700 border-l border-b border-gray-300">
+						Children.map(children, (val, ind) => (
+							<motion.div variants={itemVariants} key={ind}>
 								{val}
 							</motion.div>
 						))}

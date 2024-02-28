@@ -37,7 +37,12 @@ export default function Pranav() {
 			<PrioritiesReorder />
 			<CostGraph points={points} t={2000} />
 			<ROIGraph points={points} t={2000} />
-			<Accordion question="Who is your favorite webmaster winner?" answers={["Pranav", "Achintya"]} />
+			<Accordion question="Who is your favorite webmaster winner?">
+				<div>Hi</div>
+				<div>Hi</div>
+				<div>Hi</div>
+				<div>Hi</div>
+			</Accordion>
 		</div>
 	);
 }
