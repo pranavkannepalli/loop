@@ -8,7 +8,13 @@ const LoopContext = createContext(null);
 const states = ["NY", "TX", "WA"];
 
 const LoopContextProvider = ({ children }) => {
-	const [userData, changeData] = useState({ state: states[0], hometype: "Apartment", low: 0, high: 100, priorities: ["Cutting Down on Bills", "Lowering my Footprint", "Becoming Self-Sufficient"] });
+	const [userData, changeData] = useState({
+		state: states[0],
+		hometype: "Apartment",
+		low: 0,
+		high: 100000,
+		priorities: ["Cutting Down on Bills", "Lowering my Footprint", "Becoming Self-Sufficient"],
+	});
 	const [query, changeQuery] = useState("");
 
 	const [filterStates, changeFilterStates] = useState({
@@ -102,8 +108,7 @@ const LoopContextProvider = ({ children }) => {
 			n = solutions[userData.state];
 		}
 		if (!nosearch) {
-			n = n.filter((item) => item.title.toLowerCase().includes(query.toLowerCase()));
-			if (n.length == 0) return [];
+			n = n.filter((item) => item.title.toLowerCase().includes(query.toLowerCase()) && item.price < userData.high && item.price > userData.low);
 		}
 		return n;
 	};

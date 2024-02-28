@@ -27,7 +27,7 @@ export default function BasicList({ nosearch = false, slice = false, size = 3 })
 	} else {
 		return (
 			<>
-				<p>No results match your query.</p>
+				<p>No results match your query. Try changing your search filters.</p>
 			</>
 		);
 	}
