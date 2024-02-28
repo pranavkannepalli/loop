@@ -157,7 +157,7 @@ export default function ROIGraph({ points, t = new Date().getFullYear() }) {
             className="border-t border-t-white-300 box-border py-[10px] flex justify-around text-white-400"
         >
             {new Array(4).fill(1).map((_, i) => (
-                <p className="caption">{start[0] + step*(1.5+i)}</p>
+                <p className="caption" key={i}>{start[0] + step*(1.5+i)}</p>
             ))}
         </div>
         </div>
