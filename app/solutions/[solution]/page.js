@@ -119,13 +119,13 @@ export default function Solution({ params }) {
 					<div className="flex flex-col gap-[20px] md:flex-row justify-center w-full">
 						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[10px]">
 							<h3>Installation Steps</h3>
-							<Accordion question="Accordion 1">
+							<Accordion number={1} question="Accordion 1">
 								<p>hi</p>
 							</Accordion>
-							<Accordion question="Accordion 2">
+							<Accordion number={2} question="Accordion 2">
 								<p>hi</p>
 							</Accordion>
-							<Accordion question="Accordion 3">
+							<Accordion number={3} question="Accordion 3">
 								<p>hi</p>
 							</Accordion>
 						</div>
@@ -159,10 +159,17 @@ export default function Solution({ params }) {
 						</div>
 					</div>
 				</section>
-				<section className="layout box-border md:h-[100vh] items-center !mt-[30px] w-full">
-					<div className="flex flex-col gap-[20px] md:flex-row justify-center w-full md:h-[100vh]">
+				<section className="layout box-border !mt-[30px] w-full">
+					<h3>Rebates and Tax Credits</h3>
+					<div className="flex flex-col gap-[20px] md:flex-row justify-center w-full mt-[30px]">
 						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[10px]">
-							<h3>Rebates and Tax Credits</h3>
+							<div className="caption text-white-400">Utility</div>
+						</div>
+						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[10px]">
+							<div className="caption text-white-400">Utility</div>
+						</div>
+						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[10px]">
+							<div className="caption text-white-400">Utility</div>
 						</div>
 					</div>
 				</section>
