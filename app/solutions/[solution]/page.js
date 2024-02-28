@@ -7,6 +7,8 @@ import LoopContext from "@/components/LoopContext";
 import Icon from "@/components/Icon";
 import classNames from "@/hooks/classnames";
 import Button from "@/components/Button";
+import Image from "next/image";
+import ROIGraph from "@/components/ROIGraph";
 
 const filterData = {
 	water: {
@@ -46,10 +48,13 @@ const filterData = {
 	},
 };
 
+//TODO: fix the images with actual data inputs
+//TODO: fix the graphs with actual data inputs
+
 export default function Solution({ params }) {
 	const solutionName = params.solution.replace("%20", " ");
 	const [solution, setSolution] = useState(null);
-	const { userData, addWatchlist, addItem } = useContext(LoopContext);
+	const { userData, addWatchlist, inWatchlist, addItem, removeWatchlist } = useContext(LoopContext);
 
 	useEffect(() => {
 		solutions[userData.state].forEach((value) => {
@@ -62,9 +67,9 @@ export default function Solution({ params }) {
 	if (solution != null) {
 		return (
 			<main>
-				<section className="layout box-border h-[100vh] items-center my-4 w-full">
-					<div className="flex flex-row items-center justify-center h-[100vh] w-full">
-						<div className="w-full text-left flex flex-col items-start gap-[10px]">
+				<section className="layout box-border h-[100vh] items-center !mt-[100px] md:!mt-0 w-full">
+					<div className="flex flex-col-reverse gap-[20px] md:flex-row items-center justify-center w-full md:h-[100vh]">
+						<div className="flex-1 w-full text-left flex flex-col items-center md:items-start gap-[10px]">
 							<div
 								className={classNames(
 									"*:transition-all *:duration-200 transition-all duration-200 inline-flex gap-[10px] items-center px-[20px] py-[10px] rounded-full w-fit",
@@ -80,7 +85,7 @@ export default function Solution({ params }) {
 								<h6>/Unit</h6>
 							</div>
 							<p>{solution.description}</p>
-							<div className="flex flex-row gap-[20px]">
+							<div className="flex flex-row gap-[20px] flex-wrap">
 								{solution.stats.map((val, ind) => (
 									<div key={ind} className="py-[20px] px-[20px] rounded-[10px] border border-white-300 flex flex-col gap-[5px]">
 										<div className="flex flex-row items-baseline gap-[5px]">
@@ -91,9 +96,41 @@ export default function Solution({ params }) {
 									</div>
 								))}
 							</div>
-							<Button prefix={<Icon name="add" size={20}/> }>Add to Watchlist</Button>
+							{inWatchlist(solution) ? (
+								<Button prefix={<Icon name="remove" size={20} />} onClick={() => removeWatchlist(solution)}>
+									Remove from Watchlist
+								</Button>
+							) : (
+								<Button prefix={<Icon name="add" size={20} />} onClick={() => addWatchlist(solution)}>
+									Add to Watchlist
+								</Button>
+							)}
 						</div>
-						<div className="w-full">Hi</div>
+						<div className={classNames("flex-1 w-full mx-8 rounded-[20px] flex items-center justify-center", filterData[solution.type].bg)}>
+							<Image src="/solution_models/solar_panel.png" alt="solar panel image" width={500} height={500} className="object-contain" />
+						</div>
+					</div>
+				</section>
+				<section className="layout box-border h-[100vh] items-center !mt-[30px] w-full">
+					<div className="flex flex-col-reverse gap-[20px] md:flex-row justify-center w-full md:h-[100vh]">
+						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[10px]">
+							<h3>Installation Steps</h3>
+						</div>
+						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[10px]">
+							<ROIGraph
+								points={[
+									[1985, 30000],
+									[1990, 18000],
+									[1995, 16000],
+									[2000, 13500],
+									[2005, 13000],
+									[2010, 11500],
+									[2015, 10500],
+									[2020, 10000],
+									[2025, 5000],
+								]}
+							/>
+						</div>
 					</div>
 				</section>
 			</main>
