@@ -51,6 +51,10 @@ const LoopContextProvider = ({ children }) => {
 		changeWatchlist(item);
 	};
 
+	const inWatchlist = (solution) => {
+		return watchlist.indexOf(solution) != -1;
+	};
+
 	const removeWatchlist = (solution) => {
 		let item = watchlist.slice();
 		let index = item.indexOf(solution);
@@ -109,6 +113,8 @@ const LoopContextProvider = ({ children }) => {
 		inProgress,
 		filterStates,
 		query,
+		inWatchlist,
+		removeWatchlist,
 		addWatchlist,
 		removeWatchlist,
 		filterSort,
