@@ -10,6 +10,7 @@ import Button from "@/components/Button";
 import Image from "next/image";
 import ROIGraph from "@/components/ROIGraph";
 import CostGraph from "@/components/CostGraph";
+import Accordion from "@/components/Accordian";
 
 const filterData = {
 	water: {
@@ -51,6 +52,8 @@ const filterData = {
 
 //TODO: fix the images with actual data inputs
 //TODO: fix the graphs with actual data inputs
+//TODO: fix the accordian with actual data inputs
+//TODO: acc build the last section
 
 export default function Solution({ params }) {
 	const solutionName = params.solution.replace("%20", " ");
@@ -116,6 +119,15 @@ export default function Solution({ params }) {
 					<div className="flex flex-col-reverse gap-[20px] md:flex-row justify-center w-full md:h-[100vh]">
 						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[10px]">
 							<h3>Installation Steps</h3>
+							<Accordion question="Accordion 1">
+								<p>hi</p>
+							</Accordion>
+							<Accordion question="Accordion 2">
+								<p>hi</p>
+							</Accordion>
+							<Accordion question="Accordion 3">
+								<p>hi</p>
+							</Accordion>
 						</div>
 						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[10px]">
 							<CostGraph
