@@ -9,6 +9,7 @@ import classNames from "@/hooks/classnames";
 import Button from "@/components/Button";
 import Image from "next/image";
 import ROIGraph from "@/components/ROIGraph";
+import CostGraph from "@/components/CostGraph";
 
 const filterData = {
 	water: {
@@ -117,6 +118,19 @@ export default function Solution({ params }) {
 							<h3>Installation Steps</h3>
 						</div>
 						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[10px]">
+							<CostGraph
+								points={[
+									[1985, 30000],
+									[1990, 18000],
+									[1995, 16000],
+									[2000, 13500],
+									[2005, 13000],
+									[2010, 11500],
+									[2015, 10500],
+									[2020, 10000],
+									[2025, 5000],
+								]}
+							/>
 							<ROIGraph
 								points={[
 									[1985, 30000],
