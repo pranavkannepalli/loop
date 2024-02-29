@@ -1,8 +1,13 @@
 "use client";
 
 import classNames from "@/hooks/classnames";
+import { useInView, motion } from "framer-motion";
+import { useRef } from "react";
 
 export default function CostGraph({ points, t = new Date().getFullYear() }) {
+    const ref = useRef(null);
+    const isinView = useInView(ref, {once: true});
+
     const getMinMax = (points) => {
         let min = points[0];
         let max = points[0];
@@ -69,32 +74,41 @@ export default function CostGraph({ points, t = new Date().getFullYear() }) {
     const polygon = getPolygon(points);
     const target = getCurrent(points, t);
     return (
-        <div className="h-[300px] flex flex-col w-[500px] overflow-hidden bg-white-600 rounded-[20px]">
+        <div ref={ref} style={{ aspectRatio: "5/3"}} className="flex-1 flex flex-col overflow-hidden bg-white-600 rounded-[20px]">
         <div className="px-[20px] py-[20px] pb-[40px]">
             <p className="caption text-white-400">Unit Cost</p>
             <h4 className="text-white-200">${target[1].toLocaleString()}</h4>
         </div>
         <div className="points relative flex-1">
-            <div
+            <motion.div
+                initial={{ scaleY: 0 }}
+                animate={isinView ? {scaleY: 1, transition: {delay: 0.5, duration: 0.5}} : {scaleY: 0}}
                 id="graphLine" 
                 className={classNames("absolute w-full h-full", barFillColor)}
                 style={{
                     clipPath: `polygon(${polygon})`,
+                    transformOrigin: "bottom",
                     top: "-2px"
                 }}
             />
-            <div
+            <motion.div
                 id="graphBackground"
+                initial={{ scaleY: 0 }}
+                animate={isinView ? {scaleY: 1, transition: {delay: 0.5, duration: 0.5}} : {scaleY: 0}}
                 className="absolute w-full h-full bg-white-600"
                 style={{
                     clipPath: `polygon(${polygon})`,
+                    transformOrigin: "bottom"
                 }}
             />
-            <div
-                id="graph" 
+            <motion.div
+                id="graph"                 
+                initial={{ scaleY: 0 }}
+                animate={isinView ? {scaleY: 1, transition: {delay: 0.5, duration: 0.5}} : {scaleY: 0}}
                 className={classNames("absolute w-full h-full bg-gradient-to-b from", barGradient)}
                 style={{
                     clipPath: `polygon(${polygon})`,
+                    transformOrigin: "bottom",
                     opacity: 0.5
                 }}
             />
