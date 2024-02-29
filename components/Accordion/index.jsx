@@ -54,11 +54,11 @@ const Accordion = ({ number, question, children }) => {
 	};
 
 	return (
-		<motion.div className="bg-white-100 p-[20px] rounded-[8px] cursor-pointer flex flex-col w-full" onClick={() => setIsOpen(!isOpen)}>
+		<motion.div className="bg-white-100 p-[20px] rounded-[8px] cursor-pointer flex flex-col w-full border border-white-300" onClick={() => setIsOpen(!isOpen)}>
 			<AnimatePresence>
 				<motion.div key="question" className="flex flex-row justify-between items-center">
-					<motion.h6 className="text-gray-800 font-bold ml-1 flex flex-row gap-[5px] items-center">
-						<div className="flex bg-white-200 text-white-400 rounded-full w-[30px] h-[30px] items-center justify-center">{number}</div>
+					<motion.h6 className="text-gray-800 font-bold ml-1 flex flex-row gap-[10px] items-center">
+						<p className={classNames(isOpen ? "bg-white-600 text-white-100":"bg-white-200 text-white-400", "caption flex rounded-full w-[20px] h-[20px] items-center justify-center")}>{number}</p>
 						{question}
 					</motion.h6>
 					<motion.div className={classNames(isOpen ? "rotate-180" : "rotate-0", "*:transition-all *:duration-500 transition-all")}>
