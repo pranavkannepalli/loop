@@ -29,10 +29,10 @@ let headingVariants = {
     }
 }
 
-let text = "Helping you help both your homes.";
+let text = "Helping both your homes.";
 export default function HomeText() {
     return (
-        <motion.h1 variants={headingVariants}  initial="initial" animate="animate" className="overflow-hidden w-[80%] max-w-[1280x] text-center mx-auto" >
+        <motion.h1 variants={headingVariants}  initial="initial" animate="animate" className="overflow-hidden max-w-[1280x] text-center mx-auto" >
             {text.split(" ").map((word, i ) => (
                 <>
                     <span key={i}className={classNames(word, "inline-block overflow-hidden relative")}>
