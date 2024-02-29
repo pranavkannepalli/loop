@@ -47,7 +47,7 @@ function SectorFilters() {
 	const { filterStates, changeFilterStates } = useContext(LoopContext);
 
 	return (
-		<div className="flex gap-[20px] pb-20 flex-wrap">
+		<div className="flex flex-nowrap overflow-scroll gap-[20px] pb-[10px]">
 			{Object.keys(filterData).map((key) => (
 				<Filter value={{ ...filterData[key], name: key }} onClick={changeFilterStates} state={filterStates[key]} key={key} />
 			))}
