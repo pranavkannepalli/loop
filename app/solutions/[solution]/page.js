@@ -71,7 +71,7 @@ export default function Solution({ params }) {
 			<main>
 				<section className="layout box-border md:h-[100vh] items-center !mt-[100px] md:!mt-0 w-full">
 					<div className="flex flex-col-reverse gap-[20px] md:flex-row items-center justify-center w-full md:h-[100vh]">
-						<div className="flex-1 w-full text-left flex flex-col items-center md:items-start gap-[10px]">
+						<div className="flex-1 w-full text-left flex flex-col items-stretch md:items-start gap-[10px]">
 							<div
 								className={classNames(
 									"*:transition-all *:duration-200 transition-all duration-200 inline-flex gap-[10px] items-center px-[20px] py-[10px] rounded-full w-fit",
@@ -89,7 +89,7 @@ export default function Solution({ params }) {
 							<p>{solution.description}</p>
 							<div className="flex flex-row gap-[20px] flex-wrap">
 								{solution.stats.map((val, ind) => (
-									<div key={ind} className="py-[20px] px-[20px] rounded-[10px] border border-white-300 flex flex-col gap-[5px]">
+									<div key={ind} className="flex-1 py-[20px] px-[20px] rounded-[10px] border border-white-300 flex flex-col gap-[5px]">
 										<div className="flex flex-row items-baseline gap-[5px]">
 											<h4>{val.data}</h4>
 											<div className="caption">{val.units}</div>
@@ -115,7 +115,7 @@ export default function Solution({ params }) {
 				</section>
 				<section className="layout box-border items-center !mt-[30px] w-full">
 					<div className="flex flex-col gap-[20px] md:flex-row justify-center w-full">
-						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[10px]">
+						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[20px]">
 							<h3>Installation Steps</h3>
 							{solution.steps.map((item, ind) => (
 								<Accordion number={ind + 1} key={ind} question={item.header}>
@@ -123,8 +123,9 @@ export default function Solution({ params }) {
 								</Accordion>
 							))}
 						</div>
-						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[10px]">
+						<div className="flex-1 text-left">
 							<CostGraph points={solution.costGraph} />
+							<div className="h-[20px] w-full" />
 							<ROIGraph points={solution.roiGraph} />
 						</div>
 					</div>
