@@ -16,6 +16,7 @@ const LoopContextProvider = ({ children }) => {
 		low: 0,
 		high: 100000,
 		priorities: ["Cutting Down on Bills", "Lowering my Footprint", "Becoming Self-Sufficient"],
+		rebates: { government: false, utility: false },
 	});
 	const [query, changeQuery] = useState("");
 
@@ -102,12 +103,24 @@ const LoopContextProvider = ({ children }) => {
 		changeData(n);
 	};
 
+	const changeRebates = (data = "government") => {
+		let n = { ...userData };
+		n.rebates[data.toLowerCase()] = !n.rebates[data.toLowerCase()];
+		changeData(n);
+	};
+
 	const filterSort = (nosearch = false) => {
 		var n = solutions[userData.state];
 		n = n.filter((val) => filterStates[val.type]);
 		console.log(n);
 		if (n.length == 0) {
 			n = solutions[userData.state];
+		}
+		if (userData.rebates.government) {
+			n = n.filter((item) => item.gov > 0);
+		}
+		if (userData.rebates.utility) {
+			n = n.filter((item) => item.utility > 0);
 		}
 		if (!nosearch) {
 			n = n.filter((item) => item.title.toLowerCase().includes(query.toLowerCase()) && item.price < userData.high && item.price > userData.low);
@@ -136,6 +149,7 @@ const LoopContextProvider = ({ children }) => {
 		changeHigh,
 		changeFilterStates,
 		changeQuery,
+		changeRebates,
 	};
 
 	return <LoopContext.Provider value={data}>{children}</LoopContext.Provider>;

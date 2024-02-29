@@ -17,9 +17,7 @@ export default function Solutions() {
 				<ResultsText />
 				<div className="flex flex-row justify-between gap-[5px]">
 					<Filter />
-					<div className="py-[12px] px-[16px] rounded-[8px] border border-white-300 flex items-center justify-center">
-						<StateSelector />
-					</div>
+					<div className="py-[12px] px-[16px] rounded-[8px] border border-white-300 flex items-center justify-center"></div>
 				</div>
 			</div>
 			<div className="mt-[20px]">
