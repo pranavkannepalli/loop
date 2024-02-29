@@ -1,4 +1,4 @@
-import Accordion from "@/components/Accordian";
+import Accordion from "@/components/Accordion";
 import CostGraph from "@/components/CostGraph";
 import Dropdown from "@/components/Dropdown";
 import Icon from "@/components/Icon";

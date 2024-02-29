@@ -10,7 +10,8 @@ import Button from "@/components/Button";
 import Image from "next/image";
 import ROIGraph from "@/components/ROIGraph";
 import CostGraph from "@/components/CostGraph";
-import Accordion from "@/components/Accordian";
+import Accordion from "@/components/Accordion";
+import Rebate from "@/components/Rebates";
 
 const filterData = {
 	water: {
@@ -162,14 +163,24 @@ export default function Solution({ params }) {
 				<section className="layout box-border !mt-[30px] w-full">
 					<h3>Rebates and Tax Credits</h3>
 					<div className="flex flex-col gap-[20px] md:flex-row justify-center w-full mt-[30px]">
-						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[10px]">
+						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[20px]">
 							<div className="caption text-white-400">Utility</div>
+							<Rebate dollars={500} label={"For solar panels installed in a home"} />
+							<Rebate dollars={500} label={"For solar panels installed in a home"} />
+							<Rebate dollars={500} label={"For solar panels installed in a home"} />
+							<Rebate dollars={500} label={"For solar panels installed in a home"} />
 						</div>
-						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[10px]">
-							<div className="caption text-white-400">Utility</div>
+						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[20px]">
+							<div className="caption text-white-400">Government Rebates</div>
+							<Rebate dollars={500} label={"For solar panels installed in a home"} />
+							<Rebate dollars={500} label={"For solar panels installed in a home"} />
+							<Rebate dollars={500} label={"For solar panels installed in a home"} />
 						</div>
-						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[10px]">
-							<div className="caption text-white-400">Utility</div>
+						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[20px]">
+							<div className="caption text-white-400">Tax Concessions</div>
+							<Rebate dollars={500} label={"For solar panels installed in a home"} />
+							<Rebate dollars={500} label={"For solar panels installed in a home"} />
+							<Rebate dollars={500} label={"For solar panels installed in a home"} />
 						</div>
 					</div>
 				</section>
