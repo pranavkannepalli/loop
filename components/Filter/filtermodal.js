@@ -3,6 +3,7 @@ import BudgetSelector from "../BudgetSelector";
 import Button from "../Button";
 import HometypeCheckbox from "../HomeTypeCheckbox";
 import RebatesCheckbox from "../RebatesCheckbox";
+import StateCheckbox from "../StateCheckbox";
 
 export function FilterModal({ setOpen }) {
 	return (
@@ -16,7 +17,7 @@ export function FilterModal({ setOpen }) {
 				</div>
 				<h4 className="text-white-400">Select Budget</h4>
 				<BudgetSelector />
-				<div className="flex flex-col md:flex-row gap-[30px]">
+				<div className="grid grid-cols-1 md:flex-row gap-[10px] md:grid-cols-3 w-full">
 					<div>
 						<h4 className="text-white-400">Select Home:</h4>
 						<HometypeCheckbox />
@@ -24,6 +25,10 @@ export function FilterModal({ setOpen }) {
 					<div>
 						<h4 className="text-white-400">Select Rebates:</h4>
 						<RebatesCheckbox />
+					</div>
+					<div>
+						<h4 className="text-white-400">Select State:</h4>
+						<StateCheckbox />
 					</div>
 				</div>
 			</div>
