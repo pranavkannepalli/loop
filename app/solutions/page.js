@@ -8,14 +8,14 @@ import Search from "@/components/Search";
 
 export default function Solutions() {
 	return (
-		<div className="layout !mt-[125px] flex flex-col">
+		<div className="layout !pt-[100px] gap-[20px] flex flex-col">
 			<div className="flex flex-row gap-[20px] mb-[20px]">
 				<Search />
 			</div>
 			<SectorFilters />
-			<div className="flex flex-row justify-between items-center">
+			<div className="flex flex-col items-stretch gap-[10px] md:flex-row justify-between md:items-center">
 				<ResultsText />
-				<div className="flex flex-row gap-[5px]">
+				<div className="flex flex-row justify-between gap-[5px]">
 					<Filter />
 					<div className="py-[12px] px-[16px] rounded-[8px] border border-white-300 flex items-center justify-center">
 						<StateSelector />
