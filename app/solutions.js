@@ -67,11 +67,6 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
 
 			//Installation steps:
 			steps: [
@@ -126,11 +121,6 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
 		},
 		{
 			alt: "Solar Panels on a Independent Home",
@@ -189,11 +179,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			costGraph: [
 				[1985, 30000],
 				[1990, 18000],
@@ -232,11 +218,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "electricity",
 		},
 		{
@@ -291,11 +273,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "water",
 		},
 		{
@@ -350,11 +328,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "water",
 		},
 		{
@@ -409,11 +383,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "waste",
 		},
 		{
@@ -468,11 +438,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "waste",
 		},
 		{
@@ -527,11 +493,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "heating",
 		},
 		{
@@ -586,11 +548,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "transportation",
 		},
 	],
@@ -647,11 +605,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "electricity",
 		},
 		{
@@ -706,11 +660,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "electricity",
 		},
 		{
@@ -765,11 +715,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "water",
 		},
 		{
@@ -824,11 +770,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "water",
 		},
 		{
@@ -883,11 +825,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "waste",
 		},
 		{
@@ -942,11 +880,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "waste",
 		},
 		{
@@ -1001,11 +935,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "heating",
 		},
 		{
@@ -1060,11 +990,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "transportation",
 		},
 	],
@@ -1121,11 +1047,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "electricity",
 		},
 		{
@@ -1180,11 +1102,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "electricity",
 		},
 		{
@@ -1239,11 +1157,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "water",
 		},
 		{
@@ -1298,11 +1212,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "water",
 		},
 		{
@@ -1357,11 +1267,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "waste",
 		},
 		{
@@ -1416,11 +1322,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "waste",
 		},
 		{
@@ -1475,11 +1377,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "heating",
 		},
 		{
@@ -1534,11 +1432,7 @@ const solutions = {
 				{ price: 500, label: "For solar panels installed in a home" },
 				{ price: 500, label: "For solar panels installed in a home" },
 			],
-			taxRebates: [
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-				{ price: 500, label: "For solar panels installed in a home" },
-			],
+
 			type: "transportation",
 		},
 	],

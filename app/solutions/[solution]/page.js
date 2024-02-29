@@ -133,7 +133,7 @@ export default function Solution({ params }) {
 					</div>
 				</section>
 				<section className="layout box-border !mt-[30px] w-full">
-					<h3>Rebates and Tax Credits</h3>
+					<h3>Rebates</h3>
 					<div className="flex flex-col gap-[20px] md:flex-row justify-center w-full mt-[30px]">
 						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[20px]">
 							<div className="caption text-white-400">Utility</div>
@@ -144,12 +144,6 @@ export default function Solution({ params }) {
 						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[20px]">
 							<div className="caption text-white-400">Government Rebates</div>
 							{solution.govtRebates.map((item, ind) => (
-								<Rebate dollars={item.price} label={item.label} key={ind} />
-							))}
-						</div>
-						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[20px]">
-							<div className="caption text-white-400">Tax Concessions</div>
-							{solution.taxRebates.map((item, ind) => (
 								<Rebate dollars={item.price} label={item.label} key={ind} />
 							))}
 						</div>
