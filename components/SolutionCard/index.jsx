@@ -9,7 +9,8 @@ export default function SolutionCard({ title, gov, utility, price, setup, image,
 	const redirect = useRedirectFunction(`/solutions/${title}`);
 
 	return (
-		<motion.div whileHover={{ scale: 1.05 }} className="border min-w-[300px] border-white-300 rounded-xl overflow-hidden hover:cursor-pointer" onClick={() => redirect()}>
+		<motion.div 
+		whileHover={{ scale: 1.02}} className="border min-w-[300px] border-white-300 rounded-xl overflow-hidden hover:cursor-pointer" onClick={() => redirect()}>
 			<div className="relative w-full aspect-[16/9] ">
 				<Image src={image} alt={alt} fill />
 			</div>
