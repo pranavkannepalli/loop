@@ -16,10 +16,10 @@ import SolutionsButton from "@/components/SolutionsButton";
 export default function Home() {
 	return (
 		<main>
-			<section className="flex flex-col box-border h-[100vh] items-center my-4">
-				<div className="flex flex-col gap-[10px] flex-1 justify-center items-stretch layout">
+			<section className="flex flex-col box-border h-[100vh] items-center justify-end py-4">
+				<div className="flex flex-col gap-[10px] flex-1 box-border !pt-[80px] justify-center items-stretch layout">
 					<HomeText />
-					<div className="flex flex-row gap-[20px]">
+					<div className="flex flex-col gap-[20px] md:flex-row">
 						<Search />
 						<SolutionsButton>Search</SolutionsButton>
 					</div>
@@ -31,7 +31,7 @@ export default function Home() {
 				<h3 className="text-left my-2">Set Up Your Profile</h3>
 				<h4 className="text-left my-2 text-white-400">Select Home</h4>
 			</section>
-			<div className=" layout flex flex-col sm:flex-row gap-[20px]">
+			<div className=" layout flex flex-col md:flex-row gap-[20px]">
 				<HomeCard svg="apartment" color="bg-green-500" borderColor="outline-green-700" name="Apartment" description="Large and small complexes" />
 				<HomeCard svg="multi-family" color="bg-yellow-500" borderColor="outline-yellow-700" name="Multi-Family Home" description="Condos and multi-family homes" />
 				<HomeCard svg="single-family" color="bg-purple-500" borderColor="outline-purple-700" name="Individual Home" description="Individual homes and town homes" />
@@ -40,7 +40,7 @@ export default function Home() {
 				<div className="flex-1 flex flex-col gap-[32px]">
 					<div className="flex flex-col gap-[20px]">
 						<h4 className="text-left text-white-400">Select State</h4>
-						<TextInput hasInput={false} suffix={<StateSelector />} />
+						<TextInput hasInput={false} suffix={<StateSelector  expanded />} />
 					</div>
 					<div>
 						<h4 className="text-left my-2 text-white-400">Select Budget</h4>
