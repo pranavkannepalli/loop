@@ -3,6 +3,8 @@
 import { createContext, useState } from "react";
 import solutions from "@/app/solutions";
 
+// TODO: create login context and login page
+
 const LoopContext = createContext(null);
 
 const states = ["NY", "TX", "WA"];

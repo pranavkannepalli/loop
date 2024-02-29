@@ -51,9 +51,6 @@ const filterData = {
 	},
 };
 
-//TODO: fix the images with actual data inputs
-//TODO: fix the graphs with actual data inputs
-//TODO: fix the accordian with actual data inputs
 //TODO: acc build the last section
 
 export default function Solution({ params }) {
