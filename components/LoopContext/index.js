@@ -20,6 +20,8 @@ const LoopContextProvider = ({ children }) => {
 	});
 	const [query, changeQuery] = useState("");
 
+	const [sort, changeSort] = useState("Sort");
+
 	const [filterStates, changeFilterStates] = useState({
 		water: false,
 		electricity: false,
@@ -112,7 +114,6 @@ const LoopContextProvider = ({ children }) => {
 	const filterSort = (nosearch = false) => {
 		var n = solutions[userData.state];
 		n = n.filter((val) => filterStates[val.type]);
-		console.log(n);
 		if (n.length == 0) {
 			n = solutions[userData.state];
 		}
@@ -125,6 +126,24 @@ const LoopContextProvider = ({ children }) => {
 		if (!nosearch) {
 			n = n.filter((item) => item.title.toLowerCase().includes(query.toLowerCase()) && item.price < userData.high && item.price > userData.low);
 		}
+
+		console.log(sort);
+		if (sort == "Raw Price") {
+			n = n.sort((item1, item2) => item1.price - item2.price);
+		}
+		if (sort == "Rebates") {
+			n = n.sort((item1, item2) => item1.gov - item2.giv + item1.utility - item2.utility);
+		}
+		if (sort == "Difficulty") {
+			n = n.sort((item1, item2) => item1.setup - item2.setup);
+		}
+		if (sort == "A to Z") {
+			n = n.sort((item1, item2) => item1.title.localeCompare(item2.title));
+		}
+		if (sort == "Z to A") {
+			n = n.sort((item1, item2) => -1 * item1.title.localeCompare(item2.title));
+		}
+
 		return n;
 	};
 
@@ -133,6 +152,7 @@ const LoopContextProvider = ({ children }) => {
 		inProgress,
 		filterStates,
 		query,
+		sort,
 		inWatchlist,
 		removeWatchlist,
 		addWatchlist,
@@ -150,6 +170,7 @@ const LoopContextProvider = ({ children }) => {
 		changeFilterStates,
 		changeQuery,
 		changeRebates,
+		changeSort,
 	};
 
 	return <LoopContext.Provider value={data}>{children}</LoopContext.Provider>;
