@@ -120,43 +120,15 @@ export default function Solution({ params }) {
 					<div className="flex flex-col gap-[20px] md:flex-row justify-center w-full">
 						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[10px]">
 							<h3>Installation Steps</h3>
-							<Accordion number={1} question="Accordion 1">
-								<p>hi</p>
-							</Accordion>
-							<Accordion number={2} question="Accordion 2">
-								<p>hi</p>
-							</Accordion>
-							<Accordion number={3} question="Accordion 3">
-								<p>hi</p>
-							</Accordion>
+							{solution.steps.map((item, ind) => (
+								<Accordion number={ind + 1} key={ind} question={item.header}>
+									<p>{item.description}</p>
+								</Accordion>
+							))}
 						</div>
 						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[10px]">
-							<CostGraph
-								points={[
-									[1985, 30000],
-									[1990, 18000],
-									[1995, 16000],
-									[2000, 13500],
-									[2005, 13000],
-									[2010, 11500],
-									[2015, 10500],
-									[2020, 10000],
-									[2025, 5000],
-								]}
-							/>
-							<ROIGraph
-								points={[
-									[1985, 30000],
-									[1990, 18000],
-									[1995, 16000],
-									[2000, 13500],
-									[2005, 13000],
-									[2010, 11500],
-									[2015, 10500],
-									[2020, 10000],
-									[2025, 5000],
-								]}
-							/>
+							<CostGraph points={solution.costGraph} />
+							<ROIGraph points={solution.roiGraph} />
 						</div>
 					</div>
 				</section>
@@ -165,22 +137,21 @@ export default function Solution({ params }) {
 					<div className="flex flex-col gap-[20px] md:flex-row justify-center w-full mt-[30px]">
 						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[20px]">
 							<div className="caption text-white-400">Utility</div>
-							<Rebate dollars={500} label={"For solar panels installed in a home"} />
-							<Rebate dollars={500} label={"For solar panels installed in a home"} />
-							<Rebate dollars={500} label={"For solar panels installed in a home"} />
-							<Rebate dollars={500} label={"For solar panels installed in a home"} />
+							{solution.utilityRebates.map((item, ind) => (
+								<Rebate dollars={item.price} label={item.label} key={ind} />
+							))}
 						</div>
 						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[20px]">
 							<div className="caption text-white-400">Government Rebates</div>
-							<Rebate dollars={500} label={"For solar panels installed in a home"} />
-							<Rebate dollars={500} label={"For solar panels installed in a home"} />
-							<Rebate dollars={500} label={"For solar panels installed in a home"} />
+							{solution.govtRebates.map((item, ind) => (
+								<Rebate dollars={item.price} label={item.label} key={ind} />
+							))}
 						</div>
 						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[20px]">
 							<div className="caption text-white-400">Tax Concessions</div>
-							<Rebate dollars={500} label={"For solar panels installed in a home"} />
-							<Rebate dollars={500} label={"For solar panels installed in a home"} />
-							<Rebate dollars={500} label={"For solar panels installed in a home"} />
+							{solution.taxRebates.map((item, ind) => (
+								<Rebate dollars={item.price} label={item.label} key={ind} />
+							))}
 						</div>
 					</div>
 				</section>

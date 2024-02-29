@@ -1,6 +1,10 @@
 import Icon from "@/components/Icon";
 import UserTags from "@/components/UserTags";
 
+// TODO: Implement the solutions list
+// TODO: implement the watchlist
+// TODO: connect to react context
+
 export default function Dashboard() {
 	return (
 		<div className="layout flex flex-row !mt-[100px] gap-[20px]">
@@ -41,7 +45,9 @@ export default function Dashboard() {
 					</div>
 				</div>
 			</div>
-			<div className="flex-1">Hello</div>
+			<div className="flex-1">
+				<div className="caption">Your List</div>
+			</div>
 		</div>
 	);
 }

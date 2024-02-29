@@ -13,12 +13,13 @@ export default function Navbar() {
 					<div className="flex flex-row gap-4 items-center justify-center col-span-3">
 						<Link href="/dashboard">Dashboard</Link>
 						<Link href="/solutions">Solutions</Link>
-						<Link href="/blog">Blog</Link>
 						<Link href="/login">Login</Link>
 					</div>
 					<div className="flex justify-end h-full items-center gap-[5px]">
 						<Icon name="search" />
-						<Image alt="Profile Picture" src="/User.png" height={24} width={24} />
+						<Link href="/dashboard">
+							<Image alt="Profile Picture" src="/User.png" height={24} width={24} />
+						</Link>
 					</div>
 				</div>
 			</nav>
