@@ -6,12 +6,12 @@ import Icon from "../Icon";
 import LoopContext from "../LoopContext";
 import classNames from "@/hooks/classnames";
 
-const Dropdown = ({ placeholder = "Select an item", items = [], onClick = (value) => {} }) => {
+const Dropdown = ({ placeholder = "Select an item", expanded=false, items = [], onClick = (value) => {} }) => {
 	const [open, setOpen] = useState(false);
 	const [selected, changeSelected] = useState(placeholder);
 
 	return (
-		<div className="flex items-center justify-center bg-white !c">
+		<div className={classNames("flex items-center justify-center bg-white !c", expanded ? "flex-1": undefined)}>
 			<motion.div animate={open ? "open" : "closed"} className="relative flex flex-row flex-1">
 				<button
 					onClick={() => setOpen((pv) => !pv)}
@@ -47,9 +47,9 @@ const Dropdown = ({ placeholder = "Select an item", items = [], onClick = (value
 	);
 };
 
-const StateSelector = () => {
+const StateSelector = ({ expanded=false }) => {
 	const { userData, changeState } = useContext(LoopContext);
-	return <Dropdown placeholder={userData.state} onClick={changeState} items={["NY", "TX", "WA"]} />;
+	return <Dropdown placeholder={userData.state} expanded={expanded} onClick={changeState} items={["NY", "TX", "WA"]} />;
 };
 
 const Option = ({ selected, text, onClick = () => {} }) => {
