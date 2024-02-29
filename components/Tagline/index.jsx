@@ -38,11 +38,11 @@ export default function TagLine({ value }) {
 }
 
 function Word({ value, range, highlight, progress }) {
-  const opacity = useTransform(progress, range, [0.5, 1]);
+  const opacity = useTransform(progress, range, [0, 1]);
   const scaleX = useTransform(progress, [0, 1],  [0, 1]);
 
   return (
-    <motion.span className="relative" style={{ opacity }}>
+    <motion.span className="relative">
       {highlight != null && (
         <motion.div
           style={{ scaleX, originX: 0 }}
@@ -52,7 +52,7 @@ function Word({ value, range, highlight, progress }) {
           )}
         />
       )}
-      <span className="relative z-10">{value}</span>
+      <motion.span style={{ opacity }} className="relative z-10">{value}</motion.span>
     </motion.span>
   );
 }
