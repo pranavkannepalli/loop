@@ -18,7 +18,14 @@ export default function HomeSolutionCard({ name, img, sector }) {
     const [hover, setHover] = useState(false);
 
     return (
-        <motion.div onHoverStart={() => setHover(true)} onHoverEnd={() => setHover(false)} className={classNames(colors[sector], "cursor-pointer inline-block relative min-w-[300px] h-[400px] rounded-3xl")}>
+        <motion.div 
+            style={{
+                minWidth: "clamp(200px, 44vw, 300px)",
+                aspectRatio: "3/4"
+            }}
+            onHoverStart={() => setHover(true)} 
+            onHoverEnd={() => setHover(false)} 
+            className={classNames(colors[sector], "cursor-pointer inline-block relative rounded-3xl")}>
             <Image alt={name} src={img} fill/>
             <div className="absolute box-border left-3 bottom-3 rounded-full bg-white-100 px-5 py-[10px] border border-white-300 overflow-hidden">
                 <div className="flex gap-[10px] items-center">
