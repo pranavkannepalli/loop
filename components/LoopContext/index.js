@@ -136,7 +136,6 @@ const LoopContextProvider = ({ children }) => {
 		}
 
 
-		console.log(sort);
 		if (!nosort) {
 			if (sort == "Raw Price") {
 				n = n.sort((item1, item2) => item1.price - item2.price);

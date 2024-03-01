@@ -1,97 +1,48 @@
 "use client";
 
-import { useContext, useLayoutEffect, useRef, useState } from "react";
-import { motion, useMotionValue, useMotionValueEvent, useTransform } from "framer-motion";
-import TextInput from "../TextInput";
+import { useContext } from "react";
 import LoopContext from "../LoopContext";
+import TextInput from "../TextInput";
 
 export default function BudgetSelector() {
-	const [min, changeMin] = useState(0);
-	const minPos = useMotionValue(0);
-	const maxPos = useMotionValue(100);
-	const barWidth = useMotionValue(120);
-	const [totalWidth, changeTotalWidth] = useState(100);
-	const [max, changeMax] = useState((100000 * maxPos.get()) / totalWidth);
-	const inputRef = useRef(null);
-	const { changeLow, changeHigh } = useContext(LoopContext);
+    const {
+        userData: { low, high },
+		changeLow,
+		changeHigh
+    } = useContext(LoopContext);
 
-	useLayoutEffect(() => {
-		const updateWidth = () => {
-			let newWidth = inputRef.current ? inputRef.current.offsetWidth - 40 : 100;
-			changeTotalWidth(newWidth);
-			changeMax((100000 * maxPos.get()) / newWidth);
-		};
-		window.addEventListener("resize", updateWidth);
-
-		updateWidth();
-		return () => {
-			window.removeEventListener("resize", updateWidth);
-		};
-	}, [maxPos]);
-
-	useMotionValueEvent(maxPos, "change", () => {
-		barWidth.set(maxPos.get() - minPos.get() + 20);
-		changeMax(() => (100000 * maxPos.get()) / totalWidth);
-		changeHigh((100000 * maxPos.get()) / totalWidth);
-	});
-
-	useMotionValueEvent(minPos, "change", () => {
-		barWidth.set(maxPos.get() - minPos.get() + 20);
-		changeMin(() => (100000 * minPos.get()) / totalWidth);
-		changeLow(() => (100000 * minPos.get()) / totalWidth);
-	});
-
-	return (
-		<div className="flex-1" ref={inputRef}>
-			<div className="relative h-[20px] flex">
-				<div className="absolute top-[50%] h-[3px] w-full bg-white-300 rounded-[3px]" />
-				<motion.div style={{ left: minPos, width: barWidth }} className={`z-10 absolute  top-[50%] h-[3px] bg-yellow-600 rounded-[3px]`} />
-				<motion.div
-					style={{ x: minPos }}
-					whileDrag={{ scale: 1.3 }}
-					dragElastic={false}
-					dragConstraints={{ left: 0, right: maxPos.get() }}
-					drag="x"
-					dragMomentum={false}
-					onDragEnd={() => changeMin(() => (100000 * minPos.get()) / totalWidth)}
-					className="z-10 w-[20px] h-[20px] border-[3px] border-yellow-600 bg-white-200 rounded-[10px]"
-				/>
-				<motion.div
-					style={{ x: maxPos }}
-					whileDrag={{ scale: 1.3 }}
-					dragElastic={false}
-					dragConstraints={{ left: minPos.get(), right: totalWidth }}
-					drag="x"
-					dragMomentum={false}
-					onDragEnd={() => changeMax(() => (100000 * maxPos.get()) / totalWidth)}
-					className="z-10 w-[20px] h-[20px] border-[3px] border-yellow-600 bg-white-200 rounded-[10px]"
-				/>
-			</div>
-			<div className="flex-1 flex justify-between mt-1">
-				<p className="caption text-white-400 ">$0</p>
-				<p className="caption text-white-400">$100k</p>
-			</div>
-			<div className="flex justify-between items-center mt-5">
-				<TextInput
-					value={Math.round(min)}
-					max={max}
-					type="number"
-					onChange={(e) => {
-						changeMin(Math.min(Math.max(0, e.target.value), max));
-						minPos.set((Math.min(Math.max(0, e.target.value), max) * totalWidth) / 100000);
-					}}
-				/>
-				<p className="button min-w-[50px] text-center">TO</p>
-				<TextInput
-					value={Math.round(max)}
-					type="number"
-					min={0}
-					onChange={(e) => {
-						changeMax(Math.max(min, Math.min(e.target.value, 100000)));
-						maxPos.set((Math.max(min, Math.min(e.target.value, 100000)) * totalWidth) / 100000);
-					}}
-				/>
-			</div>
-		</div>
-	);
+    return (
+        <div className="relative flex flex-col gap-[10px]">
+            <div className="h-[8px] relative bg-white-300 overflow-hidden rounded-full">
+                <div
+                    style={{
+                        left: (low * 100) / 100000 + "%",
+                        right: 100 - (high * 100) / 100000 + "%",
+                    }}
+                    className="*:transition-all *:duration-200 absolute top-0 bottom-0 bg-yellow-600"
+                />
+            </div>
+            <div className="flex justify-between">
+                <p className="caption text-white-400">$0</p>
+                <p className="caption text-white-400">$100k</p>
+            </div>
+            <div className="flex gap-[10px] items-center">
+                <TextInput
+                    max={high}
+                    min={0}
+                    value={low}
+                    type="number"
+                    onChange={(e) => changeLow(parseInt(e.target.value))}
+                />
+                <p>TO</p>
+                <TextInput
+                    min={low}
+                    max={100000}
+                    value={high}
+                    type="number"
+                    onChange={(e) => changeHigh(parseInt(e.target.value))}
+                />
+            </div>
+        </div>
+    );
 }
