@@ -39,7 +39,6 @@ const LoopContextProvider = ({ children }) => {
 			prev[itemName] = item;
 			return { ...prev };
 		});
-		console.log(inProgress);
 	};
 
 	const removeItem = (itemName) => {
@@ -135,7 +134,6 @@ const LoopContextProvider = ({ children }) => {
 			n = n.filter((item) => item.title.toLowerCase().includes(query.toLowerCase()) && item.price < userData.high && item.price > userData.low);
 		}
 
-		console.log(sort);
 		if (sort == "Raw Price") {
 			n = n.sort((item1, item2) => item1.price - item2.price);
 		}

@@ -58,13 +58,13 @@ export default function Navbar() {
 						className="z-50 t-0 fixed w-full h-full gap-[20px] bg-white-100 flex flex-col items-center justify-center"
 					>
 						<Icon name="add" className="absolute top-[20px] right-[20px]" style={{ transform: "rotate(45deg)" }} onClick={() => changeShowMenu(false)} />
-						<Link onClick={() => changeShowModal(false)} href="/dashboard">
+						<Link onClick={() => changeShowMenu(false)} href="/dashboard">
 							<h3>Dashboard</h3>{" "}
 						</Link>
-						<Link onClick={() => changeShowModal(false)} href="/solutions">
+						<Link onClick={() => changeShowMenu(false)} href="/solutions">
 							<h3>Solutions</h3>
 						</Link>
-						<Link onClick={() => changeShowModal(false)} href="/login">
+						<Link onClick={() => changeShowMenu(false)} href="/login">
 							<h3>Login</h3>
 						</Link>
 					</motion.div>

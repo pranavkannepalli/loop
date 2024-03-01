@@ -14,7 +14,6 @@ import { useContext } from "react";
 
 export default function Dashboard() {
     const { watchlist, removeWatchlist } = useContext(LoopContext);
-    console.log(watchlist);
     return (
         <div className="flex flex-col md:flex-row gap-[20px] layout box-border !pt-[120px]">
             <div className="flex-[2] flex flex-col gap-[40px]">
@@ -95,7 +94,6 @@ export default function Dashboard() {
                         item.steps.forEach((step) => {
                             if (step.isCompleted) completed++;
                         });
-                        console.log(completed, item.steps.length);
                         return (
                             completed != item.steps.length && (
                                 <ToDoCard
