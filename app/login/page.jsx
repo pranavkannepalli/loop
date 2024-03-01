@@ -25,7 +25,7 @@ export default function Login() {
 				<h2>Login</h2>
 				<TextInput
 					placeholder="Email"
-					prefix={<Icon name="person" />}
+					prefix={<Icon name="account" />}
 					value={username}
 					onChange={(e) => {
 						setUsername(e.target.value);

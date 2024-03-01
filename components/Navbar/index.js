@@ -58,15 +58,26 @@ export default function Navbar() {
 						className="z-50 t-0 fixed w-full h-full gap-[20px] bg-white-100 flex flex-col items-center justify-center"
 					>
 						<Icon name="add" className="absolute top-[20px] right-[20px]" style={{ transform: "rotate(45deg)" }} onClick={() => changeShowMenu(false)} />
-						<Link onClick={() => changeShowModal(false)} href="/dashboard">
-							<h3>Dashboard</h3>{" "}
-						</Link>
+						{loggedIn && (
+							<Link onClick={() => changeShowModal(false)} href="/dashboard">
+								Dashboard
+							</Link>
+						)}
 						<Link onClick={() => changeShowModal(false)} href="/solutions">
-							<h3>Solutions</h3>
+							Solutions
 						</Link>
-						<Link onClick={() => changeShowModal(false)} href="/login">
-							<h3>Login</h3>
-						</Link>
+						{!loggedIn && (
+							<div
+								className="link cursor-pointer"
+								onClick={() => {
+									if (pathname != "/login") setRedirect(pathname);
+									changeShowModal(false);
+									router.push("/login");
+								}}
+							>
+								Login
+							</div>
+						)}
 					</motion.div>
 				)}
 			</AnimatePresence>
