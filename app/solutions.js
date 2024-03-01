@@ -899,14 +899,14 @@ const solutions = {
             title: "LED Lighting",
             stats: [
                 {
-                    "data": 70,
-                    "units": "%",
-                    "description": "reduction in CO2 emissions"
+                    data: 70,
+                    units: "%",
+                    description: "reduction in CO2 emissions"
                 },
                 {
-                    "data": 1000,
-                    "units": "gallons",
-                    "description": "savings in water per year"
+                    data: 1000,
+                    units: "gallons",
+                    description: "savings in water per year"
                 }
             ],
             description:
@@ -985,94 +985,209 @@ const solutions = {
         },
         {
             alt: "Smart Home Technology",
-            gov: 0,
-            utility: 300,
-            price: 2,
-            setup: 1,
-            image: "/solutions/leds.jpg",
+            gov: 300,
+            utility: 350,
+            price: 700,
+            setup: 2,
+            image: "/solutions/smart_thermostat.jpg",
             imageNoBg: "",
-            title: "LED Lighting",
+            title: "Smart Home Technology",
             stats: [
                 {
-                    "data": 70,
-                    "units": "%",
-                    "description": "reduction in CO2 emissions"
+                    data: 15,
+                    units: "%",
+                    description: "reduction in CO2 emissions"
                 },
                 {
-                    "data": 1000,
-                    "units": "gallons",
-                    "description": "savings in water per year"
+                    data: 10000,
+                    units: "gallons",
+                    description: "savings in water per year"
                 }
             ],
             description:
-                "LED lighting is a highly efficient, long-lasting, and environmentally friendly lighting solution that uses light-emitting diodes to produce light.",
+                "Smart home technology connects various devices and systems, such as lighting, heating, security, and entertainment, to a central hub or smartphone app, allowing users to control and monitor their homes remotely",
             hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
             costGraph: [
-                [1985, 20],
-                [1990, 19],
-                [1995, 16],
-                [2000, 13],
-                [2005, 12],
-                [2010, 11],
-                [2015, 7],
-                [2020, 3],
-                [2025, 1]
+                [1985, 3200],
+                [1990, 2200],
+                [1995, 1600],
+                [2000, 1200],
+                [2005, 800],
+                [2010, 600],
+                [2015, 500],
+                [2020, 450],
+                [2025, 600]
             ],
             roiGraph: [
-                [1985, 0.2],
-                [1990, 0.2],
-                [1995, 0.3],
-                [2000, 0.4],
-                [2005, 0.7],
-                [2010, 1.6],
-                [2015, 2.4],
-                [2020, 4.5],
-                [2025, 9]
+                [1985, 35],
+                [1990, 38],
+                [1995, 42],
+                [2000, 46],
+                [2005, 55],
+                [2010, 70700],
+                [2015, 90],
+                [2020, 110],
+                [2025, 150]
             ],
             steps: [
                 {
-                    header: "Turn off the power",
-                    description: "Switch off the power to the fixture or lamp that you're replacing to ensure safety during the process."
+                    header: "Research and choose smart home devices",
+                    description: "Select devices that suit your requirements and budget after thorough research."
                 },
                 {
-                    header: "Remove the old bulb",
-                    description: "Take out the old bulb and dispose of it properly, following any applicable recycling guidelines."
+                    header: "Purchase and set up",
+                    description: "Buy the chosen devices and set up an account with the manufacturer or a smart home platform."
                 },
                 {
-                    header: "Screw in the new LED bulb",
-                    description: "Install the new LED bulb into the socket, ensuring it is securely screwed in place."
+                    header: "Install and connect to Wi-Fi",
+                    description: "Follow the manufacturer's instructions to install the devices and connect them to your home's Wi-Fi network."
                 },
                 {
-                    header: "Turn the power back on",
-                    description: "Restore power to the fixture or lamp, then test the new LED bulb to ensure it is functioning correctly."
+                    header: "Configure and create scenes",
+                    description: "Configure the devices and create scenes or automation using the app or platform."
+                },
+                {
+                    header: "Test and adjust",
+                    description: "Test the devices to ensure proper functionality and make any necessary adjustments."
                 }
             ],
             utilityRebates: [
                 {
-                    price: 10,
-                    label: "rebate for LED lighting upgrades by Con Edison"
+                    price: 85,
+                    label: "rebate for smart thermostats by Con Edison"
                 },
                 {
-                    price: 12,
-                    label: "rebate for LED lighting upgrades by National Grid"
+                    price: 62.5,
+                    label: "rebate for smart thermostats by National Grid"
                 },
                 {
-                    price: 15,
-                    label: "rebate for LED lighting upgrades by NYSERDA"
+                    price: 75,
+                    label: "rebate for smart lighting systems by National Grid"
+                },
+                {
+                    price: 70,
+                    label: "rebate for smart thermostats by NYSERDA"
+                },
+                {
+                    price: 50,
+                    label: "rebate for smart lighting systems by NYSERDA"
                 }
             ],
-            govtRebates: [
+            governmentRebates: [
                 {
-                    price: 15,
-                    label: "tax credit for the purchase of LED lighting by the federal government, up to $200"
+                    price: 175,
+                    label: "tax credit for the purchase of smart home technology by the federal government, up to $500"
                 },
                 {
-                    price: 10,
-                    label: "tax credit for the purchase of LED lighting by New York State, up to $200"
+                    price: 150,
+                    label: "tax credit for the purchase of smart home technology by New York State, up to $500"
                 },
                 {
-                    price: 20,
-                    label: "tax credit for the purchase of LED lighting by NYSERDA, up to $200"
+                    price: 80,
+                    label: "tax credit for the purchase of smart home technology by NYSERDA, up to $500"
+                }
+            ],
+
+            type: "electricity",
+        },
+        {
+            alt: "A picture of a home battery system",
+            gov: 5000,
+            utility: 3000,
+            price: 9000,
+            setup: 2,
+            image: "/solutions/home-battery.png",
+            imageNoBg: "",
+            title: "Home Battery Systems",
+            stats: [
+                {
+                    data: 7,
+                    units: "ton",
+                    description: "reduction in CO2 emissions per year"
+                },
+                {
+                    data: 10000,
+                    units: "gallons",
+                    description: "savings in water per year"
+                }
+            ],
+            description:
+                " A home battery system stores energy from solar panels or the grid for use during peak demand or power outages. It can help you save money on electricity bills and reduce your carbon footprint.",
+            hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+            costGraph: [
+                [1985, 10000],
+                [1990, 12000],
+                [1995, 13000],
+                [2000, 14000],
+                [2005, 14500],
+                [2010, 11000],
+                [2015, 8000],
+                [2020, 6000],
+                [2025, 5000]
+            ],
+            roiGraph: [
+                [1985, 35],
+                [1990, 38],
+                [1995, 42],
+                [2000, 46],
+                [2005, 55],
+                [2010, 70700],
+                [2015, 90],
+                [2020, 110],
+                [2025, 150]
+            ],
+            steps: [
+                {
+                    header: "Research and select the right battery system",
+                    description: "Choose a battery system that suits your home and energy needs after thorough research."
+                },
+                {
+                    header: "Consult with a professional installer",
+                    description: "Discuss your home's compatibility and requirements with a professional installer."
+                },
+                {
+                    header: "Purchase and prepare necessary components",
+                    description: "Procure the required components for installation and prepare them accordingly."
+                },
+                {
+                    header: "Install the battery system",
+                    description: "Follow the manufacturer's instructions and local building codes to install the battery system."
+                },
+                {
+                    header: "Connect to home's electrical system",
+                    description: "Connect the battery system to your home's electrical system and solar panels if applicable."
+                },
+                {
+                    header: "Test the system",
+                    description: "Test the installed system to ensure proper functionality and make necessary adjustments."
+                }
+            ],
+            utilityRebates: [
+                {
+                    price: 750,
+                    label: "rebate for home battery systems by Con Edison"
+                },
+                {
+                    price: 1000,
+                    label: "rebate for home battery systems by National Grid"
+                },
+                {
+                    price: 1250,
+                    label: "rebate for home battery systems by NYSERDA"
+                }
+            ],
+            governmentRebates: [
+                {
+                    price: 1750,
+                    label: "tax credit for the purchase of a home battery system by the federal government"
+                },
+                {
+                    price: 1200,
+                    label: "tax credit for the purchase of a home battery system by New York State"
+                },
+                {
+                    price: 2000,
+                    label: "tax credit for the purchase of a home battery system by NYSERDA"
                 }
             ],
 
@@ -2466,8 +2581,8 @@ const solutions = {
         },
         {
             alt: "High-Efficiency Washing Machine",
-            gov: 0,
-            utility: 0,
+            gov: 250,
+            utility: 200,
             price: 800,
             setup: 1,
             image: "/solutions/high_efficiency_washing_machine.jpg",
@@ -2487,7 +2602,7 @@ const solutions = {
             ],
             description:
                 "Use washing machines designed to use less water per load while maintaining cleaning performance.",
-            hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+            hometypes: ["Multi-Family Home", "Individual Home"],
             costGraph: [
                 [1985, 1200],
                 [1990, 1000],
@@ -2507,9 +2622,16 @@ const solutions = {
                 [2045, 10],
                 [2050, 12],
             ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
+            utilityRebates: [
+              { price: 50, label: "Offered by Puget Sound Energy (PSE)" },
+              { price: 100, label: "Offered by Seattle City Light" },
+              { price: 50, label: "Offered by Tacoma Public Utilities" },
+            ],
+            govtRebates: [
+              { price: 100, label: "Offered by Washington State Department of Commerce" },
+              { price: 50, label: "Offered by City of Seattle" },
+              { price: 100, label: "Offered by King County" },
+            ],
             type: "water",
             localProviders: [
                 "EcoWash Appliances",
@@ -2518,9 +2640,9 @@ const solutions = {
         },
         {
             alt: "Composting Toilet",
-            gov: 1500,
-            utility: 0,
-            price: 3000,
+            gov: 250,
+            utility: 200,
+            price: 2000,
             setup: 3,
             image: "/solutions/composting_toilet.jpg",
             imageNoBg: "",
@@ -2745,64 +2867,6 @@ const solutions = {
             localProviders: [
                 "RiverPower Systems Inc.",
                 "Washington Hydro Solutions",
-            ],
-        },
-        {
-            alt: "Geothermal Heat Pump",
-            gov: 1000,
-            utility: 0,
-            price: 20000,
-            setup: 3,
-            image: "/solutions/geothermal_heat_pump.jpg",
-            imageNoBg: "",
-            title: "Geothermal Heat Pump",
-            stats: [
-                {
-                    data: 300,
-                    units: "lbs/kwh",
-                    description: "CO2 prevented from emissions",
-                },
-                {
-                    data: 400,
-                    units: "%",
-                    description:
-                        "Efficiency improvement over traditional heating and cooling systems",
-                },
-            ],
-            description:
-                "Utilize the constant temperature of the earth below the surface to heat and cool homes with minimal electricity consumption.",
-            hometypes: ["Individual Home"],
-            costGraph: [
-                [1985, 35000],
-                [1990, 30000],
-                [1995, 28000],
-                [2000, 26000],
-                [2005, 24000],
-                [2010, 23000],
-                [2015, 22000],
-                [2020, 21000],
-                [2025, 20000],
-            ],
-            roiGraph: [
-                [2025, 30000],
-                [2030, 28000],
-                [2035, 26000],
-                [2040, 24000],
-                [2045, 23000],
-                [2050, 22000],
-                [2055, 21000],
-                [2060, 20000],
-                [2065, 19000],
-            ],
-            utilityRebates: [],
-            govtRebates: [
-                { price: 1500, label: "Geothermal heat pump tax credit" },
-            ],
-            taxRebates: [],
-            type: "electricity",
-            localProviders: [
-                "GeoClimate Solutions",
-                "Evergreen Geothermal Systems",
             ],
         },
         {
@@ -3271,212 +3335,6 @@ const solutions = {
             localProviders: ["Carpool Connect", "GreenRide"],
         },
         {
-            alt: "Telecommuting",
-            gov: 0,
-            utility: 0,
-            price: 0,
-            setup: 1,
-            image: "/solutions/telecommuting.jpeg",
-            imageNoBg: "",
-            title: "Telecommuting",
-            stats: [
-                {
-                    data: 0,
-                    units: "g/mi",
-                    description: "Reduced emissions from avoided commute",
-                },
-                {
-                    data: 100,
-                    units: "%",
-                    description: "Flexibility in work location",
-                },
-            ],
-            description:
-                "Work remotely from home using telecommunications technology, reducing the need for daily commuting and associated emissions.",
-            hometypes: ["Individual"],
-            costGraph: [
-                [1985, 0],
-                [1990, 0],
-                [1995, 0],
-                [2000, 0],
-                [2005, 0],
-                [2010, 0],
-                [2015, 0],
-                [2020, 0],
-                [2025, 0],
-            ],
-            roiGraph: [
-                [2025, 100],
-                [2030, 150],
-                [2035, 200],
-                [2040, 250],
-                [2045, 300],
-                [2050, 350],
-                [2055, 400],
-                [2060, 450],
-                [2065, 500],
-            ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
-            type: "transportation",
-            localProviders: [
-                "TeleCommute Solutions",
-                "RemoteWork Technologies",
-            ],
-        },
-        {
-            alt: "Hybrid Vehicles",
-            gov: 0,
-            utility: 0,
-            price: 30000,
-            setup: 1,
-            image: "/solutions/hybrid_vehicles.jpg",
-            imageNoBg: "",
-            title: "Hybrid Vehicles",
-            stats: [
-                {
-                    data: 50,
-                    units: "g/mi",
-                    description:
-                        "Reduced emissions compared to traditional vehicles",
-                },
-                {
-                    data: 50,
-                    units: "mpg",
-                    description: "Average fuel efficiency",
-                },
-            ],
-            description:
-                "Opt for vehicles with hybrid powertrains that combine gasoline engines with electric motors, reducing fuel consumption and emissions.",
-            hometypes: ["Individual"],
-            costGraph: [
-                [1985, 60000],
-                [1990, 50000],
-                [1995, 40000],
-                [2000, 35000],
-                [2005, 33000],
-                [2010, 32000],
-                [2015, 31000],
-                [2020, 30500],
-                [2025, 30000],
-            ],
-            roiGraph: [
-                [2025, 35000],
-                [2030, 33000],
-                [2035, 32000],
-                [2040, 31500],
-                [2045, 31000],
-                [2050, 30500],
-                [2055, 30000],
-                [2060, 29500],
-                [2065, 29000],
-            ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
-            type: "transportation",
-            localProviders: ["GreenDrive Autos", "EcoHybrids"],
-        },
-        {
-            alt: "Car Sharing",
-            gov: 0,
-            utility: 0,
-            price: 0,
-            setup: 1,
-            image: "/solutions/car_sharing.jpeg",
-            imageNoBg: "",
-            title: "Car Sharing",
-            stats: [
-                {
-                    data: 0,
-                    units: "g/mi",
-                    description:
-                        "Reduced emissions per user compared to individual vehicles",
-                },
-                {
-                    data: 50,
-                    units: "%",
-                    description:
-                        "Average decrease in transportation costs for participants",
-                },
-            ],
-            description:
-                "Join car-sharing programs where users can rent vehicles by the hour or day, reducing the need for individual car ownership.",
-            hometypes: ["Individual"],
-            costGraph: [
-                [1985, 0],
-                [1990, 0],
-                [1995, 0],
-                [2000, 0],
-                [2005, 0],
-                [2010, 0],
-                [2015, 0],
-                [2020, 0],
-                [2025, 0],
-            ],
-            roiGraph: [
-                [2025, 50],
-                [2030, 100],
-                [2035, 150],
-                [2040, 200],
-                [2045, 250],
-                [2050, 300],
-                [2055, 350],
-                [2060, 400],
-                [2065, 450],
-            ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
-            type: "transportation",
-            localProviders: ["GreenRide Share", "EcoCar Rentals"],
-        },
-        {
-            alt: "Walking",
-            gov: 0,
-            utility: 0,
-            price: 0,
-            setup: 1,
-            image: "/solutions/walking.jpeg",
-            imageNoBg: "",
-            title: "Walking",
-            stats: [
-                { data: 0, units: "g/mi", description: "Zero emissions" },
-                { data: 3, units: "mph", description: "Average walking speed" },
-            ],
-            description:
-                "Choose walking as a sustainable mode of transportation for short-distance trips, promoting physical activity and reducing environmental impact.",
-            hometypes: ["Individual"],
-            costGraph: [
-                [1985, 0],
-                [1990, 0],
-                [1995, 0],
-                [2000, 0],
-                [2005, 0],
-                [2010, 0],
-                [2015, 0],
-                [2020, 0],
-                [2025, 0],
-            ],
-            roiGraph: [
-                [2025, 0],
-                [2030, 0],
-                [2035, 0],
-                [2040, 0],
-                [2045, 0],
-                [2050, 0],
-                [2055, 0],
-                [2060, 0],
-                [2065, 0],
-            ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
-            type: "transportation",
-            localProviders: ["Walk Green", "EcoSteps"],
-        },
-        {
             alt: "E-Scooters",
             gov: 0,
             utility: 0,
@@ -3573,112 +3431,7 @@ const solutions = {
             type: "heating",
             localProviders: ["EcoHeat Systems", "GreenHeat Solutions"],
         },
-        {
-            alt: "Wood Pellet Stoves",
-            gov: 0,
-            utility: 0,
-            price: 3000,
-            setup: 2,
-            image: "/solutions/wood_pellet_stoves.jpeg",
-            imageNoBg: "",
-            title: "Wood Pellet Stoves",
-            stats: [
-                {
-                    data: 80,
-                    units: "%",
-                    description: "Efficiency in converting fuel to heat",
-                },
-                {
-                    data: 0,
-                    units: "g/kWh",
-                    description:
-                        "CO2 emissions compared to traditional heating systems",
-                },
-            ],
-            description:
-                "Use wood pellet stoves for space heating, utilizing renewable biomass fuel for efficient and eco-friendly warmth.",
-            hometypes: ["Individual Home"],
-            costGraph: [
-                [1985, 5000],
-                [1990, 4500],
-                [1995, 4000],
-                [2000, 3500],
-                [2005, 3300],
-                [2010, 3200],
-                [2015, 3100],
-                [2020, 3050],
-                [2025, 3000],
-            ],
-            roiGraph: [
-                [2025, 4000],
-                [2030, 3500],
-                [2035, 3300],
-                [2040, 3200],
-                [2045, 3100],
-                [2050, 3050],
-                [2055, 3000],
-                [2060, 2950],
-                [2065, 2900],
-            ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
-            type: "heating",
-            localProviders: ["EcoStove Co.", "GreenFire Heating"],
-        },
-        {
-            alt: "Solar Heating Panels",
-            gov: 0,
-            utility: 0,
-            price: 6000,
-            setup: 3,
-            image: "/solutions/solar_heating_panels.jpeg",
-            imageNoBg: "",
-            title: "Solar Heating Panels",
-            stats: [
-                {
-                    data: 80,
-                    units: "%",
-                    description: "Reduction in heating costs",
-                },
-                {
-                    data: 0,
-                    units: "g/kWh",
-                    description:
-                        "CO2 emissions compared to traditional heating systems",
-                },
-            ],
-            description:
-                "Install solar heating panels to harness sunlight for space heating, reducing reliance on conventional heating systems and lowering energy bills.",
-            hometypes: ["Individual Home"],
-            costGraph: [
-                [1985, 10000],
-                [1990, 9000],
-                [1995, 8000],
-                [2000, 7000],
-                [2005, 6500],
-                [2010, 6200],
-                [2015, 6100],
-                [2020, 6050],
-                [2025, 6000],
-            ],
-            roiGraph: [
-                [2025, 8000],
-                [2030, 7500],
-                [2035, 7000],
-                [2040, 6700],
-                [2045, 6600],
-                [2050, 6500],
-                [2055, 6450],
-                [2060, 6400],
-                [2065, 6300],
-            ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
-            type: "heating",
-            localProviders: ["EcoSolar Heating", "SunHeat Solutions"],
-        },
+      
         {
             alt: "Geothermal Heat Pumps",
             gov: 0,
