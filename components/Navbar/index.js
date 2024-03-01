@@ -29,6 +29,7 @@ export default function Navbar() {
 					<div style={{ gridRow: 1 }} className="hidden md:flex flex-row gap-4 items-center justify-self-center justify-center col-span-3">
 						{loggedIn && <Link href="/dashboard">Dashboard</Link>}
 						<Link href="/solutions">Solutions</Link>
+						<Link href="/sources">Sources</Link>
 						{!loggedIn && (
 							<div
 								className="link cursor-pointer"
@@ -58,15 +59,29 @@ export default function Navbar() {
 						className="z-50 t-0 fixed w-full h-full gap-[20px] bg-white-100 flex flex-col items-center justify-center"
 					>
 						<Icon name="add" className="absolute top-[20px] right-[20px]" style={{ transform: "rotate(45deg)" }} onClick={() => changeShowMenu(false)} />
-						<Link onClick={() => changeShowMenu(false)} href="/dashboard">
-							<h3>Dashboard</h3>{" "}
-						</Link>
+						{loggedIn && (
+							<Link onClick={() => changeShowMenu(false)} href="/dashboard">
+								Dashboard
+							</Link>
+						)}
 						<Link onClick={() => changeShowMenu(false)} href="/solutions">
-							<h3>Solutions</h3>
+							Solutions
 						</Link>
-						<Link onClick={() => changeShowMenu(false)} href="/login">
-							<h3>Login</h3>
+						<Link onClick={() => changeShowMenu(false)} href="/sources">
+							Sources
 						</Link>
+						{!loggedIn && (
+							<div
+								className="link cursor-pointer"
+								onClick={() => {
+									if (pathname != "/login") setRedirect(pathname);
+									changeShowModal(false);
+									router.push("/login");
+								}}
+							>
+								Login
+							</div>
+						)}
 					</motion.div>
 				)}
 			</AnimatePresence>
