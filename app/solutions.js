@@ -892,322 +892,188 @@ const solutions = {
             alt: "An example of a house with LED Lighting installed",
             gov: 0,
             utility: 300,
-            price: 1000,
+            price: 2,
             setup: 1,
-            image: "/solutions/energy_efficient_appliances.jpg",
+            image: "/solutions/leds.jpg",
             imageNoBg: "",
-            title: "Energy-Efficent Appliances",
+            title: "LED Lighting",
             stats: [
                 {
-                    data: 50,
-                    units: "%",
-                    description: "reduction in energy usage",
+                    "data": 70,
+                    "units": "%",
+                    "description": "reduction in CO2 emissions"
                 },
                 {
-                    data: 40,
-                    units: "%",
-                    description: "reduction in water usage",
-                },
+                    "data": 1000,
+                    "units": "gallons",
+                    "description": "savings in water per year"
+                }
             ],
             description:
-                "Energy-efficient appliances use advanced technologies and design features to minimize energy consumption and water usage while maintaining optimal performance.",
+                "LED lighting is a highly efficient, long-lasting, and environmentally friendly lighting solution that uses light-emitting diodes to produce light.",
             hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
             costGraph: [
-                [1985, 1800],
-                [1990, 1760],
-                [1995, 1720],
-                [2000, 1660],
-                [2005, 1540],
-                [2010, 1380],
-                [2015, 1200],
-                [2020, 1140],
-                [2025, 980],
+                [1985, 20],
+                [1990, 19],
+                [1995, 16],
+                [2000, 13],
+                [2005, 12],
+                [2010, 11],
+                [2015, 7],
+                [2020, 3],
+                [2025, 1]
             ],
             roiGraph: [
-                [1985, 100],
-                [1990, 150],
-                [1995, 250],
-                [2000, 400],
-                [2005, 600],
-                [2010, 550],
-                [2015, 400],
-                [2020, 350],
-                [2025, 330],
+                [1985, 0.2],
+                [1990, 0.2],
+                [1995, 0.3],
+                [2000, 0.4],
+                [2005, 0.7],
+                [2010, 1.6],
+                [2015, 2.4],
+                [2020, 4.5],
+                [2025, 9]
             ],
             steps: [
                 {
-                    header: "Research and choose the right energy-efficient appliance",
-                    description: "Explore options that match your requirements and budget while prioritizing energy efficiency."
+                    header: "Turn off the power",
+                    description: "Switch off the power to the fixture or lamp that you're replacing to ensure safety during the process."
                 },
                 {
-                    header: "Remove the old appliance",
-                    description: "If necessary, uninstall and remove the old appliance to make room for the new one."
+                    header: "Remove the old bulb",
+                    description: "Take out the old bulb and dispose of it properly, following any applicable recycling guidelines."
                 },
                 {
-                    header: "Install the new energy-efficient appliance",
-                    description: "Follow the manufacturer's instructions carefully to properly install the new appliance."
+                    header: "Screw in the new LED bulb",
+                    description: "Install the new LED bulb into the socket, ensuring it is securely screwed in place."
                 },
                 {
-                    header: "Connect the appliance to necessary utilities",
-                    description: "Ensure proper connections to water, gas, or electricity sources as required for the appliance to function."
-                },
-                {
-                    header: "Test the appliance",
-                    description: "Verify that the appliance operates correctly and efficiently after installation by conducting thorough testing."
+                    header: "Turn the power back on",
+                    description: "Restore power to the fixture or lamp, then test the new LED bulb to ensure it is functioning correctly."
                 }
             ],
             utilityRebates: [
-                { price: 50, label: "for ENERGY STAR refrigerators from rebates by Con Edison" },
-                { price: 75, label: "for ENERGY STAR dishwashers from rebates by Con Edison" },
-                { price: 100, label: "for ENERGY STAR refrigerators from rebates by New York Grid" },
-                { price: 75, label: "for ENERGY STAR dishwashwers from rebates by New York Grid" },
+                {
+                    price: 10,
+                    label: "rebate for LED lighting upgrades by Con Edison"
+                },
+                {
+                    price: 12,
+                    label: "rebate for LED lighting upgrades by National Grid"
+                },
+                {
+                    price: 15,
+                    label: "rebate for LED lighting upgrades by NYSERDA"
+                }
             ],
             govtRebates: [
-                { price: 250, label: "Federal Tax Credit" },
-                { price: 250, label: "State Tax Credit from New York State Energy Research and Development Authority" },
+                {
+                    price: 15,
+                    label: "tax credit for the purchase of LED lighting by the federal government, up to $200"
+                },
+                {
+                    price: 10,
+                    label: "tax credit for the purchase of LED lighting by New York State, up to $200"
+                },
+                {
+                    price: 20,
+                    label: "tax credit for the purchase of LED lighting by NYSERDA, up to $200"
+                }
             ],
 
             type: "electricity",
         },
         {
-            alt: "A kitchen with a water-efficient dishwasher and washing machine",
+            alt: "Smart Home Technology",
             gov: 0,
             utility: 300,
-            price: 1000,
+            price: 2,
             setup: 1,
-            image: "/solutions/energy_efficient_appliances.jpg",
+            image: "/solutions/leds.jpg",
             imageNoBg: "",
-            title: "Energy-Efficent Appliances",
+            title: "LED Lighting",
             stats: [
                 {
-                    data: 50,
-                    units: "%",
-                    description: "reduction in energy usage",
+                    "data": 70,
+                    "units": "%",
+                    "description": "reduction in CO2 emissions"
                 },
                 {
-                    data: 40,
-                    units: "%",
-                    description: "reduction in water usage",
-                },
+                    "data": 1000,
+                    "units": "gallons",
+                    "description": "savings in water per year"
+                }
             ],
             description:
-                "Energy-efficient appliances use advanced technologies and design features to minimize energy consumption and water usage while maintaining optimal performance.",
+                "LED lighting is a highly efficient, long-lasting, and environmentally friendly lighting solution that uses light-emitting diodes to produce light.",
             hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
             costGraph: [
-                [1985, 1800],
-                [1990, 1760],
-                [1995, 1720],
-                [2000, 1660],
-                [2005, 1540],
-                [2010, 1380],
-                [2015, 1200],
-                [2020, 1140],
-                [2025, 980],
+                [1985, 20],
+                [1990, 19],
+                [1995, 16],
+                [2000, 13],
+                [2005, 12],
+                [2010, 11],
+                [2015, 7],
+                [2020, 3],
+                [2025, 1]
             ],
             roiGraph: [
-                [1985, 100],
-                [1990, 150],
-                [1995, 250],
-                [2000, 400],
-                [2005, 600],
-                [2010, 550],
-                [2015, 400],
-                [2020, 350],
-                [2025, 330],
+                [1985, 0.2],
+                [1990, 0.2],
+                [1995, 0.3],
+                [2000, 0.4],
+                [2005, 0.7],
+                [2010, 1.6],
+                [2015, 2.4],
+                [2020, 4.5],
+                [2025, 9]
             ],
             steps: [
                 {
-                    header: "Research and choose the right energy-efficient appliance",
-                    description: "Explore options that match your requirements and budget while prioritizing energy efficiency."
+                    header: "Turn off the power",
+                    description: "Switch off the power to the fixture or lamp that you're replacing to ensure safety during the process."
                 },
                 {
-                    header: "Remove the old appliance",
-                    description: "If necessary, uninstall and remove the old appliance to make room for the new one."
+                    header: "Remove the old bulb",
+                    description: "Take out the old bulb and dispose of it properly, following any applicable recycling guidelines."
                 },
                 {
-                    header: "Install the new energy-efficient appliance",
-                    description: "Follow the manufacturer's instructions carefully to properly install the new appliance."
+                    header: "Screw in the new LED bulb",
+                    description: "Install the new LED bulb into the socket, ensuring it is securely screwed in place."
                 },
                 {
-                    header: "Connect the appliance to necessary utilities",
-                    description: "Ensure proper connections to water, gas, or electricity sources as required for the appliance to function."
-                },
-                {
-                    header: "Test the appliance",
-                    description: "Verify that the appliance operates correctly and efficiently after installation by conducting thorough testing."
+                    header: "Turn the power back on",
+                    description: "Restore power to the fixture or lamp, then test the new LED bulb to ensure it is functioning correctly."
                 }
             ],
             utilityRebates: [
-                { price: 50, label: "for ENERGY STAR refrigerators from rebates by Con Edison" },
-                { price: 75, label: "for ENERGY STAR dishwashers from rebates by Con Edison" },
-                { price: 100, label: "for ENERGY STAR refrigerators from rebates by New York Grid" },
-                { price: 75, label: "for ENERGY STAR dishwashwers from rebates by New York Grid" },
-            ],
-            govtRebates: [
-                { price: 250, label: "Federal Tax Credit" },
-                { price: 250, label: "State Tax Credit from New York State Energy Research and Development Authority" },
-            ],
-
-            type: "electricity",
-        },
-        {
-            alt: "A kitchen with a water-efficient dishwasher and washing machine",
-            gov: 0,
-            utility: 300,
-            price: 1000,
-            setup: 1,
-            image: "/solutions/energy_efficient_appliances.jpg",
-            imageNoBg: "",
-            title: "Energy-Efficent Appliances",
-            stats: [
                 {
-                    data: 50,
-                    units: "%",
-                    description: "reduction in energy usage",
+                    price: 10,
+                    label: "rebate for LED lighting upgrades by Con Edison"
                 },
                 {
-                    data: 40,
-                    units: "%",
-                    description: "reduction in water usage",
-                },
-            ],
-            description:
-                "Energy-efficient appliances use advanced technologies and design features to minimize energy consumption and water usage while maintaining optimal performance.",
-            hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
-            costGraph: [
-                [1985, 1800],
-                [1990, 1760],
-                [1995, 1720],
-                [2000, 1660],
-                [2005, 1540],
-                [2010, 1380],
-                [2015, 1200],
-                [2020, 1140],
-                [2025, 980],
-            ],
-            roiGraph: [
-                [1985, 100],
-                [1990, 150],
-                [1995, 250],
-                [2000, 400],
-                [2005, 600],
-                [2010, 550],
-                [2015, 400],
-                [2020, 350],
-                [2025, 330],
-            ],
-            steps: [
-                {
-                    header: "Research and choose the right energy-efficient appliance",
-                    description: "Explore options that match your requirements and budget while prioritizing energy efficiency."
+                    price: 12,
+                    label: "rebate for LED lighting upgrades by National Grid"
                 },
                 {
-                    header: "Remove the old appliance",
-                    description: "If necessary, uninstall and remove the old appliance to make room for the new one."
-                },
-                {
-                    header: "Install the new energy-efficient appliance",
-                    description: "Follow the manufacturer's instructions carefully to properly install the new appliance."
-                },
-                {
-                    header: "Connect the appliance to necessary utilities",
-                    description: "Ensure proper connections to water, gas, or electricity sources as required for the appliance to function."
-                },
-                {
-                    header: "Test the appliance",
-                    description: "Verify that the appliance operates correctly and efficiently after installation by conducting thorough testing."
+                    price: 15,
+                    label: "rebate for LED lighting upgrades by NYSERDA"
                 }
             ],
-            utilityRebates: [
-                { price: 50, label: "for ENERGY STAR refrigerators from rebates by Con Edison" },
-                { price: 75, label: "for ENERGY STAR dishwashers from rebates by Con Edison" },
-                { price: 100, label: "for ENERGY STAR refrigerators from rebates by New York Grid" },
-                { price: 75, label: "for ENERGY STAR dishwashwers from rebates by New York Grid" },
-            ],
             govtRebates: [
-                { price: 250, label: "Federal Tax Credit" },
-                { price: 250, label: "State Tax Credit from New York State Energy Research and Development Authority" },
-            ],
-
-            type: "electricity",
-        },
-        {
-            alt: "A kitchen with a water-efficient dishwasher and washing machine",
-            gov: 0,
-            utility: 300,
-            price: 1000,
-            setup: 1,
-            image: "/solutions/energy_efficient_appliances.jpg",
-            imageNoBg: "",
-            title: "Energy-Efficent Appliances",
-            stats: [
                 {
-                    data: 50,
-                    units: "%",
-                    description: "reduction in energy usage",
+                    price: 15,
+                    label: "tax credit for the purchase of LED lighting by the federal government, up to $200"
                 },
                 {
-                    data: 40,
-                    units: "%",
-                    description: "reduction in water usage",
-                },
-            ],
-            description:
-                "Energy-efficient appliances use advanced technologies and design features to minimize energy consumption and water usage while maintaining optimal performance.",
-            hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
-            costGraph: [
-                [1985, 1800],
-                [1990, 1760],
-                [1995, 1720],
-                [2000, 1660],
-                [2005, 1540],
-                [2010, 1380],
-                [2015, 1200],
-                [2020, 1140],
-                [2025, 980],
-            ],
-            roiGraph: [
-                [1985, 100],
-                [1990, 150],
-                [1995, 250],
-                [2000, 400],
-                [2005, 600],
-                [2010, 550],
-                [2015, 400],
-                [2020, 350],
-                [2025, 330],
-            ],
-            steps: [
-                {
-                    header: "Research and choose the right energy-efficient appliance",
-                    description: "Explore options that match your requirements and budget while prioritizing energy efficiency."
+                    price: 10,
+                    label: "tax credit for the purchase of LED lighting by New York State, up to $200"
                 },
                 {
-                    header: "Remove the old appliance",
-                    description: "If necessary, uninstall and remove the old appliance to make room for the new one."
-                },
-                {
-                    header: "Install the new energy-efficient appliance",
-                    description: "Follow the manufacturer's instructions carefully to properly install the new appliance."
-                },
-                {
-                    header: "Connect the appliance to necessary utilities",
-                    description: "Ensure proper connections to water, gas, or electricity sources as required for the appliance to function."
-                },
-                {
-                    header: "Test the appliance",
-                    description: "Verify that the appliance operates correctly and efficiently after installation by conducting thorough testing."
+                    price: 20,
+                    label: "tax credit for the purchase of LED lighting by NYSERDA, up to $200"
                 }
-            ],
-            utilityRebates: [
-                { price: 50, label: "for ENERGY STAR refrigerators from rebates by Con Edison" },
-                { price: 75, label: "for ENERGY STAR dishwashers from rebates by Con Edison" },
-                { price: 100, label: "for ENERGY STAR refrigerators from rebates by New York Grid" },
-                { price: 75, label: "for ENERGY STAR dishwashwers from rebates by New York Grid" },
-            ],
-            govtRebates: [
-                { price: 250, label: "Federal Tax Credit" },
-                { price: 250, label: "State Tax Credit from New York State Energy Research and Development Authority" },
             ],
 
             type: "electricity",
@@ -2597,104 +2463,6 @@ const solutions = {
                 "EcoWater Recycle Solutions",
                 "Cascade Greywater Systems",
             ],
-        },
-        {
-            alt: "Smart Irrigation Controller",
-            gov: 0,
-            utility: 0,
-            price: 200,
-            setup: 1,
-            image: "/solutions/smart_irrigation_controller.jpg",
-            imageNoBg: "",
-            title: "Smart Irrigation Controller",
-            stats: [
-                {
-                    data: 30,
-                    units: "%",
-                    description: "Reduction in outdoor water usage",
-                },
-                {
-                    data: 40,
-                    units: "%",
-                    description: "Reduction in water usage for irrigation",
-                },
-            ],
-            description:
-                "Automate irrigation schedules based on weather conditions and soil moisture to optimize water usage.",
-            hometypes: ["Individual Home"],
-            costGraph: [
-                [1985, 400],
-                [1990, 300],
-                [1995, 280],
-                [2000, 250],
-                [2005, 230],
-                [2010, 220],
-                [2015, 210],
-                [2020, 205],
-                [2025, 200],
-            ],
-            roiGraph: [
-                [2025, 1],
-                [2030, 2],
-                [2035, 3],
-                [2040, 4],
-                [2045, 5],
-                [2050, 6],
-            ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
-            type: "water",
-            localProviders: ["SmartScape Technologies", "WaterWise Solutions"],
-        },
-        {
-            alt: "Permeable Pavement",
-            gov: 0,
-            utility: 0,
-            price: 500,
-            setup: 2,
-            image: "/solutions/permeable_pavement.jpg",
-            imageNoBg: "",
-            title: "Permeable Pavement",
-            stats: [
-                {
-                    data: 100,
-                    units: "%",
-                    description: "Reduction in stormwater runoff",
-                },
-                {
-                    data: 50,
-                    units: "%",
-                    description: "Increase in groundwater recharge",
-                },
-            ],
-            description:
-                "Install surfaces that allow rainwater to seep through, reducing flooding and replenishing groundwater.",
-            hometypes: ["Individual Home"],
-            costGraph: [
-                [1985, 1000],
-                [1990, 800],
-                [1995, 700],
-                [2000, 600],
-                [2005, 550],
-                [2010, 525],
-                [2015, 510],
-                [2020, 505],
-                [2025, 500],
-            ],
-            roiGraph: [
-                [2025, 3],
-                [2030, 5],
-                [2035, 7],
-                [2040, 9],
-                [2045, 11],
-                [2050, 13],
-            ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
-            type: "water",
-            localProviders: ["EcoPave Solutions", "Sustainable Surfaces Inc."],
         },
         {
             alt: "High-Efficiency Washing Machine",
