@@ -11,27 +11,32 @@ const solutions = [
 		name: "Solar Panel",
 		sector: "electricity",
 		img: "/solution_models/solar_panel.png",
+		link: "/solutions/Solar Panels",
 	},
 	{
 		name: "Solar Panel",
 		sector: "transportation",
 		img: "/solution_models/solar_panel.png",
+		link: "/solutions/Solar Panels",
 	},
 	{
 		name: "Solar Panel",
 		sector: "heating",
 		img: "/solution_models/solar_panel.png",
+		link: "/solutions/Solar Panels",
 	},
 
 	{
 		name: "Solar Panel",
 		sector: "waste",
 		img: "/solution_models/solar_panel.png",
+		link: "/solutions/Solar Panels",
 	},
 	{
 		name: "Solar Panel",
 		sector: "water",
 		img: "/solution_models/solar_panel.png",
+		link: "/solutions/Solar Panels",
 	},
 ];
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useContext, useLayoutEffect, useRef, useState } from "react";
 import { motion, useMotionValue, useMotionValueEvent, useTransform } from "framer-motion";
 import TextInput from "../TextInput";
 import LoopContext from "../LoopContext";
