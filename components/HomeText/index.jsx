@@ -34,15 +34,13 @@ export default function HomeText() {
     return (
         <motion.h1 variants={headingVariants}  initial="initial" animate="animate" className="overflow-hidden max-w-[1280x] text-center mx-auto" >
             {text.split(" ").map((word, i ) => (
-                <>
                     <span key={i}className={classNames(word, "inline-block overflow-hidden relative")}>
-                        {word == "both" && <motion.div key={word + i} initial={{ right: "100%" }} animate={{ right: 0 }} transition={{ delay: 1.6}} className="absolute left-0 h-full bg-green-600" /> }
-                        {word.split("").map((letter, i) => (
-                            <motion.span key={word + i} variants={letterVariants} className="relative inline-block">{letter}</motion.span> 
+                        {word == "both" && <motion.div key={word + i} initial={{ right: "100%" }} animate={{ right: "8%" }} transition={{ delay: 1.6}} className="absolute left-0 h-full bg-green-600" /> }
+                        {word.split("").map((letter, k) => (
+                            <motion.span key={word + k} variants={letterVariants} className="relative inline-block">{letter}</motion.span> 
                         ))}
+                        &nbsp;
                     </span>
-                    {" "}
-                </>
             ))}
         </motion.h1>
     )

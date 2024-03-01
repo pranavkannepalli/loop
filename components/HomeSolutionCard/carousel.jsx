@@ -52,7 +52,6 @@ export default function HomeCarousel() {
 
 	useEffect(() => {
 		let controls;
-		console.log(width);
 		let finalPosition = -width / 2 - 10;
 
 		if (mustFinish) {

@@ -15,8 +15,6 @@ export default function Login() {
 
 	useEffect(() => {
 		if (loggedIn) dashboard();
-		console.log("use effect");
-		console.log(loggedIn);
 	}, [loggedIn, dashboard]);
 
 	return (
@@ -42,8 +40,6 @@ export default function Login() {
 				/>
 				<Button
 					onClick={() => {
-						console.log(username);
-						console.log(password);
 						setLoggedIn(username == "tsajudges@tsa.org" && password == "Passw0rd");
 					}}
 				>

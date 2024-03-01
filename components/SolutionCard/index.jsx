@@ -21,7 +21,7 @@ export default function SolutionCard({ title, gov, utility, price, setup, image,
 				</div>
 				<div className="flex justify-between">
 					<div>
-						<p className="caption mb-1">Rebates</p>
+						<p className="caption mb-1 text-white-500">Rebates</p>
 						<div className="flex gap-[20px]">
 							<div className="flex items-center gap-[10px] text-green-700">
 								<Icon name="company" />
@@ -34,7 +34,7 @@ export default function SolutionCard({ title, gov, utility, price, setup, image,
 						</div>
 					</div>
 					<div className="flex flex-col items-end">
-						<p className="caption mb-1">Setup</p>
+						<p className="caption mb-1 text-white-500">Setup</p>
 						<div className="flex items-center">
 							{Array.from(Array(setup)).map((_, i) => (
 								<Icon name="hammer" key={i} className="text-white-400" />

@@ -12,7 +12,6 @@ export default function ROIGraph({ points, t = new Date().getFullYear() }) {
 		let max = points[0];
 		for (let i = 0; i < points.length; i++) {
 			if (points[i][1] < min[1]) {
-				console.log(points[i][1]);
 				min = points[i];
 			}
 			if (points[i][1] > max[1]) {
