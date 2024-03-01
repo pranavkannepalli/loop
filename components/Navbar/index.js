@@ -29,8 +29,8 @@ export default function Navbar() {
 					<div style={{ gridRow: 1 }} className="hidden md:flex flex-row gap-4 items-center justify-self-center justify-center col-span-3">
 						{loggedIn && <Link href="/dashboard">Dashboard</Link>}
 						<Link href="/solutions">Solutions</Link>
-						<Link href="/sources">Sources</Link>
 						<Link href="/about">About</Link>
+						<Link href="/sources">Sources</Link>
 						{!loggedIn && (
 							<div
 								className="link cursor-pointer"
@@ -68,11 +68,11 @@ export default function Navbar() {
 						<Link onClick={() => changeShowMenu(false)} href="/solutions">
 							Solutions
 						</Link>
-						<Link onClick={() => changeShowMenu(false)} href="/sources">
-							Sources
-						</Link>
 						<Link onClick={() => changeShowMenu(false)} href="/about">
 							About
+						</Link>
+						<Link onClick={() => changeShowMenu(false)} href="/sources">
+							Sources
 						</Link>
 						{!loggedIn && (
 							<div

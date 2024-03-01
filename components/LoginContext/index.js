@@ -5,8 +5,12 @@ import { createContext, useState, useEffect } from "react";
 const LoginContext = createContext(null);
 
 function LoginContextProvider({ children }) {
-	const [loggedIn, setLoggedIn] = useState(() => JSON.parse(localStorage.getItem("auth")) || false);
+	const [loggedIn, setLoggedIn] = useState(false);
 	const [redirect, setRedirect] = useState("/dashboard");
+
+	useEffect(() => {
+		setLoggedIn(JSON.parse(localStorage.getItem("auth")) || false);
+	}, [])
 
 	useEffect(() => {
 		localStorage.setItem("auth", JSON.stringify(loggedIn))

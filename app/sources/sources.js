@@ -1,3 +1,36 @@
-const sources = ["https://hi.org"];
+const sources = [
+    {
+        name: "Product Images",
+        sources: [
+            "https://www.homedepot.com/c/ab/types-of-led-lights/9ba683603be9fa5395fab9011a91d53",
+            "https://restechtoday.com/does-an-energy-monitor-really-add-value-to-a-smart-home/",
+            "https://www.reviews.org/home-security/best-smart-thermostats/",
+            "https://www.treehugger.com/energy-efficient-refrigerators-5193342",
+            "https://www.tnmagazine.org/is-a-geothermal-heat-pump-right-for-you/",
+            "https://www.micro-hydro-power.com/",
+            "https://www.altestore.com/diy-solar-resources/residential-wind-turbines-practical-for-you/",
+            "https://www.lowimpact.org/posts/composting-toilets-and-city-flats-do-they-match",
+            "https://www.homedepot.com/c/ab/best-high-efficiency-washing-machines-for-your-home/9ba683603be9fa5395fab90c4e9a308",
+            "https://vaswcd.org/permeable-pavement-installation/",
+            "https://www.zone7water.com/post/rebate-smart-irrigation-controllers",
+            "https://www.5280.com/5-xeriscaping-myths-debunked/",
+            "https://lawnlove.com/blog/benefits-of-drip-irrigation/",
+            "https://www.computerworld.com/article/3069499/sunrun-begins-installing-tesla-home-batteries.html",
+            "https://www.watts.com/solutions/systems/hydronic-heating-systems",
+            "https://www.verywellfit.com/whats-typical-for-average-daily-steps-3435736",
+            "https://www.homedepot.com/p/US-Stove-Wiseway-2-000-sq-ft-40-000-BTU-Non-Electric-Gravity-Fed-Pellet-Stove-GW1949/206691061",
+            "https://energysavingtrust.org.uk/advice/solar-water-heating/",
+            "https://modernize.com/homeowner-resources/hvac/electric-boiler-when-to-use-one-and-what-it-costs-to-run",
+            "https://www.unc.edu/discover/infrastructure-needed-for-e-scooter-safety/",
+            "https://cars.usnews.com/cars-trucks/advice/cheapest-hybrid-cars",
+            "https://www.ftc.net/business/blog/tools-needed-for-telecommuting/",
+            "https://www.maskmatters.org/carpool/",
+            "https://www.portseattle.org/sea-tac/ground-transportation/public-transit",
+            "https://www.grassracks.com/products/bike-wall-rack",
+            "https://www.forbes.com/home-improvement/insulation/cost-to-install-wall-insulation/",
+            "https://www.chinadaily.com.cn/business/motoring/2017-06/05/content_29614147.htm",
+        ],
+    },
+];
 
 export default sources;

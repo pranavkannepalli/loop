@@ -77,7 +77,6 @@ let defaultSteps = [
 
 const cleanString = (str="") => {
 	while(str.indexOf("%20") != -1) str = str.replace("%20", " ");
-	console.log(str);
 	return str;
 }
 
@@ -87,21 +86,22 @@ export default function Solution({ params }) {
 	const { userData, addWatchlist, inWatchlist, addItem, removeWatchlist } = useContext(LoopContext);
 	const pathname = usePathname();
 	const { loggedIn, setRedirect } = useContext(LoginContext);
-	const login = useRedirectFunction("/login");
+	const [isIn, toggleIn] = useState(false);
 
+	const login = useRedirectFunction("/login");
 	useEffect(() => {
 		solutions[userData.state].forEach((value) => {
 			if (value.title == solutionName) {
 				setSolution(value);
+				toggleIn(inWatchlist(value)); 
 			}
 		});
-	}, [setSolution, solutionName, userData]);
+	}, [setSolution, solutionName, inWatchlist, userData]);
 
-	console.log(userData.state)
-	console.log(solutions[userData.state]);
 	const getButton = () => {
 		if (loggedIn) {
-			if (inWatchlist(solution))
+			console.log("inWatchlist: " + isIn)
+			if (isIn)
 				return (
 					<Button prefix={<Icon name="remove" size={20} />} onClick={() => removeWatchlist(solution)}>
 						Remove from Watchlist
@@ -179,7 +179,7 @@ export default function Solution({ params }) {
 						<div className="flex-1 text-left">
 							<CostGraph points={solution.costGraph} />
 							<div className="h-[20px] w-full" />
-							<ROIGraph points={solution.roiGraph} />
+							<ROIGraph points={solution.roiGraph} cost={solution.price} />
 						</div>
 					</div>
 				</section>

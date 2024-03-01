@@ -10,18 +10,14 @@ const LoopContext = createContext(null);
 const states = ["NY", "TX", "WA"];
 
 const LoopContextProvider = ({ children }) => {
-	const [userData, changeData] = useState(() => {
-		const saved = localStorage.getItem("user");
-		const initialSaved = JSON.parse(saved);
-		return initialSaved || {
+	const [userData, changeData] = useState({
 			state: states[0],
 			hometype: "Apartment",
 			low: 0,
 			high: 100000,
 			priorities: ["Cutting Down on Bills", "Lowering my Footprint", "Becoming Self-Sufficient"],
 			rebates: { government: false, utility: false },
-		}
-	});
+		});
 	const [query, changeQuery] = useState("");
 
 	const [sort, changeSort] = useState("Sort");
@@ -36,12 +32,19 @@ const LoopContextProvider = ({ children }) => {
 		waste: false,
 	});
 
-	const [watchlist, changeWatchlist] = useState(() => {
-		const saved = localStorage.getItem("watchlist");
-		const initialSaved = JSON.parse(saved);
-		return initialSaved || [];
-	});
+	const [watchlist, changeWatchlist] = useState([]);
 
+	useEffect(() => {
+		changeData(JSON.parse(localStorage.getItem("user")) || {
+			state: states[0],
+			hometype: "Apartment",
+			low: 0,
+			high: 100000,
+			priorities: ["Cutting Down on Bills", "Lowering my Footprint", "Becoming Self-Sufficient"],
+			rebates: { government: false, utility: false },
+		});
+		changeWatchlist(JSON.parse(localStorage.getItem("watchlist")) || []);
+	}, [])
 
 	useEffect(() => {
 		localStorage.setItem("user", JSON.stringify(userData));
@@ -77,8 +80,8 @@ const LoopContextProvider = ({ children }) => {
 		let item = watchlist.slice();
 		let statefulSteps = solution.steps.map((step) => ({ ...step, isCompleted: false }));
 		solution.steps = statefulSteps;
-		item.push(solution);
-		changeWatchlist(item);
+		item.push({...solution});
+		changeWatchlist([...item]);
 	};
 
 	const setStep = (solutionIndex, stepIndex, value) => {
@@ -90,9 +93,13 @@ const LoopContextProvider = ({ children }) => {
 	const inWatchlist = (solution) => {
 		let index = -1;
 		watchlist.forEach((val, i) => {
-			if(val.title === solution.title) index = i;
+			if(val.title === solution?.title) {
+				console.log("found");
+				index = i;
+			};
 		})
-		return index;
+		console.log("not finding")
+		return index != -1;
 	};
 
 	const removeWatchlist = (solution) => {
@@ -155,7 +162,7 @@ const LoopContextProvider = ({ children }) => {
 			}
 		}
 		if (!nosearch) {
-			n = n.filter((item) => item.title.toLowerCase().includes(query.toLowerCase()) && item.price < userData.high && item.price > userData.low);
+			n = n.filter((item) => item.title.toLowerCase().includes(query.toLowerCase()) && item.price <= userData.high && item.price >= userData.low);
 		}
 
 

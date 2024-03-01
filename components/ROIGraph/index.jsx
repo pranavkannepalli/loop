@@ -5,7 +5,7 @@ import { useInView, motion } from "framer-motion";
 import { useRef } from "react";
 import CountUp from "@/components/CountUp";
 
-export default function ROIGraph({ points, t = new Date().getFullYear() }) {
+export default function ROIGraph({ cost, points, t = new Date().getFullYear() }) {
 	const ref = useRef(null);
 	const isInView = useInView(ref, {once: true});
 	const getMinMax = (points) => {
@@ -77,9 +77,10 @@ export default function ROIGraph({ points, t = new Date().getFullYear() }) {
 			<div className="px-[20px] py-[20px] pb-[40px] flex justify-between">
 				<div>
 					<p className="caption text-white-400">ROI</p>
-					<div className="flex">
-						<h4>$</h4>
-						<CountUp number={target[1]} />
+					<div className="flex items-baseline">
+						<CountUp rounded={false} number={target[1] * 100 / cost} />
+						<h4>%</h4>
+						<p className="caption">/year</p>
 					</div>
 				</div>
 
@@ -127,7 +128,7 @@ export default function ROIGraph({ points, t = new Date().getFullYear() }) {
 					}}
 				>
 					<div className="border-t-2 border-t-white-400 border-dashed flex-1" />
-					<p className="caption px-[20px]">${end[1].toLocaleString()}</p>
+					<p className="caption px-[20px]">${max[1].toLocaleString()}</p>
 					<div className="border-t-2 border-t-white-400 border-dashed flex-[3]" />
 				</div>
 

@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { animate, motion, useMotionValue, useTransform, useInView } from "framer-motion";
 import classNames from "@/hooks/classnames";
 
-export default function CountUp({ children, number, className }) {
+export default function CountUp({ rounded:r=true, children, number, className }) {
   const count = useMotionValue("0");
   const rounded = useTransform(count, (latest) =>
-    Math.round(latest).toLocaleString()
+    (r ? Math.round(latest) : Math.round(latest * 100) / 100).toLocaleString()
   );
   const ref = useRef(null);
   const isInView = useInView(ref, {once: true});

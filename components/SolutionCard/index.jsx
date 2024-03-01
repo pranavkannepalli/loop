@@ -11,7 +11,7 @@ export default function SolutionCard({ title, gov, utility, price, setup, image,
 	return (
 		<motion.div 
 		whileHover={{ scale: 1.02}} className="border min-w-[300px] border-white-300 rounded-xl overflow-hidden hover:cursor-pointer" onClick={() => redirect()}>
-			<div className="relative w-full aspect-[16/9] ">
+			<div className="*:object-cover relative w-full aspect-[16/9] ">
 				<Image src={image} alt={alt} fill />
 			</div>
 			<div className="flex flex-col gap-3 bg-white-200 p-[20px]">

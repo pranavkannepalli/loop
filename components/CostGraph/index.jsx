@@ -37,7 +37,7 @@ export default function CostGraph({ points, t = new Date().getFullYear() }) {
         return [points[points.length - 1][0] - points[0][0], max- min];
     }
     
-    const [min, max] = getMinMax(points);    
+    const [min, max] = getMinMax(points);
     const start = points[0];
     const end = points[points.length - 1];
     
@@ -67,9 +67,9 @@ export default function CostGraph({ points, t = new Date().getFullYear() }) {
         return [0, 0];
     }
 
-    let barFillColor = end[1] - start[1] > 0 ? "bg-correct" : "bg-error";
-    let barGradient = end[1] - start[1] > 0 ? "from-correct" : "from-error";
-    let barOutline = end[1] - start[1] > 0 ? "border-correct" : "border-error";
+    let barFillColor = end[1] - start[1] <= 0 ? "bg-correct" : "bg-error";
+    let barGradient = end[1] - start[1] <= 0 ? "from-correct" : "from-error";
+    let barOutline = end[1] - start[1] <= 0 ? "border-correct" : "border-error";
 
     const polygon = getPolygon(points);
     const target = getCurrent(points, t);
@@ -124,7 +124,7 @@ export default function CostGraph({ points, t = new Date().getFullYear() }) {
                 }}
             >
                 <div className="border-t-2 border-t-white-400 border-dashed flex-1" />
-                <p className="caption px-[20px]">${end[1].toLocaleString()}</p>
+                <p className="caption px-[20px]">${max[1].toLocaleString()}</p>
                 <div className="border-t-2 border-t-white-400 border-dashed flex-[3]" />
                 
             </div>
