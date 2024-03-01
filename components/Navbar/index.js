@@ -29,6 +29,7 @@ export default function Navbar() {
 					<div style={{ gridRow: 1 }} className="hidden md:flex flex-row gap-4 items-center justify-self-center justify-center col-span-3">
 						{loggedIn && <Link href="/dashboard">Dashboard</Link>}
 						<Link href="/solutions">Solutions</Link>
+						<Link href="/sources">Sources</Link>
 						{!loggedIn && (
 							<div
 								className="link cursor-pointer"
@@ -59,12 +60,15 @@ export default function Navbar() {
 					>
 						<Icon name="add" className="absolute top-[20px] right-[20px]" style={{ transform: "rotate(45deg)" }} onClick={() => changeShowMenu(false)} />
 						{loggedIn && (
-							<Link onClick={() => changeShowModal(false)} href="/dashboard">
+							<Link onClick={() => changeShowMenu(false)} href="/dashboard">
 								Dashboard
 							</Link>
 						)}
-						<Link onClick={() => changeShowModal(false)} href="/solutions">
+						<Link onClick={() => changeShowMenu(false)} href="/solutions">
 							Solutions
+						</Link>
+						<Link onClick={() => changeShowMenu(false)} href="/sources">
+							Sources
 						</Link>
 						{!loggedIn && (
 							<div
