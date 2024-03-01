@@ -3,6 +3,7 @@
 import classNames from "@/hooks/classnames";
 import { useInView, motion } from "framer-motion";
 import { useRef } from "react";
+import CountUp from "@/components/CountUp";
 
 export default function CostGraph({ points, t = new Date().getFullYear() }) {
     const ref = useRef(null);
@@ -76,7 +77,9 @@ export default function CostGraph({ points, t = new Date().getFullYear() }) {
         <div ref={ref} style={{ aspectRatio: "5/3"}} className="flex-1 flex flex-col overflow-hidden bg-white-600 rounded-[20px]">
         <div className="px-[20px] py-[20px] pb-[40px]">
             <p className="caption text-white-400">Unit Cost</p>
-            <h4 className="text-white-200">${target[1].toLocaleString()}</h4>
+            <div className="flex">
+                <h4 className="inline text-white-100">$</h4><CountUp number={target[1]} className="text-white-100"/>
+                </div>
         </div>
         <div className="points relative flex-1">
             <motion.div
@@ -122,7 +125,7 @@ export default function CostGraph({ points, t = new Date().getFullYear() }) {
             >
                 <div className="border-t-2 border-t-white-400 border-dashed flex-1" />
                 <p className="caption px-[20px]">${end[1].toLocaleString()}</p>
-                <div className="border-t-2 border-t-white-400 border-dashed flex-[7]" />
+                <div className="border-t-2 border-t-white-400 border-dashed flex-[3]" />
                 
             </div>
             

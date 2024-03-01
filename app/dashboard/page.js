@@ -15,7 +15,7 @@ import { useContext } from "react";
 export default function Dashboard() {
     const { watchlist, removeWatchlist } = useContext(LoopContext);
     return (
-        <div className="flex flex-col md:flex-row gap-[20px] layout box-border !pt-[120px]">
+        <div className="min-h-screen flex flex-col md:flex-row gap-[20px] layout box-border !pt-[120px]">
             <div className="flex-[2] flex flex-col gap-[40px]">
                 <div className=" w-full flex flex-row bg-white-100 border-white-300 border p-[20px] rounded-[20px]">
                     <div className="flex-1 flex flex-col justify-between">

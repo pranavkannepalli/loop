@@ -15,6 +15,7 @@ import Rebate from "@/components/Rebates";
 import { usePathname } from "next/navigation";
 import LoginContext from "@/components/LoginContext";
 import useRedirectFunction from "@/hooks/useRedirectFunction";
+import CountUp from "@/components/CountUp";
 
 const filterData = {
 	water: {
@@ -54,10 +55,34 @@ const filterData = {
 	},
 };
 
+let defaultSteps = [
+        {
+          header: "Find a Provider",
+          description:
+            "Important factors when choosing an provider include: warranties, installation costs, and disposal of the old system.",
+        },
+        {
+          header: "Get a Quote",
+          description:
+            "See how much the provider is charging and make an educated choice about what provider you want to go with. Then, proceed with the installation",
+        },
+        {
+          header: "Estimate Output",
+          description:
+            "Estimate how much of an impact this solution will have as you observe its performance.",
+        },
+      ];
+
 //TODO: acc build the last section
 
+const cleanString = (str="") => {
+	while(str.indexOf("%20") != -1) str = str.replace("%20", " ");
+	console.log(str);
+	return str;
+}
+
 export default function Solution({ params }) {
-	const solutionName = params.solution.replace("%20", " ");
+	const solutionName = cleanString(params.solution);
 	const [solution, setSolution] = useState(null);
 	const { userData, addWatchlist, inWatchlist, addItem, removeWatchlist } = useContext(LoopContext);
 	const pathname = usePathname();
@@ -72,6 +97,8 @@ export default function Solution({ params }) {
 		});
 	}, [setSolution, solutionName, userData]);
 
+	console.log(userData.state)
+	console.log(solutions[userData.state]);
 	const getButton = () => {
 		if (loggedIn) {
 			if (inWatchlist(solution))
@@ -118,17 +145,16 @@ export default function Solution({ params }) {
 							</div>
 							<h2>{solution.title}</h2>
 							<div className="flex flex-row">
-								<h4>{solution.price}</h4>
+								<h4>${solution.price.toLocaleString()}</h4>
 								<h6>/Unit</h6>
 							</div>
 							<p>{solution.description}</p>
 							<div className="flex flex-row gap-[20px] flex-wrap">
 								{solution.stats.map((val, ind) => (
-									<div key={ind} className="flex-1 py-[20px] px-[20px] rounded-[10px] border border-white-300 flex flex-col gap-[5px]">
-										<div className="flex flex-row items-baseline gap-[5px]">
-											<h4>{val.data}</h4>
+									<div key={ind} className="flex-1 min-w-[150px] py-[20px] px-[20px] rounded-[10px] border border-white-300 flex flex-col gap-[5px]">
+										<CountUp number={val.data}>
 											<div className="caption">{val.units}</div>
-										</div>
+										</CountUp>
 										<p className="leading-none">{val.description}</p>
 									</div>
 								))}
@@ -144,7 +170,7 @@ export default function Solution({ params }) {
 					<div className="flex flex-col gap-[20px] md:flex-row justify-center w-full">
 						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[20px]">
 							<h3>Installation Steps</h3>
-							{solution.steps.map((item, ind) => (
+							{(solution.steps ?? defaultSteps).map((item, ind) => (
 								<Accordion number={ind + 1} key={ind} question={item.header}>
 									<p>{item.description}</p>
 								</Accordion>

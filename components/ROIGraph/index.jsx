@@ -3,6 +3,7 @@
 import classNames from "@/hooks/classnames";
 import { useInView, motion } from "framer-motion";
 import { useRef } from "react";
+import CountUp from "@/components/CountUp";
 
 export default function ROIGraph({ points, t = new Date().getFullYear() }) {
 	const ref = useRef(null);
@@ -76,7 +77,10 @@ export default function ROIGraph({ points, t = new Date().getFullYear() }) {
 			<div className="px-[20px] py-[20px] pb-[40px] flex justify-between">
 				<div>
 					<p className="caption text-white-400">ROI</p>
-					<h4 className="text-white-600">${target[1].toLocaleString()}</h4>
+					<div className="flex">
+						<h4>$</h4>
+						<CountUp number={target[1]} />
+					</div>
 				</div>
 
 			</div>
@@ -124,7 +128,7 @@ export default function ROIGraph({ points, t = new Date().getFullYear() }) {
 				>
 					<div className="border-t-2 border-t-white-400 border-dashed flex-1" />
 					<p className="caption px-[20px]">${end[1].toLocaleString()}</p>
-					<div className="border-t-2 border-t-white-400 border-dashed flex-[7]" />
+					<div className="border-t-2 border-t-white-400 border-dashed flex-[3]" />
 				</div>
 
 				<div
