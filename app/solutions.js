@@ -273,7 +273,7 @@ const solutions = {
                 { price: 30, label: "% of the cost of the system back" },
             ],
             localProviders: [
-                "Rainwater Mang Solutions",
+                "Rainwater Management Solutions",
                 "Green Roofs and Water Management LLC.",
                 "BlueBarrel Systems",
             ],
@@ -674,54 +674,917 @@ const solutions = {
                 "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
             hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
             costGraph: [
-                [1985, 30000],
-                [1990, 18000],
+                [1985, 12000],
+                [1990, 13500],
                 [1995, 16000],
                 [2000, 13500],
                 [2005, 13000],
-                [2010, 11500],
-                [2015, 10500],
-                [2020, 10000],
-                [2025, 5000],
+                [2010, 19000],
+                [2015, 23000],
+                [2020, 22000],
+                [2025, 20000],
             ],
             roiGraph: [
-                [1985, 30000],
-                [1990, 18000],
-                [1995, 16000],
-                [2000, 13500],
-                [2005, 13000],
-                [2010, 11500],
-                [2015, 10500],
-                [2020, 10000],
-                [2025, 5000],
+                [1985, 1100],
+                [1990, 1250],
+                [1995, 1300],
+                [2000, 1500],
+                [2005, 1550],
+                [2010, 1600],
+                [2015, 1700],
+                [2020, 1900],
+                [2025, 2600],
             ],
             steps: [
                 {
-                    header: "Find a Provider",
-                    description:
-                        "Important factors when choosing an provider include: warranties, installation costs, and disposal of the old system.",
+                    header: "Consult with a solar panel installation expert",
+                    description: "Discuss your energy needs and site conditions with a professional to determine the best solar panel system for your home."
                 },
                 {
-                    header: "Find a Provider",
-                    description:
-                        "Important factors when choosing an provider include: warranties, installation costs, and disposal of the old system.",
+                    header: "Choose the right solar panel system",
+                    description: "Select a solar panel system that meets your energy requirements, budget, and space availability."
                 },
                 {
-                    header: "Find a Provider",
-                    description:
-                        "Important factors when choosing an provider include: warranties, installation costs, and disposal of the old system.",
+                    header: "Obtain necessary permits and approvals",
+                    description: "Secure permits and approvals from your local government or relevant authorities to comply with regulations before installation."
                 },
+                {
+                    header: "Install the solar panels",
+                    description: "Mount the solar panels onto your roof or other suitable location and connect them to your home's electrical system."
+                },
+                {
+                    header: "Start generating clean, renewable energy",
+                    description: "Once installed, your solar panels will begin generating electricity, allowing you to save on your electricity bills and reduce your carbon footprint."
+                }
             ],
             utilityRebates: [
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
+                { price: 0.20, label: "Per Watt installed from Con Edison" },
+                { price: 0.20, label: "Per Watt installed with a max incentive of $5000 from National Grid" },
             ],
             govtRebates: [
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
+                { price: 6000, label: "Federal Tax Deductible" },
+                { price: 5000, label: "State Tax Credit" },
+            ],
+
+            type: "electricity",
+        },
+        {
+            alt: "A wind turbine farm with several large turbines spinning in the wind.",
+            gov: 18500,
+            utility: 5000,
+            price: 45000,
+            setup: 3,
+            image: "/solutions/wind_turbine.jpg",
+            imageNoBg: "",
+            title: "Wind Turbine",
+            stats: [
+                {
+                    data: 90,
+                    units: "%",
+                    description: "reduction in household carbon footprint",
+                },
+                {
+                    data: 1000,
+                    units: "gal/yr",
+                    description: "of water saved from reduced energy consumption",
+                },
+            ],
+            description:
+                "Wind turbines convert wind energy into electricity, which can be used to power your home or business.",
+            hometypes: ["Multi-Family Home"],
+            costGraph: [
+                [1985, 140000],
+                [1990, 120000],
+                [1995, 90000],
+                [2000, 85000],
+                [2005, 60000],
+                [2010, 55000],
+                [2015, 50000],
+                [2020, 48000],
+                [2025, 45000],
+            ],
+            roiGraph: [
+                [1985, 2250],
+                [1990, 2650],
+                [1995, 2800],
+                [2000, 3200],
+                [2005, 3400],
+                [2010, 3600],
+                [2015, 3650],
+                [2020, 4000],
+                [2025, 5500],
+            ],
+            steps: [
+                {
+                    header: "Consult with a wind turbine installation expert",
+                    description: "Discuss your property and energy needs with a professional to determine the best wind turbine solution for your home."
+                },
+                {
+                    header: "Choose the right wind turbine",
+                    description: "Select a wind turbine model that is suitable for your property size, wind conditions, and energy requirements."
+                },
+                {
+                    header: "Obtain necessary permits and approvals",
+                    description: "Acquire permits and approvals from your local government or relevant authorities to ensure compliance with regulations before installation."
+                },
+                {
+                    header: "Install the wind turbine",
+                    description: "Mount the wind turbine on your property and connect it to your home's electrical system."
+                },
+                {
+                    header: "Start generating clean, renewable energy",
+                    description: "Once installed, your wind turbine will begin generating electricity, allowing you to save on your electricity bills and reduce your carbon footprint."
+                }
+            ],
+            utilityRebates: [
+                { price: 0.10, label: "Per Watt installed from Con Edison" },
+                { price: 0.15, label: "Per Watt installed with a max incentive of $7500 from National Grid" },
+            ],
+            govtRebates: [
+                { price: 13500, label: "Federal Tax Deductible" },
+                { price: 2550, label: "State Tax Credit" },
+            ],
+
+            type: "electricity",
+        },
+        {
+            alt: "A kitchen with a energy-efficient dishwasher and washing machine",
+            gov: 0,
+            utility: 300,
+            price: 1000,
+            setup: 1,
+            image: "/solutions/energy_efficient_appliances.jpg",
+            imageNoBg: "",
+            title: "Energy-Efficent Appliances",
+            stats: [
+                {
+                    data: 50,
+                    units: "%",
+                    description: "reduction in energy usage",
+                },
+                {
+                    data: 40,
+                    units: "%",
+                    description: "reduction in water usage",
+                },
+            ],
+            description:
+                "Energy-efficient appliances use advanced technologies and design features to minimize energy consumption and water usage while maintaining optimal performance.",
+            hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+            costGraph: [
+                [1985, 1800],
+                [1990, 1760],
+                [1995, 1720],
+                [2000, 1660],
+                [2005, 1540],
+                [2010, 1380],
+                [2015, 1200],
+                [2020, 1140],
+                [2025, 980],
+            ],
+            roiGraph: [
+                [1985, 100],
+                [1990, 150],
+                [1995, 250],
+                [2000, 400],
+                [2005, 600],
+                [2010, 550],
+                [2015, 400],
+                [2020, 350],
+                [2025, 330],
+            ],
+            steps: [
+                {
+                    header: "Research and choose the right energy-efficient appliance",
+                    description: "Explore options that match your requirements and budget while prioritizing energy efficiency."
+                },
+                {
+                    header: "Remove the old appliance",
+                    description: "If necessary, uninstall and remove the old appliance to make room for the new one."
+                },
+                {
+                    header: "Install the new energy-efficient appliance",
+                    description: "Follow the manufacturer's instructions carefully to properly install the new appliance."
+                },
+                {
+                    header: "Connect the appliance to necessary utilities",
+                    description: "Ensure proper connections to water, gas, or electricity sources as required for the appliance to function."
+                },
+                {
+                    header: "Test the appliance",
+                    description: "Verify that the appliance operates correctly and efficiently after installation by conducting thorough testing."
+                }
+            ],
+            utilityRebates: [
+                { price: 50, label: "for ENERGY STAR refrigerators from rebates by Con Edison" },
+                { price: 75, label: "for ENERGY STAR dishwashers from rebates by Con Edison" },
+                { price: 100, label: "for ENERGY STAR refrigerators from rebates by New York Grid" },
+                { price: 75, label: "for ENERGY STAR dishwashwers from rebates by New York Grid" },
+            ],
+            govtRebates: [
+                { price: 250, label: "Federal Tax Credit" },
+                { price: 250, label: "State Tax Credit from New York State Energy Research and Development Authority" },
+            ],
+
+            type: "electricity",
+        },
+        {
+            alt: "An example of a house with LED Lighting installed",
+            gov: 0,
+            utility: 300,
+            price: 2,
+            setup: 1,
+            image: "/solutions/leds.jpg",
+            imageNoBg: "",
+            title: "LED Lighting",
+            stats: [
+                {
+                    data: 70,
+                    units: "%",
+                    description: "reduction in CO2 emissions"
+                },
+                {
+                    data: 1000,
+                    units: "gallons",
+                    description: "savings in water per year"
+                }
+            ],
+            description:
+                "LED lighting is a highly efficient, long-lasting, and environmentally friendly lighting solution that uses light-emitting diodes to produce light.",
+            hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+            costGraph: [
+                [1985, 20],
+                [1990, 19],
+                [1995, 16],
+                [2000, 13],
+                [2005, 12],
+                [2010, 11],
+                [2015, 7],
+                [2020, 3],
+                [2025, 1]
+            ],
+            roiGraph: [
+                [1985, 0.2],
+                [1990, 0.2],
+                [1995, 0.3],
+                [2000, 0.4],
+                [2005, 0.7],
+                [2010, 1.6],
+                [2015, 2.4],
+                [2020, 4.5],
+                [2025, 9]
+            ],
+            steps: [
+                {
+                    header: "Turn off the power",
+                    description: "Switch off the power to the fixture or lamp that you're replacing to ensure safety during the process."
+                },
+                {
+                    header: "Remove the old bulb",
+                    description: "Take out the old bulb and dispose of it properly, following any applicable recycling guidelines."
+                },
+                {
+                    header: "Screw in the new LED bulb",
+                    description: "Install the new LED bulb into the socket, ensuring it is securely screwed in place."
+                },
+                {
+                    header: "Turn the power back on",
+                    description: "Restore power to the fixture or lamp, then test the new LED bulb to ensure it is functioning correctly."
+                }
+            ],
+            utilityRebates: [
+                {
+                    price: 10,
+                    label: "rebate for LED lighting upgrades by Con Edison"
+                },
+                {
+                    price: 12,
+                    label: "rebate for LED lighting upgrades by National Grid"
+                },
+                {
+                    price: 15,
+                    label: "rebate for LED lighting upgrades by NYSERDA"
+                }
+            ],
+            govtRebates: [
+                {
+                    price: 15,
+                    label: "tax credit for the purchase of LED lighting by the federal government, up to $200"
+                },
+                {
+                    price: 10,
+                    label: "tax credit for the purchase of LED lighting by New York State, up to $200"
+                },
+                {
+                    price: 20,
+                    label: "tax credit for the purchase of LED lighting by NYSERDA, up to $200"
+                }
+            ],
+
+            type: "electricity",
+        },
+        {
+            alt: "Smart Home Technology",
+            gov: 300,
+            utility: 350,
+            price: 700,
+            setup: 2,
+            image: "/solutions/smart_thermostat.jpg",
+            imageNoBg: "",
+            title: "Smart Home Technology",
+            stats: [
+                {
+                    data: 15,
+                    units: "%",
+                    description: "reduction in CO2 emissions"
+                },
+                {
+                    data: 10000,
+                    units: "gallons",
+                    description: "savings in water per year"
+                }
+            ],
+            description:
+                "Smart home technology connects various devices and systems, such as lighting, heating, security, and entertainment, to a central hub or smartphone app, allowing users to control and monitor their homes remotely",
+            hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+            costGraph: [
+                [1985, 3200],
+                [1990, 2200],
+                [1995, 1600],
+                [2000, 1200],
+                [2005, 800],
+                [2010, 600],
+                [2015, 500],
+                [2020, 450],
+                [2025, 600]
+            ],
+            roiGraph: [
+                [1985, 35],
+                [1990, 38],
+                [1995, 42],
+                [2000, 46],
+                [2005, 55],
+                [2010, 70700],
+                [2015, 90],
+                [2020, 110],
+                [2025, 150]
+            ],
+            steps: [
+                {
+                    header: "Research and choose smart home devices",
+                    description: "Select devices that suit your requirements and budget after thorough research."
+                },
+                {
+                    header: "Purchase and set up",
+                    description: "Buy the chosen devices and set up an account with the manufacturer or a smart home platform."
+                },
+                {
+                    header: "Install and connect to Wi-Fi",
+                    description: "Follow the manufacturer's instructions to install the devices and connect them to your home's Wi-Fi network."
+                },
+                {
+                    header: "Configure and create scenes",
+                    description: "Configure the devices and create scenes or automation using the app or platform."
+                },
+                {
+                    header: "Test and adjust",
+                    description: "Test the devices to ensure proper functionality and make any necessary adjustments."
+                }
+            ],
+            utilityRebates: [
+                {
+                    price: 85,
+                    label: "rebate for smart thermostats by Con Edison"
+                },
+                {
+                    price: 62.5,
+                    label: "rebate for smart thermostats by National Grid"
+                },
+                {
+                    price: 75,
+                    label: "rebate for smart lighting systems by National Grid"
+                },
+                {
+                    price: 70,
+                    label: "rebate for smart thermostats by NYSERDA"
+                },
+                {
+                    price: 50,
+                    label: "rebate for smart lighting systems by NYSERDA"
+                }
+            ],
+            govtRebates: [
+                {
+                    price: 175,
+                    label: "tax credit for the purchase of smart home technology by the federal government, up to $500"
+                },
+                {
+                    price: 150,
+                    label: "tax credit for the purchase of smart home technology by New York State, up to $500"
+                },
+                {
+                    price: 80,
+                    label: "tax credit for the purchase of smart home technology by NYSERDA, up to $500"
+                }
+            ],
+
+            type: "electricity",
+        },
+        {
+            alt: "A picture of a home battery system",
+            gov: 5000,
+            utility: 3000,
+            price: 9000,
+            setup: 2,
+            image: "/solutions/home-battery.png",
+            imageNoBg: "",
+            title: "Home Battery Systems",
+            stats: [
+                {
+                    data: 7,
+                    units: "ton",
+                    description: "reduction in CO2 emissions per year"
+                },
+                {
+                    data: 10000,
+                    units: "gallons",
+                    description: "savings in water per year"
+                }
+            ],
+            description:
+                " A home battery system stores energy from solar panels or the grid for use during peak demand or power outages. It can help you save money on electricity bills and reduce your carbon footprint.",
+            hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+            costGraph: [
+                [1985, 10000],
+                [1990, 12000],
+                [1995, 13000],
+                [2000, 14000],
+                [2005, 14500],
+                [2010, 11000],
+                [2015, 8000],
+                [2020, 6000],
+                [2025, 5000]
+            ],
+            roiGraph: [
+                [1985, 35],
+                [1990, 38],
+                [1995, 42],
+                [2000, 46],
+                [2005, 55],
+                [2010, 70700],
+                [2015, 90],
+                [2020, 110],
+                [2025, 150]
+            ],
+            steps: [
+                {
+                    header: "Research and select the right battery system",
+                    description: "Choose a battery system that suits your home and energy needs after thorough research."
+                },
+                {
+                    header: "Consult with a professional installer",
+                    description: "Discuss your home's compatibility and requirements with a professional installer."
+                },
+                {
+                    header: "Purchase and prepare necessary components",
+                    description: "Procure the required components for installation and prepare them accordingly."
+                },
+                {
+                    header: "Install the battery system",
+                    description: "Follow the manufacturer's instructions and local building codes to install the battery system."
+                },
+                {
+                    header: "Connect to home's electrical system",
+                    description: "Connect the battery system to your home's electrical system and solar panels if applicable."
+                },
+                {
+                    header: "Test the system",
+                    description: "Test the installed system to ensure proper functionality and make necessary adjustments."
+                }
+            ],
+            utilityRebates: [
+                {
+                    price: 750,
+                    label: "rebate for home battery systems by Con Edison"
+                },
+                {
+                    price: 1000,
+                    label: "rebate for home battery systems by National Grid"
+                },
+                {
+                    price: 1250,
+                    label: "rebate for home battery systems by NYSERDA"
+                }
+            ],
+            govtRebates: [
+                {
+                    price: 1750,
+                    label: "tax credit for the purchase of a home battery system by the federal government"
+                },
+                {
+                    price: 1200,
+                    label: "tax credit for the purchase of a home battery system by New York State"
+                },
+                {
+                    price: 2000,
+                    label: "tax credit for the purchase of a home battery system by NYSERDA"
+                }
+            ],
+
+            type: "electricity",
+        },
+        {
+            alt: "A picture of a backyard compost bin with grass clippings and food scraps inside.",
+            gov: 5000,
+            utility: 3000,
+            price: 175,
+            setup: 1,
+            image: "/solutions/composting.png",
+            imageNoBg: "",
+            title: "Composting",
+            stats: [
+                {
+                    "data": 30,
+                    "units": "%",
+                    "description": "reduction in household waste"
+                },
+                {
+                    "data": 25,
+                    "units": "%",
+                    "description": "savings in garden water usage by improving soil moisture retention"
+                }
+            ],
+            description:
+                "Composting is the process of breaking down organic waste, such as food scraps and yard waste, into nutrient-rich soil that can be used to grow plants and improve soil health.",
+            hometypes: ["Multi-Family Home", "Individual Home"],
+            costGraph: [
+                [1985, 400],
+                [1990, 350],
+                [1995, 200],
+                [2000, 150],
+                [2005, 100],
+                [2010, 50],
+                [2015, 120],
+                [2020, 145],
+                [2025, 200]
+            ],
+            roiGraph: [
+                [1985, 5],
+                [1990, 5],
+                [1995, 6],
+                [2000, 7],
+                [2005, 9],
+                [2010, 10],
+                [2015, 12],
+                [2020, 11],
+                [2025, 10]
+            ],
+            steps: [
+                {
+                    header: "Choose a composting system",
+                    description: "Select a composting system, such as a bin, tumbler, or pile, that suits your needs and available space."
+                },
+                {
+                    header: "Set up the composting system",
+                    description: "Place the composting system in a convenient location, such as a backyard or balcony, ensuring easy access."
+                },
+                {
+                    header: "Add materials to the compost bin",
+                    description: "Add a mix of 'brown' materials (e.g., dry leaves, straw, shredded paper) and 'green' materials (e.g., food scraps, grass clippings, coffee grounds) to the compost bin."
+                },
+                {
+                    header: "Maintain the compost",
+                    description: "Regularly turn the compost materials and maintain the right moisture level, similar to a damp sponge, to facilitate decomposition."
+                },
+                {
+                    header: "Monitor and adjust",
+                    description: "Monitor the compost's progress and adjust the materials as needed to ensure proper decomposition."
+                },
+                {
+                    header: "Use the compost",
+                    description: "Once the compost is ready (dark and crumbly), incorporate it into your garden or potted plants to enhance soil health and fertility."
+                }
+            ],
+            utilityRebates: [
+                {
+                    price: 75,
+                    label: "rebate for purchasing a composting system by Con Edison"
+                },
+                {
+                    price: 100,
+                    label: "rebate for composting systems by National Grid"
+                },
+                {
+                    price: 140,
+                    label: "rebate for composting systems by NYSERDA"
+                }
+            ],
+            govtRebates: [
+                {
+                    price: 120,
+                    label: "tax credit for the purchase of a composting system by the federal government, up to $500"
+                },
+                {
+                    price: 250,
+                    label: "tax credit for the purchase of a composting system by New York State, up to $500"
+                },
+                {
+                    price: 200,
+                    label: "tax credit for the purchase of a composting system by NYSERDA, up to $500"
+                }
+            ],
+
+            type: "waste",
+        },
+        {
+            alt: "A picture of a recycling bin with paper, plastic, and glass materials inside.",
+            gov: 0,
+            utility: 0,
+            price: 0,
+            setup: 1,
+            image: "/solutions/recycling.png",
+            imageNoBg: "",
+            title: "Recycling",
+            stats: [
+                {
+                    data: 17,
+                    units: "trees",
+                    description: "saved by recycling one ton of paper"
+                },
+                {
+                    data: 7000,
+                    units: "gallons",
+                    description: "saved by recycling one ton of paper"
+                },
+                {
+                    data: 3,
+                    units: "cubic yards",
+                    description: "saved by recycling one ton of paper"
+                },
+                {
+                    data: 1500,
+                    units: "gallons",
+                    description: "equivalent gasoline saved by recycling one ton of plastic"
+                },
+                {
+                    data: 9,
+                    units: "gallons",
+                    description: "equivalent oil saved by recycling one ton of glass"
+                }
+            ],
+            description:
+                " Recycling is the process of collecting and processing materials that would otherwise be thrown away as trash and turning them into new products.",
+            hometypes: ["Multi-Family Home", "Individual Home"],
+            costGraph: [
+                [1985, 0],
+                [1990, 0],
+                [1995, 0],
+                [2000, 0],
+                [2005, 0],
+                [2010, 0],
+                [2015, 0],
+                [2020, 0],
+                [2025, 0]
+            ],
+            roiGraph: [
+                [1985, 0],
+                [1990, 0],
+                [1995, 0],
+                [2000, 0],
+                [2005, 0],
+                [2010, 0],
+                [2015, 0],
+                [2020, 0],
+                [2025, 0]
+            ],
+            steps: [
+                {
+                    header: "Contact local recycling program",
+                    description: "Obtain a recycling bin or inquire about curbside pickup options from your local recycling program."
+                },
+                {
+                    header: "Set up recycling bin",
+                    description: "Place the recycling bin in your home or apartment for convenient disposal of recyclable materials."
+                },
+                {
+                    header: "Sort recyclable materials",
+                    description: "Follow your local program's guidelines to properly sort recyclable materials before placing them in the bin."
+                },
+                {
+                    header: "Rinse and clean recyclables",
+                    description: "Ensure recyclables are rinsed and cleaned before placing them in the bin to avoid contamination."
+                },
+                {
+                    header: "Dispose of recyclables",
+                    description: "Place your recycling bin at the curb on pickup day or take recyclables to a local drop-off center as per your program's instructions."
+                },
+                {
+                    header: "Continue recycling",
+                    description: "Keep recycling and encourage neighbors to do the same to promote environmental sustainability."
+                }
+            ],
+            utilityRebates: [
+                {
+                    price: 0,
+                    label: "None Available"
+                }
+            ],
+            govtRebates: [
+                {
+                    price: 0,
+                    label: "None available"
+                },
+            ],
+
+            type: "waste",
+        },
+        {
+            alt: "A picture of a composting toilet installed in a bathroom.",
+            gov: 0,
+            utility: 0,
+            price: 4000,
+            setup: 1,
+            image: "/solutions/composting_toilet.jpg",
+            imageNoBg: "",
+            title: "Composting Toilets",
+            stats: [
+                {
+                    data: 6600,
+                    units: "gallons",
+                    description: "savings in water per person per year compared to traditional flush toilets"
+                },
+                {
+                    data: 90,
+                    units: "%",
+                    description: "reduction in greenhouse gas emissions compared to conventional waste management methods"
+                },
+                {
+                    data: 1.3,
+                    units: "tons",
+                    description: "savings in CO2 per person per year"
+                }
+            ],
+            description:
+                "Composting toilets are waterless or low-water systems that convert human waste into compost through natural decomposition processes. They can be self-contained or central systems, and they require little maintenance once installed.",
+            hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+            costGraph: [
+                [1985, 2100],
+                [1990, 2200],
+                [1995, 2400],
+                [2000, 2700],
+                [2005, 2800],
+                [2010, 2800],
+                [2015, 3200],
+                [2020, 3600],
+                [2025, 4300]
+            ],
+            roiGraph: [
+                [1985, 200],
+                [1990, 250],
+                [1995, 350],
+                [2000, 550],
+                [2005, 950],
+                [2010, 1750],
+                [2015, 2150],
+                [2020, 2350],
+                [2025, 2450]
+            ],
+            steps: [
+                {
+                    header: "Choose the appropriate composting toilet",
+                    description: "Select a composting toilet that suits your home's needs and specifications."
+                },
+                {
+                    header: "Prepare the installation area",
+                    description: "Ensure the installation area is properly prepared and has adequate ventilation."
+                },
+                {
+                    header: "Install the toilet",
+                    description: "Follow the manufacturer's instructions to install the composting toilet securely."
+                },
+                {
+                    header: "Connect plumbing or electrical components",
+                    description: "If required, connect plumbing or electrical components according to the toilet's specifications."
+                },
+                {
+                    header: "Add composting medium and begin use",
+                    description: "Fill the composting toilet with the appropriate composting medium and start using it as intended."
+                }
+            ],
+            utilityRebates: [
+                {
+                    price: 0,
+                    label: "None Available"
+                }
+            ],
+            govtRebates: [
+                {
+                    price: 0,
+                    label: "None available"
+                },
+            ],
+
+            type: "waste",
+        },
+        {
+            alt: "A picture of a composting toilet installed in a bathroom.",
+            gov: 1000,
+            utility: 9200,
+            price: 52000,
+            setup: 2,
+            image: "/solutions/electric_vehicles.jpeg",
+            imageNoBg: "",
+            title: "Electric Vehicles",
+            stats: [
+                {
+                    data: 0,
+                    units: "emissions",
+                    description: "EVs produce zero tailpipe emissions, significantly reducing CO2 emissions compared to gas-powered cars."
+                },
+                {
+                    data: 165,
+                    units: "tons",
+                    description: "A single EV can save an average of 165 tons of CO2 per year, compared to a gas-powered car."
+                }
+            ],
+            description:
+                "Electric vehicle charging stations provide a convenient and eco-friendly way to power your car, allowing you to charge at home or at public locations.",
+            hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+            costGraph: [
+                [1985, 140000],
+                [1990, 120000],
+                [1995, 118000],
+                [2000, 112000],
+                [2005, 98000],
+                [2010, 76000],
+                [2015, 46000],
+                [2020, 39000],
+                [2025, 23000]
+            ],
+            roiGraph: [
+                [1985, 150],
+                [1990, 300],
+                [1995, 350],
+                [2000, 400],
+                [2005, 400],
+                [2010, 1200],
+                [2015, 2500],
+                [2020, 5200],
+                [2025, 7500]
+            ],
+            steps: [
+                {
+                    header: "Research and select an Electric Vehicle (EV)",
+                    description: "Research different EV models to find one that meets your needs and preferences. Consider factors such as range, charging infrastructure, and price."
+                },
+                {
+                    header: "Purchase an Electric Vehicle (EV)",
+                    description: "Once you have chosen the right EV for you, proceed with purchasing or leasing it from a reputable dealer."
+                },
+                {
+                    header: "Choose a suitable location for the charging station",
+                    description: "Select an appropriate location for the charging station, considering accessibility and electrical requirements."
+                },
+                {
+                    header: "Obtain permits and approvals",
+                    description: "Ensure compliance with local regulations by obtaining necessary permits and approvals from your local government."
+                },
+                {
+                    header: "Hire a licensed electrician",
+                    description: "Contract a licensed electrician to install a dedicated circuit for the charging station, ensuring safety and proper functionality."
+                },
+                {
+                    header: "Mount the charging station",
+                    description: "Install the charging station securely on a wall or other suitable surface, following manufacturer guidelines."
+                },
+                {
+                    header: "Connect to dedicated circuit",
+                    description: "Connect the charging station to the dedicated circuit installed by the electrician, ensuring proper wiring and connections."
+                },
+                {
+                    header: "Install software or apps",
+                    description: "If applicable, install any necessary software or apps to monitor and manage your charging sessions for convenience and control."
+                }
+            ],
+            utilityRebates: [
+                {
+                    price: 500,
+                    label: "rebate for the installation of a Level 2 charging station by Con Edison"
+                },
+                {
+                    price: 500,
+                    label: "rebate for the installation of a Level 2 charging station by National Grid"
+                }
+            ],
+            govtRebates: [
+                {
+                    price: 2000,
+                    label: "Drive Clean Rebate by NYSERDA for the purchase or lease of a new EV"
+                },
+                {
+                    price: 7500,
+                    label: "tax credit by the federal government for the purchase of a new EV"
+                }
             ],
 
             type: "transportation",
@@ -1599,13 +2462,286 @@ const solutions = {
 
           type: "transportation",
         },
-    ],
+        {
+          alt: "Composting Toilets in Texas",
+          gov: 300,
+          utility: 150,
+          price: 1500,
+          setup: 2,
+          image: "/solutions/composting_toilet.jpg",
+          imageNoBg: "",
+          title: "Composting Toilets",
+          stats: [
+              {
+                  data: 6000,
+                  units: "gallons/year",
+                  description: "Saved by a family of four switching to a composting toilet.",
+              },
+              {
+                  data: 120,
+                  units: "pounds",
+                  description: "Of compost produced by a composting toilet per year per person.",
+              },
+          ],
+          description:
+              "Composting Toilets are an effective way of managing human waste. The reduce water usage and can also provide nutrient rich compost for gardening. ",
+          hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+          costGraph: [
+              [1985, 30000],
+              [1990, 18000],
+              [1995, 16000],
+              [2000, 13500],
+              [2005, 13000],
+              [2010, 11500],
+              [2015, 10500],
+              [2020, 10000],
+              [2025, 5000],
+          ],
+          roiGraph: [
+              [1985, 30000],
+              [1990, 18000],
+              [1995, 16000],
+              [2000, 13500],
+              [2005, 13000],
+              [2010, 11500],
+              [2015, 10500],
+              [2020, 10000],
+              [2025, 5000],
+          ],
+
+          steps: [
+              {
+                  header: "Research composting toilet options near you",
+                  description:
+                      "Research and choose a composting toilet depending on your needs, and budget.",
+              },
+              {
+                  header: "Install the toilet",
+                  description:
+                      "Installing the toilet according to the manufacturer's instructions.",
+              },
+              {
+                  header: "Connect the toilet to a composting system",
+                  description:
+                      "Set up a composting system to connect it to one, adding a carbon source and turning the compost regularly.",
+              },
+          ],
+
+          utilityRebates: [
+            {
+                price: 100,
+                label: "Offered by Texas Disposal Systems for installing a composting toilet",
+            },
+            {
+                price: 50,
+                label: "Offered by Austin Energy for installing a composting toilet",
+            },
+          ],
+
+          govtRebates: [
+            {
+                price: 200,
+                label: "Offered by the Texas Commission on Environmental Quality for installing a composting toilet",
+            },
+            {
+                price: 100,
+                label: "Offered by the City of Dallas for purchasing a composting toilet",
+            },
+          ],
+
+          type: "waste",
+        },
+        {
+          alt: "Energy Efficient HVAC Systems",
+          gov: 800,
+          utility: 1800,
+          price: 10000,
+          setup: 3,
+          image: "/solutions/hvac.png",
+          imageNoBg: "",
+          title: "Composting Toilets",
+          stats: [
+              {
+                  data: 400,
+                  units: "dollars",
+                  description: "saved per year on heating and cooling.",
+              },
+              {
+                  data: 2000,
+                  units: "pounds/year",
+                  description: "Reduction in carbon footprint by switching to a high efficiency HVAC system.",
+              },
+          ],
+          description:
+              "Energy HVAC Systems help provide your home optimal heating and cooling while using less energy.",
+          hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+          costGraph: [
+              [1985, 30000],
+              [1990, 18000],
+              [1995, 16000],
+              [2000, 13500],
+              [2005, 13000],
+              [2010, 11500],
+              [2015, 10500],
+              [2020, 10000],
+              [2025, 5000],
+          ],
+          roiGraph: [
+              [1985, 30000],
+              [1990, 18000],
+              [1995, 16000],
+              [2000, 13500],
+              [2005, 13000],
+              [2010, 11500],
+              [2015, 10500],
+              [2020, 10000],
+              [2025, 5000],
+          ],
+
+          steps: [
+              {
+                  header: "Choose a Provider and System",
+                  description:
+                      "Choose the right provider and system for your needs and budget. Look at good warranties and efficiency ratings.",
+              },
+              {
+                  header: "Install the HVAC System",
+                  description:
+                      "We recommend hiring a profession to install the system. ",
+              },
+              {
+                  header: "Test the system and ensure heat isn't escaping",
+                  description:
+                      "Thoroughly test the system while the installer is still present. Set up any thermostat or controls. Ensure heat isn't escaping in your house.",
+              },
+          ],
+
+          utilityRebates: [
+            {
+                price: 1000,
+                label: "Offered by CPS Energy for installing a high efficiency HVAC system",
+            },
+            {
+                price: 800,
+                label: "Offered by Oncor for installing a high efficiency HVAC system",
+            },
+          ],
+
+          govtRebates: [
+            {
+                price: 300,
+                label: "Offered by the Department of Energy for installing a high efficiency HVAC system",
+            },
+            {
+                price: 500,
+                label: "Offered by the EPA Energy Star Program for installing a high efficiency HVAC system",
+            },
+          ],
+
+          type: "heating",
+        },
+        {
+          alt: "Insulation in homes in Texas",
+          gov: 1000,
+          utility: 300,
+          price: 1.2,
+          setup: 1,
+          image: "/solutions/insulation.jpeg",
+          imageNoBg: "",
+          title: "Insulation",
+          stats: [
+              {
+                  data: 40,
+                  units: "%",
+                  description: "heat loss reduction in the winter.",
+              },
+              {
+                  data: 780,
+                  units: "million tons/year",
+                  description: "Saved if all homes in the US were properly insulated.",
+              },
+          ],
+          description:
+              "Insulation helps maintain a comfortable temperature and reduce energy consumption",
+          hometypes: ["Multi-Family Home", "Individual Home"],
+          costGraph: [
+              [1985, 30000],
+              [1990, 18000],
+              [1995, 16000],
+              [2000, 13500],
+              [2005, 13000],
+              [2010, 11500],
+              [2015, 10500],
+              [2020, 10000],
+              [2025, 5000],
+          ],
+          roiGraph: [
+              [1985, 30000],
+              [1990, 18000],
+              [1995, 16000],
+              [2000, 13500],
+              [2005, 13000],
+              [2010, 11500],
+              [2015, 10500],
+              [2020, 10000],
+              [2025, 5000],
+          ],
+
+          steps: [
+              {
+                  header: "Choose a Provider and System",
+                  description:
+                      "Choose the right provider and type of insulation (fiberglass, cellulose, spray foam)",
+              },
+              {
+                  header: "Measure the area to be insulated.",
+                  description:
+                      "Measure how much area needs to be insulated and purchase the right amount of insulation",
+              },
+              {
+                  header: "Install the system",
+                  description:
+                      "We recommend hiring a professional, but if you install it yourself, wear protective gear.",
+              },
+              {
+                  header: "Check for leaks",
+                  description:
+                    "Check for leaks and ensure the insulation is properly installed.",
+              }
+          ],
+
+          utilityRebates: [
+            {
+                price: 0.10,
+                label: "Offered by Austin Energy per square foot of insulation",
+            },
+            {
+                price: 0.10,
+                label: "Offered by Texas Gas Service per square foot of insulation",
+            },
+          ],
+
+          govtRebates: [
+            {
+                price: 500,
+                label: "Offered by Department of Energy for installing insulation",
+            },
+            {
+                price: 500,
+                label: "Offered by the EPA Energy Star Program for installing a insulation system",
+            },
+          ],
+
+          type: "heating",
+        },
+
+      ],
     WA: [
         {
             alt: "Rainwater Harvesting System",
-            gov: 1200,
-            utility: 0,
-            price: 3000,
+            gov: 100,
+            utility: 5300,
+            price: 6000,
             setup: 2,
             image: "/solutions/rainwater_harvesting.jpg",
             imageNoBg: "",
@@ -1644,11 +2780,13 @@ const solutions = {
                 [2045, 25],
                 [2050, 30],
             ],
-            utilityRebates: [],
-            govtRebates: [
-                { price: 300, label: "Rainwater harvesting system tax credit" },
+            utilityRebates: [
+              { price: 4800, label: "Offered by RainWise program offers rebates" },
+              { price: 500, label: "Offered by King County Surface Water Management"},
             ],
-            taxRebates: [],
+            govtRebates: [
+                { price: 100, label: "Offered by Washington state, along with a sales tax exemption"},
+            ],
             type: "water",
             localProviders: [
                 "Rainwater Harvesting Solutions LLC",
@@ -1657,9 +2795,9 @@ const solutions = {
         },
         {
             alt: "Low-Flow Showerheads",
-            gov: 0,
-            utility: 0,
-            price: 40,
+            gov: 30,
+            utility: 25,
+            price: 70,
             setup: 1,
             image: "/solutions/low-faucet.png",
             imageNoBg: "",
@@ -1698,17 +2836,23 @@ const solutions = {
                 [2045, 5],
                 [2050, 6],
             ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
+            utilityRebates: [
+              { price: 5, label: "Offered by Puget Sound Energy "}, 
+              { price: 10, label: "Offered by Seattle City Light"}, 
+              { price: 5, label: "Offered by Tacoma Public Utilities"}, 
+              { price: 5, label: "Offered by Cascade Natural Gas"},
+            ],
+            govtRebates: [
+              { price: 100, label: "Offered by Washington State Department in multifamily buildings"},
+            ],
             type: "water",
             localProviders: ["EcoFlow Showers LLC", "Cascade Water Solutions"],
         },
         {
             alt: "Drip Irrigation System",
-            gov: 0,
-            utility: 0,
-            price: 500,
+            gov: 250,
+            utility: 200,
+            price: 600,
             setup: 2,
             image: "/solutions/drip_irrigation.jpg",
             imageNoBg: "",
@@ -1748,9 +2892,20 @@ const solutions = {
                 [2045, 11],
                 [2050, 13],
             ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
+            utilityRebates: [
+              { price: 50, label: "Offered by Puget Sound Energy (PSE)" },
+              { price: 100, label: "Offered by Seattle City Light" },
+              { price: 50, label: "Offered by Cascade Natural Gas" },
+            ],
+
+            govtRebates: [
+              { price: 100, label: "Offered by Washington State Department of Commerce" },
+              { price: 50, label: "Offered by City of Seattle" },
+              { price: 100, label: "Offered by King County" },
+              { price: 50, label: "Offered by City of Tacoma" },
+              { price: 50, label: "Offered by City of Spokane" },
+            ],
+
             type: "water",
             localProviders: [
                 "GreenGrowth Irrigation Solutions",
@@ -1758,61 +2913,9 @@ const solutions = {
             ],
         },
         {
-            alt: "Native Plant Landscaping",
-            gov: 0,
-            utility: 0,
-            price: 200,
-            setup: 2,
-            image: "/solutions/native_plant_landscaping.jpg",
-            imageNoBg: "",
-            title: "Native Plant Landscaping",
-            stats: [
-                {
-                    data: 30,
-                    units: "%",
-                    description: "Reduction in outdoor water usage",
-                },
-                {
-                    data: 50,
-                    units: "%",
-                    description: "Reduction in maintenance water needs",
-                },
-            ],
-            description:
-                "Planting native vegetation reduces the need for watering, as these plants are adapted to local conditions.",
-            hometypes: ["Individual Home"],
-            costGraph: [
-                [1985, 400],
-                [1990, 350],
-                [1995, 300],
-                [2000, 250],
-                [2005, 225],
-                [2010, 210],
-                [2015, 205],
-                [2020, 202],
-                [2025, 200],
-            ],
-            roiGraph: [
-                [2025, 1],
-                [2030, 2],
-                [2035, 3],
-                [2040, 4],
-                [2045, 5],
-                [2050, 6],
-            ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
-            type: "water",
-            localProviders: [
-                "GreenThumb Landscaping",
-                "Evergreen Native Plants Co.",
-            ],
-        },
-        {
             alt: "Greywater Recycling System",
-            gov: 1500,
-            utility: 0,
+            gov: 250,
+            utility: 200,
             price: 4000,
             setup: 3,
             image: "/solutions/greywater_recycling.png",
@@ -1855,9 +2958,17 @@ const solutions = {
             ],
             utilityRebates: [],
             govtRebates: [
-                { price: 500, label: "Greywater recycling system rebate" },
+              { price: 100, label: "Offered by Washington State Department of Commerce" },
+              { price: 50, label: "Offered by City of Seattle" },
+              { price: 100, label: "Offered by King County" },
+              { price: 50, label: "Offered by City of Tacoma" },
+              { price: 50, label: "Offered by City of Spokane" },
             ],
-            taxRebates: [],
+            utilityRebates: [
+              { price: 50, label: "Offered by Puget Sound Energy (PSE)" },
+              { price: 100, label: "Offered by Seattle City Light" },
+              { price: 50, label: "Offered by Tacoma Public Utilities" },
+            ],
             type: "water",
             localProviders: [
                 "EcoWater Recycle Solutions",
@@ -1865,159 +2976,9 @@ const solutions = {
             ],
         },
         {
-            alt: "Xeriscaping",
-            gov: 0,
-            utility: 0,
-            price: 300,
-            setup: 2,
-            image: "/solutions/xeriscaping.jpg",
-            imageNoBg: "",
-            title: "Xeriscaping",
-            stats: [
-                {
-                    data: 50,
-                    units: "%",
-                    description: "Reduction in outdoor water usage",
-                },
-                {
-                    data: 75,
-                    units: "%",
-                    description: "Reduction in maintenance water needs",
-                },
-            ],
-            description:
-                "Design landscapes that require minimal water, using drought-resistant plants and efficient irrigation techniques.",
-            hometypes: ["Individual Home"],
-            costGraph: [
-                [1985, 600],
-                [1990, 500],
-                [1995, 450],
-                [2000, 400],
-                [2005, 350],
-                [2010, 320],
-                [2015, 310],
-                [2020, 305],
-                [2025, 300],
-            ],
-            roiGraph: [
-                [2025, 2],
-                [2030, 4],
-                [2035, 6],
-                [2040, 8],
-                [2045, 10],
-                [2050, 12],
-            ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
-            type: "water",
-            localProviders: [
-                "GreenThumb Landscaping",
-                "Evergreen Xeriscape Co.",
-            ],
-        },
-        {
-            alt: "Smart Irrigation Controller",
-            gov: 0,
-            utility: 0,
-            price: 200,
-            setup: 1,
-            image: "/solutions/smart_irrigation_controller.jpg",
-            imageNoBg: "",
-            title: "Smart Irrigation Controller",
-            stats: [
-                {
-                    data: 30,
-                    units: "%",
-                    description: "Reduction in outdoor water usage",
-                },
-                {
-                    data: 40,
-                    units: "%",
-                    description: "Reduction in water usage for irrigation",
-                },
-            ],
-            description:
-                "Automate irrigation schedules based on weather conditions and soil moisture to optimize water usage.",
-            hometypes: ["Individual Home"],
-            costGraph: [
-                [1985, 400],
-                [1990, 300],
-                [1995, 280],
-                [2000, 250],
-                [2005, 230],
-                [2010, 220],
-                [2015, 210],
-                [2020, 205],
-                [2025, 200],
-            ],
-            roiGraph: [
-                [2025, 1],
-                [2030, 2],
-                [2035, 3],
-                [2040, 4],
-                [2045, 5],
-                [2050, 6],
-            ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
-            type: "water",
-            localProviders: ["SmartScape Technologies", "WaterWise Solutions"],
-        },
-        {
-            alt: "Permeable Pavement",
-            gov: 0,
-            utility: 0,
-            price: 500,
-            setup: 2,
-            image: "/solutions/permeable_pavement.jpg",
-            imageNoBg: "",
-            title: "Permeable Pavement",
-            stats: [
-                {
-                    data: 100,
-                    units: "%",
-                    description: "Reduction in stormwater runoff",
-                },
-                {
-                    data: 50,
-                    units: "%",
-                    description: "Increase in groundwater recharge",
-                },
-            ],
-            description:
-                "Install surfaces that allow rainwater to seep through, reducing flooding and replenishing groundwater.",
-            hometypes: ["Individual Home"],
-            costGraph: [
-                [1985, 1000],
-                [1990, 800],
-                [1995, 700],
-                [2000, 600],
-                [2005, 550],
-                [2010, 525],
-                [2015, 510],
-                [2020, 505],
-                [2025, 500],
-            ],
-            roiGraph: [
-                [2025, 3],
-                [2030, 5],
-                [2035, 7],
-                [2040, 9],
-                [2045, 11],
-                [2050, 13],
-            ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
-            type: "water",
-            localProviders: ["EcoPave Solutions", "Sustainable Surfaces Inc."],
-        },
-        {
             alt: "High-Efficiency Washing Machine",
-            gov: 0,
-            utility: 0,
+            gov: 250,
+            utility: 200,
             price: 800,
             setup: 1,
             image: "/solutions/high_efficiency_washing_machine.jpg",
@@ -2037,7 +2998,7 @@ const solutions = {
             ],
             description:
                 "Use washing machines designed to use less water per load while maintaining cleaning performance.",
-            hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+            hometypes: ["Multi-Family Home", "Individual Home"],
             costGraph: [
                 [1985, 1200],
                 [1990, 1000],
@@ -2057,20 +3018,27 @@ const solutions = {
                 [2045, 10],
                 [2050, 12],
             ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
+            utilityRebates: [
+              { price: 50, label: "Offered by Puget Sound Energy (PSE)" },
+              { price: 100, label: "Offered by Seattle City Light" },
+              { price: 50, label: "Offered by Tacoma Public Utilities" },
+            ],
+            govtRebates: [
+              { price: 100, label: "Offered by Washington State Department of Commerce" },
+              { price: 50, label: "Offered by City of Seattle" },
+              { price: 100, label: "Offered by King County" },
+            ],
             type: "water",
             localProviders: [
                 "EcoWash Appliances",
                 "Sustainable Laundry Solutions",
             ],
-        },
+        },    
         {
             alt: "Composting Toilet",
-            gov: 1500,
-            utility: 0,
-            price: 3000,
+            gov: 250,
+            utility: 200,
+            price: 2000,
             setup: 3,
             image: "/solutions/composting_toilet.jpg",
             imageNoBg: "",
@@ -2109,16 +3077,23 @@ const solutions = {
                 [2045, 30],
                 [2050, 35],
             ],
-            utilityRebates: [],
-            govtRebates: [{ price: 500, label: "Composting toilet rebate" }],
-            taxRebates: [],
+            utilityRebates: [
+                { price: 50, label: "Offered by Puget Sound Energy (PSE)" },
+                { price: 100, label: "Offered by Seattle City Light" },
+                { price: 50, label: "Offered by Tacoma Public Utilities" },
+            ],
+            govtRebates: [
+                { price: 100, label: "Offered by Washington State Department of Commerce" },
+                { price: 50, label: "Offered by City of Seattle" },
+                { price: 100, label: "Offered by King County" },
+            ],
             type: "water",
             localProviders: ["EcoToilet Systems", "Cascade Composting Toilets"],
         },
         {
             alt: "Solar Panels",
-            gov: 1000,
-            utility: 5000,
+            gov: 2500,
+            utility: 2000,
             price: 18000,
             setup: 3,
             image: "/solutions/solar_panel.jpg",
@@ -2162,20 +3137,14 @@ const solutions = {
                 [2065, 5000],
             ],
             utilityRebates: [
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
+                { price: 500, label: "Offered by Puget Sound Energy (PSE)" },
+                { price: 1000, label: "Offered by Seattle City Light" },
+                { price: 500, label: "Offered by Tacoma Public Utilities" },
             ],
             govtRebates: [
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
-            ],
-            taxRebates: [
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
+                { price: 1000, label: "Offered by Washington State Department of Commerce" },
+                { price: 500, label: "Offered by City of Seattle" },
+                { price: 1000, label: "Offered by King County" },
             ],
             type: "electricity",
             localProviders: [
@@ -2185,8 +3154,8 @@ const solutions = {
         },
         {
             alt: "Wind Turbines",
-            gov: 1500,
-            utility: 0,
+            gov: 2500,
+            utility: 2000,
             price: 20000,
             setup: 4,
             image: "/solutions/wind_turbine.jpg",
@@ -2194,9 +3163,9 @@ const solutions = {
             title: "Wind Turbines",
             stats: [
                 {
-                    data: 150,
+                    data: 1500,
                     units: "lbs/kwh",
-                    description: "CO2 prevented from emissions",
+                    description: "CO2 prevented from emissions per year",
                 },
                 {
                     data: 50,
@@ -2229,11 +3198,16 @@ const solutions = {
                 [2060, 14000],
                 [2065, 13000],
             ],
-            utilityRebates: [],
-            govtRebates: [
-                { price: 1000, label: "Wind turbine installation grant" },
+            utilityRebates: [
+                { price: 500, label: "Offered by Puget Sound Energy (PSE)" },
+                { price: 1000, label: "Offered by Seattle City Light" },
+                { price: 500, label: "Offered by Tacoma Public Utilities" },
             ],
-            taxRebates: [],
+            govtRebates: [
+                { price: 1000, label: "Offered by Washington State Department of Commerce" },
+                { price: 500, label: "Offered by City of Seattle" },
+                { price: 1000, label: "Offered by King County" },
+            ],
             type: "electricity",
             localProviders: [
                 "Wind Power Solutions Inc.",
@@ -2241,124 +3215,9 @@ const solutions = {
             ],
         },
         {
-            alt: "Hydroelectric Generator",
-            gov: 2000,
-            utility: 0,
-            price: 25000,
-            setup: 4,
-            image: "/solutions/hydroelectric_generator.jpg",
-            imageNoBg: "",
-            title: "Hydroelectric Generator",
-            stats: [
-                {
-                    data: 300,
-                    units: "lbs/kwh",
-                    description: "CO2 prevented from emissions",
-                },
-                {
-                    data: 80,
-                    units: "%",
-                    description: "Average efficiency of hydroelectric systems",
-                },
-            ],
-            description:
-                "Use the power of flowing water to generate electricity, typically by diverting a portion of a river through a turbine.",
-            hometypes: ["Individual Home"],
-            costGraph: [
-                [1985, 40000],
-                [1990, 35000],
-                [1995, 32000],
-                [2000, 30000],
-                [2005, 28000],
-                [2010, 27000],
-                [2015, 26000],
-                [2020, 25500],
-                [2025, 25000],
-            ],
-            roiGraph: [
-                [2025, 35000],
-                [2030, 32000],
-                [2035, 30000],
-                [2040, 28000],
-                [2045, 27000],
-                [2050, 26000],
-                [2055, 25500],
-                [2060, 25000],
-                [2065, 24000],
-            ],
-            utilityRebates: [],
-            govtRebates: [
-                { price: 1500, label: "Hydroelectric generator grant" },
-            ],
-            taxRebates: [],
-            type: "electricity",
-            localProviders: [
-                "RiverPower Systems Inc.",
-                "Washington Hydro Solutions",
-            ],
-        },
-        {
-            alt: "Geothermal Heat Pump",
-            gov: 1000,
-            utility: 0,
-            price: 20000,
-            setup: 3,
-            image: "/solutions/geothermal_heat_pump.jpg",
-            imageNoBg: "",
-            title: "Geothermal Heat Pump",
-            stats: [
-                {
-                    data: 300,
-                    units: "lbs/kwh",
-                    description: "CO2 prevented from emissions",
-                },
-                {
-                    data: 400,
-                    units: "%",
-                    description:
-                        "Efficiency improvement over traditional heating and cooling systems",
-                },
-            ],
-            description:
-                "Utilize the constant temperature of the earth below the surface to heat and cool homes with minimal electricity consumption.",
-            hometypes: ["Individual Home"],
-            costGraph: [
-                [1985, 35000],
-                [1990, 30000],
-                [1995, 28000],
-                [2000, 26000],
-                [2005, 24000],
-                [2010, 23000],
-                [2015, 22000],
-                [2020, 21000],
-                [2025, 20000],
-            ],
-            roiGraph: [
-                [2025, 30000],
-                [2030, 28000],
-                [2035, 26000],
-                [2040, 24000],
-                [2045, 23000],
-                [2050, 22000],
-                [2055, 21000],
-                [2060, 20000],
-                [2065, 19000],
-            ],
-            utilityRebates: [],
-            govtRebates: [
-                { price: 1500, label: "Geothermal heat pump tax credit" },
-            ],
-            taxRebates: [],
-            type: "electricity",
-            localProviders: [
-                "GeoClimate Solutions",
-                "Evergreen Geothermal Systems",
-            ],
-        },
-        {
             alt: "Energy-Efficient Appliances",
-            gov: 0,
-            utility: 0,
+            gov: 250,
+            utility: 200,
             price: 1500,
             setup: 1,
             image: "/solutions/energy_efficient_appliances.jpg",
@@ -2394,9 +3253,16 @@ const solutions = {
                 [2045, 150],
                 [2050, 100],
             ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
+            utilityRebates: [
+                { price: 50, label: "Offered by Puget Sound Energy (PSE)" },
+                { price: 100, label: "Offered by Seattle City Light" },
+                { price: 50, label: "Offered by Tacoma Public Utilities" },
+            ],
+            govtRebates: [
+                { price: 100, label: "Offered by Washington State Department of Commerce" },
+                { price: 50, label: "Offered by City of Seattle" },
+                { price: 100, label: "Offered by King County" },
+            ],
             type: "electricity",
             localProviders: [
                 "EcoAppliance Solutions",
@@ -2414,11 +3280,17 @@ const solutions = {
             title: "LED Lighting",
             stats: [
                 {
-                    data: 80,
+                    data: 60,
                     units: "%",
                     description:
                         "Reduction in electricity usage compared to incandescent bulbs",
                 },
+                {
+                    data: 2800,
+                    units: "dollars",
+                    description:
+                        "Saved over 10 years in a household compared to incandescent bulbs",
+                }
             ],
             description:
                 "Switch to LED bulbs which consume less energy and last longer than traditional incandescent bulbs.",
@@ -2821,212 +3693,6 @@ const solutions = {
             localProviders: ["Carpool Connect", "GreenRide"],
         },
         {
-            alt: "Telecommuting",
-            gov: 0,
-            utility: 0,
-            price: 0,
-            setup: 1,
-            image: "/solutions/telecommuting.jpeg",
-            imageNoBg: "",
-            title: "Telecommuting",
-            stats: [
-                {
-                    data: 0,
-                    units: "g/mi",
-                    description: "Reduced emissions from avoided commute",
-                },
-                {
-                    data: 100,
-                    units: "%",
-                    description: "Flexibility in work location",
-                },
-            ],
-            description:
-                "Work remotely from home using telecommunications technology, reducing the need for daily commuting and associated emissions.",
-            hometypes: ["Individual"],
-            costGraph: [
-                [1985, 0],
-                [1990, 0],
-                [1995, 0],
-                [2000, 0],
-                [2005, 0],
-                [2010, 0],
-                [2015, 0],
-                [2020, 0],
-                [2025, 0],
-            ],
-            roiGraph: [
-                [2025, 100],
-                [2030, 150],
-                [2035, 200],
-                [2040, 250],
-                [2045, 300],
-                [2050, 350],
-                [2055, 400],
-                [2060, 450],
-                [2065, 500],
-            ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
-            type: "transportation",
-            localProviders: [
-                "TeleCommute Solutions",
-                "RemoteWork Technologies",
-            ],
-        },
-        {
-            alt: "Hybrid Vehicles",
-            gov: 0,
-            utility: 0,
-            price: 30000,
-            setup: 1,
-            image: "/solutions/hybrid_vehicles.jpg",
-            imageNoBg: "",
-            title: "Hybrid Vehicles",
-            stats: [
-                {
-                    data: 50,
-                    units: "g/mi",
-                    description:
-                        "Reduced emissions compared to traditional vehicles",
-                },
-                {
-                    data: 50,
-                    units: "mpg",
-                    description: "Average fuel efficiency",
-                },
-            ],
-            description:
-                "Opt for vehicles with hybrid powertrains that combine gasoline engines with electric motors, reducing fuel consumption and emissions.",
-            hometypes: ["Individual"],
-            costGraph: [
-                [1985, 60000],
-                [1990, 50000],
-                [1995, 40000],
-                [2000, 35000],
-                [2005, 33000],
-                [2010, 32000],
-                [2015, 31000],
-                [2020, 30500],
-                [2025, 30000],
-            ],
-            roiGraph: [
-                [2025, 35000],
-                [2030, 33000],
-                [2035, 32000],
-                [2040, 31500],
-                [2045, 31000],
-                [2050, 30500],
-                [2055, 30000],
-                [2060, 29500],
-                [2065, 29000],
-            ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
-            type: "transportation",
-            localProviders: ["GreenDrive Autos", "EcoHybrids"],
-        },
-        {
-            alt: "Car Sharing",
-            gov: 0,
-            utility: 0,
-            price: 0,
-            setup: 1,
-            image: "/solutions/car_sharing.jpeg",
-            imageNoBg: "",
-            title: "Car Sharing",
-            stats: [
-                {
-                    data: 0,
-                    units: "g/mi",
-                    description:
-                        "Reduced emissions per user compared to individual vehicles",
-                },
-                {
-                    data: 50,
-                    units: "%",
-                    description:
-                        "Average decrease in transportation costs for participants",
-                },
-            ],
-            description:
-                "Join car-sharing programs where users can rent vehicles by the hour or day, reducing the need for individual car ownership.",
-            hometypes: ["Individual"],
-            costGraph: [
-                [1985, 0],
-                [1990, 0],
-                [1995, 0],
-                [2000, 0],
-                [2005, 0],
-                [2010, 0],
-                [2015, 0],
-                [2020, 0],
-                [2025, 0],
-            ],
-            roiGraph: [
-                [2025, 50],
-                [2030, 100],
-                [2035, 150],
-                [2040, 200],
-                [2045, 250],
-                [2050, 300],
-                [2055, 350],
-                [2060, 400],
-                [2065, 450],
-            ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
-            type: "transportation",
-            localProviders: ["GreenRide Share", "EcoCar Rentals"],
-        },
-        {
-            alt: "Walking",
-            gov: 0,
-            utility: 0,
-            price: 0,
-            setup: 1,
-            image: "/solutions/walking.jpeg",
-            imageNoBg: "",
-            title: "Walking",
-            stats: [
-                { data: 0, units: "g/mi", description: "Zero emissions" },
-                { data: 3, units: "mph", description: "Average walking speed" },
-            ],
-            description:
-                "Choose walking as a sustainable mode of transportation for short-distance trips, promoting physical activity and reducing environmental impact.",
-            hometypes: ["Individual"],
-            costGraph: [
-                [1985, 0],
-                [1990, 0],
-                [1995, 0],
-                [2000, 0],
-                [2005, 0],
-                [2010, 0],
-                [2015, 0],
-                [2020, 0],
-                [2025, 0],
-            ],
-            roiGraph: [
-                [2025, 0],
-                [2030, 0],
-                [2035, 0],
-                [2040, 0],
-                [2045, 0],
-                [2050, 0],
-                [2055, 0],
-                [2060, 0],
-                [2065, 0],
-            ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
-            type: "transportation",
-            localProviders: ["Walk Green", "EcoSteps"],
-        },
-        {
             alt: "E-Scooters",
             gov: 0,
             utility: 0,
@@ -3123,112 +3789,7 @@ const solutions = {
             type: "heating",
             localProviders: ["EcoHeat Systems", "GreenHeat Solutions"],
         },
-        {
-            alt: "Wood Pellet Stoves",
-            gov: 0,
-            utility: 0,
-            price: 3000,
-            setup: 2,
-            image: "/solutions/wood_pellet_stoves.jpeg",
-            imageNoBg: "",
-            title: "Wood Pellet Stoves",
-            stats: [
-                {
-                    data: 80,
-                    units: "%",
-                    description: "Efficiency in converting fuel to heat",
-                },
-                {
-                    data: 0,
-                    units: "g/kWh",
-                    description:
-                        "CO2 emissions compared to traditional heating systems",
-                },
-            ],
-            description:
-                "Use wood pellet stoves for space heating, utilizing renewable biomass fuel for efficient and eco-friendly warmth.",
-            hometypes: ["Individual Home"],
-            costGraph: [
-                [1985, 5000],
-                [1990, 4500],
-                [1995, 4000],
-                [2000, 3500],
-                [2005, 3300],
-                [2010, 3200],
-                [2015, 3100],
-                [2020, 3050],
-                [2025, 3000],
-            ],
-            roiGraph: [
-                [2025, 4000],
-                [2030, 3500],
-                [2035, 3300],
-                [2040, 3200],
-                [2045, 3100],
-                [2050, 3050],
-                [2055, 3000],
-                [2060, 2950],
-                [2065, 2900],
-            ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
-            type: "heating",
-            localProviders: ["EcoStove Co.", "GreenFire Heating"],
-        },
-        {
-            alt: "Solar Heating Panels",
-            gov: 0,
-            utility: 0,
-            price: 6000,
-            setup: 3,
-            image: "/solutions/solar_heating_panels.jpeg",
-            imageNoBg: "",
-            title: "Solar Heating Panels",
-            stats: [
-                {
-                    data: 80,
-                    units: "%",
-                    description: "Reduction in heating costs",
-                },
-                {
-                    data: 0,
-                    units: "g/kWh",
-                    description:
-                        "CO2 emissions compared to traditional heating systems",
-                },
-            ],
-            description:
-                "Install solar heating panels to harness sunlight for space heating, reducing reliance on conventional heating systems and lowering energy bills.",
-            hometypes: ["Individual Home"],
-            costGraph: [
-                [1985, 10000],
-                [1990, 9000],
-                [1995, 8000],
-                [2000, 7000],
-                [2005, 6500],
-                [2010, 6200],
-                [2015, 6100],
-                [2020, 6050],
-                [2025, 6000],
-            ],
-            roiGraph: [
-                [2025, 8000],
-                [2030, 7500],
-                [2035, 7000],
-                [2040, 6700],
-                [2045, 6600],
-                [2050, 6500],
-                [2055, 6450],
-                [2060, 6400],
-                [2065, 6300],
-            ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
-            type: "heating",
-            localProviders: ["EcoSolar Heating", "SunHeat Solutions"],
-        },
+      
         {
             alt: "Geothermal Heat Pumps",
             gov: 0,

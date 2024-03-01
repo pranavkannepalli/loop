@@ -193,7 +193,7 @@ export default function Solution({ params }) {
 							))}
 						</div>
 						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[20px]">
-							<div className="caption text-white-400">Government Rebates</div>
+							<div className="caption text-white-400">Government</div>
 							{solution.govtRebates.map((item, ind) => (
 								<Rebate dollars={item.price} label={item.label} key={ind} />
 							))}
