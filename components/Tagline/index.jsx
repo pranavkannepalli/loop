@@ -22,15 +22,13 @@ export default function TagLine({ value }) {
           highlight = "bg-green-600";
         }
         return (
-          <>
             <Word
               value={word}
               range={range}
               highlight={highlight}
               progress={scrollYProgress}
               key={i}
-            ></Word>{" "}
-          </>
+            />
         );
       })}
     </motion.h2>
@@ -39,7 +37,7 @@ export default function TagLine({ value }) {
 
 function Word({ value, range, highlight, progress }) {
   const opacity = useTransform(progress, range, [0, 1]);
-  const scaleX = useTransform(progress, [0, 1],  [0, 1]);
+  const scaleX = useTransform(progress, [0, 1],  [0, 0.96]);
 
   return (
     <motion.span className="relative">
@@ -52,7 +50,7 @@ function Word({ value, range, highlight, progress }) {
           )}
         />
       )}
-      <motion.span style={{ opacity }} className="relative z-10">{value}</motion.span>
+      <motion.span style={{ opacity }} className="relative z-10">{value}&#32;</motion.span>
     </motion.span>
   );
 }
