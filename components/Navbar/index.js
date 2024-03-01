@@ -30,7 +30,7 @@ export default function Navbar() {
 						{loggedIn && <Link href="/dashboard">Dashboard</Link>}
 						<Link href="/solutions">Solutions</Link>
 						<Link href="/sources">Sources</Link>
-						<Link href="/About">About</Link>
+						<Link href="/about">About</Link>
 						{!loggedIn && (
 							<div
 								className="link cursor-pointer"
