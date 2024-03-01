@@ -57,8 +57,8 @@ const LoopContextProvider = ({ children }) => {
 
 	const addWatchlist = (solution) => {
 		let item = watchlist.slice();
-		let statefulSteps = solution.steps.map(step => ({ ...step, isCompleted: false}));
-		solution.steps =statefulSteps;
+		let statefulSteps = solution.steps.map((step) => ({ ...step, isCompleted: false }));
+		solution.steps = statefulSteps;
 		item.push(solution);
 		changeWatchlist(item);
 	};
@@ -67,8 +67,7 @@ const LoopContextProvider = ({ children }) => {
 		let newList = [...watchlist];
 		newList[solutionIndex].steps[stepIndex].isCompleted = value;
 		changeWatchlist(newList);
-	}
-
+	};
 
 	const inWatchlist = (solution) => {
 		return watchlist.indexOf(solution) != -1;
@@ -119,37 +118,41 @@ const LoopContextProvider = ({ children }) => {
 		changeData(n);
 	};
 
-	const filterSort = (nosearch = false) => {
+	const filterSort = (nosearch = false, nofilter = false, nosort = false) => {
 		var n = solutions[userData.state];
-		n = n.filter((val) => filterStates[val.type]);
+		if (!nofilter) n = n.filter((val) => filterStates[val.type]);
 		if (n.length == 0) {
 			n = solutions[userData.state];
 		}
-		if (userData.rebates.government) {
-			n = n.filter((item) => item.gov > 0);
-		}
-		if (userData.rebates.utility) {
-			n = n.filter((item) => item.utility > 0);
+		if (!nofilter) {
+			if (userData.rebates.government) {
+				n = n.filter((item) => item.gov > 0);
+			}
+			if (userData.rebates.utility) {
+				n = n.filter((item) => item.utility > 0);
+			}
 		}
 		if (!nosearch) {
 			n = n.filter((item) => item.title.toLowerCase().includes(query.toLowerCase()) && item.price < userData.high && item.price > userData.low);
 		}
 
 		console.log(sort);
-		if (sort == "Raw Price") {
-			n = n.sort((item1, item2) => item1.price - item2.price);
-		}
-		if (sort == "Rebates") {
-			n = n.sort((item1, item2) => item1.gov - item2.giv + item1.utility - item2.utility);
-		}
-		if (sort == "Difficulty") {
-			n = n.sort((item1, item2) => item1.setup - item2.setup);
-		}
-		if (sort == "A to Z") {
-			n = n.sort((item1, item2) => item1.title.localeCompare(item2.title));
-		}
-		if (sort == "Z to A") {
-			n = n.sort((item1, item2) => -1 * item1.title.localeCompare(item2.title));
+		if (!nosort) {
+			if (sort == "Raw Price") {
+				n = n.sort((item1, item2) => item1.price - item2.price);
+			}
+			if (sort == "Rebates") {
+				n = n.sort((item1, item2) => item1.gov - item2.giv + item1.utility - item2.utility);
+			}
+			if (sort == "Difficulty") {
+				n = n.sort((item1, item2) => item1.setup - item2.setup);
+			}
+			if (sort == "A to Z") {
+				n = n.sort((item1, item2) => item1.title.localeCompare(item2.title));
+			}
+			if (sort == "Z to A") {
+				n = n.sort((item1, item2) => -1 * item1.title.localeCompare(item2.title));
+			}
 		}
 
 		return n;

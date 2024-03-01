@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Icon from "../Icon";
+import { useRouter } from "next/navigation";
 
 const colors = {
 	electricity: "bg-yellow-600",
@@ -14,8 +15,9 @@ const colors = {
 	heating: "bg-green-600",
 };
 
-export default function HomeSolutionCard({ name, img, sector, link = "/solutions" }) {
+export default function HomeSolutionCard({ name, img, sector, link = `/solutions/${name}` }) {
 	const [hover, setHover] = useState(false);
+	const router = useRouter();
 
 	return (
 		<motion.div
@@ -26,7 +28,7 @@ export default function HomeSolutionCard({ name, img, sector, link = "/solutions
 			onHoverStart={() => setHover(true)}
 			onHoverEnd={() => setHover(false)}
 			className={classNames(colors[sector], "cursor-pointer inline-block relative rounded-3xl")}
-			href={link}
+			onClick={() => router.push(link)}
 		>
 			<Image alt={name} src={img} fill />
 			<div className="absolute box-border left-3 bottom-3 rounded-full bg-white-100 px-5 py-[10px] border border-white-300 overflow-hidden">
