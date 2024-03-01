@@ -28,7 +28,6 @@ const LoopContextProvider = ({ children }) => {
 		waste: false,
 	});
 
-	const [inProgress, changeInProgress] = useState({});
 	const [watchlist, changeWatchlist] = useState([]);
 
 	const addItem = (itemName) => {
@@ -56,9 +55,18 @@ const LoopContextProvider = ({ children }) => {
 
 	const addWatchlist = (solution) => {
 		let item = watchlist.slice();
+		let statefulSteps = solution.steps.map(step => ({ ...step, isCompleted: false}));
+		solution.steps =statefulSteps;
 		item.push(solution);
 		changeWatchlist(item);
 	};
+
+	const setStep = (solutionIndex, stepIndex, value) => {
+		let newList = [...watchlist];
+		newList[solutionIndex].steps[stepIndex].isCompleted = value;
+		changeWatchlist(newList);
+	}
+
 
 	const inWatchlist = (solution) => {
 		return watchlist.indexOf(solution) != -1;
@@ -130,16 +138,16 @@ const LoopContextProvider = ({ children }) => {
 
 	const data = {
 		userData,
-		inProgress,
 		filterStates,
 		query,
+		watchlist,
+		setStep,
 		inWatchlist,
 		removeWatchlist,
 		addWatchlist,
 		removeWatchlist,
 		filterSort,
 		changeData,
-		changeInProgress,
 		addItem,
 		removeItem,
 		changeHomeType,
