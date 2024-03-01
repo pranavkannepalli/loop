@@ -3180,6 +3180,7 @@ const solutions = {
       taxRebates: [],
       type: "heating",
       localProviders: ["EcoThermostat Solutions", "GreenHeat Controls"],
+      
     },
   ],
 };
