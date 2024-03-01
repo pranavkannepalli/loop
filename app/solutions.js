@@ -1193,6 +1193,227 @@ const solutions = {
 
             type: "electricity",
         },
+        {
+            alt: "A picture of a backyard compost bin with grass clippings and food scraps inside.",
+            gov: 5000,
+            utility: 3000,
+            price: 175,
+            setup: 1,
+            image: "/solutions/composting.png",
+            imageNoBg: "",
+            title: "Composting",
+            stats: [
+                {
+                    "data": 30,
+                    "units": "%",
+                    "description": "reduction in household waste"
+                },
+                {
+                    "data": 25,
+                    "units": "%",
+                    "description": "savings in garden water usage by improving soil moisture retention"
+                }
+            ],
+            description:
+                "Composting is the process of breaking down organic waste, such as food scraps and yard waste, into nutrient-rich soil that can be used to grow plants and improve soil health.",
+            hometypes: ["Multi-Family Home", "Individual Home"],
+            costGraph: [
+                [1985, 400],
+                [1990, 350],
+                [1995, 200],
+                [2000, 150],
+                [2005, 100],
+                [2010, 50],
+                [2015, 120],
+                [2020, 145],
+                [2025, 200]
+            ],
+            roiGraph: [
+                [1985, 5],
+                [1990, 5],
+                [1995, 6],
+                [2000, 7],
+                [2005, 9],
+                [2010, 10],
+                [2015, 12],
+                [2020, 11],
+                [2025, 10]
+            ],
+            steps: [
+                {
+                    header: "Choose a composting system",
+                    description: "Select a composting system, such as a bin, tumbler, or pile, that suits your needs and available space."
+                },
+                {
+                    header: "Set up the composting system",
+                    description: "Place the composting system in a convenient location, such as a backyard or balcony, ensuring easy access."
+                },
+                {
+                    header: "Add materials to the compost bin",
+                    description: "Add a mix of 'brown' materials (e.g., dry leaves, straw, shredded paper) and 'green' materials (e.g., food scraps, grass clippings, coffee grounds) to the compost bin."
+                },
+                {
+                    header: "Maintain the compost",
+                    description: "Regularly turn the compost materials and maintain the right moisture level, similar to a damp sponge, to facilitate decomposition."
+                },
+                {
+                    header: "Monitor and adjust",
+                    description: "Monitor the compost's progress and adjust the materials as needed to ensure proper decomposition."
+                },
+                {
+                    header: "Use the compost",
+                    description: "Once the compost is ready (dark and crumbly), incorporate it into your garden or potted plants to enhance soil health and fertility."
+                }
+            ],
+            utilityRebates: [
+                {
+                    price: 75,
+                    label: "rebate for purchasing a composting system by Con Edison"
+                },
+                {
+                    price: 100,
+                    label: "rebate for composting systems by National Grid"
+                },
+                {
+                    price: 140,
+                    label: "rebate for composting systems by NYSERDA"
+                }
+            ],
+            govtRebates: [
+                {
+                    price: 120,
+                    label: "tax credit for the purchase of a composting system by the federal government, up to $500"
+                },
+                {
+                    price: 250,
+                    label: "tax credit for the purchase of a composting system by New York State, up to $500"
+                },
+                {
+                    price: 200,
+                    label: "tax credit for the purchase of a composting system by NYSERDA, up to $500"
+                }
+            ],
+
+            type: "waste",
+        },
+        {
+            alt: "A picture of a recycling bin with paper, plastic, and glass materials inside.",
+            gov: 5000,
+            utility: 3000,
+            price: 0,
+            setup: 1,
+            image: "/solutions/recycling.png",
+            imageNoBg: "",
+            title: "Recycling",
+            stats: [
+                {
+                    data: 17,
+                    units: "trees",
+                    description: "saved by recycling one ton of paper"
+                },
+                {
+                    data: 7000,
+                    units: "gallons",
+                    description: "saved by recycling one ton of paper"
+                },
+                {
+                    data: 3,
+                    units: "cubic yards",
+                    description: "saved by recycling one ton of paper"
+                },
+                {
+                    data: 1500,
+                    units: "gallons",
+                    description: "equivalent gasoline saved by recycling one ton of plastic"
+                },
+                {
+                    data: 9,
+                    units: "gallons",
+                    description: "equivalent oil saved by recycling one ton of glass"
+                }
+            ],
+            description:
+                " Recycling is the process of collecting and processing materials that would otherwise be thrown away as trash and turning them into new products.",
+            hometypes: ["Multi-Family Home", "Individual Home"],
+            costGraph: [
+                [1985, 0],
+                [1990, 0],
+                [1995, 0],
+                [2000, 0],
+                [2005, 0],
+                [2010, 0],
+                [2015, 0],
+                [2020, 0],
+                [2025, 0]
+            ],
+            roiGraph: [
+                [1985, 0],
+                [1990, 0],
+                [1995, 0],
+                [2000, 0],
+                [2005, 0],
+                [2010, 0],
+                [2015, 0],
+                [2020, 0],
+                [2025, 0]
+            ],
+            steps: [
+                {
+                    header: "Contact local recycling program",
+                    description: "Obtain a recycling bin or inquire about curbside pickup options from your local recycling program."
+                },
+                {
+                    header: "Set up recycling bin",
+                    description: "Place the recycling bin in your home or apartment for convenient disposal of recyclable materials."
+                },
+                {
+                    header: "Sort recyclable materials",
+                    description: "Follow your local program's guidelines to properly sort recyclable materials before placing them in the bin."
+                },
+                {
+                    header: "Rinse and clean recyclables",
+                    description: "Ensure recyclables are rinsed and cleaned before placing them in the bin to avoid contamination."
+                },
+                {
+                    header: "Dispose of recyclables",
+                    description: "Place your recycling bin at the curb on pickup day or take recyclables to a local drop-off center as per your program's instructions."
+                },
+                {
+                    header: "Continue recycling",
+                    description: "Keep recycling and encourage neighbors to do the same to promote environmental sustainability."
+                }
+            ],
+            utilityRebates: [
+                {
+                    price: 75,
+                    label: "rebate for purchasing a recycling bin by Con Edison"
+                },
+                {
+                    price: 125,
+                    label: "rebate for recycling bins by National Grid"
+                },
+                {
+                    price: 100,
+                    label: "rebate for recycling bins by NYSERDA"
+                }
+            ],
+            govtRebates: [
+                {
+                    price: 120,
+                    label: "tax credit for the purchase of a composting system by the federal government, up to $500"
+                },
+                {
+                    price: 250,
+                    label: "tax credit for the purchase of a composting system by New York State, up to $500"
+                },
+                {
+                    price: 200,
+                    label: "tax credit for the purchase of a composting system by NYSERDA, up to $500"
+                }
+            ],
+
+            type: "waste",
+        },
     ],
 
     TX: [
@@ -2637,7 +2858,7 @@ const solutions = {
                 "EcoWash Appliances",
                 "Sustainable Laundry Solutions",
             ],
-        },
+        },    
         {
             alt: "Composting Toilet",
             gov: 250,
