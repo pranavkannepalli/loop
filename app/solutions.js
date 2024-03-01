@@ -1073,7 +1073,7 @@ const solutions = {
                     label: "rebate for smart lighting systems by NYSERDA"
                 }
             ],
-            governmentRebates: [
+            govtRebates: [
                 {
                     price: 175,
                     label: "tax credit for the purchase of smart home technology by the federal government, up to $500"
@@ -1176,7 +1176,7 @@ const solutions = {
                     label: "rebate for home battery systems by NYSERDA"
                 }
             ],
-            governmentRebates: [
+            govtRebates: [
                 {
                     price: 1750,
                     label: "tax credit for the purchase of a home battery system by the federal government"
@@ -1298,8 +1298,8 @@ const solutions = {
         },
         {
             alt: "A picture of a recycling bin with paper, plastic, and glass materials inside.",
-            gov: 5000,
-            utility: 3000,
+            gov: 0,
+            utility: 0,
             price: 0,
             setup: 1,
             image: "/solutions/recycling.png",
@@ -1385,34 +1385,209 @@ const solutions = {
             ],
             utilityRebates: [
                 {
-                    price: 75,
-                    label: "rebate for purchasing a recycling bin by Con Edison"
-                },
-                {
-                    price: 125,
-                    label: "rebate for recycling bins by National Grid"
-                },
-                {
-                    price: 100,
-                    label: "rebate for recycling bins by NYSERDA"
+                    price: 0,
+                    label: "None Available"
                 }
             ],
             govtRebates: [
                 {
-                    price: 120,
-                    label: "tax credit for the purchase of a composting system by the federal government, up to $500"
+                    price: 0,
+                    label: "None available"
                 },
-                {
-                    price: 250,
-                    label: "tax credit for the purchase of a composting system by New York State, up to $500"
-                },
-                {
-                    price: 200,
-                    label: "tax credit for the purchase of a composting system by NYSERDA, up to $500"
-                }
             ],
 
             type: "waste",
+        },
+        {
+            alt: "A picture of a composting toilet installed in a bathroom.",
+            gov: 0,
+            utility: 0,
+            price: 4000,
+            setup: 1,
+            image: "/solutions/composting_toilet.jpg",
+            imageNoBg: "",
+            title: "Composting Toilets",
+            stats: [
+                {
+                    data: 6600,
+                    units: "gallons",
+                    description: "savings in water per person per year compared to traditional flush toilets"
+                },
+                {
+                    data: 90,
+                    units: "%",
+                    description: "reduction in greenhouse gas emissions compared to conventional waste management methods"
+                },
+                {
+                    data: 1.3,
+                    units: "tons",
+                    description: "savings in CO2 per person per year"
+                }
+            ],
+            description:
+                "Composting toilets are waterless or low-water systems that convert human waste into compost through natural decomposition processes. They can be self-contained or central systems, and they require little maintenance once installed.",
+            hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+            costGraph: [
+                [1985, 2100],
+                [1990, 2200],
+                [1995, 2400],
+                [2000, 2700],
+                [2005, 2800],
+                [2010, 2800],
+                [2015, 3200],
+                [2020, 3600],
+                [2025, 4300]
+            ],
+            roiGraph: [
+                [1985, 200],
+                [1990, 250],
+                [1995, 350],
+                [2000, 550],
+                [2005, 950],
+                [2010, 1750],
+                [2015, 2150],
+                [2020, 2350],
+                [2025, 2450]
+            ],
+            steps: [
+                {
+                    header: "Choose the appropriate composting toilet",
+                    description: "Select a composting toilet that suits your home's needs and specifications."
+                },
+                {
+                    header: "Prepare the installation area",
+                    description: "Ensure the installation area is properly prepared and has adequate ventilation."
+                },
+                {
+                    header: "Install the toilet",
+                    description: "Follow the manufacturer's instructions to install the composting toilet securely."
+                },
+                {
+                    header: "Connect plumbing or electrical components",
+                    description: "If required, connect plumbing or electrical components according to the toilet's specifications."
+                },
+                {
+                    header: "Add composting medium and begin use",
+                    description: "Fill the composting toilet with the appropriate composting medium and start using it as intended."
+                }
+            ],
+            utilityRebates: [
+                {
+                    price: 0,
+                    label: "None Available"
+                }
+            ],
+            govtRebates: [
+                {
+                    price: 0,
+                    label: "None available"
+                },
+            ],
+
+            type: "waste",
+        },
+        {
+            alt: "A picture of a composting toilet installed in a bathroom.",
+            gov: 1000,
+            utility: 9200,
+            price: 52000,
+            setup: 2,
+            image: "/solutions/electric_vehicles.jpeg",
+            imageNoBg: "",
+            title: "Electric Vehicles",
+            stats: [
+                {
+                    data: 0,
+                    units: "emissions",
+                    description: "EVs produce zero tailpipe emissions, significantly reducing CO2 emissions compared to gas-powered cars."
+                },
+                {
+                    data: 165,
+                    units: "tons",
+                    description: "A single EV can save an average of 165 tons of CO2 per year, compared to a gas-powered car."
+                }
+            ],
+            description:
+                "Electric vehicle charging stations provide a convenient and eco-friendly way to power your car, allowing you to charge at home or at public locations.",
+            hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+            costGraph: [
+                [1985, 140000],
+                [1990, 120000],
+                [1995, 118000],
+                [2000, 112000],
+                [2005, 98000],
+                [2010, 76000],
+                [2015, 46000],
+                [2020, 39000],
+                [2025, 23000]
+            ],
+            roiGraph: [
+                [1985, 150],
+                [1990, 300],
+                [1995, 350],
+                [2000, 400],
+                [2005, 400],
+                [2010, 1200],
+                [2015, 2500],
+                [2020, 5200],
+                [2025, 7500]
+            ],
+            steps: [
+                {
+                    header: "Research and select an Electric Vehicle (EV)",
+                    description: "Research different EV models to find one that meets your needs and preferences. Consider factors such as range, charging infrastructure, and price."
+                },
+                {
+                    header: "Purchase an Electric Vehicle (EV)",
+                    description: "Once you have chosen the right EV for you, proceed with purchasing or leasing it from a reputable dealer."
+                },
+                {
+                    header: "Choose a suitable location for the charging station",
+                    description: "Select an appropriate location for the charging station, considering accessibility and electrical requirements."
+                },
+                {
+                    header: "Obtain permits and approvals",
+                    description: "Ensure compliance with local regulations by obtaining necessary permits and approvals from your local government."
+                },
+                {
+                    header: "Hire a licensed electrician",
+                    description: "Contract a licensed electrician to install a dedicated circuit for the charging station, ensuring safety and proper functionality."
+                },
+                {
+                    header: "Mount the charging station",
+                    description: "Install the charging station securely on a wall or other suitable surface, following manufacturer guidelines."
+                },
+                {
+                    header: "Connect to dedicated circuit",
+                    description: "Connect the charging station to the dedicated circuit installed by the electrician, ensuring proper wiring and connections."
+                },
+                {
+                    header: "Install software or apps",
+                    description: "If applicable, install any necessary software or apps to monitor and manage your charging sessions for convenience and control."
+                }
+            ],
+            utilityRebates: [
+                {
+                    price: 500,
+                    label: "rebate for the installation of a Level 2 charging station by Con Edison"
+                },
+                {
+                    price: 500,
+                    label: "rebate for the installation of a Level 2 charging station by National Grid"
+                }
+            ],
+            govtRebates: [
+                {
+                    price: 2000,
+                    label: "Drive Clean Rebate by NYSERDA for the purchase or lease of a new EV"
+                },
+                {
+                    price: 7500,
+                    label: "tax credit by the federal government for the purchase of a new EV"
+                }
+            ],
+
+            type: "transportation",
         },
     ],
 
@@ -2902,16 +3077,23 @@ const solutions = {
                 [2045, 30],
                 [2050, 35],
             ],
-            utilityRebates: [],
-            govtRebates: [{ price: 500, label: "Composting toilet rebate" }],
-            taxRebates: [],
+            utilityRebates: [
+                { price: 50, label: "Offered by Puget Sound Energy (PSE)" },
+                { price: 100, label: "Offered by Seattle City Light" },
+                { price: 50, label: "Offered by Tacoma Public Utilities" },
+            ],
+            govtRebates: [
+                { price: 100, label: "Offered by Washington State Department of Commerce" },
+                { price: 50, label: "Offered by City of Seattle" },
+                { price: 100, label: "Offered by King County" },
+            ],
             type: "water",
             localProviders: ["EcoToilet Systems", "Cascade Composting Toilets"],
         },
         {
             alt: "Solar Panels",
-            gov: 1000,
-            utility: 5000,
+            gov: 2500,
+            utility: 2000,
             price: 18000,
             setup: 3,
             image: "/solutions/solar_panel.jpg",
@@ -2955,20 +3137,14 @@ const solutions = {
                 [2065, 5000],
             ],
             utilityRebates: [
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
+                { price: 500, label: "Offered by Puget Sound Energy (PSE)" },
+                { price: 1000, label: "Offered by Seattle City Light" },
+                { price: 500, label: "Offered by Tacoma Public Utilities" },
             ],
             govtRebates: [
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
-            ],
-            taxRebates: [
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
+                { price: 1000, label: "Offered by Washington State Department of Commerce" },
+                { price: 500, label: "Offered by City of Seattle" },
+                { price: 1000, label: "Offered by King County" },
             ],
             type: "electricity",
             localProviders: [
@@ -2978,8 +3154,8 @@ const solutions = {
         },
         {
             alt: "Wind Turbines",
-            gov: 1500,
-            utility: 0,
+            gov: 2500,
+            utility: 2000,
             price: 20000,
             setup: 4,
             image: "/solutions/wind_turbine.jpg",
@@ -2987,9 +3163,9 @@ const solutions = {
             title: "Wind Turbines",
             stats: [
                 {
-                    data: 150,
+                    data: 1500,
                     units: "lbs/kwh",
-                    description: "CO2 prevented from emissions",
+                    description: "CO2 prevented from emissions per year",
                 },
                 {
                     data: 50,
@@ -3022,11 +3198,16 @@ const solutions = {
                 [2060, 14000],
                 [2065, 13000],
             ],
-            utilityRebates: [],
-            govtRebates: [
-                { price: 1000, label: "Wind turbine installation grant" },
+            utilityRebates: [
+                { price: 500, label: "Offered by Puget Sound Energy (PSE)" },
+                { price: 1000, label: "Offered by Seattle City Light" },
+                { price: 500, label: "Offered by Tacoma Public Utilities" },
             ],
-            taxRebates: [],
+            govtRebates: [
+                { price: 1000, label: "Offered by Washington State Department of Commerce" },
+                { price: 500, label: "Offered by City of Seattle" },
+                { price: 1000, label: "Offered by King County" },
+            ],
             type: "electricity",
             localProviders: [
                 "Wind Power Solutions Inc.",
@@ -3034,66 +3215,9 @@ const solutions = {
             ],
         },
         {
-            alt: "Hydroelectric Generator",
-            gov: 2000,
-            utility: 0,
-            price: 25000,
-            setup: 4,
-            image: "/solutions/hydroelectric_generator.jpg",
-            imageNoBg: "",
-            title: "Hydroelectric Generator",
-            stats: [
-                {
-                    data: 300,
-                    units: "lbs/kwh",
-                    description: "CO2 prevented from emissions",
-                },
-                {
-                    data: 80,
-                    units: "%",
-                    description: "Average efficiency of hydroelectric systems",
-                },
-            ],
-            description:
-                "Use the power of flowing water to generate electricity, typically by diverting a portion of a river through a turbine.",
-            hometypes: ["Individual Home"],
-            costGraph: [
-                [1985, 40000],
-                [1990, 35000],
-                [1995, 32000],
-                [2000, 30000],
-                [2005, 28000],
-                [2010, 27000],
-                [2015, 26000],
-                [2020, 25500],
-                [2025, 25000],
-            ],
-            roiGraph: [
-                [2025, 35000],
-                [2030, 32000],
-                [2035, 30000],
-                [2040, 28000],
-                [2045, 27000],
-                [2050, 26000],
-                [2055, 25500],
-                [2060, 25000],
-                [2065, 24000],
-            ],
-            utilityRebates: [],
-            govtRebates: [
-                { price: 1500, label: "Hydroelectric generator grant" },
-            ],
-            taxRebates: [],
-            type: "electricity",
-            localProviders: [
-                "RiverPower Systems Inc.",
-                "Washington Hydro Solutions",
-            ],
-        },
-        {
             alt: "Energy-Efficient Appliances",
-            gov: 0,
-            utility: 0,
+            gov: 250,
+            utility: 200,
             price: 1500,
             setup: 1,
             image: "/solutions/energy_efficient_appliances.jpg",
@@ -3129,9 +3253,16 @@ const solutions = {
                 [2045, 150],
                 [2050, 100],
             ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
+            utilityRebates: [
+                { price: 50, label: "Offered by Puget Sound Energy (PSE)" },
+                { price: 100, label: "Offered by Seattle City Light" },
+                { price: 50, label: "Offered by Tacoma Public Utilities" },
+            ],
+            govtRebates: [
+                { price: 100, label: "Offered by Washington State Department of Commerce" },
+                { price: 50, label: "Offered by City of Seattle" },
+                { price: 100, label: "Offered by King County" },
+            ],
             type: "electricity",
             localProviders: [
                 "EcoAppliance Solutions",
@@ -3149,11 +3280,17 @@ const solutions = {
             title: "LED Lighting",
             stats: [
                 {
-                    data: 80,
+                    data: 60,
                     units: "%",
                     description:
                         "Reduction in electricity usage compared to incandescent bulbs",
                 },
+                {
+                    data: 2800,
+                    units: "dollars",
+                    description:
+                        "Saved over 10 years in a household compared to incandescent bulbs",
+                }
             ],
             description:
                 "Switch to LED bulbs which consume less energy and last longer than traditional incandescent bulbs.",
