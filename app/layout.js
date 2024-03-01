@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { LoopContextProvider } from "@/components/LoopContext";
+import { LoginContextProvider } from "@/components/LoginContext";
 
 export const metadata = {
 	title: "LOOP",
@@ -12,8 +13,10 @@ export default function RootLayout({ children }) {
 		<html lang="en">
 			<body>
 				<LoopContextProvider>
-					<Navbar />
-					{children}
+					<LoginContextProvider>
+						<Navbar />
+						{children}
+					</LoginContextProvider>
 				</LoopContextProvider>
 			</body>
 		</html>

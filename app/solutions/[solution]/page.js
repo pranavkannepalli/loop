@@ -12,6 +12,9 @@ import ROIGraph from "@/components/ROIGraph";
 import CostGraph from "@/components/CostGraph";
 import Accordion from "@/components/Accordion";
 import Rebate from "@/components/Rebates";
+import { usePathname } from "next/navigation";
+import LoginContext from "@/components/LoginContext";
+import useRedirectFunction from "@/hooks/useRedirectFunction";
 
 const filterData = {
 	water: {
@@ -57,6 +60,9 @@ export default function Solution({ params }) {
 	const solutionName = params.solution.replace("%20", " ");
 	const [solution, setSolution] = useState(null);
 	const { userData, addWatchlist, inWatchlist, addItem, removeWatchlist } = useContext(LoopContext);
+	const pathname = usePathname();
+	const { loggedIn, setRedirect } = useContext(LoginContext);
+	const login = useRedirectFunction("/login");
 
 	useEffect(() => {
 		solutions[userData.state].forEach((value) => {
@@ -65,6 +71,35 @@ export default function Solution({ params }) {
 			}
 		});
 	}, [setSolution, solutionName, userData]);
+
+	const getButton = () => {
+		if (loggedIn) {
+			if (inWatchlist(solution))
+				return (
+					<Button prefix={<Icon name="remove" size={20} />} onClick={() => removeWatchlist(solution)}>
+						Remove from Watchlist
+					</Button>
+				);
+			else
+				return (
+					<Button prefix={<Icon name="add" size={20} />} onClick={() => addWatchlist(solution)}>
+						Add to Watchlist
+					</Button>
+				);
+		} else {
+			return (
+				<Button
+					prefix={<Icon name="account" size={20} />}
+					onClick={() => {
+						setRedirect(pathname);
+						login();
+					}}
+				>
+					Login to Add
+				</Button>
+			);
+		}
+	};
 
 	if (solution != null) {
 		return (
@@ -98,15 +133,7 @@ export default function Solution({ params }) {
 									</div>
 								))}
 							</div>
-							{inWatchlist(solution) ? (
-								<Button prefix={<Icon name="remove" size={20} />} onClick={() => removeWatchlist(solution)}>
-									Remove from Watchlist
-								</Button>
-							) : (
-								<Button prefix={<Icon name="add" size={20} />} onClick={() => addWatchlist(solution)}>
-									Add to Watchlist
-								</Button>
-							)}
+							{getButton()}
 						</div>
 						<div className={classNames("flex-1 w-full mx-8 rounded-[20px] flex items-center justify-center", filterData[solution.type].bg)}>
 							<Image src="/solution_models/solar_panel.png" alt="solar panel image" width={500} height={500} className="object-contain" />

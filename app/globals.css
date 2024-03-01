@@ -9,7 +9,8 @@ html {
 	@apply bg-white-200;
 }
 
-html, body{
+html,
+body {
 	margin: 0px;
 	padding: 0px;
 }
@@ -78,7 +79,8 @@ p {
 	font-weight: 300;
 }
 
-a {
+a,
+.link {
 	font-family: "Rubik", sans-serif;
 	font-weight: bold;
 	font-size: 16px;
@@ -98,5 +100,4 @@ a {
 }
 nav {
 	padding: 0px clamp(20px, 2.4vw, 35px);
-
 }
