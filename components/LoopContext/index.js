@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import solutions from "@/app/solutions";
 
 // TODO: create login context and login page
@@ -10,17 +10,23 @@ const LoopContext = createContext(null);
 const states = ["NY", "TX", "WA"];
 
 const LoopContextProvider = ({ children }) => {
-	const [userData, changeData] = useState({
-		state: states[0],
-		hometype: "Apartment",
-		low: 0,
-		high: 100000,
-		priorities: ["Cutting Down on Bills", "Lowering my Footprint", "Becoming Self-Sufficient"],
-		rebates: { government: false, utility: false },
+	const [userData, changeData] = useState(() => {
+		const saved = localStorage.getItem("user");
+		const initialSaved = JSON.parse(saved);
+		return initialSaved || {
+			state: states[0],
+			hometype: "Apartment",
+			low: 0,
+			high: 100000,
+			priorities: ["Cutting Down on Bills", "Lowering my Footprint", "Becoming Self-Sufficient"],
+			rebates: { government: false, utility: false },
+		}
 	});
 	const [query, changeQuery] = useState("");
 
 	const [sort, changeSort] = useState("Sort");
+
+
 
 	const [filterStates, changeFilterStates] = useState({
 		water: false,
@@ -30,7 +36,20 @@ const LoopContextProvider = ({ children }) => {
 		waste: false,
 	});
 
-	const [watchlist, changeWatchlist] = useState([]);
+	const [watchlist, changeWatchlist] = useState(() => {
+		const saved = localStorage.getItem("watchlist");
+		const initialSaved = JSON.parse(saved);
+		return initialSaved || [];
+	});
+
+
+	useEffect(() => {
+		localStorage.setItem("user", JSON.stringify(userData));
+	}, [userData])
+
+	useEffect(() => {
+		localStorage.setItem("watchlist", JSON.stringify(watchlist));
+	}, [watchlist])
 
 	const addItem = (itemName) => {
 		let item = inProgress[itemName] ?? { stage: 0 };
@@ -69,7 +88,11 @@ const LoopContextProvider = ({ children }) => {
 	};
 
 	const inWatchlist = (solution) => {
-		return watchlist.indexOf(solution) != -1;
+		let index = -1;
+		watchlist.forEach((val, i) => {
+			if(val.title === solution.title) index = i;
+		})
+		return index;
 	};
 
 	const removeWatchlist = (solution) => {

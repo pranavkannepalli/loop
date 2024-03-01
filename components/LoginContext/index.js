@@ -1,12 +1,16 @@
 "use client";
 
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const LoginContext = createContext(null);
 
 function LoginContextProvider({ children }) {
-	const [loggedIn, setLoggedIn] = useState(false);
+	const [loggedIn, setLoggedIn] = useState(() => JSON.parse(localStorage.getItem("auth")) || false);
 	const [redirect, setRedirect] = useState("/dashboard");
+
+	useEffect(() => {
+		localStorage.setItem("auth", JSON.stringify(loggedIn))
+	}, [loggedIn]);
 
 	const data = { loggedIn, setLoggedIn, redirect, setRedirect };
 

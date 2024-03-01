@@ -55,7 +55,7 @@ export default function Home() {
 			<div className="!pt-6 layout">
 				<h4 className="pb-6">View your Recommendations</h4>
 				<SectorFilters />
-				<BasicList nosearch slice size={6} />
+				<BasicList slice size={6} />
 			</div>
 			<SeeMore />
 		</main>
