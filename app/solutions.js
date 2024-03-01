@@ -665,9 +665,9 @@ const solutions = {
                     description: "reduction in household carbon footprint",
                 },
                 {
-                    data: 200,
+                    data: 9000,
                     units: "gal/yr",
-                    description: "saved",
+                    description: "of water saved from reduced energy consumption",
                 },
             ],
             description:
