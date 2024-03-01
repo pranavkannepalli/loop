@@ -47,6 +47,7 @@ export default function ToDoCard({ name, tasks, index }) {
                         className="flex flex-col gap-[10px]">
                         {tasks.map((task, i) => (
                             <ToDoItem
+                                key={i}
                                 name={task.header}
                                 status={task.isCompleted}
                                 changeStatus={(val) => {
