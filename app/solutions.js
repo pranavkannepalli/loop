@@ -273,7 +273,7 @@ const solutions = {
                 { price: 30, label: "% of the cost of the system back" },
             ],
             localProviders: [
-                "Rainwater Mang Solutions",
+                "Rainwater Management Solutions",
                 "Green Roofs and Water Management LLC.",
                 "BlueBarrel Systems",
             ],
@@ -674,57 +674,543 @@ const solutions = {
                 "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity. ",
             hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
             costGraph: [
-                [1985, 30000],
-                [1990, 18000],
+                [1985, 12000],
+                [1990, 13500],
                 [1995, 16000],
                 [2000, 13500],
                 [2005, 13000],
-                [2010, 11500],
-                [2015, 10500],
-                [2020, 10000],
-                [2025, 5000],
+                [2010, 19000],
+                [2015, 23000],
+                [2020, 22000],
+                [2025, 20000],
             ],
             roiGraph: [
-                [1985, 30000],
-                [1990, 18000],
-                [1995, 16000],
-                [2000, 13500],
-                [2005, 13000],
-                [2010, 11500],
-                [2015, 10500],
-                [2020, 10000],
-                [2025, 5000],
+                [1985, 1100],
+                [1990, 1250],
+                [1995, 1300],
+                [2000, 1500],
+                [2005, 1550],
+                [2010, 1600],
+                [2015, 1700],
+                [2020, 1900],
+                [2025, 2600],
             ],
             steps: [
                 {
-                    header: "Find a Provider",
-                    description:
-                        "Important factors when choosing an provider include: warranties, installation costs, and disposal of the old system.",
+                    header: "Consult with a solar panel installation expert",
+                    description: "Discuss your energy needs and site conditions with a professional to determine the best solar panel system for your home."
                 },
                 {
-                    header: "Find a Provider",
-                    description:
-                        "Important factors when choosing an provider include: warranties, installation costs, and disposal of the old system.",
+                    header: "Choose the right solar panel system",
+                    description: "Select a solar panel system that meets your energy requirements, budget, and space availability."
                 },
                 {
-                    header: "Find a Provider",
-                    description:
-                        "Important factors when choosing an provider include: warranties, installation costs, and disposal of the old system.",
+                    header: "Obtain necessary permits and approvals",
+                    description: "Secure permits and approvals from your local government or relevant authorities to comply with regulations before installation."
                 },
+                {
+                    header: "Install the solar panels",
+                    description: "Mount the solar panels onto your roof or other suitable location and connect them to your home's electrical system."
+                },
+                {
+                    header: "Start generating clean, renewable energy",
+                    description: "Once installed, your solar panels will begin generating electricity, allowing you to save on your electricity bills and reduce your carbon footprint."
+                }
             ],
             utilityRebates: [
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
+                { price: 0.20, label: "Per Watt installed from Con Edison" },
+                { price: 0.20, label: "Per Watt installed with a max incentive of $5000 from National Grid" },
             ],
             govtRebates: [
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
-                { price: 500, label: "For solar panels installed in a home" },
+                { price: 6000, label: "Federal Tax Deductible" },
+                { price: 5000, label: "State Tax Credit" },
             ],
 
-            type: "transportation",
+            type: "electricity",
+        },
+        {
+            alt: "A wind turbine farm with several large turbines spinning in the wind.",
+            gov: 18500,
+            utility: 5000,
+            price: 45000,
+            setup: 3,
+            image: "/solutions/wind_turbine.jpg",
+            imageNoBg: "",
+            title: "Wind Turbine",
+            stats: [
+                {
+                    data: 90,
+                    units: "%",
+                    description: "reduction in household carbon footprint",
+                },
+                {
+                    data: 1000,
+                    units: "gal/yr",
+                    description: "of water saved from reduced energy consumption",
+                },
+            ],
+            description:
+                "Wind turbines convert wind energy into electricity, which can be used to power your home or business.",
+            hometypes: ["Multi-Family Home"],
+            costGraph: [
+                [1985, 140000],
+                [1990, 120000],
+                [1995, 90000],
+                [2000, 85000],
+                [2005, 60000],
+                [2010, 55000],
+                [2015, 50000],
+                [2020, 48000],
+                [2025, 45000],
+            ],
+            roiGraph: [
+                [1985, 2250],
+                [1990, 2650],
+                [1995, 2800],
+                [2000, 3200],
+                [2005, 3400],
+                [2010, 3600],
+                [2015, 3650],
+                [2020, 4000],
+                [2025, 5500],
+            ],
+            steps: [
+                {
+                    header: "Consult with a wind turbine installation expert",
+                    description: "Discuss your property and energy needs with a professional to determine the best wind turbine solution for your home."
+                },
+                {
+                    header: "Choose the right wind turbine",
+                    description: "Select a wind turbine model that is suitable for your property size, wind conditions, and energy requirements."
+                },
+                {
+                    header: "Obtain necessary permits and approvals",
+                    description: "Acquire permits and approvals from your local government or relevant authorities to ensure compliance with regulations before installation."
+                },
+                {
+                    header: "Install the wind turbine",
+                    description: "Mount the wind turbine on your property and connect it to your home's electrical system."
+                },
+                {
+                    header: "Start generating clean, renewable energy",
+                    description: "Once installed, your wind turbine will begin generating electricity, allowing you to save on your electricity bills and reduce your carbon footprint."
+                }
+            ],
+            utilityRebates: [
+                { price: 0.10, label: "Per Watt installed from Con Edison" },
+                { price: 0.15, label: "Per Watt installed with a max incentive of $7500 from National Grid" },
+            ],
+            govtRebates: [
+                { price: 13500, label: "Federal Tax Deductible" },
+                { price: 2550, label: "State Tax Credit" },
+            ],
+
+            type: "electricity",
+        },
+        {
+            alt: "A kitchen with a energy-efficient dishwasher and washing machine",
+            gov: 0,
+            utility: 300,
+            price: 1000,
+            setup: 1,
+            image: "/solutions/energy_efficient_appliances.jpg",
+            imageNoBg: "",
+            title: "Energy-Efficent Appliances",
+            stats: [
+                {
+                    data: 50,
+                    units: "%",
+                    description: "reduction in energy usage",
+                },
+                {
+                    data: 40,
+                    units: "%",
+                    description: "reduction in water usage",
+                },
+            ],
+            description:
+                "Energy-efficient appliances use advanced technologies and design features to minimize energy consumption and water usage while maintaining optimal performance.",
+            hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+            costGraph: [
+                [1985, 1800],
+                [1990, 1760],
+                [1995, 1720],
+                [2000, 1660],
+                [2005, 1540],
+                [2010, 1380],
+                [2015, 1200],
+                [2020, 1140],
+                [2025, 980],
+            ],
+            roiGraph: [
+                [1985, 100],
+                [1990, 150],
+                [1995, 250],
+                [2000, 400],
+                [2005, 600],
+                [2010, 550],
+                [2015, 400],
+                [2020, 350],
+                [2025, 330],
+            ],
+            steps: [
+                {
+                    header: "Research and choose the right energy-efficient appliance",
+                    description: "Explore options that match your requirements and budget while prioritizing energy efficiency."
+                },
+                {
+                    header: "Remove the old appliance",
+                    description: "If necessary, uninstall and remove the old appliance to make room for the new one."
+                },
+                {
+                    header: "Install the new energy-efficient appliance",
+                    description: "Follow the manufacturer's instructions carefully to properly install the new appliance."
+                },
+                {
+                    header: "Connect the appliance to necessary utilities",
+                    description: "Ensure proper connections to water, gas, or electricity sources as required for the appliance to function."
+                },
+                {
+                    header: "Test the appliance",
+                    description: "Verify that the appliance operates correctly and efficiently after installation by conducting thorough testing."
+                }
+            ],
+            utilityRebates: [
+                { price: 50, label: "for ENERGY STAR refrigerators from rebates by Con Edison" },
+                { price: 75, label: "for ENERGY STAR dishwashers from rebates by Con Edison" },
+                { price: 100, label: "for ENERGY STAR refrigerators from rebates by New York Grid" },
+                { price: 75, label: "for ENERGY STAR dishwashwers from rebates by New York Grid" },
+            ],
+            govtRebates: [
+                { price: 250, label: "Federal Tax Credit" },
+                { price: 250, label: "State Tax Credit from New York State Energy Research and Development Authority" },
+            ],
+
+            type: "electricity",
+        },
+        {
+            alt: "An example of a house with LED Lighting installed",
+            gov: 0,
+            utility: 300,
+            price: 1000,
+            setup: 1,
+            image: "/solutions/energy_efficient_appliances.jpg",
+            imageNoBg: "",
+            title: "Energy-Efficent Appliances",
+            stats: [
+                {
+                    data: 50,
+                    units: "%",
+                    description: "reduction in energy usage",
+                },
+                {
+                    data: 40,
+                    units: "%",
+                    description: "reduction in water usage",
+                },
+            ],
+            description:
+                "Energy-efficient appliances use advanced technologies and design features to minimize energy consumption and water usage while maintaining optimal performance.",
+            hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+            costGraph: [
+                [1985, 1800],
+                [1990, 1760],
+                [1995, 1720],
+                [2000, 1660],
+                [2005, 1540],
+                [2010, 1380],
+                [2015, 1200],
+                [2020, 1140],
+                [2025, 980],
+            ],
+            roiGraph: [
+                [1985, 100],
+                [1990, 150],
+                [1995, 250],
+                [2000, 400],
+                [2005, 600],
+                [2010, 550],
+                [2015, 400],
+                [2020, 350],
+                [2025, 330],
+            ],
+            steps: [
+                {
+                    header: "Research and choose the right energy-efficient appliance",
+                    description: "Explore options that match your requirements and budget while prioritizing energy efficiency."
+                },
+                {
+                    header: "Remove the old appliance",
+                    description: "If necessary, uninstall and remove the old appliance to make room for the new one."
+                },
+                {
+                    header: "Install the new energy-efficient appliance",
+                    description: "Follow the manufacturer's instructions carefully to properly install the new appliance."
+                },
+                {
+                    header: "Connect the appliance to necessary utilities",
+                    description: "Ensure proper connections to water, gas, or electricity sources as required for the appliance to function."
+                },
+                {
+                    header: "Test the appliance",
+                    description: "Verify that the appliance operates correctly and efficiently after installation by conducting thorough testing."
+                }
+            ],
+            utilityRebates: [
+                { price: 50, label: "for ENERGY STAR refrigerators from rebates by Con Edison" },
+                { price: 75, label: "for ENERGY STAR dishwashers from rebates by Con Edison" },
+                { price: 100, label: "for ENERGY STAR refrigerators from rebates by New York Grid" },
+                { price: 75, label: "for ENERGY STAR dishwashwers from rebates by New York Grid" },
+            ],
+            govtRebates: [
+                { price: 250, label: "Federal Tax Credit" },
+                { price: 250, label: "State Tax Credit from New York State Energy Research and Development Authority" },
+            ],
+
+            type: "electricity",
+        },
+        {
+            alt: "A kitchen with a water-efficient dishwasher and washing machine",
+            gov: 0,
+            utility: 300,
+            price: 1000,
+            setup: 1,
+            image: "/solutions/energy_efficient_appliances.jpg",
+            imageNoBg: "",
+            title: "Energy-Efficent Appliances",
+            stats: [
+                {
+                    data: 50,
+                    units: "%",
+                    description: "reduction in energy usage",
+                },
+                {
+                    data: 40,
+                    units: "%",
+                    description: "reduction in water usage",
+                },
+            ],
+            description:
+                "Energy-efficient appliances use advanced technologies and design features to minimize energy consumption and water usage while maintaining optimal performance.",
+            hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+            costGraph: [
+                [1985, 1800],
+                [1990, 1760],
+                [1995, 1720],
+                [2000, 1660],
+                [2005, 1540],
+                [2010, 1380],
+                [2015, 1200],
+                [2020, 1140],
+                [2025, 980],
+            ],
+            roiGraph: [
+                [1985, 100],
+                [1990, 150],
+                [1995, 250],
+                [2000, 400],
+                [2005, 600],
+                [2010, 550],
+                [2015, 400],
+                [2020, 350],
+                [2025, 330],
+            ],
+            steps: [
+                {
+                    header: "Research and choose the right energy-efficient appliance",
+                    description: "Explore options that match your requirements and budget while prioritizing energy efficiency."
+                },
+                {
+                    header: "Remove the old appliance",
+                    description: "If necessary, uninstall and remove the old appliance to make room for the new one."
+                },
+                {
+                    header: "Install the new energy-efficient appliance",
+                    description: "Follow the manufacturer's instructions carefully to properly install the new appliance."
+                },
+                {
+                    header: "Connect the appliance to necessary utilities",
+                    description: "Ensure proper connections to water, gas, or electricity sources as required for the appliance to function."
+                },
+                {
+                    header: "Test the appliance",
+                    description: "Verify that the appliance operates correctly and efficiently after installation by conducting thorough testing."
+                }
+            ],
+            utilityRebates: [
+                { price: 50, label: "for ENERGY STAR refrigerators from rebates by Con Edison" },
+                { price: 75, label: "for ENERGY STAR dishwashers from rebates by Con Edison" },
+                { price: 100, label: "for ENERGY STAR refrigerators from rebates by New York Grid" },
+                { price: 75, label: "for ENERGY STAR dishwashwers from rebates by New York Grid" },
+            ],
+            govtRebates: [
+                { price: 250, label: "Federal Tax Credit" },
+                { price: 250, label: "State Tax Credit from New York State Energy Research and Development Authority" },
+            ],
+
+            type: "electricity",
+        },
+        {
+            alt: "A kitchen with a water-efficient dishwasher and washing machine",
+            gov: 0,
+            utility: 300,
+            price: 1000,
+            setup: 1,
+            image: "/solutions/energy_efficient_appliances.jpg",
+            imageNoBg: "",
+            title: "Energy-Efficent Appliances",
+            stats: [
+                {
+                    data: 50,
+                    units: "%",
+                    description: "reduction in energy usage",
+                },
+                {
+                    data: 40,
+                    units: "%",
+                    description: "reduction in water usage",
+                },
+            ],
+            description:
+                "Energy-efficient appliances use advanced technologies and design features to minimize energy consumption and water usage while maintaining optimal performance.",
+            hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+            costGraph: [
+                [1985, 1800],
+                [1990, 1760],
+                [1995, 1720],
+                [2000, 1660],
+                [2005, 1540],
+                [2010, 1380],
+                [2015, 1200],
+                [2020, 1140],
+                [2025, 980],
+            ],
+            roiGraph: [
+                [1985, 100],
+                [1990, 150],
+                [1995, 250],
+                [2000, 400],
+                [2005, 600],
+                [2010, 550],
+                [2015, 400],
+                [2020, 350],
+                [2025, 330],
+            ],
+            steps: [
+                {
+                    header: "Research and choose the right energy-efficient appliance",
+                    description: "Explore options that match your requirements and budget while prioritizing energy efficiency."
+                },
+                {
+                    header: "Remove the old appliance",
+                    description: "If necessary, uninstall and remove the old appliance to make room for the new one."
+                },
+                {
+                    header: "Install the new energy-efficient appliance",
+                    description: "Follow the manufacturer's instructions carefully to properly install the new appliance."
+                },
+                {
+                    header: "Connect the appliance to necessary utilities",
+                    description: "Ensure proper connections to water, gas, or electricity sources as required for the appliance to function."
+                },
+                {
+                    header: "Test the appliance",
+                    description: "Verify that the appliance operates correctly and efficiently after installation by conducting thorough testing."
+                }
+            ],
+            utilityRebates: [
+                { price: 50, label: "for ENERGY STAR refrigerators from rebates by Con Edison" },
+                { price: 75, label: "for ENERGY STAR dishwashers from rebates by Con Edison" },
+                { price: 100, label: "for ENERGY STAR refrigerators from rebates by New York Grid" },
+                { price: 75, label: "for ENERGY STAR dishwashwers from rebates by New York Grid" },
+            ],
+            govtRebates: [
+                { price: 250, label: "Federal Tax Credit" },
+                { price: 250, label: "State Tax Credit from New York State Energy Research and Development Authority" },
+            ],
+
+            type: "electricity",
+        },
+        {
+            alt: "A kitchen with a water-efficient dishwasher and washing machine",
+            gov: 0,
+            utility: 300,
+            price: 1000,
+            setup: 1,
+            image: "/solutions/energy_efficient_appliances.jpg",
+            imageNoBg: "",
+            title: "Energy-Efficent Appliances",
+            stats: [
+                {
+                    data: 50,
+                    units: "%",
+                    description: "reduction in energy usage",
+                },
+                {
+                    data: 40,
+                    units: "%",
+                    description: "reduction in water usage",
+                },
+            ],
+            description:
+                "Energy-efficient appliances use advanced technologies and design features to minimize energy consumption and water usage while maintaining optimal performance.",
+            hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+            costGraph: [
+                [1985, 1800],
+                [1990, 1760],
+                [1995, 1720],
+                [2000, 1660],
+                [2005, 1540],
+                [2010, 1380],
+                [2015, 1200],
+                [2020, 1140],
+                [2025, 980],
+            ],
+            roiGraph: [
+                [1985, 100],
+                [1990, 150],
+                [1995, 250],
+                [2000, 400],
+                [2005, 600],
+                [2010, 550],
+                [2015, 400],
+                [2020, 350],
+                [2025, 330],
+            ],
+            steps: [
+                {
+                    header: "Research and choose the right energy-efficient appliance",
+                    description: "Explore options that match your requirements and budget while prioritizing energy efficiency."
+                },
+                {
+                    header: "Remove the old appliance",
+                    description: "If necessary, uninstall and remove the old appliance to make room for the new one."
+                },
+                {
+                    header: "Install the new energy-efficient appliance",
+                    description: "Follow the manufacturer's instructions carefully to properly install the new appliance."
+                },
+                {
+                    header: "Connect the appliance to necessary utilities",
+                    description: "Ensure proper connections to water, gas, or electricity sources as required for the appliance to function."
+                },
+                {
+                    header: "Test the appliance",
+                    description: "Verify that the appliance operates correctly and efficiently after installation by conducting thorough testing."
+                }
+            ],
+            utilityRebates: [
+                { price: 50, label: "for ENERGY STAR refrigerators from rebates by Con Edison" },
+                { price: 75, label: "for ENERGY STAR dishwashers from rebates by Con Edison" },
+                { price: 100, label: "for ENERGY STAR refrigerators from rebates by New York Grid" },
+                { price: 75, label: "for ENERGY STAR dishwashwers from rebates by New York Grid" },
+            ],
+            govtRebates: [
+                { price: 250, label: "Federal Tax Credit" },
+                { price: 250, label: "State Tax Credit from New York State Energy Research and Development Authority" },
+            ],
+
+            type: "electricity",
         },
     ],
 
@@ -1599,13 +2085,286 @@ const solutions = {
 
           type: "transportation",
         },
-    ],
+        {
+          alt: "Composting Toilets in Texas",
+          gov: 300,
+          utility: 150,
+          price: 1500,
+          setup: 2,
+          image: "/solutions/composting_toilet.jpg",
+          imageNoBg: "",
+          title: "Composting Toilets",
+          stats: [
+              {
+                  data: 6000,
+                  units: "gallons/year",
+                  description: "Saved by a family of four switching to a composting toilet.",
+              },
+              {
+                  data: 120,
+                  units: "pounds",
+                  description: "Of compost produced by a composting toilet per year per person.",
+              },
+          ],
+          description:
+              "Composting Toilets are an effective way of managing human waste. The reduce water usage and can also provide nutrient rich compost for gardening. ",
+          hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+          costGraph: [
+              [1985, 30000],
+              [1990, 18000],
+              [1995, 16000],
+              [2000, 13500],
+              [2005, 13000],
+              [2010, 11500],
+              [2015, 10500],
+              [2020, 10000],
+              [2025, 5000],
+          ],
+          roiGraph: [
+              [1985, 30000],
+              [1990, 18000],
+              [1995, 16000],
+              [2000, 13500],
+              [2005, 13000],
+              [2010, 11500],
+              [2015, 10500],
+              [2020, 10000],
+              [2025, 5000],
+          ],
+
+          steps: [
+              {
+                  header: "Research composting toilet options near you",
+                  description:
+                      "Research and choose a composting toilet depending on your needs, and budget.",
+              },
+              {
+                  header: "Install the toilet",
+                  description:
+                      "Installing the toilet according to the manufacturer's instructions.",
+              },
+              {
+                  header: "Connect the toilet to a composting system",
+                  description:
+                      "Set up a composting system to connect it to one, adding a carbon source and turning the compost regularly.",
+              },
+          ],
+
+          utilityRebates: [
+            {
+                price: 100,
+                label: "Offered by Texas Disposal Systems for installing a composting toilet",
+            },
+            {
+                price: 50,
+                label: "Offered by Austin Energy for installing a composting toilet",
+            },
+          ],
+
+          govtRebates: [
+            {
+                price: 200,
+                label: "Offered by the Texas Commission on Environmental Quality for installing a composting toilet",
+            },
+            {
+                price: 100,
+                label: "Offered by the City of Dallas for purchasing a composting toilet",
+            },
+          ],
+
+          type: "waste",
+        },
+        {
+          alt: "Energy Efficient HVAC Systems",
+          gov: 800,
+          utility: 1800,
+          price: 10000,
+          setup: 3,
+          image: "/solutions/hvac.png",
+          imageNoBg: "",
+          title: "Composting Toilets",
+          stats: [
+              {
+                  data: 400,
+                  units: "dollars",
+                  description: "saved per year on heating and cooling.",
+              },
+              {
+                  data: 2000,
+                  units: "pounds/year",
+                  description: "Reduction in carbon footprint by switching to a high efficiency HVAC system.",
+              },
+          ],
+          description:
+              "Energy HVAC Systems help provide your home optimal heating and cooling while using less energy.",
+          hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
+          costGraph: [
+              [1985, 30000],
+              [1990, 18000],
+              [1995, 16000],
+              [2000, 13500],
+              [2005, 13000],
+              [2010, 11500],
+              [2015, 10500],
+              [2020, 10000],
+              [2025, 5000],
+          ],
+          roiGraph: [
+              [1985, 30000],
+              [1990, 18000],
+              [1995, 16000],
+              [2000, 13500],
+              [2005, 13000],
+              [2010, 11500],
+              [2015, 10500],
+              [2020, 10000],
+              [2025, 5000],
+          ],
+
+          steps: [
+              {
+                  header: "Choose a Provider and System",
+                  description:
+                      "Choose the right provider and system for your needs and budget. Look at good warranties and efficiency ratings.",
+              },
+              {
+                  header: "Install the HVAC System",
+                  description:
+                      "We recommend hiring a profession to install the system. ",
+              },
+              {
+                  header: "Test the system and ensure heat isn't escaping",
+                  description:
+                      "Thoroughly test the system while the installer is still present. Set up any thermostat or controls. Ensure heat isn't escaping in your house.",
+              },
+          ],
+
+          utilityRebates: [
+            {
+                price: 1000,
+                label: "Offered by CPS Energy for installing a high efficiency HVAC system",
+            },
+            {
+                price: 800,
+                label: "Offered by Oncor for installing a high efficiency HVAC system",
+            },
+          ],
+
+          govtRebates: [
+            {
+                price: 300,
+                label: "Offered by the Department of Energy for installing a high efficiency HVAC system",
+            },
+            {
+                price: 500,
+                label: "Offered by the EPA Energy Star Program for installing a high efficiency HVAC system",
+            },
+          ],
+
+          type: "heating",
+        },
+        {
+          alt: "Insulation in homes in Texas",
+          gov: 1000,
+          utility: 300,
+          price: 1.2,
+          setup: 1,
+          image: "/solutions/insulation.jpeg",
+          imageNoBg: "",
+          title: "Insulation",
+          stats: [
+              {
+                  data: 40,
+                  units: "%",
+                  description: "heat loss reduction in the winter.",
+              },
+              {
+                  data: 780,
+                  units: "million tons/year",
+                  description: "Saved if all homes in the US were properly insulated.",
+              },
+          ],
+          description:
+              "Insulation helps maintain a comfortable temperature and reduce energy consumption",
+          hometypes: ["Multi-Family Home", "Individual Home"],
+          costGraph: [
+              [1985, 30000],
+              [1990, 18000],
+              [1995, 16000],
+              [2000, 13500],
+              [2005, 13000],
+              [2010, 11500],
+              [2015, 10500],
+              [2020, 10000],
+              [2025, 5000],
+          ],
+          roiGraph: [
+              [1985, 30000],
+              [1990, 18000],
+              [1995, 16000],
+              [2000, 13500],
+              [2005, 13000],
+              [2010, 11500],
+              [2015, 10500],
+              [2020, 10000],
+              [2025, 5000],
+          ],
+
+          steps: [
+              {
+                  header: "Choose a Provider and System",
+                  description:
+                      "Choose the right provider and type of insulation (fiberglass, cellulose, spray foam)",
+              },
+              {
+                  header: "Measure the area to be insulated.",
+                  description:
+                      "Measure how much area needs to be insulated and purchase the right amount of insulation",
+              },
+              {
+                  header: "Install the system",
+                  description:
+                      "We recommend hiring a professional, but if you install it yourself, wear protective gear.",
+              },
+              {
+                  header: "Check for leaks",
+                  description:
+                    "Check for leaks and ensure the insulation is properly installed.",
+              }
+          ],
+
+          utilityRebates: [
+            {
+                price: 0.10,
+                label: "Offered by Austin Energy per square foot of insulation",
+            },
+            {
+                price: 0.10,
+                label: "Offered by Texas Gas Service per square foot of insulation",
+            },
+          ],
+
+          govtRebates: [
+            {
+                price: 500,
+                label: "Offered by Department of Energy for installing insulation",
+            },
+            {
+                price: 500,
+                label: "Offered by the EPA Energy Star Program for installing a insulation system",
+            },
+          ],
+
+          type: "heating",
+        },
+
+      ],
     WA: [
         {
             alt: "Rainwater Harvesting System",
-            gov: 1200,
-            utility: 0,
-            price: 3000,
+            gov: 100,
+            utility: 5300,
+            price: 6000,
             setup: 2,
             image: "/solutions/rainwater_harvesting.jpg",
             imageNoBg: "",
@@ -1644,11 +2403,13 @@ const solutions = {
                 [2045, 25],
                 [2050, 30],
             ],
-            utilityRebates: [],
-            govtRebates: [
-                { price: 300, label: "Rainwater harvesting system tax credit" },
+            utilityRebates: [
+              { price: 4800, label: "Offered by RainWise program offers rebates" },
+              { price: 500, label: "Offered by King County Surface Water Management"},
             ],
-            taxRebates: [],
+            govtRebates: [
+                { price: 100, label: "Offered by Washington state, along with a sales tax exemption"},
+            ],
             type: "water",
             localProviders: [
                 "Rainwater Harvesting Solutions LLC",
@@ -1657,9 +2418,9 @@ const solutions = {
         },
         {
             alt: "Low-Flow Showerheads",
-            gov: 0,
-            utility: 0,
-            price: 40,
+            gov: 30,
+            utility: 25,
+            price: 70,
             setup: 1,
             image: "/solutions/low-faucet.png",
             imageNoBg: "",
@@ -1698,17 +2459,23 @@ const solutions = {
                 [2045, 5],
                 [2050, 6],
             ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
+            utilityRebates: [
+              { price: 5, label: "Offered by Puget Sound Energy "}, 
+              { price: 10, label: "Offered by Seattle City Light"}, 
+              { price: 5, label: "Offered by Tacoma Public Utilities"}, 
+              { price: 5, label: "Offered by Cascade Natural Gas"},
+            ],
+            govtRebates: [
+              { price: 100, label: "Offered by Washington State Department in multifamily buildings"},
+            ],
             type: "water",
             localProviders: ["EcoFlow Showers LLC", "Cascade Water Solutions"],
         },
         {
             alt: "Drip Irrigation System",
-            gov: 0,
-            utility: 0,
-            price: 500,
+            gov: 250,
+            utility: 200,
+            price: 600,
             setup: 2,
             image: "/solutions/drip_irrigation.jpg",
             imageNoBg: "",
@@ -1748,9 +2515,20 @@ const solutions = {
                 [2045, 11],
                 [2050, 13],
             ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
+            utilityRebates: [
+              { price: 50, label: "Offered by Puget Sound Energy (PSE)" },
+              { price: 100, label: "Offered by Seattle City Light" },
+              { price: 50, label: "Offered by Cascade Natural Gas" },
+            ],
+
+            govtRebates: [
+              { price: 100, label: "Offered by Washington State Department of Commerce" },
+              { price: 50, label: "Offered by City of Seattle" },
+              { price: 100, label: "Offered by King County" },
+              { price: 50, label: "Offered by City of Tacoma" },
+              { price: 50, label: "Offered by City of Spokane" },
+            ],
+
             type: "water",
             localProviders: [
                 "GreenGrowth Irrigation Solutions",
@@ -1758,61 +2536,9 @@ const solutions = {
             ],
         },
         {
-            alt: "Native Plant Landscaping",
-            gov: 0,
-            utility: 0,
-            price: 200,
-            setup: 2,
-            image: "/solutions/native_plant_landscaping.jpg",
-            imageNoBg: "",
-            title: "Native Plant Landscaping",
-            stats: [
-                {
-                    data: 30,
-                    units: "%",
-                    description: "Reduction in outdoor water usage",
-                },
-                {
-                    data: 50,
-                    units: "%",
-                    description: "Reduction in maintenance water needs",
-                },
-            ],
-            description:
-                "Planting native vegetation reduces the need for watering, as these plants are adapted to local conditions.",
-            hometypes: ["Individual Home"],
-            costGraph: [
-                [1985, 400],
-                [1990, 350],
-                [1995, 300],
-                [2000, 250],
-                [2005, 225],
-                [2010, 210],
-                [2015, 205],
-                [2020, 202],
-                [2025, 200],
-            ],
-            roiGraph: [
-                [2025, 1],
-                [2030, 2],
-                [2035, 3],
-                [2040, 4],
-                [2045, 5],
-                [2050, 6],
-            ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
-            type: "water",
-            localProviders: [
-                "GreenThumb Landscaping",
-                "Evergreen Native Plants Co.",
-            ],
-        },
-        {
             alt: "Greywater Recycling System",
-            gov: 1500,
-            utility: 0,
+            gov: 250,
+            utility: 200,
             price: 4000,
             setup: 3,
             image: "/solutions/greywater_recycling.png",
@@ -1855,65 +2581,21 @@ const solutions = {
             ],
             utilityRebates: [],
             govtRebates: [
-                { price: 500, label: "Greywater recycling system rebate" },
+              { price: 100, label: "Offered by Washington State Department of Commerce" },
+              { price: 50, label: "Offered by City of Seattle" },
+              { price: 100, label: "Offered by King County" },
+              { price: 50, label: "Offered by City of Tacoma" },
+              { price: 50, label: "Offered by City of Spokane" },
             ],
-            taxRebates: [],
+            utilityRebates: [
+              { price: 50, label: "Offered by Puget Sound Energy (PSE)" },
+              { price: 100, label: "Offered by Seattle City Light" },
+              { price: 50, label: "Offered by Tacoma Public Utilities" },
+            ],
             type: "water",
             localProviders: [
                 "EcoWater Recycle Solutions",
                 "Cascade Greywater Systems",
-            ],
-        },
-        {
-            alt: "Xeriscaping",
-            gov: 0,
-            utility: 0,
-            price: 300,
-            setup: 2,
-            image: "/solutions/xeriscaping.jpg",
-            imageNoBg: "",
-            title: "Xeriscaping",
-            stats: [
-                {
-                    data: 50,
-                    units: "%",
-                    description: "Reduction in outdoor water usage",
-                },
-                {
-                    data: 75,
-                    units: "%",
-                    description: "Reduction in maintenance water needs",
-                },
-            ],
-            description:
-                "Design landscapes that require minimal water, using drought-resistant plants and efficient irrigation techniques.",
-            hometypes: ["Individual Home"],
-            costGraph: [
-                [1985, 600],
-                [1990, 500],
-                [1995, 450],
-                [2000, 400],
-                [2005, 350],
-                [2010, 320],
-                [2015, 310],
-                [2020, 305],
-                [2025, 300],
-            ],
-            roiGraph: [
-                [2025, 2],
-                [2030, 4],
-                [2035, 6],
-                [2040, 8],
-                [2045, 10],
-                [2050, 12],
-            ],
-            utilityRebates: [],
-            govtRebates: [],
-            taxRebates: [],
-            type: "water",
-            localProviders: [
-                "GreenThumb Landscaping",
-                "Evergreen Xeriscape Co.",
             ],
         },
         {
