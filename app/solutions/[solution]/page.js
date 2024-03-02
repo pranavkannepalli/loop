@@ -161,12 +161,12 @@ export default function Solution({ params }) {
 							</div>
 							{getButton()}
 						</div>
-						<div className={classNames("flex-1 w-full mx-8 rounded-[20px] flex items-center justify-center", filterData[solution.type].bg)}>
-							<Image src="/solution_models/solar_panel.png" alt="solar panel image" width={500} height={500} className="object-contain" />
+						<div className={classNames("flex-1 w-full px-[20px] md:h-[80vh] rounded-[20px] flex items-center justify-center", filterData[solution.type].bg)}>
+							<Image src={solution.imageNoBg} alt={solution.alt ?? ""} width={500} height={500} className="object-contain" />
 						</div>
 					</div>
 				</section>
-				<section className="layout box-border items-center !mt-[30px] w-full">
+				<section className="layout box-border items-center !mt-[50px] w-full">
 					<div className="flex flex-col gap-[20px] md:flex-row justify-center w-full">
 						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[20px]">
 							<h3>Installation Steps</h3>
@@ -177,9 +177,9 @@ export default function Solution({ params }) {
 							))}
 						</div>
 						<div className="flex-1 text-left">
-							<CostGraph points={solution.costGraph} />
+							{solution.price != 0 && <CostGraph points={solution.costGraph} />}
 							<div className="h-[20px] w-full" />
-							<ROIGraph points={solution.roiGraph} cost={solution.price} />
+							{solution.roiGraph[solution.roiGraph.length - 1][1] != 0 && <ROIGraph points={solution.roiGraph} cost={solution.price} /> }
 						</div>
 					</div>
 				</section>
@@ -188,13 +188,13 @@ export default function Solution({ params }) {
 					<div className="flex flex-col gap-[20px] md:flex-row justify-center w-full mt-[30px]">
 						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[20px]">
 							<div className="caption text-white-400">Utility</div>
-							{solution.utilityRebates.map((item, ind) => (
+							{(solution.utilityRebates ?? []).map((item, ind) => (
 								<Rebate dollars={item.price} label={item.label} key={ind} />
 							))}
 						</div>
 						<div className="flex-1 w-full text-left flex flex-col md:items-start gap-[20px]">
 							<div className="caption text-white-400">Government</div>
-							{solution.govtRebates.map((item, ind) => (
+							{(solution.govtRebates ?? []).map((item, ind) => (
 								<Rebate dollars={item.price} label={item.label} key={ind} />
 							))}
 						</div>

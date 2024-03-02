@@ -78,8 +78,19 @@ export default function ROIGraph({ cost, points, t = new Date().getFullYear() })
 				<div>
 					<p className="caption text-white-400">ROI</p>
 					<div className="flex items-baseline">
-						<CountUp rounded={false} number={target[1] * 100 / cost} />
-						<h4>%</h4>
+						{cost == 0 ? 
+							<>
+								<h4>$</h4>
+								<CountUp number={target[1]} />
+
+							</>
+						:
+						(
+							<>
+								<CountUp rounded={false} number={target[1] * 100 / cost} />
+								<h4>%</h4>
+							</>
+						)}
 						<p className="caption">/year</p>
 					</div>
 				</div>

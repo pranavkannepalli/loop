@@ -27,7 +27,7 @@ export default function HomeSolutionCard({ name, img, sector, link = `/solutions
 			}}
 			onHoverStart={() => setHover(true)}
 			onHoverEnd={() => setHover(false)}
-			className={classNames(colors[sector], "cursor-pointer inline-block relative rounded-3xl")}
+			className={classNames(colors[sector], "cursor-pointer inline-block relative *:object-contain rounded-3xl")}
 			onClick={() => router.push(link)}
 		>
 			<Image alt={name} src={img} fill />
@@ -36,9 +36,9 @@ export default function HomeSolutionCard({ name, img, sector, link = `/solutions
 					<p className="caption">{name}</p>
 				</div>
 				<motion.div
-					initial={{ x: -200 }}
+					initial={{ x: -300 }}
 					animate={{
-						x: hover ? 0 : -200,
+						x: hover ? 0 : -300,
 						transition: {
 							type: "ease-out",
 						},

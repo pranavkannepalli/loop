@@ -23,7 +23,7 @@ export default function CountUp({ rounded:r=true, children, number, className })
   }, [isInView]);
 
   return (
-    <div ref={ref} className={classNames("flex inline items-baseline gap-[10px] flex-wrap", className)}>
+    <div ref={ref} className={classNames("flex items-baseline gap-[10px] flex-wrap", className)}>
       <motion.h4>{rounded}</motion.h4>
       {children}
     </div>
