@@ -1713,8 +1713,8 @@ const solutions = {
                     description: "daily riders",
                 },
                 {
-                    data: 1 / 7,
-                    description: "billion annual riders",
+                    data: 700,
+                    description: "million annual riders",
                 },
                 {
                     data: 722,
@@ -3501,7 +3501,7 @@ const solutions = {
             alt: "Low-Flow Shower heads",
             gov: 30,
             utility: 25,
-            price: 70,
+            price: 80,
             setup: 1,
             image: "/solutions/low-faucet.png",
             imageNoBg: "/solution_models/low_flow.png",
@@ -4602,7 +4602,7 @@ const solutions = {
                 },
                 {
                     data: 1.4,
-                    units: "billions of gasoline",
+                    units: "billion gallons of gasoline",
                     description:
                         "Saved annually across the United States due to pubic transportation",
                 },
