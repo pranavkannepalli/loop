@@ -2633,8 +2633,8 @@ const solutions = {
                         "Ensure your home has the necessary electrical upgrades.",
                 },
                 {
-                    header: "Find a Provider",
-                    description: " and disposal of the old system.",
+                    header: "Install the system",
+                    description: "Connect the battery to the electrical system, ideally with the provider. If you do it yourself, make sure you're taking proper safety measures.",
                 },
             ],
             utilityRebates: [
