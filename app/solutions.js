@@ -4035,7 +4035,7 @@ const solutions = {
             gov: 2500,
             utility: 2000,
             price: 45600,
-            setup: 4,
+            setup: 3,
             image: "/solutions/wind_turbine.jpg",
             imageNoBg: "/solution_models/wind_turbine.png",
             title: "Wind Turbines",
