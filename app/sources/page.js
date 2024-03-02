@@ -27,15 +27,11 @@ export default function Sources() {
                 {sources.map((val, index) => (
                     <Accordion number={index+1} key={index} question={val.name}>
                         {val.sources.map((source, i) => (
-                            <Link
-                                key={i}
-                                href={source}
-                                target="_blank"
-                                locale={false}
+                            <p
                             >
                                 {source}
 								<br />
-                            </Link>
+                            </p>
                         ))}
                     </Accordion>
                 ))}

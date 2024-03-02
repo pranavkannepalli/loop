@@ -56,8 +56,8 @@ TX: [
 	{
 		name: "Energy Efficient Windows",
 		sector: "heating",
-		img: "/solution_models/solar_panel.png",
-		link: "/solutions/Solar Panels",
+		img: "/solution_models/windows.png",
+		link: "/solutions/Energy Efficient Windows",
 	},
 
 	{

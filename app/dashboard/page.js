@@ -7,6 +7,7 @@ import UserTags from "@/components/UserTags";
 import WatchlistCard from "@/components/WatchListCard";
 import { AnimatePresence } from "framer-motion";
 import { useContext } from "react";
+import CountUp from "@/components/CountUp";
 
 // TODO: Implement the solutions list
 // TODO: implement the watchlist
@@ -21,7 +22,7 @@ export default function Dashboard() {
                     <div className="flex-1 flex flex-col justify-between">
                         <div>
                             <div className="caption text-white-400">Hello</div>
-                            <h4>Achintya</h4>
+                            <h4>Judges</h4>
                         </div>
                         <div>
                             <UserTags />
@@ -31,7 +32,7 @@ export default function Dashboard() {
                         <div className="p-[20px] rounded-[10px] bg-blue-500">
                             <div className="flex flex-row justify-between items-center">
                                 <div className="flex flex-row gap-[5px] items-baseline">
-                                    <h3>6,000</h3>
+                                    <CountUp number={6000}/>
                                     <h6>Gallons</h6>
                                 </div>
                                 <div className="text-blue-700">
@@ -46,8 +47,8 @@ export default function Dashboard() {
                         <div className="p-[20px] rounded-[10px] bg-yellow-500">
                             <div className="flex flex-row justify-between items-center">
                                 <div className="flex flex-row gap-[5px] items-baseline">
-                                    <h3>6,000</h3>
-                                    <h6>Tons</h6>
+                                    <CountUp number={4900}/>
+                                    <h6>Pounds</h6>
                                 </div>
                                 <div className="text-yellow-700">
                                     <Icon name="factory" size={40} />
@@ -64,13 +65,6 @@ export default function Dashboard() {
                     <h4>Your Watchlist</h4>
                     <div className="flex gap-[20px] overflow-x-auto">
                         {watchlist.map((sol, i) => {
-                            let trend =
-                                sol.costGraph[sol.costGraph.length - 1][1];
-                            trend -= sol.costGraph[sol.costGraph.length - 2][1];
-                            trend =
-                                (trend * 100) /
-                                sol.costGraph[sol.costGraph.length - 2][1];
-                            trend = Math.round(trend * 100) / 100;
                             return (
                                 <WatchlistCard
                                     img={sol.image}
@@ -78,7 +72,16 @@ export default function Dashboard() {
                                     key={i}
                                     name={sol.title}
                                     price={sol.price}
-                                    trend={trend}
+                                    past={
+                                        sol.costGraph[
+                                            sol.costGraph.length - 2
+                                        ][1]
+                                    }
+                                    present={
+                                        sol.costGraph[
+                                            sol.costGraph.length - 1
+                                        ][1]
+                                    }
                                     remove={() => removeWatchlist(sol)}
                                 />
                             );

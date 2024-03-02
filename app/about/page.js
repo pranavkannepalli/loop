@@ -9,7 +9,6 @@ export default function About({}) {
 					To ensure a seamless, fast, and optimized user experience, this website uses Vercel&apos;s NextJS framework, a ReactJS technology as the coding technology. However, the design
 					system and brand themes are all original and specially designed with the user&apos;s experience and accessibility in mind.
 				</p>
-				<p>All icons were created by the Loop team.</p>
 				<div className="flex flex-col">
 					<Link href="/CopyrightChecklist.pdf" locale={false} target="_blank">
 						Copyright Checklist (Click to open)

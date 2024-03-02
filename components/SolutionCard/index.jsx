@@ -25,11 +25,11 @@ export default function SolutionCard({ title, gov, utility, price, setup, image,
 						<div className="flex gap-[20px]">
 							<div className="flex items-center gap-[10px] text-green-700">
 								<Icon name="company" />
-								<p className="caption">{utility > 1000 ? `$${Math.round(utility / 1000)}k` : `$${utility}`}</p>
+								<p className="caption">{utility >= 1000 ? `$${Math.round(utility / 1000)}k` : `$${utility}`}</p>
 							</div>
 							<div className="flex items-center gap-[10px] text-green-700">
 								<Icon name="government" />
-								<p className="caption">{gov > 1000 ? `$${Math.round(gov / 1000)}k` : `$${gov}`}</p>
+								<p className="caption">{gov >= 1000 ? `$${Math.round(gov / 1000)}k` : `$${gov}`}</p>
 							</div>
 						</div>
 					</div>
