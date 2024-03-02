@@ -101,7 +101,6 @@ export default function Solution({ params }) {
 
     const getButton = () => {
         if (loggedIn) {
-            console.log("inWatchlist: " + isIn);
             if (isIn)
                 return (
                     <Button

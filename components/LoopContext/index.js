@@ -276,11 +276,9 @@ const LoopContextProvider = ({ children }) => {
 		let index = -1;
 		watchlist.forEach((val, i) => {
 			if(val.title === solution?.title) {
-				console.log("found");
 				index = i;
 			};
 		})
-		console.log("not finding")
 		return index != -1;
 	};
 

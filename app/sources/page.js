@@ -27,7 +27,7 @@ export default function Sources() {
                 {sources.map((val, index) => (
                     <Accordion number={index+1} key={index} question={val.name}>
                         {val.sources.map((source, i) => (
-                            <p
+                            <p key={i}
                             >
                                 {source}
 								<br />
