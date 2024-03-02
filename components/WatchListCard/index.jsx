@@ -3,8 +3,8 @@ import TrendIndicator from "../TrendIndicator";
 
 export default function WatchlistCard({ img, alt, name, price, past, present, remove }) {
     return (
-        <div className="flex items-stretch bg-white-100 border border-white-300  overflow-hidden w-max rounded-[8px]">
-            <div className="relative w-[80px]">
+        <div className="flex items-stretch bg-white-100 border border-white-300  overflow-hidden min-w-max rounded-[8px]">
+            <div className="relative w-[80px] *:object-cover">
                 <Image src={img} alt={alt} fill />
             </div>
             <div className="flex flex-col p-[16px] gap-[5px]">

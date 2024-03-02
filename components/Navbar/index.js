@@ -79,7 +79,7 @@ export default function Navbar() {
 								className="link cursor-pointer"
 								onClick={() => {
 									if (pathname != "/login") setRedirect(pathname);
-									changeShowModal(false);
+									changeShowMenu(false);
 									router.push("/login");
 								}}
 							>

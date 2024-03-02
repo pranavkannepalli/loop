@@ -9,17 +9,14 @@ import { AnimatePresence } from "framer-motion";
 import { useContext } from "react";
 import CountUp from "@/components/CountUp";
 
-// TODO: Implement the solutions list
-// TODO: implement the watchlist
-// TODO: connect to react context
 
 export default function Dashboard() {
     const { watchlist, removeWatchlist } = useContext(LoopContext);
     return (
-        <div className="min-h-screen flex flex-col md:flex-row gap-[20px] layout box-border !pt-[120px]">
+        <div className="flex min-h-screen gap-[20px] flex-col md:flex-row layout !pt-[120px]">
             <div className="flex-[2] flex flex-col gap-[40px]">
-                <div className=" w-full flex flex-row bg-white-100 border-white-300 border p-[20px] rounded-[20px]">
-                    <div className="flex-1 flex flex-col justify-between">
+                <div className="flex flex-col md:flex-row bg-white-100 border-white-300 border p-[20px] rounded-[20px] gap-[20px]">
+                    <div className="flex-1 flex flex-col justify-between gap-[20px]">
                         <div>
                             <div className="caption text-white-400">Hello</div>
                             <h4>Judges</h4>
@@ -61,9 +58,9 @@ export default function Dashboard() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col gap-[20px]">
+                <div className="flex flex-col w-full gap-[20px]">
                     <h4>Your Watchlist</h4>
-                    <div className="flex gap-[20px] overflow-x-auto">
+                    <div className="flex gap-[20px] overflow-x-scroll md:max-w-[66vw] md:flex-wrap">
                         {watchlist.map((sol, i) => {
                             return (
                                 <WatchlistCard
@@ -89,7 +86,7 @@ export default function Dashboard() {
                     </div>
                 </div>
             </div>
-            <div className="flex-1 flex flex-col gap-[10px]">
+            <div className="flex-1 flex flex-col min-w-[300px] gap-[10px]">
                 <div className="caption text-white-400">TO-DO List</div>
                 <AnimatePresence>
                     {watchlist.map((item, i) => {

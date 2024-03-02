@@ -351,7 +351,7 @@ const LoopContextProvider = ({ children }) => {
 				n = n.sort((item1, item2) => item1.price - item2.price);
 			}
 			if (sort == "Rebates") {
-				n = n.sort((item1, item2) => item1.gov - item2.giv + item1.utility - item2.utility);
+				n = n.sort((item1, item2) => -1 * (item1.gov - item2.gov + item1.utility - item2.utility));
 			}
 			if (sort == "Difficulty") {
 				n = n.sort((item1, item2) => item1.setup - item2.setup);

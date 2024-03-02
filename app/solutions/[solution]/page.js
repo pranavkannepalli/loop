@@ -186,15 +186,14 @@ export default function Solution({ params }) {
                         </div>
                         <div
                             className={classNames(
-                                "flex-1 w-full px-[20px] md:h-[80vh] rounded-[20px] flex items-center justify-center",
+                                "flex-1 w-full px-[20px] md:h-[80vh]  min-h-[300px] rounded-[20px] flex items-center justify-center relative",
                                 filterData[solution.type].bg
                             )}
                         >
                             <Image
                                 src={solution.imageNoBg}
                                 alt={solution.alt ?? ""}
-                                width={500}
-                                height={500}
+                                fill
                                 className="object-contain"
                             />
                         </div>
