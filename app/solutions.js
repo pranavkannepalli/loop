@@ -3757,6 +3757,35 @@ const solutions = {
                 "EcoWater Recycle Solutions",
                 "Cascade Greywater Systems",
             ],
+            steps: [
+                {
+                    header: "Consult with a plumber or greywater system specialist",
+                    description: "to determine the best system for your home.",
+                },
+                {
+                    header: "Obtain necessary permits and approvals",
+                    description: "from local authorities.",
+                },
+                {
+                    header: "Install the greywater collection and storage system",
+                    description:
+                        "typically involving plumbing modifications and the installation of a storage tank.",
+                },
+                {
+                    header: "Install the filtration and treatment system",
+                    description:
+                        "which may include a pump, filters, and disinfection equipment.",
+                },
+                {
+                    header: "Connect the treated greywater",
+                    description:
+                        "to the toilet or irrigation system as appropriate.",
+                },
+                {
+                    header: "Test the system",
+                    description: "and make any necessary adjustments.",
+                },
+            ],
         },
         {
             alt: "High-Efficiency Washing Machine",
