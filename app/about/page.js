@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function About({}) {
 	return (
 		<main>
-			<section className="flex flex-col box-border gap-[20px] !mt-[100px] layout">
+			<section className="flex flex-col box-border gap-[20px] !pt-[100px] layout">
 				<h4>About Us</h4>
 				<p>
 					To ensure a seamless, fast, and optimized user experience, this website uses Vercel&apos;s NextJS framework, a ReactJS technology as the coding technology. However, the design

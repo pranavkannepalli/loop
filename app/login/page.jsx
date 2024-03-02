@@ -18,7 +18,7 @@ export default function Login() {
 	}, [loggedIn, dashboard]);
 
 	return (
-		<main className="flex flex-col items-center justify-center w-full h-screen">
+		<main className="flex flex-col items-center justify-center w-full h-screen box-border p-[20px]">
 			<div className="flex flex-col gap-[20px] border border-white-300 bg-white-100 p-[40px] rounded-[20px]">
 				<h2>Login</h2>
 				<TextInput

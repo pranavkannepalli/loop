@@ -137,7 +137,7 @@ export default function Solution({ params }) {
     if (solution != null) {
         return (
             <main>
-                <section className="layout box-border md:h-[100vh] items-center !mt-[100px] md:!mt-0 w-full">
+                <section className="layout box-border md:h-[100vh] items-center !pt-[100px] md:!mt-0 w-full">
                     <div className="flex flex-col-reverse gap-[20px] md:flex-row items-center justify-center w-full md:h-[100vh]">
                         <div className="flex-1 w-full text-left flex flex-col items-stretch md:items-start gap-[20px]">
                             <div
@@ -158,8 +158,8 @@ export default function Solution({ params }) {
                                 </h6>
                             </div>
                             <div>
-                                <h2>{solution.title}</h2>
-                                <div className="flex flex-row">
+                                <h2 className="break-words">{solution.title}</h2>
+                                <div className="flex flex-row items-baseline">
                                     <h4>${solution.price.toLocaleString()}</h4>
                                     <h6>/Unit</h6>
                                 </div>
