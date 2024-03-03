@@ -4392,9 +4392,9 @@ const solutions = {
                     description: "Have the provider replace the windows. ",
                 },
                 {
-                    header: "Find a Provider",
+                    header: "Discard the only windows",
                     description:
-                        "Important factors when choosing an provider include: warranties, installation costs, and disposal of the old system.",
+                        "Recycle the old windows carefully.",
                 },
             ],
             taxRebates: [],
