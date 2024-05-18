@@ -26,7 +26,7 @@ export default function Sources() {
 					</Accordion>
 				))}
 			</section>
-			<button onClick={console.log(getChatGPTJawn("how are you"))}>test</button>
+			<button onClick={() => {}}>test</button>
 		</main>
 	);
 }
