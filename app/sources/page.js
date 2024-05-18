@@ -26,7 +26,6 @@ export default function Sources() {
 					</Accordion>
 				))}
 			</section>
-			<button onClick={() => {}}>test</button>
 		</main>
 	);
 }
