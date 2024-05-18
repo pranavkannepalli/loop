@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import OpenAI from "openai";
 import sdk from "@api/wattbuy";
 
 export async function POST(request) {
