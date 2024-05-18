@@ -1,7 +1,7 @@
 import Accordion from "@/components/Accordion";
 import sources from "./sources";
 import Link from "next/link";
-
+import {getChatGPTJawn} from "@/components/ChatGPT/openAiHelper";
 export default function Sources() {
     return (
         <main>
@@ -36,6 +36,7 @@ export default function Sources() {
                     </Accordion>
                 ))}
             </section>
+            <button onClick={console.log(getChatGPTJawn("how are you"))}>test</button>
         </main>
     );
 }
