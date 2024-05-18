@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@api/wattbuy": "file:.api/apis/wattbuy",
     "framer-motion": "^11.0.5",
     "next": "14.1.0",
     "openai": "^4.47.1",
