@@ -20,7 +20,7 @@ export async function POST(request) {
 			messages: [
 				{
 					role: "system",
-					content: `You are a helpful assistant whose job is to pick solutions that best match the user's query.  Only pick solutions from this list: ${s}. Only return applicable solutions. Include no other text and separate them by commas.`,
+					content: `You are a helpful assistant whose job is to pick solutions that best match the user's query.  Only pick solutions from this list: ${s}. Separate the results by commas and include no extra text. If you can't find any applicable results, just apologize for having no applicable results.`,
 				},
 				{ role: "user", content: query },
 			],
