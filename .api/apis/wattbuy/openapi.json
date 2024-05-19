@@ -1,0 +1,3105 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "WATTBUY APIs",
+    "version": "3.0"
+  },
+  "servers": [
+    {
+      "url": "https://apis.wattbuy.com/v3"
+    }
+  ],
+  "paths": {
+    "/electricity/info": {
+      "get": {
+        "summary": "Utility Information Lookup",
+        "description": "This endpoint returns the key details about the electric utility serving a particular location. Pass in a user’s location and return the utility name, phone number, web address, and any other key information available.\n",
+        "tags": [
+          "Electricity"
+        ],
+        "parameters": [
+          {
+            "name": "wattkey",
+            "in": "query",
+            "description": "Our identifier for this home",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "description": "The street address of the property",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "description": "City of the property",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "description": "State of the property as a two letter code (e.g. \"TX\")",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "zip",
+            "in": "query",
+            "description": "5-digit zip code of the property",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "type": "deregulated",
+                  "esiid": 1234567890123456800,
+                  "exact_match": true,
+                  "exact_match_reason": "success",
+                  "wattkey": "MzgyMCBWaXRydXZpYW4gV2F5IEFwdCAxMTE=@5qv-x53-nyv",
+                  "utility_info": [
+                    {
+                      "company_id": "",
+                      "avgPrice": 9.5,
+                      "name": "Oncor Electric Delivery",
+                      "place": "Texas",
+                      "phone_number": [
+                        "123-456-789-0"
+                      ],
+                      "website": "https://www.oncor.com",
+                      "facebook": "https://www.facebook.com/oncor",
+                      "twitter": "https://twitter.com/oncor",
+                      "signup_url": "https://www.oncor.com/SitePages/Home.aspx",
+                      "customers": 1000
+                    }
+                  ]
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "description": "The type of energy service for the address, either regulated or deregulated.",
+                      "enum": [
+                        "regulated",
+                        "deregulated"
+                      ]
+                    },
+                    "esiid": {
+                      "type": "string",
+                      "description": "The Electric Service Identifier (ESID) of the address."
+                    },
+                    "exact_match": {
+                      "type": "boolean",
+                      "description": "Indicates whether the search results are an exact match to the address searched."
+                    },
+                    "exact_match_reason": {
+                      "type": "string",
+                      "description": "The reason for the exact match result, if applicable.",
+                      "enum": [
+                        "success",
+                        "multiple_addresses_found",
+                        "unknown",
+                        "address_unavailable"
+                      ]
+                    },
+                    "wattkey": {
+                      "type": "string",
+                      "description": "The unique identifier for the address used in the estimation."
+                    },
+                    "utility_info": {
+                      "type": "array",
+                      "description": "An array of objects containing information about the addresses's utility provider.",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "utility_name": {
+                            "type": "string"
+                          },
+                          "utility_id": {
+                            "type": "string"
+                          },
+                          "place": {
+                            "type": "string",
+                            "description": "Place or Service Terrirtory"
+                          },
+                          "website": {
+                            "type": "string"
+                          },
+                          "phone_number": {
+                            "type": "string"
+                          },
+                          "facebook": {
+                            "type": "string"
+                          },
+                          "twitter": {
+                            "type": "string"
+                          },
+                          "signup_url": {
+                            "type": "string"
+                          },
+                          "signup_phone_number": {
+                            "type": "string"
+                          },
+                          "default_rate": {
+                            "type": "number",
+                            "description": "The default rate (per kWh) for the address."
+                          },
+                          "distributor_monthly_rate": {
+                            "type": "number"
+                          },
+                          "distributor_rate_per_kwh": {
+                            "type": "number"
+                          },
+                          "time_of_use_rate": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "Unable to find address/zipcode"
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Validation Failed | Invalid Input"
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": [
+                        "zip is required"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/electricity/estimation": {
+      "get": {
+        "summary": "Electricity Usage Estimate",
+        "description": "This endpoint returns a home’s expected electricity usage (in kWh) over a 12-month period, as well as the carbon footprint, utility rate, expected bill, and more. Our best-in-class machine learning model is trained on millions of data points and is constantly being updated with new information to create a personalized estimation output to every home.\n\nThere are a number of ways this API can be used, depending on the amount of data you already have.\n\nCase 1 (Zip Code Only): The minimum input required is a zip code. This allows us to apply weather and climate data in order to return a usage prediction for the average home in the area\n\nCase 2 (Full Address): This is the most common use case. You provide the address of the user and we take care of the rest! We use the address to fill in the rest of the fields for you.\n\nCase 3 (Housing Data): If you don't have the address but you know some other characteristics of the home (square footage, bedrooms, etc), you can manually enter those as well and we'll apply whatever you have to the model.\n\nCase 4 (Address and Housing Data): For the best results, you can enter both the address and the housing data. We'll trust any housing data you give us, and use the address to attempt to fill in any empty fields.\n",
+        "tags": [
+          "Electricity"
+        ],
+        "parameters": [
+          {
+            "name": "wattkey",
+            "in": "query",
+            "description": "Our identifier for this home",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "description": "The street address of the property",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "description": "City of the property",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "description": "State of the property as a two letter code (e.g. \"TX\")",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "zip",
+            "in": "query",
+            "description": "5-digit zip code of the property",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "year_built",
+            "description": "The year the home was built. Should be four digits.",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "bedrooms",
+            "description": "The number of bedrooms in the home.",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "bathrooms",
+            "description": "The number of bathrooms in the home.",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sq_ft",
+            "description": "The square footage of the home.",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "stories",
+            "description": "The number of stories in the home.",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "house_type",
+            "description": "The house type. Either house or apartment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "house",
+                "apartment"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "state_name": "Texas",
+                  "graph_data": [
+                    {
+                      "x": "Jan",
+                      "y": 979.11
+                    },
+                    {
+                      "x": "Feb",
+                      "y": 807.04
+                    },
+                    {
+                      "x": "Mar",
+                      "y": 665.23
+                    },
+                    {
+                      "x": "Apr",
+                      "y": 635.54
+                    },
+                    {
+                      "x": "May",
+                      "y": 720.99
+                    },
+                    {
+                      "x": "Jun",
+                      "y": 822.01
+                    },
+                    {
+                      "x": "Jul",
+                      "y": 850.01
+                    },
+                    {
+                      "x": "Aug",
+                      "y": 901.7
+                    },
+                    {
+                      "x": "Sep",
+                      "y": 772.43
+                    },
+                    {
+                      "x": "Oct",
+                      "y": 668.75
+                    },
+                    {
+                      "x": "Nov",
+                      "y": 754.56
+                    },
+                    {
+                      "x": "Dec",
+                      "y": 706.39
+                    }
+                  ],
+                  "est_bill_amount": {
+                    "max": 140,
+                    "min": 91
+                  },
+                  "monthly_cost": [
+                    139.62,
+                    115.08,
+                    94.86,
+                    90.63,
+                    102.81,
+                    117.22,
+                    121.21,
+                    128.58,
+                    110.15,
+                    95.36,
+                    107.6,
+                    100.73
+                  ],
+                  "avg_cost": 14.26,
+                  "est_usage": 9283.76,
+                  "interpolated": true,
+                  "is_apartment_or_unit": true,
+                  "wattkey": "MzgyMCBWaXRydXZpYW4gV2F5IEFwdCAxMTE=@5qv-x53-nyv"
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "state_name": {
+                      "type": "string",
+                      "description": "The name of the state where the address is located."
+                    },
+                    "graph_data": {
+                      "type": "array",
+                      "description": "An array of objects representing the estimated electricity usage for the home for each month of the year.",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "x": {
+                            "type": "string",
+                            "description": "The name of the month."
+                          },
+                          "y": {
+                            "type": "number",
+                            "description": "The estimated electricity usage for the month in kilowatt-hours (kWh)."
+                          }
+                        }
+                      }
+                    },
+                    "est_bill_amount": {
+                      "type": "object",
+                      "description": "An object containing the estimated monthly electricity bill amount for the home.",
+                      "properties": {
+                        "min": {
+                          "type": "number",
+                          "description": "The estimated minimum monthly bill amount in USD."
+                        },
+                        "max": {
+                          "type": "number",
+                          "description": "The estimated maximum monthly bill amount in USD."
+                        }
+                      }
+                    },
+                    "monthly_cost": {
+                      "type": "array",
+                      "description": "An array of monthly bill amount in USD.",
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    "avg_cost": {
+                      "type": "number",
+                      "description": "The average cost of electricity per kilowatt-hour (kWh) for the address."
+                    },
+                    "est_usage": {
+                      "type": "number",
+                      "description": "The estimated total electricity usage for the home for the year in kilowatt-hours (kWh)."
+                    },
+                    "interpolated": {
+                      "type": "boolean"
+                    },
+                    "is_apartment_or_unit": {
+                      "type": "boolean"
+                    },
+                    "wattkey": {
+                      "type": "string",
+                      "description": "The unique identifier for the address used in the estimation."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "Unable to calculate usage"
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Validation Failed"
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": [
+                        "zip is required"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/electricity/solar/estimation": {
+      "get": {
+        "summary": "Electricity Solar Estimate",
+        "description": "This endpoint returns our recommended solar panel size and estimated production of that solar panel system. Simply input the address of the home and we'll handle the rest. We do the work of estimating the available roof space as well as the solar efficiency of that specific location.  \n\nThe estimated optimal size of the solar panel system is returned in the \"m2_decided\" response field.\n\nThe estimated monthly production of that system can be found in \"solar_production_monthly\". This field is a list of solar production values for each month, January through December. If you'd like net usage, these solar values can be subtracted from our total usage estimate response.\n",
+        "tags": [
+          "Electricity"
+        ],
+        "parameters": [
+          {
+            "name": "wattkey",
+            "in": "query",
+            "description": "Our identifier for this home",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "description": "The street address of the property",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "description": "City of the property",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "description": "State of the property as a two letter code (e.g. \"TX\")",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "zip",
+            "in": "query",
+            "description": "5-digit zip code of the property",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "wattkey": "MzgyMCBWaXRydXZpYW4gV2F5IEFwdCAxMTE=@5qv-x53-nyv",
+                  "data": {
+                    "solar_production_monthly": [
+                      1071.552069028254,
+                      1093.2409608209546,
+                      1269.744994357511,
+                      1286.6346547494213,
+                      1298.9066874413918,
+                      1196.0864713474064,
+                      1233.8199830024812,
+                      1336.6077809258777,
+                      1275.6153675413098,
+                      1285.7281848838963,
+                      1139.0538239334928,
+                      1048.4083860197093
+                    ],
+                    "cost_savings_monthly": [
+                      128.90771390409896,
+                      131.51688758676082,
+                      152.75032282120856,
+                      154.78214896635538,
+                      156.25847449919942,
+                      143.88920250309297,
+                      148.42854395519848,
+                      160.79391604538307,
+                      153.45652871521955,
+                      154.67310064153273,
+                      137.02817501919918,
+                      126.12352883817103
+                    ],
+                    "upfront_cost": 26793.77905056022,
+                    "payback_period": 15.322914411135265,
+                    "payback_period_with_incentives": 12.4411135265,
+                    "solar_property_page": "https://wattbuy.com/electricity/2905-london-ct--pearland--tx--77581/solar"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "wattkey": {
+                      "type": "string",
+                      "description": "The unique identifier for the address used in the estimation."
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "solar_production_monthly": {
+                          "type": "array",
+                          "items": {
+                            "type": "number"
+                          },
+                          "description": "Monthly solar production values in kWh for each month, January through December."
+                        },
+                        "cost_savings_monthly": {
+                          "type": "array",
+                          "items": {
+                            "type": "number"
+                          },
+                          "description": "Monthly cost savings in USD for each month, January through December, if the solar panel system is installed."
+                        },
+                        "upfront_cost": {
+                          "type": "number",
+                          "description": "The upfront cost of installing the recommended solar panel system in USD."
+                        },
+                        "payback_period": {
+                          "type": "number",
+                          "description": "The estimated payback period for the solar panel system in years. The payback period is the length of time it takes for the cost savings to equal the upfront cost."
+                        },
+                        "payback_period_with_incentives": {
+                          "type": "number",
+                          "description": "The estimated payback period with incentives for the solar panel system in years. The payback period with incentives is the length of time it takes for the cost savings to equal the upfront cost taking the federal incentives into account."
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "Unable to calculate estimation"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/electricity/carbon-footprint": {
+      "get": {
+        "summary": "Carbon Footprint Estimate",
+        "description": "This endpoint returns information about a particular home's carbon footprint impact. Just enter a home's address information and we'll handle the rest. We look up the building characteristics of that particular home, along with climate characteristics and the fuel mix of the area's electricity generation to provide a personalized estimate.\n\nIf you don't need that level of specificity, you can also just enter the state and we'll return the fuel mix to give you a general idea of the carbon impact of electricity in that state.\n\nIn the response, \"carbon_foot_print\" is the estimated annual carbon footprint (in pounds) for that home. Additionally, \"estimated_generation_data\" represents the estimated mix of fuel sources for that home, where \"value\" is the percentage of electricity that a particular fuel source generates in that area.\n",
+        "tags": [
+          "Electricity"
+        ],
+        "parameters": [
+          {
+            "name": "wattkey",
+            "in": "query",
+            "description": "Our identifier for this home",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "description": "The street address of the property",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "description": "City of the property",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "description": "State of the property as a two letter code (e.g. \"TX\")",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "zip",
+            "in": "query",
+            "description": "5-digit zip code of the property",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "ok",
+                  "wattkey": "MzgyMCBWaXRydXZpYW4gV2F5IEFwdCAxMTE=@5qv-x53-nyv",
+                  "data": {
+                    "annual_carbon_footprint": 9260.68,
+                    "baseline_annual_carbon_footprint": 8623.44,
+                    "baseline_annual_usage": 2343,
+                    "estimated_generation_data": [
+                      {
+                        "type": "Coal",
+                        "value": 9
+                      },
+                      {
+                        "type": "Nuclear",
+                        "value": 32
+                      },
+                      {
+                        "type": "Natural Gas",
+                        "value": 48
+                      }
+                    ]
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "wattkey": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "annual_carbon_footprint": {
+                          "type": "number"
+                        },
+                        "baseline_annual_carbon_footprint": {
+                          "type": "number"
+                        },
+                        "baseline_annual_usage": {
+                          "type": "number"
+                        },
+                        "estimated_generation_data": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "number"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "Unable to calculate usage"
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Validation Failed"
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": [
+                        "state is required"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "No Data found!"
+          }
+        }
+      }
+    },
+    "/electricity/info/esi": {
+      "get": {
+        "summary": "ESI ID Lookup",
+        "description": "This endpoint takes an address as input and returns the ESI ID and utility name.",
+        "tags": [
+          "Electricity"
+        ],
+        "parameters": [
+          {
+            "name": "address",
+            "in": "query",
+            "description": "The street address of the property",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "string"
+            },
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "total_count": 100,
+                  "page_count": 10,
+                  "page_num": 1,
+                  "has_next_page": true,
+                  "addresses": [
+                    {
+                      "zipcode": 77063,
+                      "esiid": 1.0089010238005523e+21,
+                      "address": "3401 DUNVALE RD APT 3101",
+                      "city": "HOUSTON",
+                      "premise_type": "Residential",
+                      "utility": "cenpnt",
+                      "status": "Active",
+                      "plans_available": true
+                    },
+                    {
+                      "zipcode": 77063,
+                      "esiid": 1.0089010238005525e+21,
+                      "address": "3401 DUNVALE RD APT 3102",
+                      "city": "HOUSTON",
+                      "premise_type": "Residential",
+                      "utility": "cenpnt",
+                      "status": "Inactive",
+                      "plans_available": false
+                    }
+                  ]
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "total_count": {
+                      "type": "integer"
+                    },
+                    "page_count": {
+                      "type": "number"
+                    },
+                    "page_number": {
+                      "type": "number"
+                    },
+                    "has_next_page": {
+                      "type": "boolean"
+                    },
+                    "exact_match": {
+                      "type": "boolean"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "esiid": {
+                            "type": "string",
+                            "description": "ESI ID"
+                          },
+                          "address": {
+                            "type": "string"
+                          },
+                          "city": {
+                            "type": "string"
+                          },
+                          "zipcode": {
+                            "type": "string"
+                          },
+                          "premise_type": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string",
+                            "example": "Active"
+                          },
+                          "utility": {
+                            "type": "string"
+                          },
+                          "plans_available": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error_code": {
+                      "type": "string",
+                      "example": "Validation Failed"
+                    },
+                    "error_messages": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": [
+                        "zip is required",
+                        "state is required"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/electricity/retail-rates": {
+      "get": {
+        "summary": "Retail Rate Database",
+        "description": "This endpoint returns the tariffs (structures) and rates (costs) to purchase electricity from electrical utilities in the United States. The bulk of our retail rates are for residential customers (though there may be some overlap with small commercial or other electricity users). We include all types of utilities, including investor owned utilities, municipal utilities, and coops. Our data includes component charges, the source of the data, and the recency. \n\nWe include time-varying rates, also known as “time of use” rates, and provide the structure of peak versus non-peak \n\nOur Retail Rate Database contains electricity rates for 95% of US customers (over 1700 utility companies).\n\nOur database uses a human-augmented machine learning approach to pull the latest rates whenever they become available and we are continually feeding in new rates as well as updating existing rates.\n\nUsers can employ this data to estimate the cost of electricity based on a set usage. It can also be used to determine based on changes in electricity usage, for instance from energy efficiency upgrades. This data can be combined with the electricity usage estimate (link) to estimate the cost of electricity for nearly any home in the US\n\nThis API is currently in open beta. Please contact info@wattb.com to request access, report any errors, or request for missing utilities.\n",
+        "tags": [
+          "Electricity"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "utilityID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Required, Numeric String of utilityID, provided by EIA for every utility in the US. (A listing of Utilities IDs can be found here: https://www.eia.gov/electricity/data/eia861/)",
+            "example": "6452"
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Required, short form two characters state abbreviation",
+            "example": "fl"
+          },
+          {
+            "in": "query",
+            "name": "baseline_zone",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional, baseline allocation zone if applicable. This is assigned to most customers in CA based on where they live, and can be found on the bill.",
+            "example": "Q"
+          },
+          {
+            "in": "query",
+            "name": "verified_from",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Optional, Epoch time, default 1 year ago, example: 1664514205"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "type": "number"
+            },
+            "description": "Non negative page number, default 1",
+            "example": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "count": 1,
+                  "next": false,
+                  "data": [
+                    {
+                      "_id": "64a81540de9a063a5f7d2b51",
+                      "utility_id": 6452,
+                      "rate_name": "Residential Service (RS-1)",
+                      "utility_name": "Florida Power & Light Co",
+                      "state": "fl",
+                      "source": {
+                        "rate": "https://www.fpl.com/content/dam/fplgp/us/en/rates/pdf/res-eff-july-2023.pdf",
+                        "rate_parent": "https://www.fpl.com/rates.html"
+                      },
+                      "structure": "fixed",
+                      "minimum_bill": {
+                        "amount": 2500,
+                        "frequency": "monthly"
+                      },
+                      "customer_charge": {
+                        "frequency": "monthly",
+                        "amount": 948,
+                        "adjustment_types": "",
+                        "adjustment_urls": [
+                          ""
+                        ]
+                      },
+                      "rate_structure": [
+                        {
+                          "name": "Full Year Rate",
+                          "frequency": "monthly",
+                          "availability": [
+                            {
+                              "start_date": 1,
+                              "start_month": 1,
+                              "start_time": 0,
+                              "start_time_string": "00:00",
+                              "end_date": 31,
+                              "end_month": 12,
+                              "end_time": 1439,
+                              "end_time_string": "23:59",
+                              "days_of_week": [
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1
+                              ]
+                            }
+                          ],
+                          "unit": "kWh",
+                          "price": [
+                            {
+                              "minimum_usage": 0,
+                              "maximum_usage": 1000,
+                              "amount": 7.063,
+                              "adjustment": 5.239
+                            },
+                            {
+                              "minimum_usage": 1001,
+                              "maximum_usage": null,
+                              "amount": 8.055,
+                              "adjustment": 6.239
+                            }
+                          ],
+                          "adjustment_types": "Conservation, Capacity, Environmental, Storm Protection, Fuel Charge, 2022 Consolidated Interim Storm Restoration Recovery, Transition Credit",
+                          "adjustment_urls": ""
+                        }
+                      ],
+                      "is_active": true,
+                      "is_default": true,
+                      "effective_start_date": "2023-07-01T00:00:00.000+0000",
+                      "retrieved_at": "2023-07-07T13:38:08.196Z",
+                      "verified_at": "2023-08-21T16:52:53.688+0000",
+                      "effective_end_date": null,
+                      "tariff_code": "RS-1"
+                    },
+                    {
+                      "_id": "64a814c8904b87a9d477b5e7",
+                      "utility_id": 6452,
+                      "rate_name": "Residential Time of Use (RTR-1)",
+                      "utility_name": "Florida Power & Light Co",
+                      "state": "fl",
+                      "source": {
+                        "rate": "https://www.fpl.com/content/dam/fplgp/us/en/rates/pdf/res-eff-july-2023.pdf",
+                        "rate_parent": "https://www.fpl.com/rates.html"
+                      },
+                      "structure": "TOU",
+                      "minimum_bill": {
+                        "amount": 2500,
+                        "frequency": "monthly"
+                      },
+                      "customer_charge": {
+                        "frequency": "monthly",
+                        "amount": 948,
+                        "adjustment_types": "",
+                        "adjustment_urls": [
+                          ""
+                        ]
+                      },
+                      "rate_structure": [
+                        {
+                          "name": "On-Peak",
+                          "frequency": "monthly",
+                          "availability": [
+                            {
+                              "start_date": 1,
+                              "start_month": 11,
+                              "start_time": 360,
+                              "start_time_string": "6:00",
+                              "end_date": 31,
+                              "end_month": 3,
+                              "end_time": 600,
+                              "end_time_string": "10:00",
+                              "days_of_week": [
+                                0,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                0
+                              ]
+                            },
+                            {
+                              "start_date": 1,
+                              "start_month": 11,
+                              "start_time": 1080,
+                              "start_time_string": "18:00",
+                              "end_date": 31,
+                              "end_month": 3,
+                              "end_time": 1320,
+                              "end_time_string": "22:00",
+                              "days_of_week": [
+                                0,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                0
+                              ]
+                            },
+                            {
+                              "start_date": 1,
+                              "start_month": 4,
+                              "start_time": 720,
+                              "start_time_string": "12:00",
+                              "end_date": 31,
+                              "end_month": 10,
+                              "end_time": 1260,
+                              "end_time_string": "21:00",
+                              "days_of_week": [
+                                0,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                0
+                              ]
+                            }
+                          ],
+                          "unit": "kWh",
+                          "price": [
+                            {
+                              "minimum_usage": 0,
+                              "maximum_usage": 1000,
+                              "amount": 19.76,
+                              "adjustment": 5.577
+                            },
+                            {
+                              "minimum_usage": 1001,
+                              "maximum_usage": null,
+                              "amount": 20.752,
+                              "adjustment": 6.577
+                            }
+                          ],
+                          "adjustment_types": "Conservation, Capacity, Environmental, Storm Protection, Fuel Charge, 2022 Consolidated Interim Storm Restoration Recovery, Transition Credit",
+                          "adjustment_urls": [
+                            ""
+                          ],
+                          "adjustments": ""
+                        },
+                        {
+                          "name": "Off-Peak",
+                          "frequency": "monthly",
+                          "availability": [
+                            {
+                              "start_date": 1,
+                              "start_month": 4,
+                              "start_time": 1261,
+                              "start_time_string": "21:01",
+                              "end_date": 31,
+                              "end_month": 10,
+                              "end_time": 1439,
+                              "end_time_string": "23:59",
+                              "days_of_week": [
+                                0,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                0
+                              ]
+                            },
+                            {
+                              "start_date": 1,
+                              "start_month": 11,
+                              "start_time": 1321,
+                              "start_time_string": "22:01",
+                              "end_date": 31,
+                              "end_month": 3,
+                              "end_time": 1439,
+                              "end_time_string": "23:59",
+                              "days_of_week": [
+                                0,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                0
+                              ]
+                            },
+                            {
+                              "start_date": 1,
+                              "start_month": 11,
+                              "start_time": 601,
+                              "start_time_string": "10:01",
+                              "end_date": 31,
+                              "end_month": 3,
+                              "end_time": 1079,
+                              "end_time_string": "17:59",
+                              "days_of_week": [
+                                0,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                0
+                              ]
+                            },
+                            {
+                              "start_date": 1,
+                              "start_month": 4,
+                              "start_time": 0,
+                              "start_time_string": "0:00",
+                              "end_date": 31,
+                              "end_month": 10,
+                              "end_time": 719,
+                              "end_time_string": "11:59",
+                              "days_of_week": [
+                                0,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                0
+                              ]
+                            },
+                            {
+                              "start_date": 1,
+                              "start_month": 11,
+                              "start_time": 0,
+                              "start_time_string": "0:00",
+                              "end_date": 31,
+                              "end_month": 3,
+                              "end_time": 359,
+                              "end_time_string": "5:59",
+                              "days_of_week": [
+                                0,
+                                1,
+                                1,
+                                1,
+                                1,
+                                1,
+                                0
+                              ]
+                            },
+                            {
+                              "start_date": 1,
+                              "start_month": 1,
+                              "start_time": 0,
+                              "start_time_string": "0:00",
+                              "end_date": 31,
+                              "end_month": 12,
+                              "end_time": 1439,
+                              "end_time_string": "23:59",
+                              "days_of_week": [
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                1
+                              ]
+                            }
+                          ],
+                          "unit": "kWh",
+                          "price": [
+                            {
+                              "minimum_usage": 0,
+                              "maximum_usage": 1000,
+                              "amount": 1.511,
+                              "adjustment": 5.096
+                            },
+                            {
+                              "minimum_usage": 1001,
+                              "maximum_usage": null,
+                              "amount": 2.503,
+                              "adjustment": 6.096
+                            }
+                          ],
+                          "adjustment_types": "Conservation, Capacity, Environmental, Storm Protection, Fuel Charge, 2022 Consolidated Interim Storm Restoration Recovery, Transition Credit",
+                          "adjustment_urls": [
+                            ""
+                          ],
+                          "adjustments": ""
+                        }
+                      ],
+                      "is_active": true,
+                      "is_default": false,
+                      "retrieved_at": "2023-07-07T13:36:07.946Z",
+                      "verified_at": "2023-08-21T16:53:35.594+0000",
+                      "effective_end_date": null,
+                      "effective_start_date": "2023-07-06T00:00:00.000+0000",
+                      "tariff_code": "RTR-1"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content for given utilityID"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/electricity/generation-rate": {
+      "get": {
+        "summary": "Surplus Generation Rate Database",
+        "description": "This endpoint returns the surplus generation rate for electricity utilities in the United States, also sometimes referred to as the net metering rate. The bulk of our surplus generation rates are for residential customers, usually with rooftop solar, but some of the generation rates may be helpful also for small commercial customers, or for customers with wind or other generation facilities. Our data includes the rates, the parameters employed by utilities to calculate the total value, the sources of the data, the recency of collection, and when it is not possible to directly calculate the surplus generation rate, we identify the type of estimation that was used to calculate the estimate. \n\nIf a rate varies with time, we include the structure so that users are able to calculate the value of surplus for a period of time, over a calendar year. \n\nOur surplus generation rate database includes sixty of the utilities with the largest number of customers generating surplus generation. \n\nWe collect this data with a human-augmented machine learning approach to collect the latest data concerning surplus generation valuations, and it is verified by an independent energy consultancy.\n\nUsers can employ this data to estimate the value of surplus generated electricity, based on a production curve. It can also be used to test the value of different production curves, for instance to determine the increased return on investment if a larger rooftop solar system is installed. This data can be combined with the electricity solar estimate and the electricity usage estimate to calculate the value of surplus solar production for nearly every home in the US.\n\nThis API is currently in open beta. Please contact info@wattb.com to request access, report any errors, or request missing utilities.\n",
+        "tags": [
+          "Electricity"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "state",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Required, short form two characters state abbreviation",
+            "example": "nc"
+          },
+          {
+            "in": "query",
+            "name": "utility_id",
+            "schema": {
+              "type": "integer"
+            },
+            "required": false,
+            "description": "Required, Numeric String of utilityID, provided by EIA for every utility in the US. (A listing of Utilities IDs can be found here: https://www.eia.gov/electricity/data/eia861/)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "excess_generation": {
+                      "granularity": "annual",
+                      "rate": [
+                        "3.35"
+                      ]
+                    },
+                    "reconciliation": {
+                      "netting_period": "monthly"
+                    },
+                    "state": "nc"
+                  }
+                ]
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error_code": {
+                      "type": "string",
+                      "example": "Validation Failed"
+                    },
+                    "error_messages": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": [
+                        "state is required"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/electricity": {
+      "get": {
+        "summary": "Get All Electricity Details For A Property",
+        "description": "This endpoint combines our electricity estimation, solar, cost, and carbon footprint APIs into one call. This allows us to efficiently re-use components of the calculations and return all data quicker than calling all the APIs separately.\n\nIf given address not found it will return 204 status\n\nIf given address has mutliple matches it will return 400 status with relavent addresses\n",
+        "tags": [
+          "Electricity"
+        ],
+        "parameters": [
+          {
+            "name": "wattkey",
+            "in": "query",
+            "description": "Our identifier for this home",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "description": "The street address of the property",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "description": "City of the property",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "description": "State of the property as a two letter code (e.g. \"TX\")",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "zip",
+            "in": "query",
+            "description": "5-digit zip code of the property",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "utility_eid",
+            "schema": {
+              "type": "number"
+            },
+            "description": "EID of Utility which is getting in electricity info API"
+          },
+          {
+            "in": "query",
+            "name": "year_built",
+            "schema": {
+              "type": "number"
+            },
+            "description": "Year the home was built"
+          },
+          {
+            "in": "query",
+            "name": "bedrooms",
+            "schema": {
+              "type": "number"
+            },
+            "description": "Number of bedrooms in the home"
+          },
+          {
+            "in": "query",
+            "name": "bathrooms",
+            "schema": {
+              "type": "number"
+            },
+            "description": "Number of bathrooms in the home"
+          },
+          {
+            "in": "query",
+            "name": "sq_ft",
+            "schema": {
+              "type": "number"
+            },
+            "description": "Square footage of livable indoor area"
+          },
+          {
+            "in": "query",
+            "name": "stories",
+            "schema": {
+              "type": "number"
+            },
+            "description": "Number of floors in the home"
+          },
+          {
+            "in": "query",
+            "name": "house_type",
+            "schema": {
+              "type": "number",
+              "enum": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                10,
+                13
+              ]
+            },
+            "example": [
+              {
+                "type": "Condo/Co-op",
+                "value": 3
+              },
+              {
+                "type": "Multi-family 2-4 unit",
+                "value": 4
+              },
+              {
+                "type": "Multi-family 5+ unit",
+                "value": 5
+              },
+              {
+                "type": "Single-family",
+                "value": 6
+              },
+              {
+                "type": "Ranch",
+                "value": 7
+              },
+              {
+                "type": "Mobile/manufactured",
+                "value": 10
+              },
+              {
+                "type": "Townhouse",
+                "value": 13
+              }
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "ok",
+                  "estimation": {
+                    "monthly_usage_estimates": [
+                      {
+                        "x": "Jan",
+                        "y": 1160.9
+                      },
+                      {
+                        "x": "Feb",
+                        "y": 1258.81
+                      },
+                      {
+                        "x": "Mar",
+                        "y": 1296.6
+                      },
+                      {
+                        "x": "Apr",
+                        "y": 1456.43
+                      },
+                      {
+                        "x": "May",
+                        "y": 1500.12
+                      },
+                      {
+                        "x": "Jun",
+                        "y": 1948.16
+                      },
+                      {
+                        "x": "Jul",
+                        "y": 1948.16
+                      },
+                      {
+                        "x": "Aug",
+                        "y": 1730.37
+                      },
+                      {
+                        "x": "Sep",
+                        "y": 1843.15
+                      },
+                      {
+                        "x": "Oct",
+                        "y": 1435.88
+                      },
+                      {
+                        "x": "Nov",
+                        "y": 1179.78
+                      },
+                      {
+                        "x": "Dec",
+                        "y": 1327.06
+                      }
+                    ],
+                    "annual_usage_estimate": 18085.41,
+                    "incomplete_data": true
+                  },
+                  "solar": {
+                    "solar_production_monthly": [
+                      1071.55,
+                      1093.24,
+                      1269.74,
+                      1286.63,
+                      1298.9,
+                      1196.08,
+                      1233.81,
+                      1336.6,
+                      1275.61,
+                      1285.72,
+                      1139.05,
+                      1048.4
+                    ],
+                    "cost_savings_monthly": [
+                      128.9,
+                      131.51,
+                      152.75,
+                      154.78,
+                      156.25,
+                      143.88,
+                      148.42,
+                      160.79,
+                      153.45,
+                      154.67,
+                      137.02,
+                      126.12
+                    ],
+                    "upfront_cost": 26793.77,
+                    "payback_period": 15.32,
+                    "solar_property_page": "https://wattbuy.com/electricity/2905-london-ct--pearland--tx--77581/solar"
+                  },
+                  "carbon_foot_print": {
+                    "annual_carbon_footprint": 16489.73,
+                    "baseline_annual_carbon_footprint": 12416.61,
+                    "baseline_annual_usage": 13618,
+                    "estimated_generation_data": [
+                      {
+                        "type": "Coal",
+                        "value": 19
+                      },
+                      {
+                        "type": "Nuclear",
+                        "value": 7
+                      },
+                      {
+                        "type": "Natural Gas",
+                        "value": 55
+                      },
+                      {
+                        "type": "Wind",
+                        "value": 15
+                      },
+                      {
+                        "type": "Solar",
+                        "value": 3
+                      }
+                    ]
+                  },
+                  "cost": {
+                    "est_bill_range": {
+                      "max": 234,
+                      "min": 140
+                    },
+                    "monthly_cost": [
+                      139.66,
+                      151.43,
+                      155.98,
+                      175.21,
+                      180.46,
+                      234.36,
+                      234.36,
+                      208.16,
+                      221.73,
+                      172.74,
+                      141.93,
+                      159.65
+                    ],
+                    "avg_rate": 12.03
+                  },
+                  "energy_score": 53,
+                  "deregulated": true,
+                  "wb_property_page": "https://wattbuy.com/electricity/2905-london-ct--pearland--tx--77581",
+                  "wattkey": "MjkwNSBMb25kb24gQ3Q=@8fc-8sr-r49"
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "estimation": {
+                      "type": "object",
+                      "properties": {
+                        "monthly_usage_estimates": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "x": {
+                                "type": "string"
+                              },
+                              "y": {
+                                "type": "number"
+                              }
+                            }
+                          }
+                        },
+                        "annual_usage_estimate": {
+                          "type": "string"
+                        },
+                        "incomplete_data": {
+                          "type": "boolean"
+                        }
+                      }
+                    },
+                    "solar": {
+                      "type": "object",
+                      "properties": {
+                        "solar_production_monthly": {
+                          "type": "array",
+                          "items": {
+                            "type": "number"
+                          }
+                        },
+                        "cost_savings_monthly": {
+                          "type": "array",
+                          "items": {
+                            "type": "number"
+                          }
+                        },
+                        "upfront_cost": {
+                          "type": "number"
+                        },
+                        "payback_period": {
+                          "type": "number"
+                        },
+                        "solar_property_page": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "carbon_foot_print": {
+                      "type": "object",
+                      "properties": {
+                        "annual_carbon_footprint": {
+                          "type": "number"
+                        },
+                        "baseline_annual_carbon_footprint": {
+                          "type": "number"
+                        },
+                        "baseline_annual_usage": {
+                          "type": "number"
+                        },
+                        "estimated_generation_data": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "number"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "cost": {
+                      "type": "object",
+                      "properties": {
+                        "est_bill_range": {
+                          "type": "object",
+                          "properties": {
+                            "max": {
+                              "type": "number"
+                            },
+                            "min": {
+                              "type": "number"
+                            }
+                          }
+                        },
+                        "monthly_cost": {
+                          "type": "array",
+                          "items": {
+                            "type": "number"
+                          }
+                        },
+                        "avg_rate": {
+                          "type": "number"
+                        }
+                      }
+                    },
+                    "energy_score": {
+                      "type": "number"
+                    },
+                    "deregulated": {
+                      "type": "boolean"
+                    },
+                    "wb_property_page": {
+                      "type": "string"
+                    },
+                    "wattkey": {
+                      "type": "string",
+                      "description": "wattkey will be used to call Offers API"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "Unable to find address"
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "err"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "\"zip\" is required,\"city\" is required"
+                    },
+                    "relavent_addresses": {
+                      "description": "This propety will present only if mutliple addresses found",
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "address": {
+                            "type": "string"
+                          },
+                          "city": {
+                            "type": "string"
+                          },
+                          "state": {
+                            "type": "string"
+                          },
+                          "shortstate": {
+                            "type": "string"
+                          },
+                          "zip": {
+                            "type": "string"
+                          },
+                          "county": {
+                            "type": "string"
+                          },
+                          "formatted_address": {
+                            "type": "string"
+                          },
+                          "location": {
+                            "type": "object",
+                            "properties": {
+                              "lat": {
+                                "type": "number"
+                              },
+                              "lng": {
+                                "type": "number"
+                              }
+                            }
+                          },
+                          "sub_type": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/offers": {
+      "get": {
+        "summary": "Offers",
+        "tags": [
+          "Offers"
+        ],
+        "parameters": [
+          {
+            "name": "wattkey",
+            "in": "query",
+            "description": "Our identifier for this home",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "description": "The street address of the property",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "description": "City of the property",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "description": "State of the property as a two letter code (e.g. \"TX\")",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "zip",
+            "in": "query",
+            "description": "5-digit zip code of the property",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "language",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "en",
+                "es"
+              ],
+              "default": "en"
+            },
+            "description": "Language code to be used for offer URLs. Supported languages are English (en) and Spanish (es)."
+          },
+          {
+            "in": "query",
+            "name": "category",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "electricity_plans",
+                "rooftop_solar",
+                "smart_plugs",
+                "community_solar",
+                "demand_response",
+                "smart_thermostat",
+                "light_bulbs"
+              ]
+            },
+            "description": "The category of offers to return. All offers will be returned if category is not provided."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "All available offers",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "ok",
+                  "wattkey": "MzgyMCBWaXRydXZpYW4gV2F5IEFwdCAxMTE=@5qv-x53-nyv",
+                  "offers": [
+                    {
+                      "offer_id": "ecobee3",
+                      "offer_name": "Ecobee Smart Thermostat",
+                      "offer_desc": "Sleek design and elevated comfort meet impactful energy savings. Save up to 23% annually on heating and cooling costs while managing your comfort from anywhere with the ecobee app.",
+                      "offer_cta": "BUY NOW",
+                      "offer_image": "https://m.media-amazon.com/images/I/31zyVIGuo5L._SL500_.jpg",
+                      "offer_category": "smart_thermostat",
+                      "cost": 147.15,
+                      "link": "https://wattbuy.com/r/6385b2c4d0267bf2e370b315/",
+                      "kwh_saved": 178.89,
+                      "monthly_savings": 25,
+                      "item_count": 1,
+                      "payback_period": 6,
+                      "carbon_fp_saved": 14,
+                      "form": false
+                    },
+                    {
+                      "offer_id": "cee",
+                      "offer_name": "Rooftop Solar",
+                      "offer_desc": "Harness the power of the sun right from the comfort of home. Rooftop solar panels directly convert sunlight into green energy that you can use or sell back to your utility company. Plus the cost to install them decreases every year.",
+                      "offer_cta": "Learn More",
+                      "offer_category": "rooftop_solar",
+                      "link": "http://wattbuy.com/electricity/address_slug/solar/?utm_source=wattbuy&utm_medium=partner",
+                      "kwh_generated": 1571.77,
+                      "monthly_savings": 217,
+                      "carbon_fp_saved": 1429,
+                      "form": true
+                    },
+                    {
+                      "offer_id": "wbdb-ZvG90Wrz",
+                      "offer_name": "Sure Saver 12",
+                      "offer_desc": "Sure Saver 12 allows you to lock into a low rate for 12 months but the best part of this plan is the $60.00/monthly service fee credit you will receive if usage is greater than 999 kwh.  This plan includes an early termination fee of $100.",
+                      "offer_cta": "Choose Plan",
+                      "offer_image": "https://s3.amazonaws.com/assets.wattbuy.com/images/spark.png",
+                      "offer_category": "electricity_plans",
+                      "link": "https://wattbuy.com/enrollment-form/texas/oncor-electric-delivery/spark-energy/sure-saver-12/12-months/fixed/details?screen=billingInfo&utm_source=wattbuy&utm_medium=partner",
+                      "plan_details": "https://wattbuy.com/plan-details/texas/oncor-electric-delivery/spark-energy/sure-saver-12/12-months/fixed/details?screen=billingInfo&utm_source=wattbuy&utm_medium=partner",
+                      "plan_rate": 0.06,
+                      "plan_min_bill": 69.83,
+                      "plan_max_bill": 69.83,
+                      "cost": 0.06,
+                      "monthly_savings": 30,
+                      "carbon_fp_saved": 854,
+                      "form": false,
+                      "offer_data": {
+                        "utility": "oncor",
+                        "supplier": "spark",
+                        "plan_id": 21285,
+                        "term": 12,
+                        "monthly_charge": {
+                          "max": 999,
+                          "amount": 0,
+                          "min": 0
+                        },
+                        "kwh500": 11.7,
+                        "kwh1000": 5.3,
+                        "kwh2000": 8.2,
+                        "is_fixed": true,
+                        "is_variable": false,
+                        "is_green": false,
+                        "green_percentage": 20.7,
+                        "state": "tx",
+                        "utility_name": "ONCOR",
+                        "supplier_name": "spark energy",
+                        "green_details": null,
+                        "service_type": "Residential",
+                        "product_id": "21285",
+                        "commodity": "Electric",
+                        "brand_name": "Spark Energy",
+                        "early_term_fee_type": "Fixed Amount",
+                        "plan_start_date": "2015-03-24 00:00:00.000",
+                        "is_msf_credit": "true",
+                        "market_type": "ONCOR",
+                        "supplier_rate": "0.07500000",
+                        "supplier_true_rate": "0.07500000",
+                        "supplier_monthly_charge": "-60.00",
+                        "supplier_display_term": "12 Months",
+                        "supplier_product_type": "Fixed",
+                        "efl": "https://wattbuy.com/product-document/spark-energy/21285/EFL_MSFCREDIT",
+                        "tos": "https://wattbuy.com/product-document/spark-energy/21285/TOS",
+                        "yrac": "https://wattbuy.com/product-document/spark-energy/21285/YRAC",
+                        "supplier_etf": "100",
+                        "name_id": "sure-saver-12",
+                        "rate_type": "fixed",
+                        "supplier_info": {
+                          "puct": "10046",
+                          "phone": "1-877-547-7275",
+                          "url": "https://www.sparkenergy.com/en/home/",
+                          "email": "customercare@sparkenergy.com"
+                        },
+                        "state_renewable_percentage": 0,
+                        "utility_charge_index": 16,
+                        "sq_ft_800": 11.82,
+                        "sq_ft_2600": 7.15,
+                        "start_date": "2021-03-19T00:00:00.000Z",
+                        "is_active": true,
+                        "new_customer_only": false,
+                        "cancel_notes": "$100",
+                        "customer_type": "Residential",
+                        "icon": "spark"
+                      }
+                    }
+                  ]
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "wattkey": {
+                      "type": "string"
+                    },
+                    "offers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "offer_id": {
+                            "type": "string"
+                          },
+                          "offer_name": {
+                            "type": "string"
+                          },
+                          "offer_desc": {
+                            "type": "string"
+                          },
+                          "offer_cta": {
+                            "type": "string"
+                          },
+                          "offer_image": {
+                            "type": "string"
+                          },
+                          "offer_category": {
+                            "type": "string"
+                          },
+                          "cost": {
+                            "type": "number"
+                          },
+                          "link": {
+                            "type": "string"
+                          },
+                          "kwh_saved": {
+                            "type": "number"
+                          },
+                          "kwh_generated": {
+                            "type": "number"
+                          },
+                          "monthly_savings": {
+                            "type": "number"
+                          },
+                          "item_count": {
+                            "type": "number"
+                          },
+                          "payback_period": {
+                            "type": "number"
+                          },
+                          "carbon_fp_saved": {
+                            "type": "number"
+                          },
+                          "form": {
+                            "type": "boolean"
+                          },
+                          "offer_data": {
+                            "type": "object"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "err"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "zip is required"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "err"
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Internal server error"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/plans/link": {
+      "post": {
+        "summary": "Marketplace Deeplink",
+        "tags": [
+          "Offers"
+        ],
+        "parameters": [
+          {
+            "name": "wattkey",
+            "in": "query",
+            "description": "Our identifier for this home",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "description": "The street address of the property",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "description": "City of the property",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "description": "State of the property as a two letter code (e.g. \"TX\")",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "zip",
+            "in": "query",
+            "description": "5-digit zip code of the property",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "first_name": {
+                    "type": "string"
+                  },
+                  "last_name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "phone_number": {
+                    "type": "string"
+                  },
+                  "dob": {
+                    "type": "string",
+                    "description": "MM/DD/YYYY"
+                  },
+                  "service_start_date": {
+                    "type": "string",
+                    "description": "MM/DD/YYYY"
+                  },
+                  "service_type": {
+                    "type": "string",
+                    "enum": [
+                      "switch",
+                      "move"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "example": {
+                  "url": "https://devreact.wattbuy.com/electricity-info?3801-vitruvian-way--addison--tx--75001&user_id=6079559049c87cf5190cdf89"
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string",
+                      "description": "custom url with partner code and customer_id"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "Plans are not available"
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Validation Failed"
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": [
+                        "first_name is required",
+                        "last_name is required"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-api-key"
+      }
+    },
+    "parameters": {
+      "wattkey": {
+        "name": "wattkey",
+        "in": "query",
+        "description": "Our identifier for this home",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "address": {
+        "name": "address",
+        "in": "query",
+        "description": "The street address of the property",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "state": {
+        "name": "state",
+        "in": "query",
+        "description": "State of the property as a two letter code (e.g. \"TX\")",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "city": {
+        "name": "city",
+        "in": "query",
+        "description": "City of the property",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "zip": {
+        "name": "zip",
+        "in": "query",
+        "description": "5-digit zip code of the property",
+        "schema": {
+          "type": "string"
+        },
+        "required": true
+      }
+    },
+    "schemas": {
+      "Distributor": {
+        "type": "object",
+        "properties": {
+          "utility_name": {
+            "type": "string"
+          },
+          "utility_id": {
+            "type": "string"
+          },
+          "place": {
+            "type": "string",
+            "description": "Place or Service Terrirtory"
+          },
+          "website": {
+            "type": "string"
+          },
+          "phone_number": {
+            "type": "string"
+          },
+          "facebook": {
+            "type": "string"
+          },
+          "twitter": {
+            "type": "string"
+          },
+          "signup_url": {
+            "type": "string"
+          },
+          "signup_phone_number": {
+            "type": "string"
+          },
+          "default_rate": {
+            "type": "number",
+            "description": "The default rate (per kWh) for the address."
+          },
+          "distributor_monthly_rate": {
+            "type": "number"
+          },
+          "distributor_rate_per_kwh": {
+            "type": "number"
+          },
+          "time_of_use_rate": {
+            "type": "number"
+          }
+        }
+      },
+      "ESIID": {
+        "type": "object",
+        "properties": {
+          "esiid": {
+            "type": "string",
+            "description": "ESI ID"
+          },
+          "address": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "zipcode": {
+            "type": "string"
+          },
+          "premise_type": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "example": "Active"
+          },
+          "utility": {
+            "type": "string"
+          },
+          "plans_available": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Offers": {
+        "type": "object",
+        "properties": {
+          "offer_id": {
+            "type": "string"
+          },
+          "offer_name": {
+            "type": "string"
+          },
+          "offer_desc": {
+            "type": "string"
+          },
+          "offer_cta": {
+            "type": "string"
+          },
+          "offer_image": {
+            "type": "string"
+          },
+          "offer_category": {
+            "type": "string"
+          },
+          "cost": {
+            "type": "number"
+          },
+          "link": {
+            "type": "string"
+          },
+          "kwh_saved": {
+            "type": "number"
+          },
+          "kwh_generated": {
+            "type": "number"
+          },
+          "monthly_savings": {
+            "type": "number"
+          },
+          "item_count": {
+            "type": "number"
+          },
+          "payback_period": {
+            "type": "number"
+          },
+          "carbon_fp_saved": {
+            "type": "number"
+          },
+          "form": {
+            "type": "boolean"
+          },
+          "offer_data": {
+            "type": "object"
+          }
+        }
+      },
+      "Plans": {
+        "type": "object",
+        "properties": {
+          "msid": {
+            "type": "string"
+          },
+          "brand": {
+            "type": "string",
+            "description": "Brand Name"
+          },
+          "cancel_notes": {
+            "type": "string",
+            "description": "cancellation charge"
+          },
+          "commodity": {
+            "type": "string"
+          },
+          "cost": {
+            "type": "object",
+            "properties": {
+              "max": {
+                "type": "integer"
+              },
+              "min": {
+                "type": "integer"
+              },
+              "total": {
+                "type": "string"
+              }
+            }
+          },
+          "customer_type": {
+            "type": "string",
+            "description": "Residential or Commercial"
+          },
+          "description": {
+            "type": "string"
+          },
+          "early_term_fee_type": {
+            "type": "string"
+          },
+          "efl": {
+            "type": "string"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "green_percentage": {
+            "type": "integer"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "image_url": {
+            "type": "string"
+          },
+          "is_fixed": {
+            "type": "boolean"
+          },
+          "is_green": {
+            "type": "boolean"
+          },
+          "is_msf_credit": {
+            "type": "string"
+          },
+          "is_variable": {
+            "type": "boolean"
+          },
+          "kwh500": {
+            "type": "integer"
+          },
+          "kwh1000": {
+            "type": "integer"
+          },
+          "kwh2000": {
+            "type": "integer"
+          },
+          "market_type": {
+            "type": "string"
+          },
+          "monthly_charge": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "max": {
+                  "type": "integer"
+                },
+                "min": {
+                  "type": "integer"
+                },
+                "amount": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "name_id": {
+            "type": "string"
+          },
+          "new_customer_only": {
+            "type": "boolean"
+          },
+          "plan_details": {
+            "type": "string"
+          },
+          "plan_id": {
+            "type": "integer"
+          },
+          "plan_start_date": {
+            "type": "string"
+          },
+          "product_id": {
+            "type": "string"
+          },
+          "rate_type": {
+            "type": "string"
+          },
+          "service_type": {
+            "type": "string"
+          },
+          "sq_ft_800": {
+            "type": "integer"
+          },
+          "sq_ft_2600": {
+            "type": "integer"
+          },
+          "start_date": {
+            "type": "object",
+            "properties": {
+              "day": {
+                "type": "integer"
+              },
+              "month": {
+                "type": "integer"
+              },
+              "year": {
+                "type": "integer"
+              },
+              "timestamp": {
+                "type": "integer"
+              }
+            }
+          },
+          "state": {
+            "type": "string"
+          },
+          "state_renewable_percentage": {
+            "type": "integer"
+          },
+          "supplier": {
+            "type": "string"
+          },
+          "supplier_display_term": {
+            "type": "string"
+          },
+          "supplier_etf": {
+            "type": "string"
+          },
+          "supplier_info": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "puct": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              }
+            }
+          },
+          "supplier_monthly_charge": {
+            "type": "string"
+          },
+          "supplier_name": {
+            "type": "string"
+          },
+          "supplier_product_type": {
+            "type": "string"
+          },
+          "supplier_rate": {
+            "type": "string"
+          },
+          "supplier_true_rate": {
+            "type": "string"
+          },
+          "term": {
+            "type": "integer"
+          },
+          "tos": {
+            "type": "string"
+          },
+          "utility": {
+            "type": "string"
+          },
+          "utility_charge_index": {
+            "type": "integer"
+          },
+          "utility_name": {
+            "type": "string"
+          },
+          "wid": {
+            "type": "string"
+          },
+          "yrac": {
+            "type": "string"
+          }
+        }
+      },
+      "UANValidations": {
+        "type": "object",
+        "properties": {
+          "lengthValidation": {
+            "type": "string"
+          },
+          "regex": {
+            "type": "string"
+          },
+          "utilityId": {
+            "type": "string"
+          }
+        }
+      },
+      "FormResponse": {
+        "type": "object",
+        "properties": {
+          "supplierForm": {
+            "type": "object",
+            "properties": {
+              "form": {
+                "type": "object",
+                "example": {
+                  "firstName": {
+                    "required": true,
+                    "regex": "^[A-Za-z -]{1,50}$",
+                    "errMsg": "First Name is a required field and should be 1-50 characters."
+                  },
+                  "lastName": {
+                    "required": true,
+                    "regex": "^[A-Za-z -]{1,50}$",
+                    "errMsg": "Last Name is a required field and should be 1-50 characters."
+                  }
+                }
+              },
+              "tos": {
+                "type": "object"
+              }
+            }
+          },
+          "requiredLoa": {
+            "type": "boolean"
+          },
+          "availableDates": {
+            "type": "object",
+            "description": "Following properties are optional it will change based on plan and type",
+            "properties": {
+              "move": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "2021-01-01"
+                }
+              },
+              "forward_switch": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "2021-01-01"
+                }
+              },
+              "priority_move": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "2021-01-01"
+                }
+              }
+            }
+          },
+          "uan_validations": {
+            "type": "array",
+            "description": "This property is optional",
+            "items": {
+              "type": "object",
+              "properties": {
+                "lengthValidation": {
+                  "type": "string"
+                },
+                "regex": {
+                  "type": "string"
+                },
+                "utilityId": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "SuccessForm": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "FAILED",
+              "SUBMITTED",
+              "ACTIVE",
+              "CLOSED"
+            ]
+          },
+          "agent": {
+            "type": "string",
+            "enum": [
+              "Distributor",
+              "Supplier",
+              "Customer"
+            ]
+          },
+          "sub_status": {
+            "type": "string",
+            "enum": [
+              "Processing",
+              "Account Number",
+              "Confirm Plan",
+              "Deposit Required",
+              "Validation",
+              "Approved",
+              "Approved with Deposit Needed",
+              "Approved with Deposit Waiver Needed",
+              "Active",
+              "Expired",
+              "Declined",
+              "Canceled"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "P1",
+              "P2",
+              "P3",
+              "P4",
+              "P5",
+              "F1",
+              "F2",
+              "F3",
+              "F4",
+              "S1",
+              "S2",
+              "S3",
+              "S4",
+              "A1",
+              "C1",
+              "C2",
+              "C3"
+            ]
+          },
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "deposit_paid": {
+                "type": "boolean"
+              },
+              "deposit_amount": {
+                "type": "number"
+              },
+              "deposit_payment_link": {
+                "type": "string"
+              },
+              "deposit_text": {
+                "type": "string"
+              },
+              "service_start_date": {
+                "type": "string"
+              },
+              "account_number": {
+                "type": "string"
+              },
+              "order_id": {
+                "type": "string",
+                "description": "Wattb order id"
+              },
+              "reference_id": {
+                "type": "string",
+                "description": "Supplier order id"
+              },
+              "secondary_id": {
+                "type": "object",
+                "description": "optional id",
+                "properties": {
+                  "key": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              },
+              "error_message": {
+                "type": "string"
+              },
+              "status_reason": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "Customer": {
+        "type": "object",
+        "properties": {
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone_number": {
+            "type": "string"
+          },
+          "dob": {
+            "type": "string",
+            "description": "MM/DD/YYYY"
+          },
+          "service_start_date": {
+            "type": "string",
+            "description": "MM/DD/YYYY"
+          },
+          "service_type": {
+            "type": "string",
+            "enum": [
+              "switch",
+              "move"
+            ]
+          }
+        }
+      },
+      "DistributorRate": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "utility_id": {
+            "type": "string"
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "website_url": {
+                "type": "string"
+              },
+              "base_url": {
+                "type": "string"
+              },
+              "rates_url": {
+                "type": "string"
+              }
+            }
+          },
+          "charge_type": {
+            "type": "string"
+          },
+          "charge": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "duration": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "object",
+                  "properties": {
+                    "max": {
+                      "type": "integer"
+                    },
+                    "min": {
+                      "type": "integer"
+                    },
+                    "amount": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "rate": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "created_at": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "object",
+                  "properties": {
+                    "max": {
+                      "type": "integer"
+                    },
+                    "min": {
+                      "type": "integer"
+                    },
+                    "amount": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "retrived_at": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "ApiKeyAuth": []
+    }
+  ]
+}
