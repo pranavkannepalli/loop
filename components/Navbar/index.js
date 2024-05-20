@@ -7,12 +7,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState, useContext } from "react";
 import LoginContext from "../LoginContext";
 import { useRouter, usePathname } from "next/navigation";
+import { useScrollPosition } from "@/hooks/useScrollPosition";
 
 export default function Navbar() {
 	const [showMenu, changeShowMenu] = useState(false);
 	const router = useRouter();
 	const pathname = usePathname();
 	const { setRedirect, loggedIn } = useContext(LoginContext);
+	const scrollPos = useScrollPosition();
 
 	return (
 		<>
@@ -20,20 +22,33 @@ export default function Navbar() {
 				style={{
 					width: "min(1440px, calc(100vw - 40px)",
 				}}
-				className="z-40 fixed top-[20px] bg-white-100 rounded-[20px] shadow-card max-w-[1440px] left-[50%] translate-x-[-50%]"
+				className={`z-40 fixed top-[20px] bg-white-200 rounded-[20px] ${scrollPos < 100 ? "" : "shadow-card"} max-w-[1440px] left-[50%] translate-x-[-50%]`}
 			>
 				<div className="!py-5 grid items-center">
 					<Link href="/" style={{ justifySelf: "flex-start", gridRow: 1 }}>
 						<h4>Loop</h4>
 					</Link>
 					<div style={{ gridRow: 1 }} className="hidden md:flex flex-row gap-4 items-center justify-self-center justify-center col-span-3">
-						{loggedIn && <Link href="/dashboard">Dashboard</Link>}
-						<Link href="/solutions">Solutions</Link>
-						<Link href="/about">About</Link>
-						<Link href="/sources">Sources</Link>
+						<Link href="/" className={"/" == pathname ? "" : "text-white-400"}>
+							Home
+						</Link>
+						{loggedIn && (
+							<Link href="/dashboard" className={"/dashboard" == pathname ? "" : "text-white-400"}>
+								Dashboard
+							</Link>
+						)}
+						<Link href="/solutions" className={"/solutions" == pathname ? "" : "text-white-400"}>
+							Solutions
+						</Link>
+						<Link href="/about" className={"/about" == pathname ? "" : "text-white-400"}>
+							About
+						</Link>
+						<Link href="/sources" className={"/sources" == pathname ? "" : "text-white-400"}>
+							Sources
+						</Link>
 						{!loggedIn && (
 							<div
-								className="link cursor-pointer"
+								className={`link cursor-pointer ${"/login" == pathname ? "" : "text-white-400"}`}
 								onClick={() => {
 									if (pathname != "/login") setRedirect(pathname);
 									router.push("/login");
