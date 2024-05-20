@@ -39,7 +39,7 @@ export default function Login() {
 					}}
 				/>
 				<Button
-					onClick={() => {
+					onClick={(e) => {
 						setLoggedIn(username == "tsajudges@tsa.org" && password == "Passw0rd");
 					}}
 				>

@@ -17,7 +17,7 @@ export default function SolutionCard({ title, gov, utility, price, setup, image,
 				<div className="flex justify-between items-start">
 					<div>
 						<h6 className="text-white-400">{title}</h6>
-						<h6>{price > 1000 ? `$${Math.round(price / 1000) * 1000}` : `$${price}`}</h6>
+						<h6>{price > 1000 ? `$${(Math.round(price / 1000) * 1000).toLocaleString()}` : `$${price}`}</h6>
 					</div>
 					<div className="flex flex-col items-end">
 						<p className="caption my-1 text-white-500">Setup</p>
