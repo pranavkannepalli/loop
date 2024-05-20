@@ -74,7 +74,15 @@ export default function Calculators() {
 						</div>
 						<Button onClick={async (e) => await onSubmit(e)}>GO</Button>
 					</form>
-					{data != null && screen == 0 && data["carbon_footprint"] != null && <div>{data["carbon_footprint"]["annual_carbon_footprint"]}</div>}
+					{
+						data != null && screen == 0 && data["carbon_footprint"] != null && <div>{data["carbon_footprint"]["annual_carbon_footprint"]}</div> //TODO: add content here
+					}
+					{
+						data != null && screen == 1 && data["solar"] != null && <div>{data["solar"]["payback_period"]}</div> //TODO: add content here
+					}
+					{
+						(data == null || (screen == 0 && data["carbon_footprint"] == null) || (screen == 1 && data["solar"] == null)) && <div>Something went wrong</div> //TODO: add content here
+					}
 				</div>
 			</section>
 		</main>
