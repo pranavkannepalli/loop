@@ -15,8 +15,12 @@ export default function Calculators() {
 	const [data, setData] = useState(null);
 	const [error, setError] = useState(false);
 
+	const [loading, setLoading] = useState(false);
+
 	const onSubmit = async (e) => {
 		e.preventDefault();
+		setLoading(true);
+
 		console.log(address);
 		console.log(state);
 		console.log(zip);
@@ -37,11 +41,12 @@ export default function Calculators() {
 			setError(true);
 		}
 		console.log(d);
+		setLoading(false);
 	};
 
 	return (
 		<main>
-			<section className="flex flex-col box-border h-[100vh] items-center justify-start py-4 !pt-[125px]">
+			<section className="layout flex flex-col box-border h-[100vh] items-center justify-start py-4 !pt-[125px]">
 				<h2>CALCULATOR HUB</h2>
 				<div className="flex flex-row gap-[40px] mt-[40px]">
 					<button className={screen != 0 && "text-white-400"} onClick={() => setScreen(0)}>
@@ -51,8 +56,8 @@ export default function Calculators() {
 						SOLAR PANEL ESTIMATES
 					</button>
 				</div>
-				<div className="flex flex-row gap-20px mt-[60px] justify-center">
-					<form className="bg-white-100 p-[20px] rounded-[12px] flex flex-col gap-[20px]" onSubmit={async (e) => await onSubmit(e)}>
+				<div className="flex flex-row gap-20px mt-[60px] justify-center gap-[20px]">
+					<form className="bg-white-100 p-[20px] rounded-[12px] flex flex-1 flex-col gap-[20px]" onSubmit={async (e) => await onSubmit(e)}>
 						<h4>HOME DETAILS</h4>
 						<div className="flex flex-col gap-[6px]">
 							<div className="caption text-white-500">STREET ADDRESS</div>
@@ -72,16 +77,18 @@ export default function Calculators() {
 								<TextInput placeholder="98052" onChange={(e) => setZip(e.target.value)} />
 							</div>
 						</div>
-						<Button onClick={async (e) => await onSubmit(e)}>GO</Button>
+						<Button disabled={loading} onClick={async (e) => await onSubmit(e)}>
+							GO
+						</Button>
 					</form>
 					{
-						data != null && screen == 0 && data["carbon_footprint"] != null && <div>{data["carbon_footprint"]["annual_carbon_footprint"]}</div> //TODO: add content here
+						data != null && screen == 0 && data["carbon_footprint"] != null && <div className="flex-1">{data["carbon_footprint"]["annual_carbon_footprint"]}</div> //TODO: add content here
 					}
 					{
-						data != null && screen == 1 && data["solar"] != null && <div>{data["solar"]["payback_period"]}</div> //TODO: add content here
+						data != null && screen == 1 && data["solar"] != null && <div className="flex-1">{data["solar"]["payback_period"]}</div> //TODO: add content here
 					}
 					{
-						(data == null || (screen == 0 && data["carbon_footprint"] == null) || (screen == 1 && data["solar"] == null)) && <div>Something went wrong</div> //TODO: add content here
+						data != null && ((screen == 0 && data["carbon_footprint"] == null) || (screen == 1 && data["solar"] == null)) && <div className="flex-1">Something went wrong</div> //TODO: add content here
 					}
 				</div>
 			</section>
