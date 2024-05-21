@@ -40,6 +40,9 @@ export default function Navbar() {
 						<Link href="/solutions" className={"/solutions" == pathname ? "" : "text-white-400"}>
 							Solutions
 						</Link>
+						<Link href="/calculators" className={"/calculators" == pathname ? "" : "text-white-400"}>
+							Calculators
+						</Link>
 						<Link href="/about" className={"/about" == pathname ? "" : "text-white-400"}>
 							About
 						</Link>
