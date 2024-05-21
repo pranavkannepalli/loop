@@ -1,14 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import TextInput from "../../components/TextInput";
 import Button from "../../components/Button";
+import LoopContext from "@/components/LoopContext";
 
 export default function Calculators() {
-	const [address, setAddress] = useState("");
-	const [state, setState] = useState("WA");
-	const [zip, setZip] = useState("");
-	const [city, setCity] = useState("");
+	const { address, state, zip, city } = useContext(LoopContext);
+
+	const [nAddress, setAddress] = useState(address);
+	const [nState, setState] = useState(state);
+	const [nZip, setZip] = useState(zip);
+	const [nCity, setCity] = useState(city);
 
 	const [screen, setScreen] = useState(0);
 
@@ -21,16 +24,16 @@ export default function Calculators() {
 		e.preventDefault();
 		setLoading(true);
 
-		console.log(address);
-		console.log(state);
-		console.log(zip);
-		console.log(city);
+		console.log(nAddress);
+		console.log(nState);
+		console.log(nZip);
+		console.log(nCity);
 		const response = await fetch("/api/houseData", {
 			method: "POST",
 			headers: {
 				"Content-type": "application/json",
 			},
-			body: JSON.stringify({ address: address, zip: zip, city: city, state: state }),
+			body: JSON.stringify({ address: nAddress, zip: nZip, city: nCity, state: nState }),
 		});
 		const d = await response.json();
 		if (response.status == 200) {
@@ -61,20 +64,20 @@ export default function Calculators() {
 						<h4>HOME DETAILS</h4>
 						<div className="flex flex-col gap-[6px]">
 							<div className="caption text-white-500">STREET ADDRESS</div>
-							<TextInput placeholder="9769 111th Ave NE" onChange={(e) => setAddress(e.target.value)} />
+							<TextInput placeholder="9769 111th Ave NE" value={nAddress} onChange={(e) => setAddress(e.target.value)} />
 						</div>
 						<div className="flex flex-row gap-[13px]">
 							<div className="flex flex-col gap-[6px]">
 								<div className="caption text-white-500">City</div>
-								<TextInput placeholder="Redmond" onChange={(e) => setCity(e.target.value)} />
+								<TextInput placeholder="Redmond" value={nCity} onChange={(e) => setCity(e.target.value)} />
 							</div>
 							<div className="flex flex-col gap-[6px]">
 								<div className="caption text-white-500">State</div>
-								<TextInput placeholder="WA" onChange={(e) => setState(e.target.value)} />
+								<TextInput placeholder="WA" value={nState} onChange={(e) => setState(e.target.value)} />
 							</div>
 							<div className="flex flex-col gap-[6px]">
 								<div className="caption text-white-500">Zip</div>
-								<TextInput placeholder="98052" onChange={(e) => setZip(e.target.value)} />
+								<TextInput placeholder="98052" value={nZip} onChange={(e) => setZip(e.target.value)} />
 							</div>
 						</div>
 						<Button disabled={loading} onClick={async (e) => await onSubmit(e)}>
@@ -88,7 +91,7 @@ export default function Calculators() {
 						data != null && screen == 1 && data["solar"] != null && <div className="flex-1">{data["solar"]["payback_period"]}</div> //TODO: add content here
 					}
 					{
-						data != null && ((screen == 0 && data["carbon_footprint"] == null) || (screen == 1 && data["solar"] == null)) && <div className="flex-1">Something went wrong</div> //TODO: add content here
+						error && <div className="flex-1">Something went wrong</div> //TODO: add content here
 					}
 				</div>
 			</section>
