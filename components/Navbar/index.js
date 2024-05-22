@@ -71,10 +71,10 @@ export default function Navbar() {
 						<div style={{ gridRow: 1 }} className="hidden md:flex flex-row gap-[50px] items-start justify-self-center justify-center col-span-3">
 							{linksFiltered.map(e => (
 								<div className="flex flex-col items-center gap-[6px]" key={e.label}>
-									<Link href={e.address} className={pathname.includes(e.address) ? "text-white-600" : "text-white-400"}>
+									<Link href={e.address} className={(pathname == e.address || (e.address != "/" && pathname.includes(e.address))) ? "text-white-600" : "text-white-400"}>
 										{e.label}
 									</Link>
-									{pathname.includes(e.address) &&
+									{(pathname == e.address || (e.address != "/" && pathname.includes(e.address))) &&
 										<motion.div className="w-[35px] h-[3px] rounded-full bg-white-600" layoutId="underline"/>
 									}
 								</div>
