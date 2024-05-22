@@ -22,7 +22,7 @@ export default function Navbar() {
 				style={{
 					width: "min(1440px, calc(100vw - 40px)",
 				}}
-				className={`z-40 fixed top-[20px] bg-white-200 rounded-[20px] ${scrollPos < 100 ? "" : "shadow-card"} max-w-[1440px] left-[50%] translate-x-[-50%]`}
+				className={`z-40 fixed top-[20px] bg-white-200 rounded-[20px] ${scrollPos < 50 ? "" : "shadow-card"} max-w-[1440px] left-[50%] translate-x-[-50%] ${pathname == "/register" && ""}`}
 			>
 				<div className="!py-5 grid items-center">
 					<Link href="/" style={{ justifySelf: "flex-start", gridRow: 1 }}>

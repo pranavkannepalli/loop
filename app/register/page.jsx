@@ -10,6 +10,7 @@ import LoopContext from "@/components/LoopContext";
 import HomeCard from "@/components/HomeCard";
 import BudgetSelector from "@/components/BudgetSelector";
 import PrioritiesReorder from "@/components/PrioritiesReorder";
+import { StateSelector } from "@/components/Dropdown";
 
 export default function Login() {
 	const [screen, setScreen] = useState(0);
@@ -47,13 +48,14 @@ export default function Login() {
 						</div>
 						<div className="flex flex-col gap-[6px]">
 							<div className="caption text-white-500">State</div>
-							<TextInput placeholder="WA" value={state} onChange={(e) => setState(e.target.value)} />
+							<TextInput hasInput={false} suffix={<StateSelector />}></TextInput>
 						</div>
 						<div className="flex flex-col gap-[6px]">
 							<div className="caption text-white-500">Zip</div>
 							<TextInput placeholder="98052" value={zip} onChange={(e) => setZip(e.target.value)} />
 						</div>
 					</div>
+					<p>Note: Currently only supports/offers services to people in Washington, New York, or Texas.</p>
 				</div>
 				<div className={`flex flex-col gap-[20px] ${screen != 2 && "hidden"}`}>
 					<div className="caption text-white-500 !text-[20px]">Budget</div>
