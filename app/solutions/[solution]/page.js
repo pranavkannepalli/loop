@@ -16,6 +16,7 @@ import { usePathname } from "next/navigation";
 import LoginContext from "@/components/LoginContext";
 import useRedirectFunction from "@/hooks/useRedirectFunction";
 import CountUp from "@/components/CountUp";
+import LineGraph from "@/components/LineGraph";
 
 const filterData = {
 	water: {
@@ -175,7 +176,7 @@ export default function Solution({ params }) {
 							))}
 						</div>
 						<div className="flex-1 text-left">
-							{solution.price != 0 && <CostGraph points={solution.costGraph} />}
+							{solution.price != 0 && <LineGraph.CostGraph datapoints={solution.costGraph} />}
 							<div className="h-[20px] w-full" />
 							{solution.roiGraph[solution.roiGraph.length - 1][1] != 0 && <ROIGraph points={solution.roiGraph} cost={solution.price} />}
 						</div>
