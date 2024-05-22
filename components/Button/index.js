@@ -6,7 +6,7 @@ export default function Button({ prefix = null, type = "primary", children, clas
 	return (
 		<button
 			className={classNames(
-				"px-[32px] flex gap-[10px] items-center justify-center py-[16px] rounded-[16px]",
+				"px-[24px] flex gap-[10px] items-center justify-center py-[12px] rounded-[8px]",
 				type == "primary" ? "bg-green-800 text-white-200" : "bg-none text-green-700",
 				className
 			)}

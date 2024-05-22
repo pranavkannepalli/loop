@@ -39,19 +39,21 @@ const features = [
 export default function Home() {
 	return (
 		<main>
-			<section className="flex flex-col box-border items-center justify-end py-4">
-				<div className="flex flex-col gap-[10px] flex-1 box-border !pt-[80px] justify-center gap-[50px] layout mb-6">
+			<section className="flex layout flex-col items-center !mt-[200px] !mb-[40px] gap-[40px]">
+				<div className="max-w-[900px]">
 					<HomeText />
-					<div className="flex flex-col gap-[20px] md:flex-row">
-						<Search />
-						<SolutionsButton>Search</SolutionsButton>
-					</div>
 				</div>
-				<HomeCarousel />
+				<div className="flex items-stretch gap-[16px]">
+					<TextInput
+						placeholder="Tell us what the problem is"
+						suffix={<StateSelector />}
+					/>
+					<Button>Go</Button>
+				</div>
 			</section>
+			<HomeCarousel />
 			<section className=" layout flex flex-col text-center my-4">
-				<TagLine value="Helping you find solutions Across All Sectors and all buildings" />
-				
+				<TagLine value="helping you find solutions across all sectors and all buildings" />
 			</section>
 			<FeaturesContextProvider>
 				<section className="layout flex w-full items-start gap-20">
@@ -59,14 +61,14 @@ export default function Home() {
 						<ul>
 							{features.map((feature, index) => (
 								<li key={"feature" + index}>
-									<FeatureTitle title={feature.title} description={feature.description}/>
+									<FeatureTitle title={feature.title} description={feature.description} />
 								</li>
 							))}
 						</ul>
 					</div>
 					<div className="sticky top-0 flex h-screen w-full items-center">
 						<div className="aspect-square w-full">
-							{features.map((feature) => (<FeatureCard key={feature.pic} id={feature.title}><Image fill className="object-contain" src={feature.pic}/></FeatureCard>))}
+							{features.map((feature) => (<FeatureCard key={feature.pic} id={feature.title}><Image fill className="object-contain" src={feature.pic} /></FeatureCard>))}
 						</div>
 					</div>
 				</section>
@@ -74,37 +76,3 @@ export default function Home() {
 		</main>
 	);
 }
-
-/*
-	<h3 className="text-left my-2">Set Up Your Profile</h3>
-	<h4 className="text-left my-2 text-white-400">Select Home</h4>
-
-	<div className=" layout flex flex-col md:flex-row gap-[20px]">
-		<HomeCard svg="apartment" color="bg-green-500" borderColor="outline-green-700" name="Apartment" description="Large and small complexes" />
-		<HomeCard svg="multi-family" color="bg-yellow-500" borderColor="outline-yellow-700" name="Multi-Family Home" description="Condos and multi-family homes" />
-		<HomeCard svg="single-family" color="bg-purple-500" borderColor="outline-purple-700" name="Individual Home" description="Individual homes and town homes" />
-	</div>
-	<div className="layout !mt-6 flex flex-col md:flex-row gap-[20px]">
-		<div className="flex-1 flex flex-col gap-[32px]">
-			<div className="flex flex-col gap-[20px]">
-				<h4 className="text-left text-white-400">Select State</h4>
-				<TextInput hasInput={false} suffix={<StateSelector  expanded />} />
-			</div>
-			<div>
-				<h4 className="text-left my-2 text-white-400">Select Budget</h4>
-				<BudgetSelector />
-			</div>
-		</div>
-		<div className="flex-1 flex flex-col gap-[20px]">
-			<h4 className="text-left text-white-400">Priorities</h4>
-			<PrioritiesReorder />
-		</div>
-	</div>
-	<div className="!pt-6 layout">
-		<h4 className="pb-6">View your Recommendations</h4>
-		<SectorFilters />
-		<BasicList slice size={6} />
-	</div>
-	<SeeMore />
-
-*/

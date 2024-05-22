@@ -16,7 +16,7 @@ export default function TagLine({ value }) {
       {words.map((word, i) => {
         let range = [i / words.length, (i + 1) / words.length];
         let highlight = null;
-        if (word == "Sectors") {
+        if (word == "sectors") {
           highlight = "bg-purple-600";
         } else if (word == "buildings") {
           highlight = "bg-green-600";

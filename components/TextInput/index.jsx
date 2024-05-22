@@ -14,7 +14,7 @@ export default function TextInput({ size = "small", hasInput = true, prefix = nu
 			)}
 		>
 			{prefix}
-			{hasInput && <input className=" flex-1 w-full min-w-0 focus:outline-none !bg-transparent font-krona" {...props} />}
+			{hasInput && <input className=" flex-1 w-full min-w-0 focus:outline-none !bg-transparent font-inter" {...props} />}
 			{suffix}
 		</div>
 	);
