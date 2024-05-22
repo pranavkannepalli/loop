@@ -42,10 +42,10 @@ export default function Home() {
 				<div className="max-w-[900px]">
 					<HomeText />
 				</div>
-				<div className="flex items-stretch gap-[16px]">
+				<form className="flex items-stretch gap-[16px]">
 					<TextInput placeholder="Tell us what the problem is" suffix={<StateSelector />} />
 					<Button>Go</Button>
-				</div>
+				</form>
 			</section>
 			<HomeCarousel />
 			<section className=" layout flex flex-col text-center my-4">
@@ -53,7 +53,7 @@ export default function Home() {
 			</section>
 			<FeaturesContextProvider>
 				<section className="hidden layout md:flex w-full items-start gap-20">
-					<div className="w-full py-[40vh]">
+					<div className="w-full py-[30vh]">
 						<ul>
 							{features.map((feature, index) => (
 								<li key={"feature" + index}>

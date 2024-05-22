@@ -1,7 +1,8 @@
 "use client";
 
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 import solutions from "@/app/solutions";
+import ChatGPTContext from "../ChatGPTContext";
 
 // TODO: create login context and login page
 
@@ -383,6 +384,11 @@ const LoopContextProvider = ({ children }) => {
 		changeRebates,
 		changeSort,
 	};
+
+	const { setMessages } = useContext(ChatGPTContext);
+	useEffect(() => {
+		setMessages([]);
+	}, [state, setMessages]);
 
 	return <LoopContext.Provider value={data}>{children}</LoopContext.Provider>;
 };
