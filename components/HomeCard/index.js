@@ -4,6 +4,7 @@ import Icon from "../Icon";
 import { useContext } from "react";
 import LoopContext from "../LoopContext";
 import classNames from "@/hooks/classnames";
+import { motion } from "framer-motion";
 
 export default function HomeCard({ svg, color, borderColor, name, description }) {
 	const { userData, changeHomeType } = useContext(LoopContext);

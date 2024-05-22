@@ -3,11 +3,50 @@
 import Link from "next/link";
 import Icon from "../Icon";
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m, motion } from "framer-motion";
 import { useState, useContext } from "react";
 import LoginContext from "../LoginContext";
 import { useRouter, usePathname } from "next/navigation";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
+
+
+const links = [
+	{
+		label: "Home",
+		address: "/",
+		shouldRender: (loggedIn) => true
+	},
+	{
+		label: "Dashboard",
+		address: "/dashboard",
+		shouldRender: (loggedIn) => loggedIn
+	},
+	{
+		label: "Solutions",
+		address: "/solutions",
+		shouldRender: (loggedIn) => true
+	},
+	{
+		label: "Calculators",
+		address: "/calculators",
+		shouldRender: (loggedIn) => true
+	},
+	{
+		label: "About",
+		address: "/about",
+		shouldRender: (loggedIn) => true
+	},
+	{
+		label: "Sources",
+		address: "/sources",
+		shouldRender: (loggedIn) => true,
+	},
+	{
+		label: "Login",
+		address: "/login",
+		shouldRender: (loggedIn) => !loggedIn
+	}
+];
 
 export default function Navbar() {
 	const [showMenu, changeShowMenu] = useState(false);
@@ -15,52 +54,33 @@ export default function Navbar() {
 	const pathname = usePathname();
 	const { setRedirect, loggedIn } = useContext(LoginContext);
 	const scrollPos = useScrollPosition();
-
+	const linksFiltered = links.filter(e => e.shouldRender(loggedIn));
 	return (
 		<>
 			<nav
 				style={{
 					width: "min(1440px, calc(100vw - 40px)",
 				}}
-				className={`z-40 fixed top-[20px] bg-white-200 rounded-[20px] ${scrollPos < 50 ? "" : "shadow-card"} max-w-[1440px] left-[50%] translate-x-[-50%] ${pathname == "/register" && ""}`}
+				className={`z-40 fixed top-[20px] bg-white-200 rounded-[20px] ${scrollPos < 50 ? "" : "shadow-card"} max-w-[1440px] left-[50%] translate-x-[-50%] ${pathname == "/register" && "hidden"}`}
 			>
 				<div className="!py-5 grid items-center">
 					<Link href="/" style={{ justifySelf: "flex-start", gridRow: 1 }}>
 						<h4>Loop</h4>
 					</Link>
-					<div style={{ gridRow: 1 }} className="hidden md:flex flex-row gap-4 items-center justify-self-center justify-center col-span-3">
-						<Link href="/" className={"/" == pathname ? "" : "text-white-400"}>
-							Home
-						</Link>
-						{loggedIn && (
-							<Link href="/dashboard" className={"/dashboard" == pathname ? "" : "text-white-400"}>
-								Dashboard
-							</Link>
-						)}
-						<Link href="/solutions" className={"/solutions" == pathname ? "" : "text-white-400"}>
-							Solutions
-						</Link>
-						<Link href="/calculators" className={"/calculators" == pathname ? "" : "text-white-400"}>
-							Calculators
-						</Link>
-						<Link href="/about" className={"/about" == pathname ? "" : "text-white-400"}>
-							About
-						</Link>
-						<Link href="/sources" className={"/sources" == pathname ? "" : "text-white-400"}>
-							Sources
-						</Link>
-						{!loggedIn && (
-							<div
-								className={`link cursor-pointer ${"/login" == pathname ? "" : "text-white-400"}`}
-								onClick={() => {
-									if (pathname != "/login") setRedirect(pathname);
-									router.push("/login");
-								}}
-							>
-								Login
-							</div>
-						)}
-					</div>
+					<AnimatePresence>
+						<div style={{ gridRow: 1 }} className="hidden md:flex flex-row gap-[50px] items-start justify-self-center justify-center col-span-3">
+							{linksFiltered.map(e => (
+								<div className="flex flex-col items-center gap-[6px]" key={e.label}>
+									<Link href={e.address} className={pathname == e.address ? "text-white-600" : "text-white-400"}>
+										{e.label}
+									</Link>
+									{pathname == e.address &&
+										<motion.div className="w-[35px] h-[3px] rounded-full bg-white-600" layoutId="underline"/>
+									}
+								</div>
+							))}
+						</div>
+					</AnimatePresence>
 					<div style={{ gridRow: 1 }} className="justify-self-end flex justify-end h-full items-center gap-[10px]">
 						<Icon name="menu" className="md:hidden" onClick={() => changeShowMenu(true)} />
 						<Link href={loggedIn ? "/dashboard" : "/login"}>

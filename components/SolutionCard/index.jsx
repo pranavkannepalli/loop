@@ -9,24 +9,21 @@ export default function SolutionCard({ title, gov, utility, price, setup, image,
 	const redirect = useRedirectFunction(`/solutions/${title}`);
 
 	return (
-		<motion.div whileHover={{ scale: 1.02 }} className="border min-w-[300px] border-white-300 rounded-xl overflow-hidden hover:cursor-pointer" onClick={() => redirect()}>
-			<div className="*:object-cover relative w-full aspect-[16/9] ">
-				<Image src={image} alt={alt} fill />
+		<motion.div whileHover="hover" className="border min-w-[300px] border-white-300 rounded-xl overflow-hidden hover:cursor-pointer" onClick={() => redirect()}>
+			<div className="*:object-cover relative w-full aspect-[16/9] overflow-hidden">
+				<motion.div variants={{
+					hover: { scale: 1.1, transition: { duration: 0.5}}
+				}} className="*:object-cover relative w-full aspect-[16/9] ">
+					<Image src={image} alt={alt} fill />
+				</motion.div>
 			</div>
 			<div className="flex flex-col gap-3 bg-white-200 p-[20px]">
 				<div className="flex justify-between items-start">
 					<div>
 						<h6 className="text-white-400">{title}</h6>
-						<h6>{price > 1000 ? `$${(Math.round(price / 1000) * 1000).toLocaleString()}` : `$${price}`}</h6>
+						<h4>{price > 1000 ? `$${(Math.round(price / 1000) * 1000).toLocaleString()}` : `$${price}`}</h4>
 					</div>
-					<div className="flex flex-col items-end">
-						<p className="caption my-1 text-white-500">Setup</p>
-						<div className="flex items-center">
-							{Array.from(Array(setup)).map((_, i) => (
-								<Icon name="hammer" key={i} className="text-white-400" />
-							))}
-						</div>
-					</div>
+
 				</div>
 				<div className="flex justify-between">
 					<div>
@@ -40,6 +37,14 @@ export default function SolutionCard({ title, gov, utility, price, setup, image,
 								<Icon name="government" size={16} />
 								<p className="caption">{gov >= 1000 ? `$${Math.round(gov / 1000)}k` : `$${gov}`}</p>
 							</div>
+						</div>
+					</div>
+					<div className="flex flex-col items-end">
+						<p className="caption my-1 text-white-500">Setup</p>
+						<div className="flex items-center">
+							{Array.from(Array(setup)).map((_, i) => (
+								<Icon name="hammer" key={i} className="text-white-400" />
+							))}
 						</div>
 					</div>
 				</div>
