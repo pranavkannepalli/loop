@@ -10,8 +10,9 @@ import useRedirectFunction from "@/hooks/useRedirectFunction";
 export default function Login() {
 	const [password, setPassword] = useState("");
 	const [username, setUsername] = useState("");
-	const { redirect, loggedIn, setLoggedIn } = useContext(LoginContext);
-	const dashboard = useRedirectFunction(redirect);
+
+	const { loggedIn, setLoggedIn } = useContext(LoginContext);
+	const dashboard = useRedirectFunction("/register");
 
 	useEffect(() => {
 		if (loggedIn) dashboard();
@@ -39,14 +40,19 @@ export default function Login() {
 					}}
 				/>
 				<Button
-					onClick={() => {
+					onClick={(e) => {
 						setLoggedIn(username == "tsajudges@tsa.org" && password == "Passw0rd");
+						if (loggedIn) setScreen(screen + 1);
 					}}
 				>
 					Login
 				</Button>
 				<p>Username: tsajudges@tsa.org</p>
 				<p>Password: Passw0rd</p>
+				<p>
+					NOTE: This will trigger a registration flow as
+					<br /> if the user just registered. This is just for demonstration <br /> purposes and the judges do not have to fill anything out.
+				</p>
 			</div>
 		</main>
 	);

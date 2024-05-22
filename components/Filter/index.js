@@ -9,7 +9,7 @@ export default function Filter() {
 
 	return (
 		<>
-			<Button className="py-[12px] px-[16px] rounded-[8px] border border-white-300 !text-white-600" type="secondary" onClick={() => setOpen(true)}>
+			<Button className="py-[12px] px-[16px] rounded-[8px] border border-white-300 !text-white-600" type="secondary" onClick={(e) => setOpen(true)}>
 				Filter
 			</Button>
 			{open && <FilterModal setOpen={setOpen} />}
