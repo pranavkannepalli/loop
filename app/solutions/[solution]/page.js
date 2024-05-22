@@ -178,7 +178,7 @@ export default function Solution({ params }) {
 						<div className="flex-1 text-left">
 							{solution.price != 0 && <LineGraph.CostGraph datapoints={solution.costGraph} />}
 							<div className="h-[20px] w-full" />
-							{solution.roiGraph[solution.roiGraph.length - 1][1] != 0 && <ROIGraph points={solution.roiGraph} cost={solution.price} />}
+							{solution.roiGraph[solution.roiGraph.length - 1][1] != 0 && <LineGraph.ROIGraph datapoints={solution.roiGraph} cost={solution.price} />}
 						</div>
 					</div>
 				</section>
