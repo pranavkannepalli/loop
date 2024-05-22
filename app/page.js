@@ -39,8 +39,8 @@ const features = [
 export default function Home() {
 	return (
 		<main>
-			<section className="flex flex-col box-border items-center justify-end py-4 mb-6">
-				<div className="flex flex-col gap-[10px] flex-1 box-border !pt-[80px] justify-center gap-[50px] layout">
+			<section className="flex flex-col box-border items-center justify-end py-4">
+				<div className="flex flex-col gap-[10px] flex-1 box-border !pt-[80px] justify-center gap-[50px] layout mb-6">
 					<HomeText />
 					<div className="flex flex-col gap-[20px] md:flex-row">
 						<Search />
