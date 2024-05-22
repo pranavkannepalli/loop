@@ -57,9 +57,9 @@ const stageVariant = {
 };
 
 const stages = [
-	<HomeTypeSelector />,
-	<BasicInfoForm />,
-	<GoalsForm />
+	<HomeTypeSelector key={0}/>,
+	<BasicInfoForm key={1}/>,
+	<GoalsForm key={2}/>
 ]
 
 function Login() {
