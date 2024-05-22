@@ -25,16 +25,15 @@ const features = [
 	},
 	{
 		title: "See If They Fit",
-		description: "Explore our wide list of solutions, choosing the ones best for you based on cost, difficulty to implement, and rebates/tax credits you can receive upon implementing them.",
+		description: "For each sustainable solution, learn about its historical pricing, return on investment, environmental impact, installation steps, and potential rebates to see if it fits you.",
 		pic: "/about/Details.png",
 	},
 	{
 		title: "Start Implementing",
-		description: "Explore our wide list of solutions, choosing the ones best for you based on cost, difficulty to implement, and rebates/tax credits you can receive upon implementing them.",
+		description: "Add a solution to your information dashboard, where you can keep track of your implementation progress, or add it to your watchlist so you know when the time is right.",
 		pic: "/about/Dashboard.png",
-	}
-]
-
+	},
+];
 
 export default function Home() {
 	return (
@@ -44,10 +43,7 @@ export default function Home() {
 					<HomeText />
 				</div>
 				<div className="flex items-stretch gap-[16px]">
-					<TextInput
-						placeholder="Tell us what the problem is"
-						suffix={<StateSelector />}
-					/>
+					<TextInput placeholder="Tell us what the problem is" suffix={<StateSelector />} />
 					<Button>Go</Button>
 				</div>
 			</section>
@@ -56,7 +52,7 @@ export default function Home() {
 				<TagLine value="helping you find solutions across all sectors and all buildings" />
 			</section>
 			<FeaturesContextProvider>
-				<section className="layout flex w-full items-start gap-20">
+				<section className="hidden layout md:flex w-full items-start gap-20">
 					<div className="w-full py-[40vh]">
 						<ul>
 							{features.map((feature, index) => (
@@ -68,8 +64,27 @@ export default function Home() {
 					</div>
 					<div className="sticky top-0 flex h-screen w-full items-center">
 						<div className="aspect-square w-full">
-							{features.map((feature) => (<FeatureCard key={feature.pic} id={feature.title}><Image fill className="object-contain" src={feature.pic} /></FeatureCard>))}
+							{features.map((feature) => (
+								<FeatureCard key={feature.pic} id={feature.title}>
+									<Image alt="Demonstration Graphic" fill className="object-contain" src={feature.pic} />
+								</FeatureCard>
+							))}
 						</div>
+					</div>
+				</section>
+				<section className="flex layout md:hidden w-full items-start gap-20">
+					<div className="w-full pb-[20vh]">
+						<ul>
+							{features.map((feature, index) => (
+								<li key={"feature" + index} className="flex flex-col">
+									<div className=" *:object-contain relative w-full h-auto ">
+										<Image alt="Demonstration Graphic" src={feature.pic} className="w-full h-auto" width={500} height={500} />
+									</div>
+
+									<FeatureTitle title={feature.title} description={feature.description} margin={"med"} />
+								</li>
+							))}
+						</ul>
 					</div>
 				</section>
 			</FeaturesContextProvider>

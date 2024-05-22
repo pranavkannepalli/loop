@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { createContext, useState, useEffect } from "react";
 
@@ -8,10 +8,6 @@ function FeaturesContextProvider({ children }) {
 	const [inView, setInView] = useState(null);
 
 	const data = { inView, setInView };
-
-	useEffect(() => {
-		console.log(inView);
-	}, [inView])
 
 	return <FeaturesContext.Provider value={data}>{children}</FeaturesContext.Provider>;
 }
