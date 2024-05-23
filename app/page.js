@@ -1,21 +1,11 @@
-import HomeCard from "@/components/HomeCard";
-import Button from "@/components/Button";
-import { StateSelector } from "@/components/Dropdown";
-import TextInput from "@/components/TextInput";
-import BudgetSelector from "@/components/BudgetSelector";
-import PrioritiesReorder from "@/components/PrioritiesReorder";
-import BasicList from "@/components/SectorFilters/basicList";
 import HomeText from "@/components/HomeText";
 import HomeCarousel from "@/components/HomeSolutionCard/carousel";
 import TagLine from "@/components/Tagline";
-import SectorFilters from "@/components/SectorFilters";
-import SeeMore from "@/components/SeeMoreOverlay";
-import Search from "@/components/Search";
-import SolutionsButton from "@/components/SolutionsButton";
 import FeatureTitle from "@/components/FeatureTitle";
 import FeatureCard from "@/components/FeatureCard";
 import Image from "next/image";
 import { FeaturesContextProvider } from "@/components/FeaturesContext";
+import ChatGPTPrompt from "@/components/ChatGPTPrompt";
 
 const features = [
 	{
@@ -42,10 +32,7 @@ export default function Home() {
 				<div className="max-w-[900px]">
 					<HomeText />
 				</div>
-				<form className="flex items-stretch gap-[16px]">
-					<TextInput placeholder="Tell us what the problem is" />
-					<Button>Go</Button>
-				</form>
+				<ChatGPTPrompt />
 			</section>
 			<HomeCarousel />
 			<section className=" layout flex flex-col text-center my-4">
