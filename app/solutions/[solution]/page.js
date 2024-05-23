@@ -8,8 +8,6 @@ import Icon from "@/components/Icon";
 import classNames from "@/hooks/classnames";
 import Button from "@/components/Button";
 import Image from "next/image";
-import ROIGraph from "@/components/ROIGraph";
-import CostGraph from "@/components/CostGraph";
 import Accordion from "@/components/Accordion";
 import Rebate from "@/components/Rebates";
 import { usePathname } from "next/navigation";

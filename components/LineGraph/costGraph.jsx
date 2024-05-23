@@ -1,7 +1,7 @@
 import TrendIndicator from "../TrendIndicator";
 import {motion, useInView} from "framer-motion";
 import { useRef } from "react";
-import { shortenNum } from ".";
+import { shortenNum, getMaxVertical } from ".";
 
 export default function CostGraph({ datapoints, labelInterval = 8 }) {
     const ref = useRef(null);
@@ -63,6 +63,7 @@ export default function CostGraph({ datapoints, labelInterval = 8 }) {
                         }
                     }} className="absolute w-full h-full box-border bottom-0 pl-[60px]">
                         <div className="relative w-full h-full">
+                            <div className="absolute left-0 top-0 bottom-0 border-l border-l-white-100 opacity-20 border-dashed" />
                             <svg className="absolute" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 100 100">
                                 <polyline points={polyline} style={{ stroke: graphColor, fill: "none", strokeWidth: "1"}}/>
                             </svg>
@@ -80,22 +81,4 @@ export default function CostGraph({ datapoints, labelInterval = 8 }) {
             </div>
         </div>
     )
-}
-
-const getMaxVertical = (datapoints) => {
-    let max = datapoints[0][1];
-    for (let i = 0; i < datapoints.length; i++) {
-        if (datapoints[i][1] > max) {
-            max = datapoints[i][1];
-        }
-    }
-
-    let order = 0;
-    while (max >= 10) {
-        max /= 10;
-        order++;
-    }
-    max = Math.ceil(max);
-    max *= Math.pow(10, order);
-    return max;
 }

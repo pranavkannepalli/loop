@@ -4,6 +4,10 @@ import { useState, useEffect, useContext } from "react";
 import TextInput from "../../components/TextInput";
 import Button from "../../components/Button";
 import LoopContext from "@/components/LoopContext";
+import { motion, AnimatePresence } from "framer-motion";
+import classNames from "@/hooks/classnames";
+import Footprint from "./footprint";
+import SolarSavings from "./solarSavings";
 
 export default function Calculators() {
 	const { address, state, zip, city } = useContext(LoopContext);
@@ -52,15 +56,23 @@ export default function Calculators() {
 			<section className="layout flex flex-col box-border h-[100vh] items-center justify-start py-4 !pt-[125px]">
 				<h2>CALCULATOR HUB</h2>
 				<div className="flex flex-row gap-[40px] mt-[40px]">
-					<button className={screen != 0 && "text-white-400"} onClick={() => setScreen(0)}>
-						CARBON FOOTPRINT
-					</button>
-					<button className={screen != 1 && "text-white-400"} onClick={() => setScreen(1)}>
-						SOLAR PANEL ESTIMATES
-					</button>
+					<AnimatePresence>
+						<div className="flex flex-col items-start gap-[6px]">
+							<button className={screen != 0 && "text-white-400"} onClick={() => setScreen(0)}>
+								CARBON FOOTPRINT
+							</button>
+							{screen == 0 && <motion.div layoutId="calcUnderline" className="w-[35px] h-[3px] rounded-full bg-white-600" />}
+						</div>
+						<div className="flex flex-col items-start gap-[6px]">
+							<button className={screen != 1 && "text-white-400"} onClick={() => setScreen(1)}>
+								SOLAR PANEL ESTIMATES
+							</button>
+							{screen == 1 && <motion.div layoutId="calcUnderline" className="w-[35px] h-[3px] rounded-full bg-white-600" />}
+						</div>
+					</AnimatePresence>
 				</div>
 				<div className="flex flex-row gap-20px mt-[60px] justify-center gap-[20px]">
-					<form className="bg-white-100 p-[20px] rounded-[12px] flex flex-1 flex-col gap-[20px]" onSubmit={async (e) => await onSubmit(e)}>
+					<form className="flex flex-1 flex-col gap-[20px]" onSubmit={async (e) => await onSubmit(e)}>
 						<h4>HOME DETAILS</h4>
 						<div className="flex flex-col gap-[6px]">
 							<div className="caption text-white-500">STREET ADDRESS</div>
@@ -85,10 +97,11 @@ export default function Calculators() {
 						</Button>
 					</form>
 					{
-						data != null && screen == 0 && data["carbon_footprint"] != null && <div className="flex-1">{data["carbon_footprint"]["annual_carbon_footprint"]}</div> //TODO: add content here
-					}
+						data != null && screen == 0 && data["carbon_footprint"] != null && (
+							<Footprint data={data["carbon_footprint"]} />
+						)}
 					{
-						data != null && screen == 1 && data["solar"] != null && <div className="flex-1">{data["solar"]["payback_period"]}</div> //TODO: add content here
+						data != null && screen == 1 && data["solar"] != null && <SolarSavings data={data["solar"]} />//TODO: add content here
 					}
 					{
 						error && <div className="flex-1">Something went wrong</div> //TODO: add content here
