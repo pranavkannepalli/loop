@@ -184,10 +184,10 @@ const LoopContextProvider = ({ children }) => {
 
 	const [sort, changeSort] = useState("Sort");
 
-	const [address, setAddress] = useState("3828 Piermont Drive NE");
-	const [city, setCity] = useState("Albuquerque");
-	const [state, setState] = useState("NM");
-	const [zip, setZip] = useState("87111");
+	const [address, setAddress] = useState("9407 221st PL NE");
+	const [city, setCity] = useState("Redmond");
+	const [state, setState] = useState("WA");
+	const [zip, setZip] = useState("98053");
 
 	const [filterStates, changeFilterStates] = useState({
 		water: false,
@@ -384,11 +384,6 @@ const LoopContextProvider = ({ children }) => {
 		changeRebates,
 		changeSort,
 	};
-
-	const { setMessages } = useContext(ChatGPTContext);
-	useEffect(() => {
-		setMessages([]);
-	}, [state, setMessages]);
 
 	return <LoopContext.Provider value={data}>{children}</LoopContext.Provider>;
 };

@@ -10,17 +10,11 @@ function ChatGPTContextProvider({ children }) {
 	const [openMessage, setOpenMessage] = useState("");
 	const [submitOnOpen, setSubmitOnOpen] = useState(false);
 
-	const addMessage = (message) => {
-		let m = messages.slice();
-		m.push(message);
-		setMessages(m);
+	const addMessage = (sender, message, state) => {
+		setMessages((prev) => [...prev, { sender: sender, message: message, state: state }]);
 	};
 
-	useEffect(() => {
-		console.log(isOpen);
-	}, [isOpen]);
-
-	const data = { messages, setMessages, addMessage, isOpen, setIsOpen, openMessage, setOpenMessage };
+	const data = { messages, setMessages, addMessage, isOpen, setIsOpen, openMessage, setOpenMessage, submitOnOpen, setSubmitOnOpen };
 
 	return <ChatGPTContext.Provider value={data}>{children}</ChatGPTContext.Provider>;
 }

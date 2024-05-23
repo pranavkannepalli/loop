@@ -8,7 +8,6 @@ const LoginContext = createContext(null);
 function LoginContextProvider({ children }) {
 	const [loggedIn, setLoggedIn] = useState(false);
 	const [redirect, setRedirect] = useState("/dashboard");
-	const { setMessages } = useContext(ChatGPTContext);
 
 	useEffect(() => {
 		setLoggedIn(JSON.parse(localStorage.getItem("auth")) || false);
@@ -16,8 +15,7 @@ function LoginContextProvider({ children }) {
 
 	useEffect(() => {
 		localStorage.setItem("auth", JSON.stringify(loggedIn));
-		setMessages([]);
-	}, [loggedIn, setMessages]);
+	}, [loggedIn]);
 
 	const data = { loggedIn, setLoggedIn, redirect, setRedirect };
 

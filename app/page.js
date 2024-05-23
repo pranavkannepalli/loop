@@ -43,7 +43,7 @@ export default function Home() {
 					<HomeText />
 				</div>
 				<form className="flex items-stretch gap-[16px]">
-					<TextInput placeholder="Tell us what the problem is" suffix={<StateSelector />} />
+					<TextInput placeholder="Tell us what the problem is" />
 					<Button>Go</Button>
 				</form>
 			</section>
