@@ -8,8 +8,6 @@ import Icon from "@/components/Icon";
 import classNames from "@/hooks/classnames";
 import Button from "@/components/Button";
 import Image from "next/image";
-import ROIGraph from "@/components/ROIGraph";
-import CostGraph from "@/components/CostGraph";
 import Accordion from "@/components/Accordion";
 import Rebate from "@/components/Rebates";
 import { usePathname } from "next/navigation";
@@ -178,7 +176,7 @@ export default function Solution({ params }) {
 						<div className="flex-1 text-left">
 							{solution.price != 0 && <LineGraph.CostGraph datapoints={solution.costGraph} />}
 							<div className="h-[20px] w-full" />
-							{solution.roiGraph[solution.roiGraph.length - 1][1] != 0 && <ROIGraph points={solution.roiGraph} cost={solution.price} />}
+							{solution.roiGraph[solution.roiGraph.length - 1][1] != 0 && <LineGraph.ROIGraph datapoints={solution.roiGraph} cost={solution.price} />}
 						</div>
 					</div>
 				</section>

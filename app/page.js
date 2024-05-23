@@ -28,7 +28,7 @@ const features = [
 export default function Home() {
 	return (
 		<main>
-			<section className="flex layout flex-col items-center !mt-[200px] !mb-[40px] gap-[40px]">
+			<section className="flex layout flex-col items-center !pt-[200px] !mb-[40px] gap-[40px]">
 				<div className="max-w-[900px]">
 					<HomeText />
 				</div>

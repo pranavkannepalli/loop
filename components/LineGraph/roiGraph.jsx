@@ -1,9 +1,9 @@
 import TrendIndicator from "../TrendIndicator";
-import {motion, useInView} from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { shortenNum, getMaxVertical } from ".";
 
-export default function CostGraph({ datapoints, labelInterval = 8 }) {
+export default function ROIGraph({ datapoints, labelInterval = 8 }) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
     let yearsToRender = [];
@@ -30,42 +30,46 @@ export default function CostGraph({ datapoints, labelInterval = 8 }) {
     polygon += "100% 100%";
     let mostRecent = 0;
     let today = new Date();
-    for(let i = 0; datapoints[i][0] < today.getFullYear(); i++){
-        mostRecent = i; 
+    for (let i = 0; datapoints[i][0] < today.getFullYear(); i++) {
+        mostRecent = i;
     }
     let lastPrice = datapoints[mostRecent][1];
     let nextPrice = datapoints[mostRecent + 1][1];
-    let currentPrice = lastPrice + (nextPrice - lastPrice) / 5 *( today.getUTCFullYear() - datapoints[mostRecent][0]);
-    
+    let currentPrice = lastPrice + (nextPrice - lastPrice) / 5 * (today.getUTCFullYear() - datapoints[mostRecent][0]);
 
-    const graphColor = datapoints[datapoints.length - 1][1] - datapoints[datapoints.length - 2][1] < 0 ? "#48BB78" : "#F56565";
+
+    const graphColor = datapoints[datapoints.length - 1][1] - datapoints[datapoints.length - 2][1] > 0 ? "#48BB78" : "#F56565";
     return (
-        <div style={{ aspectRatio: "5/3" }} className="flex flex-col bg-white-600 p-[20px] !pr-0 rounded-[20px]">
-            <h6 className="text-white-300">Historical Prices</h6>
+        <div style={{ aspectRatio: "5/3" }} className="flex flex-col bg-white-100 border border-white-300 p-[20px] !pr-0 rounded-[20px]">
+            <h6 className="text-white-400">Return on Investment</h6>
             <div className="flex items-center gap-[20px]">
-                <h4 className="text-white-100">${currentPrice.toLocaleString()}</h4>
-                <TrendIndicator past={datapoints[datapoints.length - 2][1]} present={datapoints[datapoints.length - 1][1]} />
+                <div className="flex items-baseline">
+                    <h4 className="text-white-600">${currentPrice.toLocaleString()}</h4>
+                    <p className="text-white-600 caption">/year</p>
+                </div>
+                <TrendIndicator past={datapoints[datapoints.length - 2][1]} reversed={false} present={datapoints[datapoints.length - 1][1]} />
             </div>
-            <div  className="flex-1 flex flex-col mt-[12px] items-stretch">
+            <div className="flex-1 flex flex-col mt-[12px] items-stretch">
                 <div className="flex-1 relative flex items-stretch">
                     <div id="axis label" className="flex flex-1 flex-col justify-between">
                         {verticalNumbersToRender.map(num => (
                             <div key={num} className="flex gap-[10px] items-center">
-                                <p className="caption text-right text-white-300 w-[50px]">${shortenNum(num)}</p>
-                                <div className="flex-1 border-t border-t-white-100 opacity-20 border-dashed" />
+                                <p className="caption text-right text-white-400 w-[50px]">${shortenNum(num)}</p>
+                                <div className="flex-1 border-t border-t-[#000000] opacity-20 border-dashed" />
                             </div>
                         ))}
                     </div>
-                    <motion.div initial={{ scaleY: 0}} animate={{
-                        scaleY: isInView ? 1:0,
+                    <motion.div initial={{ scaleY: 0 }} animate={{
+                        scaleY: isInView ? 1 : 0,
                         transition: {
                             duration: 0.5
                         }
                     }} className="absolute w-full h-full box-border bottom-0 pl-[60px]">
                         <div className="relative w-full h-full">
-                            <div className="absolute left-0 top-0 bottom-0 border-l border-l-white-100 opacity-20 border-dashed" />
+                            <div className="absolute left-0 top-0 bottom-0 border-l border-l-[#000] opacity-20 border-dashed" />
+
                             <svg className="absolute" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 100 100">
-                                <polyline points={polyline} style={{ stroke: graphColor, fill: "none", strokeWidth: "1"}}/>
+                                <polyline points={polyline} style={{ stroke: graphColor, fill: "none", strokeWidth: "1" }} />
                             </svg>
                             <div className="absolute w-full h-full" style={{
                                 clipPath: `polygon(${polygon})`,
@@ -75,8 +79,8 @@ export default function CostGraph({ datapoints, labelInterval = 8 }) {
                         </div>
                     </motion.div>
                 </div>
-                <div ref={ref}  className="flex ml-[50px]">
-                    {yearsToRender.map(year => <p key={year} className="flex-1 text-center caption text-white-300">{year}</p>)}
+                <div ref={ref} className="flex ml-[50px]">
+                    {yearsToRender.map(year => <p key={year} className="flex-1 text-center caption text-white-400">{year}</p>)}
                 </div>
             </div>
         </div>
