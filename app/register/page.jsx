@@ -90,13 +90,13 @@ function Login() {
 						<a className={classNames("w-[40px] h-[40px] flex items-center justify-center rounded-full transition-all duration-1000", stageStyles(screen, 2))}>3</a>
 					</div>
 				</div>
-				<div className="flex-1 flex flex-col justify-between">
+				<div className="flex-1 flex flex-col items-stretch justify-between">
 					<div className="flex flex-col gap-[12px]">
 						<h6 className="text-white-400 text-center">Set Up Your Profile</h6>
 						<h2 className="text-center">{titles[screen]}</h2>
 					</div>
 						<AnimatePresence mode="wait" custom={direction}>
-							<motion.div className="flex" key={screen} custom={direction} variants={stageVariant} initial="initial" animate="animate" exit="exit">
+							<motion.div key={screen} custom={direction} variants={stageVariant} initial="initial" animate="animate" exit="exit">
 								{stages[screen]}
 							</motion.div>
 						</AnimatePresence>

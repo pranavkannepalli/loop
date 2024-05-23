@@ -2,7 +2,7 @@
 
 import classNames from "@/hooks/classnames";
 
-export default function Button({ prefix = null, type = "primary", children, className = "", onClick = (e) => {} }) {
+export default function Button({ prefix = null, type = "primary", children, className = "", onClick = (e) => {}, submit=false }) {
 	return (
 		<button
 			className={classNames(
@@ -10,6 +10,7 @@ export default function Button({ prefix = null, type = "primary", children, clas
 				type == "primary" ? "bg-green-800 text-white-200" : "bg-none text-green-700",
 				className
 			)}
+			type={submit ? "submit" : ""}
 			onClick={(e) => onClick(e)}
 		>
 			{prefix}

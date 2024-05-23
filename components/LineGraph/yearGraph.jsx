@@ -37,7 +37,7 @@ export default function YearGraph({
     }
     polygon += "100% 100%";
     console.log(polygon);
-
+    let [cx, cy] = [(0.5 + currentMonth) * 100 / 12, (verticalMax -  datapoints[currentMonth][1]) * 100 / verticalMax];
     return (
         <div ref={ref} style={{ aspectRatio: "5/3" }} className="flex flex-col bg-white-100 border border-white-300 p-[20px] rounded-[20px]">
             <h6 className="text-white-400">{title}</h6>
@@ -47,7 +47,7 @@ export default function YearGraph({
                     <div id="axis label" className="flex flex-1 flex-col justify-between">
                         {verticalNumbersToRender.map(num => (
                             <div key={num} className="flex gap-[10px] items-center">
-                                <p className="caption text-right text-white-400 w-[50px]">${shortenNum(num)}</p>
+                                <p className="caption text-right text-white-400 w-[50px]">{shortenNum(num)}</p>
                                 <div className="flex-1 border-t border-t-[#000] opacity-20 border-dashed" />
                             </div>
                         ))}
@@ -57,8 +57,10 @@ export default function YearGraph({
                         transition: {
                             duration: 0.5
                         }
-                    }} className="absolute w-full h-full box-border bottom-0 pl-[60px]">
+                    }} className="absolute w-full h-full box-border bottom-0 py-[5px] pl-[60px]">
                         <div className="relative w-full h-full">
+                        <div className="absolute w-[10px] h-[10px] translate-y-[-5px] rounded-full" style={{ backgroundColor: color, top: `${cy}%`, left: `${cx}%`}} />
+
                             <div className="absolute left-0 top-0 bottom-0 border-l border-l-[#000] opacity-20 border-dashed" />
                             <svg className="absolute" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 100 100">
                                 <polyline points={polyline} style={{ stroke: color, fill: "none", strokeWidth: "0.5px"}}/>

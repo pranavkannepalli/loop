@@ -8,7 +8,7 @@ export default function SolarSavings({ data }) {
     }
     return (
         <div className="flex-1 flex flex-col items-stretch gap-[16px]">
-            <div className="flex gap-[16px] items-stretch">
+            <div className="flex flex-wrap gap-[16px] items-stretch">
                 <div className="flex flex-1 flex-col p-[20px] rounded-[12px] items-start gap-[12px] bg-yellow-500">
                     <h6 className="text-yellow-700">Up-Front Cost</h6>
                     <h3 className="text-yellow-800">${data["upfront_cost"].toLocaleString()}</h3>

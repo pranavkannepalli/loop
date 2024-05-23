@@ -37,8 +37,9 @@ export default function ROIGraph({ datapoints, labelInterval = 8 }) {
     let nextPrice = datapoints[mostRecent + 1][1];
     let currentPrice = lastPrice + (nextPrice - lastPrice) / 5 * (today.getUTCFullYear() - datapoints[mostRecent][0]);
 
+    let [cx, cy] = [(today.getFullYear() - 1985) * 100 / 40, (verticalMax - currentPrice) * 100 / verticalMax];
 
-    const graphColor = datapoints[datapoints.length - 1][1] - datapoints[datapoints.length - 2][1] > 0 ? "#48BB78" : "#F56565";
+    const graphColor = datapoints[datapoints.length - 1][1] - datapoints[0][1] > 0 ? "#48BB78" : "#F56565";
     return (
         <div style={{ aspectRatio: "5/3" }} className="flex flex-col bg-white-100 border border-white-300 p-[20px] !pr-0 rounded-[20px]">
             <h6 className="text-white-400">Return on Investment</h6>
@@ -47,7 +48,7 @@ export default function ROIGraph({ datapoints, labelInterval = 8 }) {
                     <h4 className="text-white-600">${currentPrice.toLocaleString()}</h4>
                     <p className="text-white-600 caption">/year</p>
                 </div>
-                <TrendIndicator past={datapoints[datapoints.length - 2][1]} reversed={false} present={datapoints[datapoints.length - 1][1]} />
+                <TrendIndicator past={datapoints[0][1]} reversed={false} present={datapoints[datapoints.length - 1][1]} />
             </div>
             <div className="flex-1 flex flex-col mt-[12px] items-stretch">
                 <div className="flex-1 relative flex items-stretch">
@@ -64,8 +65,9 @@ export default function ROIGraph({ datapoints, labelInterval = 8 }) {
                         transition: {
                             duration: 0.5
                         }
-                    }} className="absolute w-full h-full box-border bottom-0 pl-[60px]">
+                    }} className="absolute w-full h-full box-border bottom-0 py-[5px] pl-[60px]">
                         <div className="relative w-full h-full">
+                        <div className="absolute w-[10px] h-[10px] translate-x-[-50%] translate-y-[-50%] rounded-full" style={{ backgroundColor: graphColor, top: `${cy}%`, left: `${cx}%`}} />
                             <div className="absolute left-0 top-0 bottom-0 border-l border-l-[#000] opacity-20 border-dashed" />
 
                             <svg className="absolute" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 100 100">

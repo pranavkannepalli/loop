@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function About({}) {
 	return (
-		<main>
+		<main className="min-h-screen">
 			<section className="flex flex-col box-border gap-[20px] !pt-[100px] layout">
 				<h4>About Us</h4>
 				<p>

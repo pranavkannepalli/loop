@@ -70,7 +70,7 @@ export default function Navbar() {
 						<h4>Loop</h4>
 					</Link>
 					<AnimatePresence>
-						<div style={{ gridRow: 1 }} className="hidden md:flex flex-row gap-[50px] items-start justify-self-center justify-center col-span-3">
+						<div style={{ gridRow: 1 }} className="hidden min-[900px]:flex flex-row gap-[50px] items-start justify-self-center justify-center col-span-3">
 							{linksFiltered.map((e) => (
 								<div className="flex flex-col items-center gap-[6px]" key={e.label}>
 									<Link href={e.address} className={pathname == e.address || (e.address != "/" && pathname.includes(e.address)) ? "text-white-600" : "text-white-400"}>
@@ -83,17 +83,18 @@ export default function Navbar() {
 							))}
 						</div>
 					</AnimatePresence>
-					<div style={{ gridRow: 1 }} className="justify-self-end flex justify-end h-full items-center gap-[10px]">
-						<div
-							className="text-white-100 bg-white-600 rounded-full flex justify-center items-center w-[24px] h-[24px] hover:cursor-pointer
-						"
+					<div style={{ gridRow: 1 }} className=" flex justify-end h-full items-center gap-[10px]">
+						<Icon name="menu" className="min-[900px]:hidden" onClick={() => changeShowMenu(true)} />
+						{/* <div
+							className="text-white-100 bg-white-600 rounded-full flex justify-center items-center w-[40px] h-[40px] hover:cursor-pointer"
 							onClick={() => setIsOpen(true)}
-						>
-							<Icon name="sparkles" size={15} />
+						> */}
+						<div onClick={() => setIsOpen(true)} className="w-[40px] h-[40px] text-white-100 flex items-center justify-center rounded-full bg-white-600">
+							<Icon name="sparkles" size={24} />
 						</div>
-						<Icon name="menu" className="md:hidden" onClick={() => changeShowMenu(true)} />
+						{/* </div> */}
 						<Link href={loggedIn ? "/dashboard" : "/login"}>
-							<Image alt="Profile Picture" src="/User.png" height={24} width={24} />
+							<Image alt="Profile Picture" src="/User.png" height={40} width={40} />
 						</Link>
 					</div>
 				</div>
@@ -107,32 +108,19 @@ export default function Navbar() {
 						className="z-50 t-0 fixed w-full h-full gap-[20px] bg-white-100 flex flex-col items-center justify-center"
 					>
 						<Icon name="add" className="absolute top-[20px] right-[20px]" style={{ transform: "rotate(45deg)" }} onClick={() => changeShowMenu(false)} />
-						{loggedIn && (
-							<Link onClick={() => changeShowMenu(false)} href="/dashboard">
-								Dashboard
-							</Link>
-						)}
-						<Link onClick={() => changeShowMenu(false)} href="/solutions">
-							Solutions
-						</Link>
-						<Link onClick={() => changeShowMenu(false)} href="/about">
-							About
-						</Link>
-						<Link onClick={() => changeShowMenu(false)} href="/sources">
-							Sources
-						</Link>
-						{!loggedIn && (
-							<div
-								className="link cursor-pointer"
-								onClick={() => {
-									if (pathname != "/login") setRedirect(pathname);
+						{linksFiltered.map((e) => (
+							<div className="flex flex-col items-center gap-[6px]" key={e.label}>
+								<a onClick={() => {
 									changeShowMenu(false);
-									router.push("/login");
-								}}
-							>
-								Login
+									router.push(e.address);
+								}} className={pathname == e.address || (e.address != "/" && pathname.includes(e.address)) ? "text-white-600" : "text-white-400"}>
+									{e.label}
+								</a>
+								{(pathname == e.address || (e.address != "/" && pathname.includes(e.address))) && (
+									<motion.div className="w-[35px] h-[3px] rounded-full bg-white-600" layoutId="underline" />
+								)}
 							</div>
-						)}
+						))}
 					</motion.div>
 				)}
 			</AnimatePresence>

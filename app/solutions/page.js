@@ -8,7 +8,7 @@ import Search from "@/components/Search";
 
 export default function Solutions() {
 	return (
-		<div className="layout !pt-[100px] gap-[20px] flex flex-col">
+		<div className="layout !pt-[120px] gap-[20px] flex flex-col">
 			<div className="flex flex-row gap-[20px] mb-[20px]">
 				<Search />
 			</div>

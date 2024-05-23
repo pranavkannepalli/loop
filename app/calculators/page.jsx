@@ -47,17 +47,17 @@ export default function Calculators() {
 
 	return (
 		<main>
-			<section className="layout flex flex-col box-border h-[100vh] items-center justify-start py-4 !pt-[125px]">
-				<h2>CALCULATOR HUB</h2>
+			<section className="layout flex flex-col box-border min-h-[100vh] items-center justify-start py-4 !pt-[125px]">
+				<h2 className="text-center">CALCULATOR HUB</h2>
 				<div className="flex flex-row gap-[40px] mt-[40px]">
 					<AnimatePresence>
-						<div className="flex flex-col items-start gap-[6px]">
+						<div className="flex flex-col items-center gap-[6px]">
 							<button className={screen != 0 && "text-white-400"} onClick={() => setScreen(0)}>
 								CARBON FOOTPRINT
 							</button>
 							{screen == 0 && <motion.div layoutId="calcUnderline" className="w-[35px] h-[3px] rounded-full bg-white-600" />}
 						</div>
-						<div className="flex flex-col items-start gap-[6px]">
+						<div className="flex flex-col items-center gap-[6px]">
 							<button className={screen != 1 && "text-white-400"} onClick={() => setScreen(1)}>
 								SOLAR PANEL ESTIMATES
 							</button>
@@ -65,29 +65,33 @@ export default function Calculators() {
 						</div>
 					</AnimatePresence>
 				</div>
-				<div className="flex flex-row gap-20px mt-[60px] justify-center gap-[20px]">
-					<form className="flex flex-1 flex-col gap-[20px]" onSubmit={async (e) => await onSubmit(e)}>
+				<div className="flex flex-wrap gap-20px mt-[60px] justify-center gap-[20px]">
+					<form className="flex flex-1 flex-col gap-[20px] min-w-[250px]" onSubmit={async (e) => await onSubmit(e)}>
 						<h4>HOME DETAILS</h4>
 						<div className="flex flex-col gap-[6px]">
 							<div className="caption text-white-500">STREET ADDRESS</div>
-							<TextInput placeholder="9769 111th Ave NE" value={nAddress} onChange={(e) => setAddress(e.target.value)} />
+							<TextInput placeholder="9769 111th Ave NE" value={nAddress} onChange={(e) => {
+								setAddress(e.target.value);
+								setError(false);
+							}} />
 						</div>
 						<div className="flex flex-row gap-[13px]">
 							<div className="flex flex-col gap-[6px]">
 								<div className="caption text-white-500">City</div>
-								<TextInput placeholder="Redmond" value={nCity} onChange={(e) => setCity(e.target.value)} />
+								<TextInput placeholder="Redmond" value={nCity} onChange={(e) => { setError(false); setCity(e.target.value) }} />
 							</div>
 							<div className="flex flex-col gap-[6px]">
 								<div className="caption text-white-500">State</div>
-								<TextInput placeholder="WA" value={nState} onChange={(e) => setState(e.target.value)} />
+								<TextInput placeholder="WA" value={nState} onChange={(e) =>{setError(false); setState(e.target.value)}} />
 							</div>
 							<div className="flex flex-col gap-[6px]">
 								<div className="caption text-white-500">Zip</div>
-								<TextInput placeholder="98052" value={nZip} onChange={(e) => setZip(e.target.value)} />
+								<TextInput placeholder="98052" value={nZip} onChange={(e) => { setError(false); setZip(e.target.value)}} />
 							</div>
 						</div>
+						{error && <p className="caption text-error">Something went wrong. Please try another address or try again later.</p>}
 						<Button disabled={loading} onClick={async (e) => await onSubmit(e)}>
-							GO
+							{loading ? "Loading..." : "GO"}
 						</Button>
 					</form>
 					{
@@ -96,9 +100,6 @@ export default function Calculators() {
 						)}
 					{
 						data != null && screen == 1 && data["solar"] != null && <SolarSavings data={data["solar"]} />//TODO: add content here
-					}
-					{
-						error && <div className="flex-1">Something went wrong</div> //TODO: add content here
 					}
 				</div>
 			</section>

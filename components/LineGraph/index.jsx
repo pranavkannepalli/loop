@@ -3,9 +3,9 @@ import ROIGraph from "./roiGraph";
 import YearGraph from "./yearGraph";
 
 const shortenNum = (num) => {
-    if(num < 1000) return `${num}`;
+    if(num < 1000) return `${Math.round(num * 100) / 100}`;
     else {
-        return `${Math.round(num / 1000)}K`;
+        return `${Math.round(num  / 100) / 10}K`;
     }
 }
 
