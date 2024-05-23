@@ -3,6 +3,8 @@ import Navbar from "@/components/Navbar";
 import { LoopContextProvider } from "@/components/LoopContext";
 import { LoginContextProvider } from "@/components/LoginContext";
 import Footer from "@/components/Footer";
+import { ChatGPTContextProvider } from "@/components/ChatGPTContext";
+import ChatGPTModal from "@/components/ChatGPTModal";
 
 export const metadata = {
 	title: "LOOP",
@@ -12,14 +14,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body >
-				<LoopContextProvider>
-					<LoginContextProvider>
-						<Navbar />
-						{children}
-						<Footer />
-					</LoginContextProvider>
-				</LoopContextProvider>
+			<body>
+				<ChatGPTContextProvider>
+					<LoopContextProvider>
+						<LoginContextProvider>
+							<ChatGPTModal />
+
+							<Navbar />
+							{children}
+							<Footer />
+						</LoginContextProvider>
+					</LoopContextProvider>
+				</ChatGPTContextProvider>
 			</body>
 		</html>
 	);

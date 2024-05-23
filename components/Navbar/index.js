@@ -8,33 +8,33 @@ import { useState, useContext } from "react";
 import LoginContext from "../LoginContext";
 import { useRouter, usePathname } from "next/navigation";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
-
+import ChatGPTContext from "../ChatGPTContext";
 
 const links = [
 	{
 		label: "Home",
 		address: "/",
-		shouldRender: (loggedIn) => true
+		shouldRender: (loggedIn) => true,
 	},
 	{
 		label: "Dashboard",
 		address: "/dashboard",
-		shouldRender: (loggedIn) => loggedIn
+		shouldRender: (loggedIn) => loggedIn,
 	},
 	{
 		label: "Solutions",
 		address: "/solutions",
-		shouldRender: (loggedIn) => true
+		shouldRender: (loggedIn) => true,
 	},
 	{
 		label: "Calculators",
 		address: "/calculators",
-		shouldRender: (loggedIn) => true
+		shouldRender: (loggedIn) => true,
 	},
 	{
 		label: "About",
 		address: "/about",
-		shouldRender: (loggedIn) => true
+		shouldRender: (loggedIn) => true,
 	},
 	{
 		label: "Sources",
@@ -44,8 +44,8 @@ const links = [
 	{
 		label: "Login",
 		address: "/login",
-		shouldRender: (loggedIn) => !loggedIn
-	}
+		shouldRender: (loggedIn) => !loggedIn,
+	},
 ];
 
 export default function Navbar() {
@@ -54,7 +54,9 @@ export default function Navbar() {
 	const pathname = usePathname();
 	const { setRedirect, loggedIn } = useContext(LoginContext);
 	const scrollPos = useScrollPosition();
-	const linksFiltered = links.filter(e => e.shouldRender(loggedIn));
+	const linksFiltered = links.filter((e) => e.shouldRender(loggedIn));
+	const { setIsOpen } = useContext(ChatGPTContext);
+
 	return (
 		<>
 			<nav
@@ -69,19 +71,26 @@ export default function Navbar() {
 					</Link>
 					<AnimatePresence>
 						<div style={{ gridRow: 1 }} className="hidden md:flex flex-row gap-[50px] items-start justify-self-center justify-center col-span-3">
-							{linksFiltered.map(e => (
+							{linksFiltered.map((e) => (
 								<div className="flex flex-col items-center gap-[6px]" key={e.label}>
-									<Link href={e.address} className={(pathname == e.address || (e.address != "/" && pathname.includes(e.address))) ? "text-white-600" : "text-white-400"}>
+									<Link href={e.address} className={pathname == e.address || (e.address != "/" && pathname.includes(e.address)) ? "text-white-600" : "text-white-400"}>
 										{e.label}
 									</Link>
-									{(pathname == e.address || (e.address != "/" && pathname.includes(e.address))) &&
-										<motion.div className="w-[35px] h-[3px] rounded-full bg-white-600" layoutId="underline"/>
-									}
+									{(pathname == e.address || (e.address != "/" && pathname.includes(e.address))) && (
+										<motion.div className="w-[35px] h-[3px] rounded-full bg-white-600" layoutId="underline" />
+									)}
 								</div>
 							))}
 						</div>
 					</AnimatePresence>
 					<div style={{ gridRow: 1 }} className="justify-self-end flex justify-end h-full items-center gap-[10px]">
+						<div
+							className="text-white-100 bg-white-600 rounded-full flex justify-center items-center w-[24px] h-[24px] hover:cursor-pointer
+						"
+							onClick={() => setIsOpen(true)}
+						>
+							<Icon name="sparkles" size={15} />
+						</div>
 						<Icon name="menu" className="md:hidden" onClick={() => changeShowMenu(true)} />
 						<Link href={loggedIn ? "/dashboard" : "/login"}>
 							<Image alt="Profile Picture" src="/User.png" height={24} width={24} />

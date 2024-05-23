@@ -27,11 +27,6 @@ export default function Calculators() {
 	const onSubmit = async (e) => {
 		e.preventDefault();
 		setLoading(true);
-
-		console.log(nAddress);
-		console.log(nState);
-		console.log(nZip);
-		console.log(nCity);
 		const response = await fetch("/api/houseData", {
 			method: "POST",
 			headers: {
@@ -47,7 +42,6 @@ export default function Calculators() {
 			setData(null);
 			setError(true);
 		}
-		console.log(d);
 		setLoading(false);
 	};
 

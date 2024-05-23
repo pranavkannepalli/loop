@@ -1,6 +1,7 @@
 "use client";
 
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
+import ChatGPTContext from "../ChatGPTContext";
 
 const LoginContext = createContext(null);
 
@@ -10,10 +11,10 @@ function LoginContextProvider({ children }) {
 
 	useEffect(() => {
 		setLoggedIn(JSON.parse(localStorage.getItem("auth")) || false);
-	}, [])
+	}, []);
 
 	useEffect(() => {
-		localStorage.setItem("auth", JSON.stringify(loggedIn))
+		localStorage.setItem("auth", JSON.stringify(loggedIn));
 	}, [loggedIn]);
 
 	const data = { loggedIn, setLoggedIn, redirect, setRedirect };

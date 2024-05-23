@@ -1,7 +1,8 @@
 "use client";
 
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 import solutions from "@/app/solutions";
+import ChatGPTContext from "../ChatGPTContext";
 
 // TODO: create login context and login page
 
@@ -183,10 +184,10 @@ const LoopContextProvider = ({ children }) => {
 
 	const [sort, changeSort] = useState("Sort");
 
-	const [address, setAddress] = useState("3828 Piermont Drive NE");
-	const [city, setCity] = useState("Albuquerque");
-	const [state, setState] = useState("NM");
-	const [zip, setZip] = useState("87111");
+	const [address, setAddress] = useState("9407 221st PL NE");
+	const [city, setCity] = useState("Redmond");
+	const [state, setState] = useState("WA");
+	const [zip, setZip] = useState("98053");
 
 	const [filterStates, changeFilterStates] = useState({
 		water: false,

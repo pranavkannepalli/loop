@@ -5,7 +5,6 @@ import solutions from "../../solutions";
 export async function POST(request) {
 	try {
 		var requestData = await request.json();
-
 		var state = requestData["state"];
 		var s = [];
 
