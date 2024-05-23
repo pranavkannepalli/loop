@@ -55,23 +55,33 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Turn off water supply.",
-                    description: "You can find this in your garage",
+                    header: "Turn off the water supply",
+                    description: "Locate the main water shut-off valve, usually found in the garage, basement, or near the water meter, and turn it off."
                 },
                 {
-                    header: "Remove the old fixture.",
-                    description:
-                        "Consult the manufacturer's instructions for specific removal steps",
+                    header: "Drain the water lines",
+                    description: "Open the faucets to drain any remaining water from the pipes to avoid spills during the installation."
                 },
                 {
-                    header: "Install the new low-flow fixture.",
-                    description:
-                        "Consult the manufacturer's instructions for specific installation steps",
+                    header: "Remove the old fixture",
+                    description: "Use appropriate tools and follow the manufacturer's instructions to carefully remove the old fixture."
+                },
+                {
+                    header: "Prepare the installation area",
+                    description: "Clean the area and make any necessary repairs or adjustments to ensure a proper fit for the new fixture."
+                },
+                {
+                    header: "Install the new low-flow fixture",
+                    description: "Consult the manufacturer's instructions and use the recommended tools to install the new low-flow fixture securely."
                 },
                 {
                     header: "Turn the water supply on",
-                    description: "Test the fixture before certifying it works",
+                    description: "Slowly turn the main water valve back on and check for leaks around the new fixture."
                 },
+                {
+                    header: "Test the new fixture",
+                    description: "Run the water through the new low-flow fixture to ensure it is functioning correctly and efficiently."
+                }
             ],
             utilityRebates: [
                 {
@@ -129,32 +139,33 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Consult with a plumber or greywater system specialist",
-                    description: "to determine the best system for your home.",
+                    header: "Turn off the water supply",
+                    description: "Locate the main water shut-off valve, usually found in the garage, basement, or near the water meter, and turn it off."
                 },
                 {
-                    header: "Obtain necessary permits and approvals",
-                    description: "from local authorities.",
+                    header: "Plan the greywater system layout",
+                    description: "Determine the sources of greywater (sinks, showers, etc.) and plan the route to the greywater recycling system. Make sure to comply with local codes and regulations."
                 },
                 {
-                    header: "Install the greywater collection and storage system",
-                    description:
-                        "typically involving plumbing modifications and the installation of a storage tank.",
+                    header: "Install the diverter valve",
+                    description: "Install a diverter valve at each greywater source to direct water either to the recycling system or the sewer."
                 },
                 {
-                    header: "Install the filtration and treatment system",
-                    description:
-                        "which may include a pump, filters, and disinfection equipment.",
+                    header: "Set up the greywater storage tank",
+                    description: "Place the storage tank in an appropriate location, such as a basement or outdoor area, and ensure it is securely positioned and properly connected to the diverter valves."
                 },
                 {
-                    header: "Connect the treated greywater",
-                    description:
-                        "to the toilet or irrigation system as appropriate.",
+                    header: "Connect the irrigation system",
+                    description: "Install pipes or hoses from the greywater storage tank to the irrigation system in your garden or landscape area. Ensure proper filtration and distribution."
                 },
                 {
-                    header: "Test the system",
-                    description: "and make any necessary adjustments.",
+                    header: "Turn the water supply on",
+                    description: "Slowly turn the main water valve back on and check for leaks around the diverter valves and storage tank connections."
                 },
+                {
+                    header: "Test the greywater system",
+                    description: "Run water through the system to ensure the greywater is being properly diverted, stored, and used for irrigation without any leaks or issues."
+                }
             ],
             utilityRebates: [
                 {
@@ -229,35 +240,33 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Consult with a plumber or rainwater harvesting specialist",
-                    description:
-                        "Discuss and determine the most suitable rainwater harvesting system tailored to your home's needs and location.",
+                    header: "Choose a location for the storage tank",
+                    description: "Select a suitable location for the rainwater storage tank, such as near a downspout, and ensure the ground is level and stable."
                 },
                 {
-                    header: "Obtain any necessary permits and approvals",
-                    description:
-                        "Ensure compliance with local regulations by obtaining required permits and approvals before proceeding with installation.",
+                    header: "Install gutters and downspouts",
+                    description: "Ensure your roof has gutters installed, and attach downspouts that will direct rainwater into the storage tank."
                 },
                 {
-                    header: "Install the collection system",
-                    description:
-                        "Set up gutters and downspouts to channel rainwater into a storage tank, establishing the primary infrastructure of the harvesting system.",
+                    header: "Set up the first flush diverter",
+                    description: "Install a first flush diverter on the downspout to remove debris and contaminants from the initial flow of rainwater."
                 },
                 {
-                    header: "Install the filtration and treatment system",
-                    description:
-                        "Integrate essential components such as pumps, filters, and disinfection equipment to ensure the collected rainwater meets quality standards for intended usage.",
+                    header: "Install the rainwater storage tank",
+                    description: "Position the storage tank in the selected location and connect it to the downspout using pipes or hoses. Ensure all connections are secure and watertight."
                 },
                 {
-                    header: "Connect the treated rainwater",
-                    description:
-                        "Establish connections from the treatment system to designated non-potable water systems within your property, optimizing the utilization of harvested rainwater.",
+                    header: "Add a filtration system",
+                    description: "Install a filtration system to remove any remaining debris from the rainwater before it enters the storage tank."
                 },
                 {
-                    header: "Test the system and make any necessary adjustments",
-                    description:
-                        "Conduct thorough testing to verify functionality and performance, making adjustments as needed to guarantee optimal operation and efficiency.",
+                    header: "Connect the distribution system",
+                    description: "Set up a distribution system to use the collected rainwater for irrigation, toilet flushing, or other non-potable uses. Ensure proper piping and valves are in place."
                 },
+                {
+                    header: "Test the rainwater harvesting system",
+                    description: "Check all connections and run water through the system to ensure it is functioning correctly, with no leaks or issues."
+                }
             ],
             utilityRebates: [
                 {
@@ -326,40 +335,37 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Assess the site and determine plant selection and hardscape elements",
-                    description:
-                        "Evaluate the site conditions to determine suitable plants and hardscape features for landscaping.",
+                    header: "Assess the site and plan the layout",
+                    description: "Evaluate the area to be xeriscaped, considering factors like soil type, sunlight, and existing vegetation. Plan the layout to incorporate native and drought-resistant plants."
                 },
                 {
-                    header: "Remove existing turf or plants",
-                    description:
-                        "If necessary, clear the area of any existing turf or plants to prepare for landscaping.",
+                    header: "Remove existing turf and weeds",
+                    description: "Clear the area of any existing grass, weeds, and other unwanted vegetation. Use appropriate tools and methods to ensure thorough removal."
                 },
                 {
-                    header: "Install efficient irrigation systems",
-                    description:
-                        "Implement water-saving irrigation methods such as drip or micro-sprinklers to ensure efficient water distribution.",
+                    header: "Amend the soil",
+                    description: "Improve the soil with organic matter, compost, or other amendments to enhance its water retention and drainage properties."
                 },
                 {
-                    header: "Prepare the soil and incorporate organic matter",
-                    description:
-                        "Enhance soil quality by incorporating organic matter to improve water retention and overall soil health.",
+                    header: "Install a drip irrigation system",
+                    description: "Set up a drip irrigation system to provide efficient water delivery directly to the plant roots. Ensure the system is properly installed and covers all planned planting areas."
                 },
                 {
-                    header: "Plant drought-tolerant trees, shrubs, and groundcovers",
-                    description:
-                        "Select and plant species that are resilient to drought conditions, reducing the need for excessive watering.",
+                    header: "Place landscape fabric",
+                    description: "Lay down landscape fabric to help prevent weed growth while allowing water and air to reach the soil."
                 },
                 {
-                    header: "Apply a layer of mulch",
-                    description:
-                        "Spread mulch over planted areas to conserve moisture, suppress weed growth, and improve soil health.",
+                    header: "Plant drought-resistant and native species",
+                    description: "Plant a variety of drought-resistant and native plants according to your layout plan. Group plants with similar water needs together."
                 },
                 {
-                    header: "Monitor and adjust the irrigation system",
-                    description:
-                        "Regularly monitor the irrigation system's performance and adjust settings as necessary to ensure optimal plant health and water efficiency.",
+                    header: "Apply mulch",
+                    description: "Cover the soil with a layer of mulch to retain moisture, regulate soil temperature, and reduce weed growth."
                 },
+                {
+                    header: "Test the irrigation system",
+                    description: "Run the drip irrigation system to ensure all plants are receiving adequate water and adjust as necessary."
+                }
             ],
             utilityRebates: [
                 {
@@ -429,45 +435,37 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Design the system layout",
-                    description:
-                        "Plan the layout of the irrigation system considering the positioning of water sources and plants for optimal water distribution.",
+                    header: "Plan the layout",
+                    description: "Determine the areas that need irrigation and plan the layout of the drip lines and emitters. Consider the water needs of different plants and group them accordingly."
                 },
                 {
-                    header: "Install a backflow preventer and pressure regulator",
-                    description:
-                        "Ensure the protection of the water supply by installing backflow preventers and pressure regulators.",
+                    header: "Gather materials and tools",
+                    description: "Collect all necessary materials and tools, including drip tubing, emitters, connectors, a pressure regulator, a filter, and a timer (optional)."
                 },
                 {
-                    header: "Lay out the main and sub-main lines",
-                    description:
-                        "Position the main and sub-main lines, connecting them to the water source to facilitate water distribution throughout the irrigation system.",
+                    header: "Install the main supply line",
+                    description: "Connect the main supply line to the water source, such as an outdoor faucet. Install a backflow preventer, pressure regulator, and filter in line with the main supply."
                 },
                 {
-                    header: "Install the drip lines or soaker hoses",
-                    description:
-                        "Place drip lines or soaker hoses along plant rows or around plants to deliver water directly to the root zone.",
+                    header: "Lay out the drip tubing",
+                    description: "Run the drip tubing from the main supply line to the planting areas according to your layout plan. Secure the tubing with stakes to keep it in place."
                 },
                 {
-                    header: "Connect the drip lines to the sub-main lines",
-                    description:
-                        "Use appropriate fittings to connect the drip lines to the sub-main lines, ensuring seamless water flow.",
-                },
-                {
-                    header: "Install the emitters or micro-sprinklers",
-                    description:
-                        "Position emitters or micro-sprinklers at plant locations to deliver water evenly to individual plants.",
+                    header: "Install emitters and connectors",
+                    description: "Punch holes in the drip tubing and insert emitters or connectors at appropriate intervals to provide water to individual plants or rows. Use different types of emitters based on the water needs of the plants."
                 },
                 {
                     header: "Test the system",
-                    description:
-                        "Check the irrigation system for leaks and assess water distribution to ensure proper functionality.",
+                    description: "Turn on the water supply and run the system to check for leaks and ensure all emitters are working properly. Adjust the emitters as needed to ensure even water distribution."
                 },
                 {
-                    header: "Adjust the system as needed",
-                    description:
-                        "Make necessary adjustments to the system to enhance efficiency and ensure uniform watering across the landscape.",
+                    header: "Cover the tubing with mulch",
+                    description: "Cover the drip tubing with a layer of mulch to protect it from UV damage, help retain soil moisture, and improve the appearance of the garden."
                 },
+                {
+                    header: "Set the timer (optional)",
+                    description: "If using a timer, set it to water the plants at appropriate intervals, ensuring they receive adequate moisture without overwatering."
+                }
             ],
             utilityRebates: [
                 {
@@ -537,30 +535,41 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Research and select water-efficient appliances",
-                    description:
-                        "Choose appliances that meet your needs and budget while prioritizing water efficiency.",
+                    header: "Assess current water usage",
+                    description: "Evaluate your current water usage to identify areas where efficiency can be improved, such as in bathrooms, kitchens, and outdoor areas."
                 },
                 {
-                    header: "Purchase the appliances",
-                    description:
-                        "Buy the selected appliances from a local retailer or online.",
+                    header: "Choose water-efficient fixtures and appliances",
+                    description: "Select water-efficient fixtures and appliances, such as low-flow showerheads, faucets, toilets, and water-saving washing machines and dishwashers."
                 },
                 {
-                    header: "Arrange for professional installation or self-installation",
-                    description:
-                        "Either hire a professional for installation or follow the manufacturer's instructions for self-installation.",
+                    header: "Turn off the water supply",
+                    description: "Locate the main water shut-off valve, usually found in the garage, basement, or near the water meter, and turn it off."
                 },
                 {
-                    header: "Connect the appliances to water and energy sources",
-                    description:
-                        "Ensure proper connection of the appliances to appropriate water and energy sources as per installation guidelines.",
+                    header: "Install water-efficient fixtures",
+                    description: "Replace existing fixtures with water-efficient models. Follow the manufacturer's instructions for removing old fixtures and installing new ones."
                 },
                 {
-                    header: "Test the appliances",
-                    description:
-                        "Verify the functionality of the installed appliances to ensure they are operating correctly.",
+                    header: "Install water-saving appliances",
+                    description: "Replace old appliances with water-saving models. Follow the manufacturer's instructions for proper installation and connection to water lines."
                 },
+                {
+                    header: "Set up a greywater recycling system (optional)",
+                    description: "Install a greywater recycling system to reuse water from sinks, showers, and washing machines for irrigation or toilet flushing. Follow guidelines for local regulations and proper installation."
+                },
+                {
+                    header: "Set up a rainwater harvesting system (optional)",
+                    description: "Install a rainwater harvesting system to collect and use rainwater for irrigation or other non-potable uses. Ensure proper installation of gutters, downspouts, storage tanks, and filtration systems."
+                },
+                {
+                    header: "Turn the water supply on",
+                    description: "Slowly turn the main water valve back on and check all new fixtures and appliances for leaks."
+                },
+                {
+                    header: "Test and adjust the system",
+                    description: "Run water through all new fixtures and appliances to ensure they are functioning correctly. Make any necessary adjustments to improve efficiency."
+                }
             ],
             utilityRebates: [
                 {
@@ -625,45 +634,45 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Fix leaks",
-                    description:
-                        "Regularly inspect and repair leaks in faucets, pipes, and irrigation systems to prevent water wastage.",
+                    header: "Assess current water usage",
+                    description: "Evaluate your household's current water usage to identify areas where habits can be adjusted to save water, such as during showers, dishwashing, and garden irrigation."
                 },
                 {
-                    header: "Install water-efficient fixtures",
-                    description:
-                        "Replace old fixtures with low-flow faucets, showerheads, and toilets to reduce water consumption.",
+                    header: "Educate household members",
+                    description: "Inform all household members about the importance of water conservation and provide tips on how they can contribute to saving water in their daily routines."
                 },
                 {
-                    header: "Collect and reuse rainwater",
-                    description:
-                        "Install rain barrels or cisterns to collect rainwater for irrigation or other non-potable uses.",
-                },
-                {
-                    header: "Implement drought-resistant landscaping",
-                    description:
-                        "Choose native plants and xeriscaping techniques that require minimal watering to maintain landscaping.",
-                },
-                {
-                    header: "Use mulch and compost",
-                    description:
-                        "Apply mulch to soil surfaces to reduce evaporation and incorporate compost to improve soil water retention.",
-                },
-                {
-                    header: "Adjust irrigation schedules",
-                    description:
-                        "Program irrigation systems to water plants during early morning or late evening hours to minimize water loss due to evaporation.",
-                },
-                {
-                    header: "Take shorter showers",
-                    description:
-                        "Encourage family members to take shorter showers to reduce water consumption.",
+                    header: "Implement shorter shower times",
+                    description: "Encourage everyone to take shorter showers. Aim for showers to be 5 minutes or less, and consider using a timer to track time."
                 },
                 {
                     header: "Turn off taps when not in use",
-                    description:
-                        "Remind everyone to turn off taps tightly after use to prevent unnecessary water wastage.",
+                    description: "Make it a habit to turn off the tap while brushing teeth, shaving, or washing hands. Only run the tap when necessary."
                 },
+                {
+                    header: "Fix leaks promptly",
+                    description: "Regularly check for and repair any leaks in faucets, toilets, and showerheads. A small drip can waste a significant amount of water over time."
+                },
+                {
+                    header: "Use water-saving devices",
+                    description: "Install aerators on faucets, low-flow showerheads, and dual-flush or low-flow toilets to reduce water usage without sacrificing performance."
+                },
+                {
+                    header: "Run full loads in dishwashers and washing machines",
+                    description: "Only run the dishwasher and washing machine with full loads to maximize water efficiency. Avoid running these appliances for small loads."
+                },
+                {
+                    header: "Practice mindful watering in the garden",
+                    description: "Water plants during the early morning or late evening to reduce evaporation. Use a watering can or a drip irrigation system instead of a hose to minimize water wastage."
+                },
+                {
+                    header: "Collect and reuse water",
+                    description: "Collect rainwater or use greywater for watering plants. Reuse water from cooking (e.g., water used to wash vegetables) for watering garden plants."
+                },
+                {
+                    header: "Monitor water bills and usage",
+                    description: "Regularly check your water bills and monitor water usage to identify trends and areas for improvement. Set goals for reducing water consumption and track your progress."
+                }
             ],
             utilityRebates: [{ price: 0, label: "None Available" }],
             govtRebates: [{ price: 0, label: "None Available" }],
@@ -719,30 +728,45 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Consult with a solar panel installation expert",
-                    description:
-                        "Discuss your energy needs and site conditions with a professional to determine the best solar panel system for your home.",
+                    header: "Assess your energy needs",
+                    description: "Determine your household's energy consumption to decide the number and size of solar panels required. Review past electricity bills to get an average usage."
+                },
+                {
+                    header: "Evaluate your roof's suitability",
+                    description: "Inspect your roof to ensure it can support solar panels. Consider factors like roof orientation, angle, shading, and structural integrity."
                 },
                 {
                     header: "Choose the right solar panel system",
-                    description:
-                        "Select a solar panel system that meets your energy requirements, budget, and space availability.",
+                    description: "Research and select a solar panel system that meets your energy needs and budget. Consider the type of panels, inverter, and mounting system."
                 },
                 {
                     header: "Obtain necessary permits and approvals",
-                    description:
-                        "Secure permits and approvals from your local government or relevant authorities to comply with regulations before installation.",
+                    description: "Check with your local government and utility company for required permits and approvals. Follow all regulations and guidelines for solar panel installation."
+                },
+                {
+                    header: "Install the mounting system",
+                    description: "Secure the racking or mounting system to your roof. Ensure it is properly aligned and securely attached to support the solar panels."
                 },
                 {
                     header: "Install the solar panels",
-                    description:
-                        "Mount the solar panels onto your roof or other suitable location and connect them to your home's electrical system.",
+                    description: "Attach the solar panels to the mounting system. Follow the manufacturer's instructions for securing the panels and making electrical connections."
                 },
                 {
-                    header: "Start generating clean, renewable energy",
-                    description:
-                        "Once installed, your solar panels will begin generating electricity, allowing you to save on your electricity bills and reduce your carbon footprint.",
+                    header: "Connect the solar inverter",
+                    description: "Install the inverter and connect it to the solar panels. The inverter converts the direct current (DC) produced by the panels into alternating current (AC) used by your home."
                 },
+                {
+                    header: "Complete electrical wiring",
+                    description: "Connect the inverter to your home's electrical system. Ensure all wiring is done safely and complies with local electrical codes. This step is typically performed by a licensed electrician."
+                },
+                {
+                    header: "Test the system",
+                    description: "Turn on the solar panel system and test it to ensure everything is working correctly. Check the output and monitor the system to verify it meets expected performance levels."
+                },
+                {
+                    header: "Monitor and maintain the system",
+                    description: "Regularly monitor the solar panel system's performance through a monitoring app or system. Perform routine maintenance, such as cleaning the panels and checking for any issues, to ensure optimal efficiency."
+                }
             ],
             utilityRebates: [
                 { price: 0.2, label: "Per Watt installed from Con Edison" },
@@ -807,30 +831,45 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Consult with a wind turbine installation expert",
-                    description:
-                        "Discuss your property and energy needs with a professional to determine the best wind turbine solution for your home.",
+                    header: "Assess wind resource",
+                    description: "Evaluate wind speeds and patterns at your location using a wind resource map or anemometer. Choose a site with consistent and sufficient wind for optimal turbine performance."
                 },
                 {
-                    header: "Choose the right wind turbine",
-                    description:
-                        "Select a wind turbine model that is suitable for your property size, wind conditions, and energy requirements.",
+                    header: "Check local regulations",
+                    description: "Research zoning laws, building codes, and permit requirements for installing a wind turbine in your area. Obtain necessary permits and approvals from local authorities."
                 },
                 {
-                    header: "Obtain necessary permits and approvals",
-                    description:
-                        "Acquire permits and approvals from your local government or relevant authorities to ensure compliance with regulations before installation.",
+                    header: "Select the right turbine",
+                    description: "Choose a wind turbine that matches your energy needs and site conditions. Consider factors like turbine size, tower height, rotor diameter, and rated power."
                 },
                 {
-                    header: "Install the wind turbine",
-                    description:
-                        "Mount the wind turbine on your property and connect it to your home's electrical system.",
+                    header: "Prepare the site",
+                    description: "Clear the installation site of any obstacles that could interfere with the turbine's operation, such as trees or buildings. Ensure the site is level and stable."
                 },
                 {
-                    header: "Start generating clean, renewable energy",
-                    description:
-                        "Once installed, your wind turbine will begin generating electricity, allowing you to save on your electricity bills and reduce your carbon footprint.",
+                    header: "Install the tower",
+                    description: "Assemble the tower according to the manufacturer's instructions. Secure the tower base to a concrete foundation or anchor bolts embedded in the ground."
                 },
+                {
+                    header: "Install the turbine",
+                    description: "Mount the turbine on top of the tower. Follow the manufacturer's instructions for assembling and attaching the turbine components, including the rotor, blades, and nacelle."
+                },
+                {
+                    header: "Connect electrical components",
+                    description: "Install electrical wiring from the turbine to your home's electrical system. Connect the turbine to an inverter to convert the generated electricity from AC to DC for use in your home."
+                },
+                {
+                    header: "Test the system",
+                    description: "Turn on the wind turbine and test it to ensure everything is functioning correctly. Monitor the turbine's performance and output to verify it meets expected levels."
+                },
+                {
+                    header: "Maintain the turbine",
+                    description: "Regularly inspect and maintain the wind turbine to ensure optimal performance and longevity. Check for any signs of wear or damage and perform routine maintenance tasks as recommended by the manufacturer."
+                },
+                {
+                    header: "Monitor wind conditions",
+                    description: "Continuously monitor wind conditions to maximize turbine efficiency and output. Adjust turbine settings as needed to optimize performance in different wind speeds and directions."
+                }
             ],
             utilityRebates: [
                 { price: 0.1, label: "Per Watt installed from Con Edison" },
@@ -894,30 +933,45 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Research and choose the right energy-efficient appliance",
-                    description:
-                        "Explore options that match your requirements and budget while prioritizing energy efficiency.",
+                    header: "Assess current appliances",
+                    description: "Identify old or inefficient appliances in your home that need replacement. Consider factors such as age, energy consumption, and overall performance."
                 },
                 {
-                    header: "Remove the old appliance",
-                    description:
-                        "If necessary, uninstall and remove the old appliance to make room for the new one.",
+                    header: "Research energy-efficient models",
+                    description: "Research energy-efficient appliances that meet your needs. Look for ENERGY STAR® certified products, which meet strict energy efficiency criteria set by the EPA."
                 },
                 {
-                    header: "Install the new energy-efficient appliance",
-                    description:
-                        "Follow the manufacturer's instructions carefully to properly install the new appliance.",
+                    header: "Calculate energy savings",
+                    description: "Estimate potential energy savings by comparing the energy consumption of old appliances with new, energy-efficient models. Consider factors such as annual operating costs and payback period."
                 },
                 {
-                    header: "Connect the appliance to necessary utilities",
-                    description:
-                        "Ensure proper connections to water, gas, or electricity sources as required for the appliance to function.",
+                    header: "Select the right appliances",
+                    description: "Choose energy-efficient appliances that match your household's requirements and budget. Look for features such as EnergyGuide labels and energy-saving settings."
                 },
                 {
-                    header: "Test the appliance",
-                    description:
-                        "Verify that the appliance operates correctly and efficiently after installation by conducting thorough testing.",
+                    header: "Prepare for installation",
+                    description: "Measure the available space for each appliance and ensure proper electrical and plumbing connections are in place. Clear the area and remove old appliances if necessary."
                 },
+                {
+                    header: "Purchase and deliver appliances",
+                    description: "Order the selected energy-efficient appliances from a reputable retailer. Arrange for delivery or pick-up and ensure appliances are handled with care during transportation."
+                },
+                {
+                    header: "Install appliances",
+                    description: "Follow the manufacturer's instructions or hire a professional to install the new appliances. Ensure proper electrical connections, plumbing hook-ups, and ventilation as required."
+                },
+                {
+                    header: "Dispose of old appliances responsibly",
+                    description: "Recycle or donate old appliances to prevent them from ending up in landfills. Check with local recycling centers or appliance retailers for disposal options."
+                },
+                {
+                    header: "Test appliances",
+                    description: "Turn on the new appliances and test their functionality. Verify that all features and settings are working correctly and check for any signs of damage or defects."
+                },
+                {
+                    header: "Monitor energy usage",
+                    description: "Monitor energy usage with the new appliances to track savings over time. Compare utility bills and energy consumption data to assess the impact of energy-efficient upgrades."
+                }
             ],
             utilityRebates: [
                 {
@@ -995,25 +1049,45 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Turn off the power",
-                    description:
-                        "Switch off the power to the fixture or lamp that you're replacing to ensure safety during the process.",
+                    header: "Evaluate current lighting",
+                    description: "Assess your current lighting setup and identify areas where LED bulbs could replace traditional incandescent or CFL bulbs."
                 },
                 {
-                    header: "Remove the old bulb",
-                    description:
-                        "Take out the old bulb and dispose of it properly, following any applicable recycling guidelines.",
+                    header: "Calculate potential savings",
+                    description: "Estimate potential energy and cost savings by switching to LED bulbs. Consider factors such as wattage, lifespan, and electricity rates."
                 },
                 {
-                    header: "Screw in the new LED bulb",
-                    description:
-                        "Install the new LED bulb into the socket, ensuring it is securely screwed in place.",
+                    header: "Research LED bulbs",
+                    description: "Research different types of LED bulbs available on the market. Consider factors such as brightness, color temperature, and compatibility with existing fixtures."
                 },
                 {
-                    header: "Turn the power back on",
-                    description:
-                        "Restore power to the fixture or lamp, then test the new LED bulb to ensure it is functioning correctly.",
+                    header: "Select the right bulbs",
+                    description: "Choose LED bulbs that match your lighting needs and preferences. Look for Energy Star certified bulbs to ensure quality and energy efficiency."
                 },
+                {
+                    header: "Purchase LED bulbs",
+                    description: "Purchase the selected LED bulbs from a reputable retailer or online store. Buy bulbs in bulk to save money and ensure consistency in lighting."
+                },
+                {
+                    header: "Prepare for installation",
+                    description: "Turn off power to the lighting fixtures before replacing bulbs. Remove old bulbs carefully and ensure sockets are clean and free of debris."
+                },
+                {
+                    header: "Install LED bulbs",
+                    description: "Insert LED bulbs into the sockets and twist them securely into place. Ensure bulbs are compatible with existing fixtures and fit properly."
+                },
+                {
+                    header: "Test LED bulbs",
+                    description: "Turn on the power to the lighting fixtures and test the LED bulbs. Verify that they illuminate properly and provide the desired brightness and color."
+                },
+                {
+                    header: "Dispose of old bulbs responsibly",
+                    description: "Dispose of old incandescent or CFL bulbs responsibly. Recycle them at designated recycling centers or hazardous waste facilities."
+                },
+                {
+                    header: "Monitor energy usage",
+                    description: "Monitor energy usage with LED bulbs to track savings over time. Compare utility bills and energy consumption data to assess the impact of the switch to LED lighting."
+                }
             ],
             utilityRebates: [
                 {
@@ -1094,30 +1168,45 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Research and choose smart home devices",
-                    description:
-                        "Select devices that suit your requirements and budget after thorough research.",
+                    header: "Assess your needs",
+                    description: "Identify areas in your home where smart technology could enhance convenience, comfort, and energy efficiency. Consider factors such as security, lighting, heating, and entertainment."
                 },
                 {
-                    header: "Purchase and set up",
-                    description:
-                        "Buy the chosen devices and set up an account with the manufacturer or a smart home platform.",
+                    header: "Research smart devices",
+                    description: "Research different types of smart devices available on the market, such as smart thermostats, lighting systems, security cameras, and voice assistants. Consider compatibility and integration options."
                 },
                 {
-                    header: "Install and connect to Wi-Fi",
-                    description:
-                        "Follow the manufacturer's instructions to install the devices and connect them to your home's Wi-Fi network.",
+                    header: "Choose the right devices",
+                    description: "Select smart devices that meet your specific needs and preferences. Look for devices with user-friendly interfaces, reliable connectivity, and compatibility with other smart systems."
                 },
                 {
-                    header: "Configure and create scenes",
-                    description:
-                        "Configure the devices and create scenes or automation using the app or platform.",
+                    header: "Plan your smart-home ecosystem",
+                    description: "Create a plan for integrating smart devices into your home. Determine how devices will communicate with each other and whether you need a central hub or controller."
                 },
                 {
-                    header: "Test and adjust",
-                    description:
-                        "Test the devices to ensure proper functionality and make any necessary adjustments.",
+                    header: "Purchase smart devices",
+                    description: "Purchase the selected smart devices from reputable retailers or online stores. Consider bundling devices or buying starter kits to save money and ensure compatibility."
                 },
+                {
+                    header: "Install smart devices",
+                    description: "Follow the manufacturer's instructions to install and set up each smart device. Connect devices to your home's Wi-Fi network and configure settings as needed."
+                },
+                {
+                    header: "Test smart devices",
+                    description: "Test each smart device to ensure it functions correctly and communicates with other devices as intended. Verify that you can control devices remotely via smartphone apps or voice commands."
+                },
+                {
+                    header: "Integrate smart devices",
+                    description: "Integrate smart devices into your daily routines and automation schedules. Set up scenes, routines, or schedules to automate tasks and optimize energy usage."
+                },
+                {
+                    header: "Explore additional features",
+                    description: "Explore additional features and capabilities of your smart devices, such as energy monitoring, security alerts, voice control, and third-party app integrations."
+                },
+                {
+                    header: "Monitor and update",
+                    description: "Regularly monitor your smart-home system for updates, security patches, and new features. Stay informed about advancements in smart technology and consider expanding your system as needed."
+                }
             ],
             utilityRebates: [
                 {
@@ -1206,35 +1295,45 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Research and select the right battery system",
-                    description:
-                        "Choose a battery system that suits your home and energy needs after thorough research.",
+                    header: "Assess your energy needs",
+                    description: "Evaluate your household's energy usage and determine the size of the battery system needed to meet your requirements. Consider factors such as peak usage times, blackout protection, and renewable energy integration."
                 },
                 {
-                    header: "Consult with a professional installer",
-                    description:
-                        "Discuss your home's compatibility and requirements with a professional installer.",
+                    header: "Choose the right battery system",
+                    description: "Research different types of home battery systems, such as lithium-ion, lead-acid, or flow batteries. Consider factors like capacity, efficiency, lifespan, and warranty."
                 },
                 {
-                    header: "Purchase and prepare necessary components",
-                    description:
-                        "Procure the required components for installation and prepare them accordingly.",
+                    header: "Select compatible components",
+                    description: "Choose other components for your battery system, such as an inverter, charge controller, and monitoring system. Ensure compatibility with your chosen battery technology and electrical setup."
+                },
+                {
+                    header: "Calculate system size and layout",
+                    description: "Determine the optimal placement and configuration of your battery system. Consider factors such as available space, wiring requirements, and ventilation needs."
+                },
+                {
+                    header: "Obtain necessary permits and approvals",
+                    description: "Check with local authorities and utility companies for required permits and approvals. Ensure compliance with building codes, zoning regulations, and safety standards."
+                },
+                {
+                    header: "Purchase battery system components",
+                    description: "Order the selected battery system components from a reputable supplier or manufacturer. Arrange for delivery and ensure all necessary parts and equipment are available."
                 },
                 {
                     header: "Install the battery system",
-                    description:
-                        "Follow the manufacturer's instructions and local building codes to install the battery system.",
+                    description: "Follow the manufacturer's instructions or hire a professional installer to set up the battery system. Install batteries, inverters, and other components according to the planned layout."
                 },
                 {
-                    header: "Connect to home's electrical system",
-                    description:
-                        "Connect the battery system to your home's electrical system and solar panels if applicable.",
+                    header: "Connect to electrical system",
+                    description: "Connect the battery system to your home's electrical system. Install wiring, breakers, and disconnect switches as needed. Ensure all connections are secure and properly insulated."
                 },
                 {
                     header: "Test the system",
-                    description:
-                        "Test the installed system to ensure proper functionality and make necessary adjustments.",
+                    description: "Turn on the battery system and test its functionality. Verify that it charges and discharges correctly, communicates with other components, and integrates with your renewable energy sources."
                 },
+                {
+                    header: "Monitor performance",
+                    description: "Regularly monitor your home battery system's performance and energy usage. Use monitoring software or apps to track battery status, energy production, and consumption patterns."
+                }
             ],
             utilityRebates: [
                 {
@@ -1316,35 +1415,45 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Choose a composting system",
-                    description:
-                        "Select a composting system, such as a bin, tumbler, or pile, that suits your needs and available space.",
+                    header: "Select a composting method",
+                    description: "Choose a composting method that fits your space, lifestyle, and composting goals. Options include traditional compost bins, tumblers, worm bins (vermicomposting), or open piles."
+                },
+                {
+                    header: "Choose a location",
+                    description: "Select a suitable location for your composting system. Choose an area with good drainage, airflow, and access to sunlight or shade, depending on the composting method."
+                },
+                {
+                    header: "Gather composting materials",
+                    description: "Collect organic materials for composting, including kitchen scraps (fruits, vegetables, coffee grounds), yard waste (grass clippings, leaves), and other organic matter (shredded paper, cardboard)."
                 },
                 {
                     header: "Set up the composting system",
-                    description:
-                        "Place the composting system in a convenient location, such as a backyard or balcony, ensuring easy access.",
+                    description: "Assemble your compost bin or tumbler according to the manufacturer's instructions. For open piles or vermicomposting, designate an area and prepare the soil or bedding."
                 },
                 {
-                    header: "Add materials to the compost bin",
-                    description:
-                        "Add a mix of 'brown' materials (e.g., dry leaves, straw, shredded paper) and 'green' materials (e.g., food scraps, grass clippings, coffee grounds) to the compost bin.",
+                    header: "Add compostable materials",
+                    description: "Start adding organic materials to your composting system. Layer green (nitrogen-rich) and brown (carbon-rich) materials to maintain a balanced compost pile."
                 },
                 {
-                    header: "Maintain the compost",
-                    description:
-                        "Regularly turn the compost materials and maintain the right moisture level, similar to a damp sponge, to facilitate decomposition.",
+                    header: "Monitor and maintain the compost pile",
+                    description: "Regularly monitor the compost pile's moisture level, temperature, and decomposition progress. Turn or aerate the pile periodically to promote decomposition and prevent odors."
                 },
                 {
-                    header: "Monitor and adjust",
-                    description:
-                        "Monitor the compost's progress and adjust the materials as needed to ensure proper decomposition.",
+                    header: "Adjust composting conditions",
+                    description: "Adjust composting conditions as needed to maintain optimal decomposition. Add water to keep the pile moist, add more brown materials to balance the pile, or cover the pile during heavy rain."
                 },
                 {
-                    header: "Use the compost",
-                    description:
-                        "Once the compost is ready (dark and crumbly), incorporate it into your garden or potted plants to enhance soil health and fertility.",
+                    header: "Harvest and use compost",
+                    description: "Once the compost is fully decomposed and resembles dark, crumbly soil, it is ready to use. Harvest the compost and use it to enrich garden soil, amend potting mixes, or fertilize plants."
                 },
+                {
+                    header: "Troubleshoot common issues",
+                    description: "Address any issues that arise during composting, such as unpleasant odors, pests, or slow decomposition. Troubleshoot problems by adjusting composting conditions or adding corrective measures."
+                },
+                {
+                    header: "Continue learning and improving",
+                    description: "Keep learning about composting techniques, tips, and best practices to improve your composting skills over time. Share knowledge and experiences with other composters to foster a sense of community."
+                }
             ],
             utilityRebates: [
                 {
@@ -1442,35 +1551,45 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Contact local recycling program",
-                    description:
-                        "Obtain a recycling bin or inquire about curbside pickup options from your local recycling program.",
+                    header: "Research local recycling guidelines",
+                    description: "Check with your local municipality or waste management authority to understand recycling regulations, accepted materials, and collection schedules in your area."
                 },
                 {
-                    header: "Set up recycling bin",
-                    description:
-                        "Place the recycling bin in your home or apartment for convenient disposal of recyclable materials.",
+                    header: "Identify recyclable materials",
+                    description: "Learn which materials are recyclable and commonly accepted in your area's recycling program. Common recyclables include paper, cardboard, glass, plastic bottles, and aluminum cans."
                 },
                 {
-                    header: "Sort recyclable materials",
-                    description:
-                        "Follow your local program's guidelines to properly sort recyclable materials before placing them in the bin.",
+                    header: "Set up recycling bins",
+                    description: "Designate a specific area in your home or garage for recycling bins. Use separate bins or containers to sort recyclables by material type (e.g., paper, plastic, metal). Label bins clearly for easy identification."
                 },
                 {
-                    header: "Rinse and clean recyclables",
-                    description:
-                        "Ensure recyclables are rinsed and cleaned before placing them in the bin to avoid contamination.",
+                    header: "Educate household members",
+                    description: "Inform everyone in your household about the importance of recycling and how to properly sort recyclable materials. Provide guidance on which items can be recycled and where to place them."
                 },
                 {
-                    header: "Dispose of recyclables",
-                    description:
-                        "Place your recycling bin at the curb on pickup day or take recyclables to a local drop-off center as per your program's instructions.",
+                    header: "Establish a recycling routine",
+                    description: "Create a regular schedule for collecting and disposing of recyclables. Set a specific day or days each week to empty recycling bins and take materials to the designated collection point or curbside pickup area."
                 },
                 {
-                    header: "Continue recycling",
-                    description:
-                        "Keep recycling and encourage neighbors to do the same to promote environmental sustainability.",
+                    header: "Rinse and prepare recyclables",
+                    description: "Before placing recyclables in the bins, rinse containers, remove lids, and flatten cardboard boxes to save space. Check with local guidelines for any specific preparation requirements."
                 },
+                {
+                    header: "Monitor and maintain recycling bins",
+                    description: "Regularly check recycling bins for contamination or non-recyclable items. Remove any contaminants and educate household members about proper recycling practices to prevent future issues."
+                },
+                {
+                    header: "Participate in community recycling events",
+                    description: "Take advantage of community recycling events or drop-off locations for special items that may not be accepted in curbside recycling programs, such as electronics, batteries, or hazardous materials."
+                },
+                {
+                    header: "Reduce and reuse",
+                    description: "In addition to recycling, focus on reducing waste and reusing items whenever possible. Choose products with minimal packaging, opt for reusable items instead of single-use products, and repair or repurpose items when feasible."
+                },
+                {
+                    header: "Track progress and celebrate success",
+                    description: "Keep track of your recycling efforts by monitoring the amount and types of materials recycled over time. Celebrate milestones and achievements to motivate continued participation and commitment to recycling."
+                }
             ],
             utilityRebates: [
                 {
@@ -1542,30 +1661,45 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Choose the appropriate composting toilet",
-                    description:
-                        "Select a composting toilet that suits your home's needs and specifications.",
+                    header: "Research composting toilets",
+                    description: "Learn about different types of composting toilets available on the market, including self-contained units, central systems, and DIY options. Consider factors such as capacity, ventilation, and maintenance requirements."
                 },
                 {
-                    header: "Prepare the installation area",
-                    description:
-                        "Ensure the installation area is properly prepared and has adequate ventilation.",
+                    header: "Check local regulations",
+                    description: "Check with your local building department or health authority to understand regulations and permitting requirements for installing a composting toilet in your area. Ensure compliance with applicable codes and guidelines."
                 },
                 {
-                    header: "Install the toilet",
-                    description:
-                        "Follow the manufacturer's instructions to install the composting toilet securely.",
+                    header: "Select a suitable location",
+                    description: "Choose a location for the composting toilet that provides adequate ventilation, privacy, and access to utilities (if required). Consider factors such as proximity to living areas and outdoor spaces."
                 },
                 {
-                    header: "Connect plumbing or electrical components",
-                    description:
-                        "If required, connect plumbing or electrical components according to the toilet's specifications.",
+                    header: "Prepare the installation site",
+                    description: "Prepare the installation site by clearing the area and ensuring it is level and stable. Install any necessary ventilation ducting, plumbing connections, and electrical wiring as required."
                 },
                 {
-                    header: "Add composting medium and begin use",
-                    description:
-                        "Fill the composting toilet with the appropriate composting medium and start using it as intended.",
+                    header: "Install the composting toilet",
+                    description: "Follow the manufacturer's instructions to install the composting toilet unit. Secure the toilet to the floor or platform and connect any plumbing or electrical components according to the provided guidelines."
                 },
+                {
+                    header: "Set up ventilation",
+                    description: "Ensure proper ventilation for the composting toilet system to remove odors and excess moisture. Install a vent pipe or fan system to exhaust air outdoors and maintain airflow within the unit."
+                },
+                {
+                    header: "Add composting material",
+                    description: "Add an appropriate composting medium, such as peat moss, coconut coir, or sawdust, to the composting chamber. Follow recommendations for the initial layer thickness and ongoing maintenance."
+                },
+                {
+                    header: "Educate users",
+                    description: "Provide instructions to household members or users on how to use the composting toilet correctly. Emphasize proper waste separation, composting material usage, and maintenance procedures."
+                },
+                {
+                    header: "Monitor and maintain the system",
+                    description: "Regularly monitor the composting toilet system for odors, moisture levels, and compost decomposition. Follow maintenance tasks outlined by the manufacturer, such as turning compost, adding material, and emptying the finished compost."
+                },
+                {
+                    header: "Compost disposal",
+                    description: "Dispose of finished compost according to local regulations and guidelines. Use compost as a soil amendment in gardens or landscaping projects, or arrange for proper disposal through municipal composting facilities."
+                }
             ],
             utilityRebates: [
                 {
@@ -1632,45 +1766,45 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Research and select an Electric Vehicle (EV)",
-                    description:
-                        "Research different EV models to find one that meets your needs and preferences. Consider factors such as range, charging infrastructure, and price.",
+                    header: "Research electric vehicles (EVs)",
+                    description: "Learn about different electric vehicle models available on the market, including sedans, SUVs, and trucks. Consider factors such as range, charging infrastructure, and incentives."
                 },
                 {
-                    header: "Purchase an Electric Vehicle (EV)",
-                    description:
-                        "Once you have chosen the right EV for you, proceed with purchasing or leasing it from a reputable dealer.",
+                    header: "Calculate cost savings",
+                    description: "Estimate potential cost savings from switching to an electric vehicle, including fuel savings, maintenance costs, and available incentives such as tax credits or rebates."
                 },
                 {
-                    header: "Choose a suitable location for the charging station",
-                    description:
-                        "Select an appropriate location for the charging station, considering accessibility and electrical requirements.",
+                    header: "Assess charging infrastructure",
+                    description: "Evaluate the availability of charging infrastructure in your area, including home charging options, public charging stations, and workplace charging facilities. Determine if additional charging equipment is needed."
                 },
                 {
-                    header: "Obtain permits and approvals",
-                    description:
-                        "Ensure compliance with local regulations by obtaining necessary permits and approvals from your local government.",
+                    header: "Select an electric vehicle",
+                    description: "Choose an electric vehicle that meets your needs and preferences. Consider factors such as range, battery size, charging speed, and additional features like autopilot or regenerative braking."
                 },
                 {
-                    header: "Hire a licensed electrician",
-                    description:
-                        "Contract a licensed electrician to install a dedicated circuit for the charging station, ensuring safety and proper functionality.",
+                    header: "Arrange financing or leasing",
+                    description: "Explore financing or leasing options for purchasing or leasing an electric vehicle. Compare interest rates, loan terms, and lease terms from different lenders or dealerships."
                 },
                 {
-                    header: "Mount the charging station",
-                    description:
-                        "Install the charging station securely on a wall or other suitable surface, following manufacturer guidelines.",
+                    header: "Install home charging equipment",
+                    description: "If necessary, install home charging equipment to facilitate convenient charging of your electric vehicle. Consider factors such as charging speed, connector type, and installation costs."
                 },
                 {
-                    header: "Connect to dedicated circuit",
-                    description:
-                        "Connect the charging station to the dedicated circuit installed by the electrician, ensuring proper wiring and connections.",
+                    header: "Learn about EV maintenance",
+                    description: "Educate yourself about electric vehicle maintenance requirements, which differ from traditional internal combustion engine vehicles. Learn about battery care, tire maintenance, and software updates."
                 },
                 {
-                    header: "Install software or apps",
-                    description:
-                        "If applicable, install any necessary software or apps to monitor and manage your charging sessions for convenience and control.",
+                    header: "Take delivery of your EV",
+                    description: "Take delivery of your electric vehicle from the dealership or manufacturer. Familiarize yourself with the vehicle's features, controls, and charging process."
                 },
+                {
+                    header: "Plan charging routines",
+                    description: "Develop a charging routine that suits your lifestyle and driving patterns. Take advantage of off-peak charging rates, schedule charging sessions to coincide with low electricity demand, and plan longer trips around charging stops."
+                },
+                {
+                    header: "Monitor energy usage and savings",
+                    description: "Track your electric vehicle's energy usage, charging habits, and cost savings over time. Use available tools and apps to monitor energy consumption, estimate charging costs, and track your environmental impact."
+                }
             ],
             utilityRebates: [
                 {
@@ -1749,35 +1883,21 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Locate nearby public transportation options",
-                    description:
-                        "Identify the nearest bus stops, train stations, or other public transit hubs using online maps or transit apps.",
+                    header: "Research available options",
+                    description: "Find out about the public transportation options in your area, such as buses, trains, or subways."
                 },
                 {
-                    header: "Check schedules and routes",
-                    description:
-                        "Review the schedules and routes of available public transportation options to plan your journey effectively.",
+                    header: "Plan your journey",
+                    description: "Use online resources or apps to plan your route, including stops, schedules, and fares."
                 },
                 {
                     header: "Purchase tickets or passes",
-                    description:
-                        "Obtain the necessary tickets or passes for your chosen mode of public transportation, which may include single ride tickets, day passes, or monthly passes.",
+                    description: "Buy tickets or passes in advance or at the station, depending on the available options."
                 },
                 {
                     header: "Board the vehicle",
-                    description:
-                        "Arrive at the designated stop or station on time and board the appropriate vehicle according to your planned route.",
-                },
-                {
-                    header: "Pay fares or validate passes",
-                    description:
-                        "Pay the fare using cash, a transit card, or mobile payment, or validate your pass upon boarding to ensure valid access.",
-                },
-                {
-                    header: "Enjoy your ride",
-                    description:
-                        "Relax and enjoy the journey as you travel to your destination using public transportation.",
-                },
+                    description: "Wait for your ride at the designated stop, then board the vehicle and enjoy your journey."
+                }
             ],
             utilityRebates: [
                 {
@@ -1844,25 +1964,33 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Set up the computer",
-                    description:
-                        "Position the computer in a suitable location and connect it to a power source.",
+                    header: "Set up your workstation",
+                    description: "Designate a dedicated area in your home for telecommuting. Ensure it's equipped with a comfortable desk, ergonomic chair, and sufficient lighting."
                 },
                 {
-                    header: "Connect the monitor",
-                    description:
-                        "Attach the monitor to the computer using the appropriate cable, such as HDMI or DisplayPort.",
+                    header: "Prepare your computer",
+                    description: "Ensure your computer or laptop is in good working condition and has the necessary software installed for telecommuting tasks."
                 },
                 {
-                    header: "Connect the keyboard and mouse",
-                    description:
-                        "Connect the keyboard and mouse to the computer using USB cables or wireless connections, if supported.",
+                    header: "Install telecommuting software",
+                    description: "Download and install essential telecommuting software such as video conferencing tools, project management platforms, and communication apps."
                 },
                 {
-                    header: "Connect the headset",
-                    description:
-                        "Plug the headset into the computer using the appropriate cable or pair it wirelessly, if supported.",
+                    header: "Test your internet connection",
+                    description: "Check the reliability and speed of your internet connection to ensure seamless communication and productivity during telecommuting."
                 },
+                {
+                    header: "Set up a VPN (Virtual Private Network)",
+                    description: "If required by your employer, set up a VPN connection to securely access company networks and resources from your telecommuting workstation."
+                },
+                {
+                    header: "Organize your workspace",
+                    description: "Arrange your workspace to minimize distractions and maximize productivity. Keep essential documents, supplies, and equipment within reach."
+                },
+                {
+                    header: "Personalize your workspace",
+                    description: "Add personal touches to your telecommuting workspace to make it feel comfortable and inviting. Consider adding plants, artwork, or photographs to enhance the ambiance."
+                }
             ],
             utilityRebates: [
                 {
@@ -1929,20 +2057,21 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Research and choose AFV",
-                    description:
-                        "Research and select the most suitable alternative fuel vehicle (AFV) based on your needs and budget.",
+                    header: "Research alternative fuel options",
+                    description: "Explore vehicles that run on alternative fuels such as hydrogen, biodiesel, ethanol, propane, or natural gas."
                 },
                 {
-                    header: "Purchase or lease AFV",
-                    description:
-                        "Acquire the chosen AFV by purchasing or leasing it from a local dealership.",
+                    header: "Assess vehicle availability",
+                    description: "Check the availability of vehicles that run on your chosen alternative fuel in your area or nearby markets."
                 },
                 {
-                    header: "Install charging or fueling station",
-                    description:
-                        "If required, set up a charging station or fueling station at your home or workplace to facilitate the use of the AFV.",
+                    header: "Evaluate vehicle features and performance",
+                    description: "Compare the features, performance, range, and fuel efficiency of different alternative fuel vehicles to find the best fit for your needs."
                 },
+                {
+                    header: "Find a reputable dealer or manufacturer",
+                    description: "Locate a reputable dealer or manufacturer that offers alternative fuel vehicles and provides support for sales, service, and maintenance."
+                }
             ],
             utilityRebates: [
                 {
@@ -2013,30 +2142,33 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Research car-sharing providers",
-                    description:
-                        "Explore and compare different car-sharing providers available in New York City to find one that suits your needs.",
+                    header: "Research car-sharing options",
+                    description: "Explore different car-sharing services available in your area. Consider factors such as coverage area, vehicle availability, pricing, and membership requirements."
                 },
                 {
-                    header: "Sign up for membership",
-                    description:
-                        "Register for a membership with your chosen car-sharing provider to access their services.",
+                    header: "Sign up for a membership",
+                    description: "Register for a membership with the car-sharing service of your choice. Provide required information such as your driver's license, payment details, and contact information."
                 },
                 {
-                    header: "Download app and create account",
-                    description:
-                        "Download the provider's mobile app and create an account to facilitate bookings and vehicle access.",
+                    header: "Download the mobile app",
+                    description: "Download the car-sharing service's mobile app to your smartphone or mobile device. Use the app to find available vehicles, reserve cars, and manage your bookings."
                 },
                 {
-                    header: "Find available cars",
-                    description:
-                        "Use the app to locate available cars near your current location or desired pickup point.",
+                    header: "Find and reserve a vehicle",
+                    description: "Use the mobile app or website to locate nearby vehicles and check their availability. Reserve a vehicle for your desired time and duration, making sure to consider factors like vehicle type and location."
                 },
                 {
-                    header: "Reserve and unlock car",
-                    description:
-                        "Book a car for your desired time slot through the app and unlock it using the app or membership card when you arrive at the vehicle.",
+                    header: "Unlock and access the vehicle",
+                    description: "Use the car-sharing service's mobile app or membership card to unlock the reserved vehicle. Follow any instructions provided by the app or service for accessing the vehicle."
                 },
+                {
+                    header: "Use the vehicle responsibly",
+                    description: "Drive the car-sharing vehicle responsibly, adhering to traffic laws and safety guidelines. Return the vehicle on time and in the same condition as when you picked it up, refueling if necessary."
+                },
+                {
+                    header: "End your trip",
+                    description: "End your trip using the car-sharing service's mobile app or website. Follow any instructions provided for parking the vehicle and locking it securely."
+                }
             ],
             utilityRebates: [
                 {
@@ -2103,20 +2235,33 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Research and compare HVAC systems",
-                    description:
-                        "Explore various energy-efficient HVAC systems available on the market and compare their features to choose the most suitable option for your home.",
+                    header: "Assess your heating and cooling needs",
+                    description: "Evaluate your home's heating and cooling requirements based on factors such as size, insulation, climate, and existing HVAC system efficiency."
                 },
                 {
-                    header: "Hire professional contractor",
-                    description:
-                        "Engage a licensed HVAC contractor to install the selected energy-efficient system in your home. Professional installation ensures proper setup and optimal performance.",
+                    header: "Research energy-efficient HVAC options",
+                    description: "Explore energy-efficient HVAC systems such as high-efficiency furnaces, heat pumps, ductless mini-split systems, and smart thermostats. Compare energy ratings, features, and performance."
                 },
                 {
-                    header: "Schedule regular maintenance",
-                    description:
-                        "Arrange for periodic maintenance visits by HVAC professionals to inspect and tune up your energy-efficient system. Regular maintenance helps ensure the system operates efficiently and prolongs its lifespan.",
+                    header: "Calculate potential energy savings",
+                    description: "Estimate potential energy savings by upgrading to an energy-efficient HVAC system. Consider factors such as energy efficiency ratings, annual fuel utilization efficiency (AFUE), seasonal energy efficiency ratio (SEER), and heating seasonal performance factor (HSPF)."
                 },
+                {
+                    header: "Select the right HVAC system",
+                    description: "Choose an HVAC system that meets your heating and cooling needs while maximizing energy efficiency. Consult with HVAC professionals to determine the best system size, type, and features for your home."
+                },
+                {
+                    header: "Schedule professional installation",
+                    description: "Hire licensed HVAC contractors to install the energy-efficient HVAC system. Ensure proper sizing, installation, and ductwork design to optimize performance and efficiency."
+                },
+                {
+                    header: "Seal and insulate ductwork",
+                    description: "Inspect and seal ductwork to prevent air leaks and improve energy efficiency. Properly insulate ducts in unconditioned spaces to reduce heat loss or gain during air distribution."
+                },
+                {
+                    header: "Program and optimize thermostat settings",
+                    description: "Install programmable or smart thermostats to control heating and cooling settings automatically based on your schedule and preferences. Set energy-saving temperature setbacks for times when you're away or asleep."
+                }
             ],
             utilityRebates: [
                 {
@@ -2182,25 +2327,33 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Select south-facing location",
-                    description:
-                        "Choose a location for the building that faces south and receives maximum sunlight exposure, with minimal shading from surrounding structures or trees.",
+                    header: "Assess solar potential",
+                    description: "Evaluate your home's solar potential by analyzing factors such as orientation, roof angle, shading, and local climate conditions."
                 },
                 {
-                    header: "Install south-facing windows",
-                    description:
-                        "Install large windows on the south-facing side of the building to maximize solar gain and capture sunlight for passive heating.",
+                    header: "Design passive solar features",
+                    description: "Design passive solar features such as large south-facing windows, thermal mass materials (e.g., concrete floors, masonry walls), and shading elements (e.g., overhangs, deciduous trees)."
                 },
                 {
-                    header: "Incorporate thermal mass materials",
-                    description:
-                        "Use materials with high thermal mass, such as concrete, brick, or stone, inside the building to absorb and store heat from sunlight during the day and release it slowly at night.",
+                    header: "Calculate glazing area and placement",
+                    description: "Calculate the appropriate size and placement of south-facing windows to maximize solar gain while minimizing heat loss. Consider factors such as window orientation, glazing type, and overhang design."
                 },
                 {
-                    header: "Insulate the building",
-                    description:
-                        "Apply insulation to the walls, roof, and floors of the building to minimize heat loss and improve energy efficiency.",
+                    header: "Install thermal mass materials",
+                    description: "Incorporate thermal mass materials into your home's design to absorb and store solar heat during the day, releasing it gradually at night to maintain indoor comfort."
                 },
+                {
+                    header: "Optimize natural ventilation",
+                    description: "Design natural ventilation strategies to enhance indoor air quality and comfort. Use operable windows, vents, and fans to facilitate airflow and regulate temperature."
+                },
+                {
+                    header: "Maximize insulation and air sealing",
+                    description: "Ensure your home is well-insulated and air-sealed to minimize heat loss and maintain thermal comfort. Use high-performance insulation materials and seal gaps and cracks in the building envelope."
+                },
+                {
+                    header: "Monitor and adjust",
+                    description: "Monitor the performance of your passive solar heating system and make adjustments as needed to optimize efficiency and comfort. Consider factors such as solar exposure, temperature fluctuations, and occupant feedback."
+                }
             ],
             utilityRebates: [
                 {
@@ -2269,20 +2422,45 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Find a Provider",
-                    description:
-                        "Look at warranties and installation costs. Good providers include Texas Solar Outfitters, Freedom Solar Power, Green Mountain Energy",
+                    header: "Assess your energy needs",
+                    description: "Determine your household's energy consumption to decide the number and size of solar panels required. Review past electricity bills to get an average usage."
                 },
                 {
-                    header: "Incentives and financing",
-                    description:
-                        "Explore financing options, take advantages of the rebates, to make installation more affordable.",
+                    header: "Evaluate your roof's suitability",
+                    description: "Inspect your roof to ensure it can support solar panels. Consider factors like roof orientation, angle, shading, and structural integrity."
                 },
                 {
-                    header: "Installation",
-                    description:
-                        "Schedule the installation from the provider. A local utility company and government representative will inspect it to ensure it meets requirements and it'll be ready to be connected.",
+                    header: "Choose the right solar panel system",
+                    description: "Research and select a solar panel system that meets your energy needs and budget. Consider the type of panels, inverter, and mounting system."
                 },
+                {
+                    header: "Obtain necessary permits and approvals",
+                    description: "Check with your local government and utility company for required permits and approvals. Follow all regulations and guidelines for solar panel installation."
+                },
+                {
+                    header: "Install the mounting system",
+                    description: "Secure the racking or mounting system to your roof. Ensure it is properly aligned and securely attached to support the solar panels."
+                },
+                {
+                    header: "Install the solar panels",
+                    description: "Attach the solar panels to the mounting system. Follow the manufacturer's instructions for securing the panels and making electrical connections."
+                },
+                {
+                    header: "Connect the solar inverter",
+                    description: "Install the inverter and connect it to the solar panels. The inverter converts the direct current (DC) produced by the panels into alternating current (AC) used by your home."
+                },
+                {
+                    header: "Complete electrical wiring",
+                    description: "Connect the inverter to your home's electrical system. Ensure all wiring is done safely and complies with local electrical codes. This step is typically performed by a licensed electrician."
+                },
+                {
+                    header: "Test the system",
+                    description: "Turn on the solar panel system and test it to ensure everything is working correctly. Check the output and monitor the system to verify it meets expected performance levels."
+                },
+                {
+                    header: "Monitor and maintain the system",
+                    description: "Regularly monitor the solar panel system's performance through a monitoring app or system. Perform routine maintenance, such as cleaning the panels and checking for any issues, to ensure optimal efficiency."
+                }
             ],
             utilityRebates: [
                 {
@@ -2365,19 +2543,37 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Find a Provider",
-                    description:
-                        "Look at warranties and installation costs. Good providers include Pella Windows & Doors and Renewal by Anderson",
+                    header: "Assess your window needs",
+                    description: "Evaluate your home's current windows and identify areas where energy efficiency can be improved. Consider factors such as window type, size, condition, and location."
                 },
                 {
-                    header: "Replace Windows",
-                    description: "Have the provider replace the windows. If you're installing yourself, be careful to not damage the frame.",
+                    header: "Research energy-efficient window options",
+                    description: "Explore energy-efficient window options such as double or triple-pane glass, low-emissivity (low-e) coatings, gas fills (e.g., argon or krypton), and insulated frames."
                 },
                 {
-                    header: "Dispose of Old Windows",
-                    description:
-                        "Dispose of the old windows in a responsible manner. Some providers will do this for you.",
+                    header: "Choose the right window style and features",
+                    description: "Select window styles and features that meet your aesthetic preferences and functional needs while maximizing energy efficiency. Consider factors such as frame material, glazing type, and operability."
                 },
+                {
+                    header: "Measure and order windows",
+                    description: "Measure the dimensions of your window openings accurately and order energy-efficient windows from a reputable manufacturer or supplier. Ensure proper sizing and fit for each window."
+                },
+                {
+                    header: "Prepare for installation",
+                    description: "Prepare your home for window installation by clearing the work area, removing window coverings and hardware, and protecting furniture and flooring from dust and debris."
+                },
+                {
+                    header: "Install new windows",
+                    description: "Hire professional window installers or follow manufacturer guidelines to install the new energy-efficient windows. Ensure proper sealing, insulation, and weatherproofing to prevent air leaks and moisture infiltration."
+                },
+                {
+                    header: "Seal and insulate around windows",
+                    description: "Seal gaps and cracks around window frames with weatherstripping, caulking, or foam insulation to minimize air leakage and improve energy efficiency. Insulate window cavities to reduce heat transfer."
+                },
+                {
+                    header: "Test and evaluate",
+                    description: "Test the performance of your new energy-efficient windows by monitoring indoor comfort, energy usage, and utility bills over time. Evaluate the impact of the windows on thermal comfort, noise reduction, and indoor air quality."
+                }
             ],
             utilityRebates: [
                 {
@@ -2451,20 +2647,37 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Fnd a Provider",
-                    description:
-                        "Pick a heat pump from a provider based of efficacy ratings and warranty. Good providers include Carrier, Trane, and Lennox.",
+                    header: "Site assessment",
+                    description: "Inspect your property to determine the best location for the outdoor unit (condenser) and indoor unit (air handler). Ensure proper clearance, accessibility, and adequate airflow for efficient operation."
                 },
                 {
-                    header: "Assess home heating needs",
-                    description:
-                        "Assess your home heating system (either yourself or the provider) to calculate heating and cooling needs.",
+                    header: "Mount outdoor unit",
+                    description: "Install the outdoor unit on a stable and level surface, such as a concrete pad or mounting brackets. Secure the unit to prevent vibration and noise during operation."
                 },
                 {
-                    header: "Apply for rebates",
-                    description:
-                        "Apply for government and utility rebates to reduce the cost",
+                    header: "Install refrigerant lines",
+                    description: "Connect the refrigerant lines between the indoor and outdoor units. Ensure proper sizing, insulation, and sealing to prevent leaks and optimize system efficiency."
                 },
+                {
+                    header: "Mount indoor unit",
+                    description: "Mount the indoor unit in the desired location, typically on a wall or ceiling. Ensure proper spacing for airflow and access for maintenance. Connect the indoor unit to the refrigerant lines and electrical wiring."
+                },
+                {
+                    header: "Connect electrical wiring",
+                    description: "Connect the electrical wiring for both the indoor and outdoor units. Follow local electrical codes and manufacturer guidelines for proper wiring, grounding, and circuit protection."
+                },
+                {
+                    header: "Test system",
+                    description: "Test the operation of the heat pump system to ensure proper functionality and performance. Verify heating and cooling modes, thermostat operation, airflow, and refrigerant pressures."
+                },
+                {
+                    header: "Commission system",
+                    description: "Commission the heat pump system by adjusting settings and parameters for optimal performance. Verify proper refrigerant charge, airflow, and temperature differentials."
+                },
+                {
+                    header: "Provide user instructions",
+                    description: "Provide the homeowner with instructions on how to operate and maintain the heat pump system. Explain thermostat settings, filter maintenance, and troubleshooting procedures."
+                }
             ],
             utilityRebates: [
                 {
@@ -2544,19 +2757,45 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Find a Provider",
-                    description:
-                        "Look for a provider. Look for a good warranty",
+                    header: "Evaluate current lighting",
+                    description: "Assess your current lighting setup and identify areas where LED bulbs could replace traditional incandescent or CFL bulbs."
                 },
                 {
-                    header: "Install the LED bulb",
-                    description: "Make sure power is turned off.",
+                    header: "Calculate potential savings",
+                    description: "Estimate potential energy and cost savings by switching to LED bulbs. Consider factors such as wattage, lifespan, and electricity rates."
                 },
                 {
-                    header: "Apply for rebates",
-                    description:
-                        "Apply for any rebates that come with the LED bulb purchased",
+                    header: "Research LED bulbs",
+                    description: "Research different types of LED bulbs available on the market. Consider factors such as brightness, color temperature, and compatibility with existing fixtures."
                 },
+                {
+                    header: "Select the right bulbs",
+                    description: "Choose LED bulbs that match your lighting needs and preferences. Look for Energy Star certified bulbs to ensure quality and energy efficiency."
+                },
+                {
+                    header: "Purchase LED bulbs",
+                    description: "Purchase the selected LED bulbs from a reputable retailer or online store. Buy bulbs in bulk to save money and ensure consistency in lighting."
+                },
+                {
+                    header: "Prepare for installation",
+                    description: "Turn off power to the lighting fixtures before replacing bulbs. Remove old bulbs carefully and ensure sockets are clean and free of debris."
+                },
+                {
+                    header: "Install LED bulbs",
+                    description: "Insert LED bulbs into the sockets and twist them securely into place. Ensure bulbs are compatible with existing fixtures and fit properly."
+                },
+                {
+                    header: "Test LED bulbs",
+                    description: "Turn on the power to the lighting fixtures and test the LED bulbs. Verify that they illuminate properly and provide the desired brightness and color."
+                },
+                {
+                    header: "Dispose of old bulbs responsibly",
+                    description: "Dispose of old incandescent or CFL bulbs responsibly. Recycle them at designated recycling centers or hazardous waste facilities."
+                },
+                {
+                    header: "Monitor energy usage",
+                    description: "Monitor energy usage with LED bulbs to track savings over time. Compare utility bills and energy consumption data to assess the impact of the switch to LED lighting."
+                }
             ],
             govtRebates: [
                 { price: 6, label: "Dollar tax credit offered federally." },
@@ -2623,19 +2862,45 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Find a Provider",
-                    description:
-                        "Using factors like efficiency, warranty, and costs to determine the best system for your home.",
+                    header: "Assess your energy needs",
+                    description: "Evaluate your household's energy usage and determine the size of the battery system needed to meet your requirements. Consider factors such as peak usage times, blackout protection, and renewable energy integration."
                 },
                 {
-                    header: "Prepare your home",
-                    description:
-                        "Ensure your home has the necessary electrical upgrades.",
+                    header: "Choose the right battery system",
+                    description: "Research different types of home battery systems, such as lithium-ion, lead-acid, or flow batteries. Consider factors like capacity, efficiency, lifespan, and warranty."
                 },
                 {
-                    header: "Install the system",
-                    description: "Connect the battery to the electrical system, ideally with the provider. If you do it yourself, make sure you're taking proper safety measures.",
+                    header: "Select compatible components",
+                    description: "Choose other components for your battery system, such as an inverter, charge controller, and monitoring system. Ensure compatibility with your chosen battery technology and electrical setup."
                 },
+                {
+                    header: "Calculate system size and layout",
+                    description: "Determine the optimal placement and configuration of your battery system. Consider factors such as available space, wiring requirements, and ventilation needs."
+                },
+                {
+                    header: "Obtain necessary permits and approvals",
+                    description: "Check with local authorities and utility companies for required permits and approvals. Ensure compliance with building codes, zoning regulations, and safety standards."
+                },
+                {
+                    header: "Purchase battery system components",
+                    description: "Order the selected battery system components from a reputable supplier or manufacturer. Arrange for delivery and ensure all necessary parts and equipment are available."
+                },
+                {
+                    header: "Install the battery system",
+                    description: "Follow the manufacturer's instructions or hire a professional installer to set up the battery system. Install batteries, inverters, and other components according to the planned layout."
+                },
+                {
+                    header: "Connect to electrical system",
+                    description: "Connect the battery system to your home's electrical system. Install wiring, breakers, and disconnect switches as needed. Ensure all connections are secure and properly insulated."
+                },
+                {
+                    header: "Test the system",
+                    description: "Turn on the battery system and test its functionality. Verify that it charges and discharges correctly, communicates with other components, and integrates with your renewable energy sources."
+                },
+                {
+                    header: "Monitor performance",
+                    description: "Regularly monitor your home battery system's performance and energy usage. Use monitoring software or apps to track battery status, energy production, and consumption patterns."
+                }
             ],
             utilityRebates: [
                 {
@@ -2700,23 +2965,33 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Turn off water supply.",
-                    description: "You can find this in your garage",
+                    header: "Turn off the water supply",
+                    description: "Locate the main water shut-off valve, usually found in the garage, basement, or near the water meter, and turn it off."
                 },
                 {
-                    header: "Remove the old fixture.",
-                    description:
-                        "Consult the manufacturer's instructions for specific removal steps",
+                    header: "Drain the water lines",
+                    description: "Open the faucets to drain any remaining water from the pipes to avoid spills during the installation."
                 },
                 {
-                    header: "Install the new low-flow fixture.",
-                    description:
-                        "Consult the manufacturer's instructions for specific installation steps",
+                    header: "Remove the old fixture",
+                    description: "Use appropriate tools and follow the manufacturer's instructions to carefully remove the old fixture."
+                },
+                {
+                    header: "Prepare the installation area",
+                    description: "Clean the area and make any necessary repairs or adjustments to ensure a proper fit for the new fixture."
+                },
+                {
+                    header: "Install the new low-flow fixture",
+                    description: "Consult the manufacturer's instructions and use the recommended tools to install the new low-flow fixture securely."
                 },
                 {
                     header: "Turn the water supply on",
-                    description: "Test the fixture before certifying it works",
+                    description: "Slowly turn the main water valve back on and check for leaks around the new fixture."
                 },
+                {
+                    header: "Test the new fixture",
+                    description: "Run the water through the new low-flow fixture to ensure it is functioning correctly and efficiently."
+                }
             ],
             utilityRebates: [
                 {
@@ -2785,30 +3060,33 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Install a Catchment Area",
-                    description:
-                        "Set up a catchment area, such as a roof, to collect rainwater.",
+                    header: "Choose a location for the storage tank",
+                    description: "Select a suitable location for the rainwater storage tank, such as near a downspout, and ensure the ground is level and stable."
                 },
                 {
-                    header: "Set Up Gutters and Downspouts",
-                    description:
-                        "Install gutters and downspouts to channel rainwater from the catchment area to storage tanks.",
+                    header: "Install gutters and downspouts",
+                    description: "Ensure your roof has gutters installed, and attach downspouts that will direct rainwater into the storage tank."
                 },
                 {
-                    header: "Install Storage Tanks",
-                    description:
-                        "Set up storage tanks to store the collected rainwater.",
+                    header: "Set up the first flush diverter",
+                    description: "Install a first flush diverter on the downspout to remove debris and contaminants from the initial flow of rainwater."
                 },
                 {
-                    header: "Connect the Distribution System",
-                    description:
-                        "Connect the distribution system to distribute the stored rainwater for various uses.",
+                    header: "Install the rainwater storage tank",
+                    description: "Position the storage tank in the selected location and connect it to the downspout using pipes or hoses. Ensure all connections are secure and watertight."
                 },
                 {
-                    header: "Install a Filtration System (Optional)",
-                    description:
-                        "Optionally, install a filtration system to filter the collected rainwater before use.",
+                    header: "Add a filtration system",
+                    description: "Install a filtration system to remove any remaining debris from the rainwater before it enters the storage tank."
                 },
+                {
+                    header: "Connect the distribution system",
+                    description: "Set up a distribution system to use the collected rainwater for irrigation, toilet flushing, or other non-potable uses. Ensure proper piping and valves are in place."
+                },
+                {
+                    header: "Test the rainwater harvesting system",
+                    description: "Check all connections and run water through the system to ensure it is functioning correctly, with no leaks or issues."
+                }
             ],
             utilityRebates: [
                 {
@@ -2895,35 +3173,37 @@ const solutions = {
 
             steps: [
                 {
-                    header: "Assess your yard's sun exposure and soil type.",
-                    description:
-                        "Evaluate how much sunlight your yard receives and determine the type of soil you have.",
+                    header: "Assess the site and plan the layout",
+                    description: "Evaluate the area to be xeriscaped, considering factors like soil type, sunlight, and existing vegetation. Plan the layout to incorporate native and drought-resistant plants."
                 },
                 {
-                    header: "Choose appropriate native or drought-tolerant plants.",
-                    description:
-                        "Select plants that are well-suited to your local climate and require less water.",
+                    header: "Remove existing turf and weeds",
+                    description: "Clear the area of any existing grass, weeds, and other unwanted vegetation. Use appropriate tools and methods to ensure thorough removal."
                 },
                 {
-                    header: "Plan the layout and design of your xeriscape.",
-                    description:
-                        "Create a plan for arranging the plants and other elements in your xeriscape.",
+                    header: "Amend the soil",
+                    description: "Improve the soil with organic matter, compost, or other amendments to enhance its water retention and drainage properties."
                 },
                 {
-                    header: "Prepare the soil and install the plants.",
-                    description:
-                        "Prepare the soil by removing weeds and debris, then plant the chosen plants.",
+                    header: "Install a drip irrigation system",
+                    description: "Set up a drip irrigation system to provide efficient water delivery directly to the plant roots. Ensure the system is properly installed and covers all planned planting areas."
                 },
                 {
-                    header: "Install an efficient irrigation system.",
-                    description:
-                        "Set up an irrigation system that minimizes water usage and ensures proper watering.",
+                    header: "Place landscape fabric",
+                    description: "Lay down landscape fabric to help prevent weed growth while allowing water and air to reach the soil."
                 },
                 {
-                    header: "Apply mulch to conserve moisture and prevent weed growth.",
-                    description:
-                        "Spread mulch around the plants to retain moisture and suppress weed growth.",
+                    header: "Plant drought-resistant and native species",
+                    description: "Plant a variety of drought-resistant and native plants according to your layout plan. Group plants with similar water needs together."
                 },
+                {
+                    header: "Apply mulch",
+                    description: "Cover the soil with a layer of mulch to retain moisture, regulate soil temperature, and reduce weed growth."
+                },
+                {
+                    header: "Test the irrigation system",
+                    description: "Run the drip irrigation system to ensure all plants are receiving adequate water and adjust as necessary."
+                }
             ],
 
             utilityRebates: [
@@ -2993,25 +3273,45 @@ const solutions = {
 
             steps: [
                 {
-                    header: "Research EV models",
-                    description:
-                        "Research and choose an EV model depending on your needs (seats, range, storing capacity), and budget. Good options include the Nissan Leaf and the Tesla Model 3.",
+                    header: "Research electric vehicles (EVs)",
+                    description: "Learn about different electric vehicle models available on the market, including sedans, SUVs, and trucks. Consider factors such as range, charging infrastructure, and incentives."
                 },
                 {
-                    header: "Purchase the EV",
-                    description:
-                        "Purchase the EV from a local dealership or online. Buying used is also a valid option",
+                    header: "Calculate cost savings",
+                    description: "Estimate potential cost savings from switching to an electric vehicle, including fuel savings, maintenance costs, and available incentives such as tax credits or rebates."
                 },
                 {
-                    header: "Assess your method of charging",
-                    description:
-                        "Install a home charging station or find a public charging station near your home.",
+                    header: "Assess charging infrastructure",
+                    description: "Evaluate the availability of charging infrastructure in your area, including home charging options, public charging stations, and workplace charging facilities. Determine if additional charging equipment is needed."
                 },
                 {
-                    header: "Register the EV to apply for incentives",
-                    description:
-                        "Register the EV with the Texas Department of Motor Vehicles to apply for any applicable rebates.",
+                    header: "Select an electric vehicle",
+                    description: "Choose an electric vehicle that meets your needs and preferences. Consider factors such as range, battery size, charging speed, and additional features like autopilot or regenerative braking."
                 },
+                {
+                    header: "Arrange financing or leasing",
+                    description: "Explore financing or leasing options for purchasing or leasing an electric vehicle. Compare interest rates, loan terms, and lease terms from different lenders or dealerships."
+                },
+                {
+                    header: "Install home charging equipment",
+                    description: "If necessary, install home charging equipment to facilitate convenient charging of your electric vehicle. Consider factors such as charging speed, connector type, and installation costs."
+                },
+                {
+                    header: "Learn about EV maintenance",
+                    description: "Educate yourself about electric vehicle maintenance requirements, which differ from traditional internal combustion engine vehicles. Learn about battery care, tire maintenance, and software updates."
+                },
+                {
+                    header: "Take delivery of your EV",
+                    description: "Take delivery of your electric vehicle from the dealership or manufacturer. Familiarize yourself with the vehicle's features, controls, and charging process."
+                },
+                {
+                    header: "Plan charging routines",
+                    description: "Develop a charging routine that suits your lifestyle and driving patterns. Take advantage of off-peak charging rates, schedule charging sessions to coincide with low electricity demand, and plan longer trips around charging stops."
+                },
+                {
+                    header: "Monitor energy usage and savings",
+                    description: "Track your electric vehicle's energy usage, charging habits, and cost savings over time. Use available tools and apps to monitor energy consumption, estimate charging costs, and track your environmental impact."
+                }
             ],
 
             utilityRebates: [
@@ -3087,20 +3387,21 @@ const solutions = {
 
             steps: [
                 {
-                    header: "Research transportation options near you",
-                    description:
-                        "Research and choose a public transportation option depending on your needs (seats, range, storing capacity), and budget. Good options include the bus and the train.",
+                    header: "Research available options",
+                    description: "Find out about the public transportation options in your area, such as buses, trains, or subways."
                 },
                 {
-                    header: "Purchase a card or download an app",
-                    description:
-                        "Purchase a card or download an app to pay for public transportation.",
+                    header: "Plan your journey",
+                    description: "Use online resources or apps to plan your route, including stops, schedules, and fares."
                 },
                 {
-                    header: "Look at the schedule",
-                    description:
-                        "Look at the schedule to see when the public transportation is available.",
+                    header: "Purchase tickets or passes",
+                    description: "Buy tickets or passes in advance or at the station, depending on the available options."
                 },
+                {
+                    header: "Board the vehicle",
+                    description: "Wait for your ride at the designated stop, then board the vehicle and enjoy your journey."
+                }
             ],
 
             utilityRebates: [
@@ -3170,20 +3471,45 @@ const solutions = {
 
             steps: [
                 {
-                    header: "Research composting toilet options near you",
-                    description:
-                        "Research and choose a composting toilet depending on your needs, and budget.",
+                    header: "Research composting toilets",
+                    description: "Learn about different types of composting toilets available on the market, including self-contained units, central systems, and DIY options. Consider factors such as capacity, ventilation, and maintenance requirements."
                 },
                 {
-                    header: "Install the toilet",
-                    description:
-                        "Installing the toilet according to the manufacturer's instructions.",
+                    header: "Check local regulations",
+                    description: "Check with your local building department or health authority to understand regulations and permitting requirements for installing a composting toilet in your area. Ensure compliance with applicable codes and guidelines."
                 },
                 {
-                    header: "Connect the toilet to a composting system",
-                    description:
-                        "Set up a composting system to connect it to one, adding a carbon source and turning the compost regularly.",
+                    header: "Select a suitable location",
+                    description: "Choose a location for the composting toilet that provides adequate ventilation, privacy, and access to utilities (if required). Consider factors such as proximity to living areas and outdoor spaces."
                 },
+                {
+                    header: "Prepare the installation site",
+                    description: "Prepare the installation site by clearing the area and ensuring it is level and stable. Install any necessary ventilation ducting, plumbing connections, and electrical wiring as required."
+                },
+                {
+                    header: "Install the composting toilet",
+                    description: "Follow the manufacturer's instructions to install the composting toilet unit. Secure the toilet to the floor or platform and connect any plumbing or electrical components according to the provided guidelines."
+                },
+                {
+                    header: "Set up ventilation",
+                    description: "Ensure proper ventilation for the composting toilet system to remove odors and excess moisture. Install a vent pipe or fan system to exhaust air outdoors and maintain airflow within the unit."
+                },
+                {
+                    header: "Add composting material",
+                    description: "Add an appropriate composting medium, such as peat moss, coconut coir, or sawdust, to the composting chamber. Follow recommendations for the initial layer thickness and ongoing maintenance."
+                },
+                {
+                    header: "Educate users",
+                    description: "Provide instructions to household members or users on how to use the composting toilet correctly. Emphasize proper waste separation, composting material usage, and maintenance procedures."
+                },
+                {
+                    header: "Monitor and maintain the system",
+                    description: "Regularly monitor the composting toilet system for odors, moisture levels, and compost decomposition. Follow maintenance tasks outlined by the manufacturer, such as turning compost, adding material, and emptying the finished compost."
+                },
+                {
+                    header: "Compost disposal",
+                    description: "Dispose of finished compost according to local regulations and guidelines. Use compost as a soil amendment in gardens or landscaping projects, or arrange for proper disposal through municipal composting facilities."
+                }
             ],
 
             utilityRebates: [
@@ -3260,20 +3586,33 @@ const solutions = {
 
             steps: [
                 {
-                    header: "Choose a Provider and System",
-                    description:
-                        "Choose the right provider and system for your needs and budget. Look at good warranties and efficiency ratings.",
+                    header: "Assess your heating and cooling needs",
+                    description: "Evaluate your home's heating and cooling requirements based on factors such as size, insulation, climate, and existing HVAC system efficiency."
                 },
                 {
-                    header: "Install the HVAC System",
-                    description:
-                        "We recommend hiring a profession to install the system. ",
+                    header: "Research energy-efficient HVAC options",
+                    description: "Explore energy-efficient HVAC systems such as high-efficiency furnaces, heat pumps, ductless mini-split systems, and smart thermostats. Compare energy ratings, features, and performance."
                 },
                 {
-                    header: "Test the system and ensure heat isn't escaping",
-                    description:
-                        "Thoroughly test the system while the installer is still present. Set up any thermostat or controls. Ensure heat isn't escaping in your house.",
+                    header: "Calculate potential energy savings",
+                    description: "Estimate potential energy savings by upgrading to an energy-efficient HVAC system. Consider factors such as energy efficiency ratings, annual fuel utilization efficiency (AFUE), seasonal energy efficiency ratio (SEER), and heating seasonal performance factor (HSPF)."
                 },
+                {
+                    header: "Select the right HVAC system",
+                    description: "Choose an HVAC system that meets your heating and cooling needs while maximizing energy efficiency. Consult with HVAC professionals to determine the best system size, type, and features for your home."
+                },
+                {
+                    header: "Schedule professional installation",
+                    description: "Hire licensed HVAC contractors to install the energy-efficient HVAC system. Ensure proper sizing, installation, and ductwork design to optimize performance and efficiency."
+                },
+                {
+                    header: "Seal and insulate ductwork",
+                    description: "Inspect and seal ductwork to prevent air leaks and improve energy efficiency. Properly insulate ducts in unconditioned spaces to reduce heat loss or gain during air distribution."
+                },
+                {
+                    header: "Program and optimize thermostat settings",
+                    description: "Install programmable or smart thermostats to control heating and cooling settings automatically based on your schedule and preferences. Set energy-saving temperature setbacks for times when you're away or asleep."
+                }
             ],
 
             utilityRebates: [
@@ -3350,25 +3689,37 @@ const solutions = {
 
             steps: [
                 {
-                    header: "Choose a Provider and System",
-                    description:
-                        "Choose the right provider and type of insulation (fiberglass, cellulose, spray foam)",
+                    header: "Assess insulation needs",
+                    description: "Evaluate your home's insulation needs by inspecting walls, floors, ceilings, and attic spaces. Identify areas with inadequate or degraded insulation, as well as potential air leaks."
                 },
                 {
-                    header: "Measure the area to be insulated.",
-                    description:
-                        "Measure how much area needs to be insulated and purchase the right amount of insulation",
+                    header: "Choose insulation materials",
+                    description: "Select appropriate insulation materials based on factors such as R-value, moisture resistance, fire safety, and environmental impact. Common insulation types include fiberglass, cellulose, spray foam, and rigid foam boards."
                 },
                 {
-                    header: "Install the system",
-                    description:
-                        "We recommend hiring a professional, but if you install it yourself, wear protective gear.",
+                    header: "Prepare for installation",
+                    description: "Prepare the installation area by clearing obstructions, sealing air leaks, and protecting surfaces from damage. Ensure proper ventilation and safety precautions are in place."
                 },
                 {
-                    header: "Check for leaks",
-                    description:
-                        "Check for leaks and ensure the insulation is properly installed.",
+                    header: "Install insulation in walls and ceilings",
+                    description: "Install insulation in wall cavities, attic spaces, and ceiling areas using appropriate techniques for each material type. Ensure proper coverage and density to achieve desired thermal performance."
                 },
+                {
+                    header: "Seal air leaks",
+                    description: "Seal air leaks and gaps around windows, doors, electrical outlets, and other penetrations using caulking, weatherstripping, or expanding foam insulation. This helps prevent heat loss and improve energy efficiency."
+                },
+                {
+                    header: "Insulate floors and crawl spaces",
+                    description: "Insulate floors above unheated spaces, such as crawl spaces or garages, using insulation materials appropriate for the application. Ensure proper ventilation and moisture control to prevent mold and rot."
+                },
+                {
+                    header: "Install vapor barriers",
+                    description: "Install vapor barriers or retarders as needed to control moisture infiltration and prevent condensation within insulated spaces. Ensure proper placement and sealing to avoid moisture-related issues."
+                },
+                {
+                    header: "Test and evaluate",
+                    description: "Test the effectiveness of the insulation installation by monitoring indoor comfort, energy usage, and utility bills over time. Evaluate the impact of insulation on thermal performance, indoor air quality, and overall home comfort."
+                }
             ],
 
             utilityRebates: [
@@ -3445,35 +3796,33 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Consult with a plumber or rainwater harvesting specialist",
-                    description:
-                        "Discuss and determine the most suitable rainwater harvesting system tailored to your home's needs and location.",
+                    header: "Choose a location for the storage tank",
+                    description: "Select a suitable location for the rainwater storage tank, such as near a downspout, and ensure the ground is level and stable."
                 },
                 {
-                    header: "Obtain any necessary permits and approvals",
-                    description:
-                        "Ensure compliance with local regulations by obtaining required permits and approvals before proceeding with installation.",
+                    header: "Install gutters and downspouts",
+                    description: "Ensure your roof has gutters installed, and attach downspouts that will direct rainwater into the storage tank."
                 },
                 {
-                    header: "Install the collection system",
-                    description:
-                        "Set up gutters and downspouts to channel rainwater into a storage tank, establishing the primary infrastructure of the harvesting system.",
+                    header: "Set up the first flush diverter",
+                    description: "Install a first flush diverter on the downspout to remove debris and contaminants from the initial flow of rainwater."
                 },
                 {
-                    header: "Install the filtration and treatment system",
-                    description:
-                        "Integrate essential components such as pumps, filters, and disinfection equipment to ensure the collected rainwater meets quality standards for intended usage.",
+                    header: "Install the rainwater storage tank",
+                    description: "Position the storage tank in the selected location and connect it to the downspout using pipes or hoses. Ensure all connections are secure and watertight."
                 },
                 {
-                    header: "Connect the treated rainwater",
-                    description:
-                        "Establish connections from the treatment system to designated non-potable water systems within your property, optimizing the utilization of harvested rainwater.",
+                    header: "Add a filtration system",
+                    description: "Install a filtration system to remove any remaining debris from the rainwater before it enters the storage tank."
                 },
                 {
-                    header: "Test the system and make any necessary adjustments",
-                    description:
-                        "Conduct thorough testing to verify functionality and performance, making adjustments as needed to guarantee optimal operation and efficiency.",
+                    header: "Connect the distribution system",
+                    description: "Set up a distribution system to use the collected rainwater for irrigation, toilet flushing, or other non-potable uses. Ensure proper piping and valves are in place."
                 },
+                {
+                    header: "Test the rainwater harvesting system",
+                    description: "Check all connections and run water through the system to ensure it is functioning correctly, with no leaks or issues."
+                }
             ],
             utilityRebates: [
                 {
@@ -3520,23 +3869,37 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Turn off water supply.",
-                    description: "You can find this in your garage",
+                    header: "Turn off water supply",
+                    description: "Locate the water shut-off valve for the shower and turn it off to prevent water flow during installation. If there's no dedicated valve, shut off the main water supply to the house."
                 },
                 {
-                    header: "Remove the old fixture.",
-                    description:
-                        "Consult the manufacturer's instructions for specific removal steps",
+                    header: "Remove existing showerhead",
+                    description: "Use an adjustable wrench or pliers to loosen and remove the existing showerhead. Turn it counterclockwise until it's fully detached from the shower arm."
                 },
                 {
-                    header: "Install the new low-flow fixture.",
-                    description:
-                        "Consult the manufacturer's instructions for specific installation steps",
+                    header: "Clean the shower arm threads",
+                    description: "Inspect the threads of the shower arm for any debris or old plumber's tape. Use a rag or brush to clean the threads thoroughly and ensure a proper seal with the new showerhead."
                 },
                 {
-                    header: "Turn the water supply on",
-                    description: "Test the fixture before certifying it works",
+                    header: "Apply plumber's tape (if needed)",
+                    description: "Wrap plumber's tape clockwise around the threads of the shower arm to create a tight seal. This helps prevent leaks and ensures a secure connection with the new showerhead."
                 },
+                {
+                    header: "Attach the new showerhead",
+                    description: "Screw the new low-flow showerhead onto the shower arm by turning it clockwise. Use your hand to tighten the showerhead securely, ensuring a snug fit without over-tightening."
+                },
+                {
+                    header: "Turn on water supply",
+                    description: "Turn on the water supply to the shower by opening the shut-off valve or main water supply. Slowly turn on the shower faucet to check for leaks or drips from the new showerhead."
+                },
+                {
+                    header: "Adjust flow rate (if applicable)",
+                    description: "If the low-flow showerhead has adjustable settings for flow rate or spray pattern, adjust them to your preference. Follow the manufacturer's instructions for making adjustments."
+                },
+                {
+                    header: "Test the showerhead",
+                    description: "Step into the shower and test the new low-flow showerhead to ensure proper water flow and pressure. Make any necessary adjustments to the settings or installation if needed."
+                }
             ],
             description:
                 "Install showerheads designed to reduce water flow without sacrificing water pressure or comfort.",
@@ -3602,45 +3965,37 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Design the system layout",
-                    description:
-                        "Plan the layout of the irrigation system considering the positioning of water sources and plants for optimal water distribution.",
+                    header: "Plan the layout",
+                    description: "Determine the areas that need irrigation and plan the layout of the drip lines and emitters. Consider the water needs of different plants and group them accordingly."
                 },
                 {
-                    header: "Install a backflow preventer and pressure regulator",
-                    description:
-                        "Ensure the protection of the water supply by installing backflow preventers and pressure regulators.",
+                    header: "Gather materials and tools",
+                    description: "Collect all necessary materials and tools, including drip tubing, emitters, connectors, a pressure regulator, a filter, and a timer (optional)."
                 },
                 {
-                    header: "Lay out the main and sub-main lines",
-                    description:
-                        "Position the main and sub-main lines, connecting them to the water source to facilitate water distribution throughout the irrigation system.",
+                    header: "Install the main supply line",
+                    description: "Connect the main supply line to the water source, such as an outdoor faucet. Install a backflow preventer, pressure regulator, and filter in line with the main supply."
                 },
                 {
-                    header: "Install the drip lines or soaker hoses",
-                    description:
-                        "Place drip lines or soaker hoses along plant rows or around plants to deliver water directly to the root zone.",
+                    header: "Lay out the drip tubing",
+                    description: "Run the drip tubing from the main supply line to the planting areas according to your layout plan. Secure the tubing with stakes to keep it in place."
                 },
                 {
-                    header: "Connect the drip lines to the sub-main lines",
-                    description:
-                        "Use appropriate fittings to connect the drip lines to the sub-main lines, ensuring seamless water flow.",
-                },
-                {
-                    header: "Install the emitters or micro-sprinklers",
-                    description:
-                        "Position emitters or micro-sprinklers at plant locations to deliver water evenly to individual plants.",
+                    header: "Install emitters and connectors",
+                    description: "Punch holes in the drip tubing and insert emitters or connectors at appropriate intervals to provide water to individual plants or rows. Use different types of emitters based on the water needs of the plants."
                 },
                 {
                     header: "Test the system",
-                    description:
-                        "Check the irrigation system for leaks and assess water distribution to ensure proper functionality.",
+                    description: "Turn on the water supply and run the system to check for leaks and ensure all emitters are working properly. Adjust the emitters as needed to ensure even water distribution."
                 },
                 {
-                    header: "Adjust the system as needed",
-                    description:
-                        "Make necessary adjustments to the system to enhance efficiency and ensure uniform watering across the landscape.",
+                    header: "Cover the tubing with mulch",
+                    description: "Cover the drip tubing with a layer of mulch to protect it from UV damage, help retain soil moisture, and improve the appearance of the garden."
                 },
+                {
+                    header: "Set the timer (optional)",
+                    description: "If using a timer, set it to water the plants at appropriate intervals, ensuring they receive adequate moisture without overwatering."
+                }
             ],
             description:
                 "Efficiently water plants by delivering water directly to their roots, minimizing water waste.",
@@ -3759,32 +4114,33 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Consult with a plumber or greywater system specialist",
-                    description: "to determine the best system for your home.",
+                    header: "Turn off the water supply",
+                    description: "Locate the main water shut-off valve, usually found in the garage, basement, or near the water meter, and turn it off."
                 },
                 {
-                    header: "Obtain necessary permits and approvals",
-                    description: "from local authorities.",
+                    header: "Plan the greywater system layout",
+                    description: "Determine the sources of greywater (sinks, showers, etc.) and plan the route to the greywater recycling system. Make sure to comply with local codes and regulations."
                 },
                 {
-                    header: "Install the greywater collection and storage system",
-                    description:
-                        "typically involving plumbing modifications and the installation of a storage tank.",
+                    header: "Install the diverter valve",
+                    description: "Install a diverter valve at each greywater source to direct water either to the recycling system or the sewer."
                 },
                 {
-                    header: "Install the filtration and treatment system",
-                    description:
-                        "which may include a pump, filters, and disinfection equipment.",
+                    header: "Set up the greywater storage tank",
+                    description: "Place the storage tank in an appropriate location, such as a basement or outdoor area, and ensure it is securely positioned and properly connected to the diverter valves."
                 },
                 {
-                    header: "Connect the treated greywater",
-                    description:
-                        "to the toilet or irrigation system as appropriate.",
+                    header: "Connect the irrigation system",
+                    description: "Install pipes or hoses from the greywater storage tank to the irrigation system in your garden or landscape area. Ensure proper filtration and distribution."
                 },
                 {
-                    header: "Test the system",
-                    description: "and make any necessary adjustments.",
+                    header: "Turn the water supply on",
+                    description: "Slowly turn the main water valve back on and check for leaks around the diverter valves and storage tank connections."
                 },
+                {
+                    header: "Test the greywater system",
+                    description: "Run water through the system to ensure the greywater is being properly diverted, stored, and used for irrigation without any leaks or issues."
+                }
             ],
         },
         {
@@ -3806,23 +4162,6 @@ const solutions = {
                     data: 30,
                     units: "%",
                     description: "Reduction in water usage for laundry",
-                },
-            ],
-            steps: [
-                {
-                    header: "Choose a Provider and System",
-                    description:
-                        "Choose the right provider and system for your needs and budget. Look at good warranties and efficiency ratings.",
-                },
-                {
-                    header: "Install the High-Efficiency Washing Machine System",
-                    description:
-                        "We recommend hiring a profession to install the system. ",
-                },
-                {
-                    header: "Test the system and ensure it's working.",
-                    description:
-                        "Thoroughly test the system while the installer is still present. Set up any thermostat or controls.",
                 },
             ],
             description:
@@ -3870,32 +4209,41 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Consult with a plumber or greywater system specialist",
-                    description: "to determine the best system for your home.",
+                    header: "Prepare the installation area",
+                    description: "Clear the installation area and ensure it's level and stable to support the washing machine. Make sure there's proper ventilation and access to water and electrical connections."
                 },
                 {
-                    header: "Obtain necessary permits and approvals",
-                    description: "from local authorities.",
+                    header: "Inspect the washing machine",
+                    description: "Inspect the washing machine for any damage or defects before installation. Check the manufacturer's packaging and documentation for any missing parts or accessories."
                 },
                 {
-                    header: "Install the greywater collection and storage system",
-                    description:
-                        "typically involving plumbing modifications and the installation of a storage tank.",
+                    header: "Position the washing machine",
+                    description: "Position the washing machine in the designated installation area, ensuring it's aligned properly and has sufficient clearance for opening the door and accessing controls."
                 },
                 {
-                    header: "Install the filtration and treatment system",
-                    description:
-                        "which may include a pump, filters, and disinfection equipment.",
+                    header: "Level the washing machine",
+                    description: "Use a level to ensure the washing machine is properly leveled from side to side and front to back. Adjust the leveling feet as needed to achieve a stable and balanced position."
                 },
                 {
-                    header: "Connect the treated greywater",
-                    description:
-                        "to the toilet or irrigation system as appropriate.",
+                    header: "Connect water supply hoses",
+                    description: "Connect the hot and cold water supply hoses to the corresponding water inlet valves on the back of the washing machine. Ensure the connections are tight to prevent leaks."
                 },
                 {
-                    header: "Test the system",
-                    description: "and make any necessary adjustments.",
+                    header: "Connect the drain hose",
+                    description: "Connect the drain hose to the washing machine's drain outlet, ensuring it's securely fastened to prevent leaks or dislodging during operation. Properly route the drain hose to a suitable drain or standpipe."
                 },
+                {
+                    header: "Plug in the power cord",
+                    description: "Plug the washing machine's power cord into a grounded electrical outlet with the appropriate voltage and amperage rating. Avoid using extension cords or adapters."
+                },
+                {
+                    header: "Test the washing machine",
+                    description: "Run a test cycle on the washing machine to ensure proper operation and functionality. Check for any leaks, abnormal noises, or error codes during the test cycle."
+                },
+                {
+                    header: "Read the user manual",
+                    description: "Refer to the manufacturer's user manual for detailed instructions on operating and maintaining the high-efficiency washing machine. Follow any recommended maintenance procedures to ensure optimal performance and longevity."
+                }
             ],
         },
         {
@@ -3921,20 +4269,45 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Research composting toilet options near you",
-                    description:
-                        "Research and choose a composting toilet depending on your needs, and budget.",
+                    header: "Research composting toilets",
+                    description: "Learn about different types of composting toilets available on the market, including self-contained units, central systems, and DIY options. Consider factors such as capacity, ventilation, and maintenance requirements."
                 },
                 {
-                    header: "Install the toilet",
-                    description:
-                        "Installing the toilet according to the manufacturer's instructions.",
+                    header: "Check local regulations",
+                    description: "Check with your local building department or health authority to understand regulations and permitting requirements for installing a composting toilet in your area. Ensure compliance with applicable codes and guidelines."
                 },
                 {
-                    header: "Connect the toilet to a composting system",
-                    description:
-                        "Set up a composting system to connect it to one, adding a carbon source and turning the compost regularly.",
+                    header: "Select a suitable location",
+                    description: "Choose a location for the composting toilet that provides adequate ventilation, privacy, and access to utilities (if required). Consider factors such as proximity to living areas and outdoor spaces."
                 },
+                {
+                    header: "Prepare the installation site",
+                    description: "Prepare the installation site by clearing the area and ensuring it is level and stable. Install any necessary ventilation ducting, plumbing connections, and electrical wiring as required."
+                },
+                {
+                    header: "Install the composting toilet",
+                    description: "Follow the manufacturer's instructions to install the composting toilet unit. Secure the toilet to the floor or platform and connect any plumbing or electrical components according to the provided guidelines."
+                },
+                {
+                    header: "Set up ventilation",
+                    description: "Ensure proper ventilation for the composting toilet system to remove odors and excess moisture. Install a vent pipe or fan system to exhaust air outdoors and maintain airflow within the unit."
+                },
+                {
+                    header: "Add composting material",
+                    description: "Add an appropriate composting medium, such as peat moss, coconut coir, or sawdust, to the composting chamber. Follow recommendations for the initial layer thickness and ongoing maintenance."
+                },
+                {
+                    header: "Educate users",
+                    description: "Provide instructions to household members or users on how to use the composting toilet correctly. Emphasize proper waste separation, composting material usage, and maintenance procedures."
+                },
+                {
+                    header: "Monitor and maintain the system",
+                    description: "Regularly monitor the composting toilet system for odors, moisture levels, and compost decomposition. Follow maintenance tasks outlined by the manufacturer, such as turning compost, adding material, and emptying the finished compost."
+                },
+                {
+                    header: "Compost disposal",
+                    description: "Dispose of finished compost according to local regulations and guidelines. Use compost as a soil amendment in gardens or landscaping projects, or arrange for proper disposal through municipal composting facilities."
+                }
             ],
             description:
                 "Convert human waste into compost instead of using water-based sewage systems.",
@@ -4000,20 +4373,45 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Find a Provider",
-                    description:
-                        "Look at warranties and installation costs. Good providers include Texas Solar Outfitters, Freedom Solar Power, Green Mountain Energy",
+                    header: "Assess your energy needs",
+                    description: "Determine your household's energy consumption to decide the number and size of solar panels required. Review past electricity bills to get an average usage."
                 },
                 {
-                    header: "Incentives and financing",
-                    description:
-                        "Explore financing options, take advantages of the rebates, to make installation more affordable.",
+                    header: "Evaluate your roof's suitability",
+                    description: "Inspect your roof to ensure it can support solar panels. Consider factors like roof orientation, angle, shading, and structural integrity."
                 },
                 {
-                    header: "Installation",
-                    description:
-                        "Schedule the installation from the provider. A local utility company and government representative will inspect it to ensure it meets requirements and it'll be ready to be connected.",
+                    header: "Choose the right solar panel system",
+                    description: "Research and select a solar panel system that meets your energy needs and budget. Consider the type of panels, inverter, and mounting system."
                 },
+                {
+                    header: "Obtain necessary permits and approvals",
+                    description: "Check with your local government and utility company for required permits and approvals. Follow all regulations and guidelines for solar panel installation."
+                },
+                {
+                    header: "Install the mounting system",
+                    description: "Secure the racking or mounting system to your roof. Ensure it is properly aligned and securely attached to support the solar panels."
+                },
+                {
+                    header: "Install the solar panels",
+                    description: "Attach the solar panels to the mounting system. Follow the manufacturer's instructions for securing the panels and making electrical connections."
+                },
+                {
+                    header: "Connect the solar inverter",
+                    description: "Install the inverter and connect it to the solar panels. The inverter converts the direct current (DC) produced by the panels into alternating current (AC) used by your home."
+                },
+                {
+                    header: "Complete electrical wiring",
+                    description: "Connect the inverter to your home's electrical system. Ensure all wiring is done safely and complies with local electrical codes. This step is typically performed by a licensed electrician."
+                },
+                {
+                    header: "Test the system",
+                    description: "Turn on the solar panel system and test it to ensure everything is working correctly. Check the output and monitor the system to verify it meets expected performance levels."
+                },
+                {
+                    header: "Monitor and maintain the system",
+                    description: "Regularly monitor the solar panel system's performance through a monitoring app or system. Perform routine maintenance, such as cleaning the panels and checking for any issues, to ensure optimal efficiency."
+                }
             ],
             description:
                 "Installed in areas with high sunlight exposure such as rooftops and balconies, these silicon-based panels harness sunlight to produce electricity.",
@@ -4082,30 +4480,45 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Consult with a wind turbine installation expert",
-                    description:
-                        "Discuss your property and energy needs with a professional to determine the best wind turbine solution for your home.",
+                    header: "Assess wind resource",
+                    description: "Evaluate wind speeds and patterns at your location using a wind resource map or anemometer. Choose a site with consistent and sufficient wind for optimal turbine performance."
                 },
                 {
-                    header: "Choose the right wind turbine",
-                    description:
-                        "Select a wind turbine model that is suitable for your property size, wind conditions, and energy requirements.",
+                    header: "Check local regulations",
+                    description: "Research zoning laws, building codes, and permit requirements for installing a wind turbine in your area. Obtain necessary permits and approvals from local authorities."
                 },
                 {
-                    header: "Obtain necessary permits and approvals",
-                    description:
-                        "Acquire permits and approvals from your local government or relevant authorities to ensure compliance with regulations before installation.",
+                    header: "Select the right turbine",
+                    description: "Choose a wind turbine that matches your energy needs and site conditions. Consider factors like turbine size, tower height, rotor diameter, and rated power."
                 },
                 {
-                    header: "Install the wind turbine",
-                    description:
-                        "Mount the wind turbine on your property and connect it to your home's electrical system.",
+                    header: "Prepare the site",
+                    description: "Clear the installation site of any obstacles that could interfere with the turbine's operation, such as trees or buildings. Ensure the site is level and stable."
                 },
                 {
-                    header: "Start generating clean, renewable energy",
-                    description:
-                        "Once installed, your wind turbine will begin generating electricity, allowing you to save on your electricity bills and reduce your carbon footprint.",
+                    header: "Install the tower",
+                    description: "Assemble the tower according to the manufacturer's instructions. Secure the tower base to a concrete foundation or anchor bolts embedded in the ground."
                 },
+                {
+                    header: "Install the turbine",
+                    description: "Mount the turbine on top of the tower. Follow the manufacturer's instructions for assembling and attaching the turbine components, including the rotor, blades, and nacelle."
+                },
+                {
+                    header: "Connect electrical components",
+                    description: "Install electrical wiring from the turbine to your home's electrical system. Connect the turbine to an inverter to convert the generated electricity from AC to DC for use in your home."
+                },
+                {
+                    header: "Test the system",
+                    description: "Turn on the wind turbine and test it to ensure everything is functioning correctly. Monitor the turbine's performance and output to verify it meets expected levels."
+                },
+                {
+                    header: "Maintain the turbine",
+                    description: "Regularly inspect and maintain the wind turbine to ensure optimal performance and longevity. Check for any signs of wear or damage and perform routine maintenance tasks as recommended by the manufacturer."
+                },
+                {
+                    header: "Monitor wind conditions",
+                    description: "Continuously monitor wind conditions to maximize turbine efficiency and output. Adjust turbine settings as needed to optimize performance in different wind speeds and directions."
+                }
             ],
             description:
                 "Large turbines installed in areas with consistent wind speeds to generate electricity from wind energy.",
@@ -4195,30 +4608,45 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Research and choose the right energy-efficient appliance",
-                    description:
-                        "Explore options that match your requirements and budget while prioritizing energy efficiency.",
+                    header: "Assess current appliances",
+                    description: "Identify old or inefficient appliances in your home that need replacement. Consider factors such as age, energy consumption, and overall performance."
                 },
                 {
-                    header: "Remove the old appliance",
-                    description:
-                        "If necessary, uninstall and remove the old appliance to make room for the new one.",
+                    header: "Research energy-efficient models",
+                    description: "Research energy-efficient appliances that meet your needs. Look for ENERGY STAR® certified products, which meet strict energy efficiency criteria set by the EPA."
                 },
                 {
-                    header: "Install the new energy-efficient appliance",
-                    description:
-                        "Follow the manufacturer's instructions carefully to properly install the new appliance.",
+                    header: "Calculate energy savings",
+                    description: "Estimate potential energy savings by comparing the energy consumption of old appliances with new, energy-efficient models. Consider factors such as annual operating costs and payback period."
                 },
                 {
-                    header: "Connect the appliance to necessary utilities",
-                    description:
-                        "Ensure proper connections to water, gas, or electricity sources as required for the appliance to function.",
+                    header: "Select the right appliances",
+                    description: "Choose energy-efficient appliances that match your household's requirements and budget. Look for features such as EnergyGuide labels and energy-saving settings."
                 },
                 {
-                    header: "Test the appliance",
-                    description:
-                        "Verify that the appliance operates correctly and efficiently after installation by conducting thorough testing.",
+                    header: "Prepare for installation",
+                    description: "Measure the available space for each appliance and ensure proper electrical and plumbing connections are in place. Clear the area and remove old appliances if necessary."
                 },
+                {
+                    header: "Purchase and deliver appliances",
+                    description: "Order the selected energy-efficient appliances from a reputable retailer. Arrange for delivery or pick-up and ensure appliances are handled with care during transportation."
+                },
+                {
+                    header: "Install appliances",
+                    description: "Follow the manufacturer's instructions or hire a professional to install the new appliances. Ensure proper electrical connections, plumbing hook-ups, and ventilation as required."
+                },
+                {
+                    header: "Dispose of old appliances responsibly",
+                    description: "Recycle or donate old appliances to prevent them from ending up in landfills. Check with local recycling centers or appliance retailers for disposal options."
+                },
+                {
+                    header: "Test appliances",
+                    description: "Turn on the new appliances and test their functionality. Verify that all features and settings are working correctly and check for any signs of damage or defects."
+                },
+                {
+                    header: "Monitor energy usage",
+                    description: "Monitor energy usage with the new appliances to track savings over time. Compare utility bills and energy consumption data to assess the impact of energy-efficient upgrades."
+                }
             ],
             utilityRebates: [
                 { price: 50, label: "Offered by Puget Sound Energy (PSE)" },
@@ -4264,19 +4692,45 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Find a Provider",
-                    description:
-                        "Look for a provider. Look for a good warranty",
+                    header: "Evaluate current lighting",
+                    description: "Assess your current lighting setup and identify areas where LED bulbs could replace traditional incandescent or CFL bulbs."
                 },
                 {
-                    header: "Install the LED bulb",
-                    description: "Make sure power is turned off.",
+                    header: "Calculate potential savings",
+                    description: "Estimate potential energy and cost savings by switching to LED bulbs. Consider factors such as wattage, lifespan, and electricity rates."
                 },
                 {
-                    header: "Apply for rebates",
-                    description:
-                        "Apply for any rebates that come with the LED bulb purchased",
+                    header: "Research LED bulbs",
+                    description: "Research different types of LED bulbs available on the market. Consider factors such as brightness, color temperature, and compatibility with existing fixtures."
                 },
+                {
+                    header: "Select the right bulbs",
+                    description: "Choose LED bulbs that match your lighting needs and preferences. Look for Energy Star certified bulbs to ensure quality and energy efficiency."
+                },
+                {
+                    header: "Purchase LED bulbs",
+                    description: "Purchase the selected LED bulbs from a reputable retailer or online store. Buy bulbs in bulk to save money and ensure consistency in lighting."
+                },
+                {
+                    header: "Prepare for installation",
+                    description: "Turn off power to the lighting fixtures before replacing bulbs. Remove old bulbs carefully and ensure sockets are clean and free of debris."
+                },
+                {
+                    header: "Install LED bulbs",
+                    description: "Insert LED bulbs into the sockets and twist them securely into place. Ensure bulbs are compatible with existing fixtures and fit properly."
+                },
+                {
+                    header: "Test LED bulbs",
+                    description: "Turn on the power to the lighting fixtures and test the LED bulbs. Verify that they illuminate properly and provide the desired brightness and color."
+                },
+                {
+                    header: "Dispose of old bulbs responsibly",
+                    description: "Dispose of old incandescent or CFL bulbs responsibly. Recycle them at designated recycling centers or hazardous waste facilities."
+                },
+                {
+                    header: "Monitor energy usage",
+                    description: "Monitor energy usage with LED bulbs to track savings over time. Compare utility bills and energy consumption data to assess the impact of the switch to LED lighting."
+                }
             ],
             description:
                 "Switch to LED bulbs which consume less energy and last longer than traditional incandescent bulbs.",
@@ -4383,19 +4837,37 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Find a Provider",
-                    description:
-                        "Look at warranties and installation costs. Good providers include Pella Windows & Doors and Renewal by Anderson",
+                    header: "Assess your window needs",
+                    description: "Evaluate your home's current windows and identify areas where energy efficiency can be improved. Consider factors such as window type, size, condition, and location."
                 },
                 {
-                    header: "Replace Windows",
-                    description: "Have the provider replace the windows. ",
+                    header: "Research energy-efficient window options",
+                    description: "Explore energy-efficient window options such as double or triple-pane glass, low-emissivity (low-e) coatings, gas fills (e.g., argon or krypton), and insulated frames."
                 },
                 {
-                    header: "Discard the only windows",
-                    description:
-                        "Recycle the old windows carefully.",
+                    header: "Choose the right window style and features",
+                    description: "Select window styles and features that meet your aesthetic preferences and functional needs while maximizing energy efficiency. Consider factors such as frame material, glazing type, and operability."
                 },
+                {
+                    header: "Measure and order windows",
+                    description: "Measure the dimensions of your window openings accurately and order energy-efficient windows from a reputable manufacturer or supplier. Ensure proper sizing and fit for each window."
+                },
+                {
+                    header: "Prepare for installation",
+                    description: "Prepare your home for window installation by clearing the work area, removing window coverings and hardware, and protecting furniture and flooring from dust and debris."
+                },
+                {
+                    header: "Install new windows",
+                    description: "Hire professional window installers or follow manufacturer guidelines to install the new energy-efficient windows. Ensure proper sealing, insulation, and weatherproofing to prevent air leaks and moisture infiltration."
+                },
+                {
+                    header: "Seal and insulate around windows",
+                    description: "Seal gaps and cracks around window frames with weatherstripping, caulking, or foam insulation to minimize air leakage and improve energy efficiency. Insulate window cavities to reduce heat transfer."
+                },
+                {
+                    header: "Test and evaluate",
+                    description: "Test the performance of your new energy-efficient windows by monitoring indoor comfort, energy usage, and utility bills over time. Evaluate the impact of the windows on thermal comfort, noise reduction, and indoor air quality."
+                }
             ],
             taxRebates: [],
             type: "electricity",
@@ -4457,15 +4929,41 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Research and choose a thermostat",
-                    description:
-                        "Research and choose a thermostat based on your house size and needs.",
+                    header: "Turn off power to the HVAC system",
+                    description: "Turn off the power to your heating, ventilation, and air conditioning (HVAC) system at the circuit breaker or fuse box to prevent electrical shock during installation."
                 },
                 {
-                    header: "Purchase and install the thermostat",
-                    description:
-                        "Purchase the thermostat and install it yourself or hire a professional.",
+                    header: "Remove the old thermostat",
+                    description: "Remove the cover of the old thermostat and unscrew it from the wall mounting plate. Carefully disconnect the wires from the terminals, noting their colors and connections for reference."
                 },
+                {
+                    header: "Mount the new thermostat",
+                    description: "Install the mounting plate for the new smart thermostat on the wall, ensuring it's level and securely attached. Route the wires through the center opening of the mounting plate."
+                },
+                {
+                    header: "Connect the wires",
+                    description: "Connect the wires from your HVAC system to the corresponding terminals on the smart thermostat. Follow the manufacturer's instructions and refer to the wire labels and color-coding."
+                },
+                {
+                    header: "Attach the smart thermostat",
+                    description: "Carefully attach the smart thermostat to the mounting plate, ensuring it's properly aligned and seated. Follow the manufacturer's instructions for securing the thermostat in place."
+                },
+                {
+                    header: "Restore power and configure the thermostat",
+                    description: "Turn the power back on at the circuit breaker or fuse box to restore power to the HVAC system. Follow the manufacturer's instructions to configure the smart thermostat settings, including Wi-Fi setup, temperature preferences, and scheduling."
+                },
+                {
+                    header: "Download and set up the mobile app",
+                    description: "Download the companion mobile app for your smart thermostat and follow the instructions to set up remote access and control. Connect the thermostat to your home Wi-Fi network and create an account if required."
+                },
+                {
+                    header: "Test the smart thermostat",
+                    description: "Test the functionality of the smart thermostat by adjusting the temperature settings and monitoring the HVAC system's response. Use the mobile app to remotely control the thermostat and verify connectivity."
+                },
+                {
+                    header: "Enjoy energy savings and convenience",
+                    description: "Take advantage of the energy-saving features and convenience offered by your new smart thermostat. Monitor your energy usage and adjust settings as needed to optimize comfort and efficiency."
+                }
             ],
             type: "heating",
             localProviders: ["SmartHeat Technologies", "GreenThermo Inc."],
@@ -4523,25 +5021,45 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Research EV models",
-                    description:
-                        "Research and choose an EV model depending on your needs (seats, range, storing capacity), and budget. Good options include the Nissan Leaf and the Tesla Model 3.",
+                    header: "Research electric vehicles (EVs)",
+                    description: "Learn about different electric vehicle models available on the market, including sedans, SUVs, and trucks. Consider factors such as range, charging infrastructure, and incentives."
                 },
                 {
-                    header: "Purchase the EV",
-                    description:
-                        "Purchase the EV from a local dealership or online. Buying used is also a valid option",
+                    header: "Calculate cost savings",
+                    description: "Estimate potential cost savings from switching to an electric vehicle, including fuel savings, maintenance costs, and available incentives such as tax credits or rebates."
                 },
                 {
-                    header: "Assess your method of charging",
-                    description:
-                        "Install a home charging station or find a public charging station near your home.",
+                    header: "Assess charging infrastructure",
+                    description: "Evaluate the availability of charging infrastructure in your area, including home charging options, public charging stations, and workplace charging facilities. Determine if additional charging equipment is needed."
                 },
                 {
-                    header: "Register the EV to apply for incentives",
-                    description:
-                        "Register the EV with the Washington State Department of Licensing to apply for any applicable rebates.",
+                    header: "Select an electric vehicle",
+                    description: "Choose an electric vehicle that meets your needs and preferences. Consider factors such as range, battery size, charging speed, and additional features like autopilot or regenerative braking."
                 },
+                {
+                    header: "Arrange financing or leasing",
+                    description: "Explore financing or leasing options for purchasing or leasing an electric vehicle. Compare interest rates, loan terms, and lease terms from different lenders or dealerships."
+                },
+                {
+                    header: "Install home charging equipment",
+                    description: "If necessary, install home charging equipment to facilitate convenient charging of your electric vehicle. Consider factors such as charging speed, connector type, and installation costs."
+                },
+                {
+                    header: "Learn about EV maintenance",
+                    description: "Educate yourself about electric vehicle maintenance requirements, which differ from traditional internal combustion engine vehicles. Learn about battery care, tire maintenance, and software updates."
+                },
+                {
+                    header: "Take delivery of your EV",
+                    description: "Take delivery of your electric vehicle from the dealership or manufacturer. Familiarize yourself with the vehicle's features, controls, and charging process."
+                },
+                {
+                    header: "Plan charging routines",
+                    description: "Develop a charging routine that suits your lifestyle and driving patterns. Take advantage of off-peak charging rates, schedule charging sessions to coincide with low electricity demand, and plan longer trips around charging stops."
+                },
+                {
+                    header: "Monitor energy usage and savings",
+                    description: "Track your electric vehicle's energy usage, charging habits, and cost savings over time. Use available tools and apps to monitor energy consumption, estimate charging costs, and track your environmental impact."
+                }
             ],
             type: "transportation",
             localProviders: ["EcoWheels", "CleanDrive Autos"],
@@ -4663,20 +5181,21 @@ const solutions = {
             ],
             steps: [
                 {
-                    header: "Research transportation options near you",
-                    description:
-                        "Research and choose a public transportation option depending on your needs (seats, range, storing capacity), and budget. Good options include the bus and the train.",
+                    header: "Research available options",
+                    description: "Find out about the public transportation options in your area, such as buses, trains, or subways."
                 },
                 {
-                    header: "Purchase a card or download an app",
-                    description:
-                        "Purchase a card or download an app to pay for public transportation.",
+                    header: "Plan your journey",
+                    description: "Use online resources or apps to plan your route, including stops, schedules, and fares."
                 },
                 {
-                    header: "Look at the schedule",
-                    description:
-                        "Look at the schedule to see when the public transportation is available.",
+                    header: "Purchase tickets or passes",
+                    description: "Buy tickets or passes in advance or at the station, depending on the available options."
                 },
+                {
+                    header: "Board the vehicle",
+                    description: "Wait for your ride at the designated stop, then board the vehicle and enjoy your journey."
+                }
             ],
             type: "transportation",
             localProviders: ["EcoTransit", "GreenCommute"],
@@ -4770,20 +5289,37 @@ const solutions = {
             hometypes: ["Apartment", "Multi-Family Home", "Individual Home"],
             steps: [
                 {
-                    header: "Fnd a Provider",
-                    description:
-                        "Pick a heat pump from a provider based of efficacy ratings and warranty. Good providers include Carrier, Trane, and Lennox.",
+                    header: "Site assessment",
+                    description: "Inspect your property to determine the best location for the outdoor unit (condenser) and indoor unit (air handler). Ensure proper clearance, accessibility, and adequate airflow for efficient operation."
                 },
                 {
-                    header: "Assess home heating needs",
-                    description:
-                        "Assess your home heating system (either yourself or the provider) to calculate heating and cooling needs.",
+                    header: "Mount outdoor unit",
+                    description: "Install the outdoor unit on a stable and level surface, such as a concrete pad or mounting brackets. Secure the unit to prevent vibration and noise during operation."
                 },
                 {
-                    header: "Apply for rebates",
-                    description:
-                        "Apply for government and utility rebates to reduce the cost",
+                    header: "Install refrigerant lines",
+                    description: "Connect the refrigerant lines between the indoor and outdoor units. Ensure proper sizing, insulation, and sealing to prevent leaks and optimize system efficiency."
                 },
+                {
+                    header: "Mount indoor unit",
+                    description: "Mount the indoor unit in the desired location, typically on a wall or ceiling. Ensure proper spacing for airflow and access for maintenance. Connect the indoor unit to the refrigerant lines and electrical wiring."
+                },
+                {
+                    header: "Connect electrical wiring",
+                    description: "Connect the electrical wiring for both the indoor and outdoor units. Follow local electrical codes and manufacturer guidelines for proper wiring, grounding, and circuit protection."
+                },
+                {
+                    header: "Test system",
+                    description: "Test the operation of the heat pump system to ensure proper functionality and performance. Verify heating and cooling modes, thermostat operation, airflow, and refrigerant pressures."
+                },
+                {
+                    header: "Commission system",
+                    description: "Commission the heat pump system by adjusting settings and parameters for optimal performance. Verify proper refrigerant charge, airflow, and temperature differentials."
+                },
+                {
+                    header: "Provide user instructions",
+                    description: "Provide the homeowner with instructions on how to operate and maintain the heat pump system. Explain thermostat settings, filter maintenance, and troubleshooting procedures."
+                }
             ],
             costGraph: [
                 [1985, 1750],
@@ -4842,20 +5378,41 @@ const solutions = {
                 "Upgrade to energy-efficient boilers that utilize advanced technology to maximize heat output while minimizing energy consumption.",
             steps: [
                 {
-                    header: "Fnd a Provider",
-                    description:
-                        "Look for a provider. You can also take advice from a professional if needed for your home.",
+                    header: "Assess heating needs",
+                    description: "Evaluate your home's heating requirements to determine the appropriate size and type of energy-efficient boiler needed. Consider factors such as square footage, insulation, and hot water demand."
                 },
                 {
-                    header: "Select an Energy-Efficient Boiler",
-                    description:
-                        "Choose the right boiler for your home. We recommend a condensing boiler. Look for the Energy Star certified boilers as well.",
+                    header: "Choose the right boiler",
+                    description: "Select an energy-efficient boiler with a high Annual Fuel Utilization Efficiency (AFUE) rating. Consider options such as condensing boilers, which recycle heat from exhaust gases for increased efficiency."
                 },
                 {
-                    header: "Install the boiler",
-                    description:
-                        "We recommend hiring a professional, but if you install it yourself, be careful and make sure what you're doing.",
+                    header: "Prepare for installation",
+                    description: "Clear the installation area and ensure proper ventilation and access for the boiler. Consult local building codes and regulations, and obtain necessary permits for the installation."
                 },
+                {
+                    header: "Disconnect and remove old boiler",
+                    description: "Turn off the power and water supply to the old boiler. Disconnect and remove the old boiler from its mounting location. Drain the water from the system and disconnect plumbing and electrical connections."
+                },
+                {
+                    header: "Install the new boiler",
+                    description: "Position the new energy-efficient boiler in the designated installation area. Connect plumbing and electrical connections according to manufacturer instructions. Ensure proper clearances and access for maintenance."
+                },
+                {
+                    header: "Vent the boiler",
+                    description: "Install venting for the boiler, ensuring proper venting materials and clearances are met. Follow manufacturer guidelines and local building codes for safe and efficient venting."
+                },
+                {
+                    header: "Fill and pressurize the system",
+                    description: "Fill the boiler system with water and purge air from the system using bleed valves. Pressurize the system to the recommended pressure levels and check for leaks."
+                },
+                {
+                    header: "Test the boiler",
+                    description: "Test the operation of the energy-efficient boiler, including heating and hot water functions. Monitor performance and check for any leaks, unusual noises, or malfunctions."
+                },
+                {
+                    header: "Commission the boiler",
+                    description: "Commission the boiler by adjusting settings and parameters for optimal performance and efficiency. Test safety features and controls, and verify proper operation."
+                }
             ],
             hometypes: ["Individual Home"],
             costGraph: [
@@ -4925,25 +5482,37 @@ const solutions = {
             hometypes: ["Multi-Family Home", "Individual Home"],
             steps: [
                 {
-                    header: "Choose a Provider and System",
-                    description:
-                        "Choose the right provider and type of insulation (fiberglass, cellulose, spray foam)",
+                    header: "Assess insulation needs",
+                    description: "Evaluate your home's insulation needs by inspecting walls, floors, ceilings, and attic spaces. Identify areas with inadequate or degraded insulation, as well as potential air leaks."
                 },
                 {
-                    header: "Measure the area to be insulated.",
-                    description:
-                        "Measure how much area needs to be insulated and purchase the right amount of insulation",
+                    header: "Choose insulation materials",
+                    description: "Select appropriate insulation materials based on factors such as R-value, moisture resistance, fire safety, and environmental impact. Common insulation types include fiberglass, cellulose, spray foam, and rigid foam boards."
                 },
                 {
-                    header: "Install the system",
-                    description:
-                        "We recommend hiring a professional, but if you install it yourself, wear protective gear.",
+                    header: "Prepare for installation",
+                    description: "Prepare the installation area by clearing obstructions, sealing air leaks, and protecting surfaces from damage. Ensure proper ventilation and safety precautions are in place."
                 },
                 {
-                    header: "Check for leaks",
-                    description:
-                        "Check for leaks and ensure the insulation is properly installed.",
+                    header: "Install insulation in walls and ceilings",
+                    description: "Install insulation in wall cavities, attic spaces, and ceiling areas using appropriate techniques for each material type. Ensure proper coverage and density to achieve desired thermal performance."
                 },
+                {
+                    header: "Seal air leaks",
+                    description: "Seal air leaks and gaps around windows, doors, electrical outlets, and other penetrations using caulking, weatherstripping, or expanding foam insulation. This helps prevent heat loss and improve energy efficiency."
+                },
+                {
+                    header: "Insulate floors and crawl spaces",
+                    description: "Insulate floors above unheated spaces, such as crawl spaces or garages, using insulation materials appropriate for the application. Ensure proper ventilation and moisture control to prevent mold and rot."
+                },
+                {
+                    header: "Install vapor barriers",
+                    description: "Install vapor barriers or retarders as needed to control moisture infiltration and prevent condensation within insulated spaces. Ensure proper placement and sealing to avoid moisture-related issues."
+                },
+                {
+                    header: "Test and evaluate",
+                    description: "Test the effectiveness of the insulation installation by monitoring indoor comfort, energy usage, and utility bills over time. Evaluate the impact of insulation on thermal performance, indoor air quality, and overall home comfort."
+                }
             ],
             costGraph: [
                 [1985, 6],
