@@ -16,14 +16,14 @@ export default function ChatGPTPrompt({ children }) {
 	};
 
 	return (
-		<div>
-			<form className="flex flex-row items-center gap-[16px]" onSubmit={(e) => onClick(e, openMessage)}>
+		<div className="flex flex-col items-center">
+			<form className="flex flex-row justify-center items-center gap-[16px]" onSubmit={(e) => onClick(e, openMessage)}>
 				<TextInput placeholder="Tell us what the problem is" value={openMessage} onChange={(e) => setOpenMessage(e.target.value)} />
 				<Button onClick={(e) => onClick(e, openMessage)}>Go</Button>
 			</form>
 			<div className="flex flex-row gap-[10px] overflow-x-auto mt-[10px]">
 				<button className="caption p-[10px] bg-green-500 border border-green-700 text-green-700 border-solid rounded-[5px]" onClick={(e) => onClick(e, "My Electric Bill Is Too High")}>
-					My Electric Bill Is Too High
+					My Electricity Bill Is Too High
 				</button>
 				<button className="caption p-[10px] bg-purple-500 border border-purple-700 text-purple-700 border-solid rounded-[5px]" onClick={(e) => onClick(e, "How Do I low My Footprint?")}>
 					How Do I Lower My Footprint?
