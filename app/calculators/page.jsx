@@ -21,27 +21,53 @@ export default function Calculators() {
 
 	const [data, setData] = useState(null);
 	const [error, setError] = useState(false);
+	const [errorMessage, setErrorMessage] = useState("");
 
 	const [loading, setLoading] = useState(false);
 
 	const onSubmit = async (e) => {
 		e.preventDefault();
 		setLoading(true);
-		const response = await fetch("/api/houseData", {
-			method: "POST",
-			headers: {
-				"Content-type": "application/json",
-			},
-			body: JSON.stringify({ address: nAddress, zip: nZip, city: nCity, state: nState }),
-		});
-		const d = await response.json();
-		if (response.status == 200) {
-			setData(d);
-			setError(false);
-		} else {
+		setError(false);
+		setErrorMessage("");
+		
+		// Basic validation
+		if (!nZip || nZip.trim() === "") {
+			setError(true);
+			setErrorMessage("Zip code is required.");
+			setLoading(false);
+			return;
+		}
+		
+		try {
+			const response = await fetch("/api/houseData", {
+				method: "POST",
+				headers: {
+					"Content-type": "application/json",
+				},
+				body: JSON.stringify({ address: nAddress, zip: nZip, city: nCity, state: nState }),
+			});
+			
+			const d = await response.json();
+			
+			if (response.status == 200) {
+				setData(d);
+				setError(false);
+				console.log("Success: Data received", d);
+			} else {
+				setData(null);
+				setError(true);
+				// Use the error message from the API response if available
+				setErrorMessage(d.error || "Something went wrong. Please try another address or try again later.");
+				console.error("API Error:", d);
+			}
+		} catch (fetchError) {
 			setData(null);
 			setError(true);
+			setErrorMessage("Network error. Please check your connection and try again.");
+			console.error("Fetch Error:", fetchError);
 		}
+		
 		setLoading(false);
 	};
 
@@ -73,23 +99,36 @@ export default function Calculators() {
 							<TextInput placeholder="9769 111th Ave NE" value={nAddress} onChange={(e) => {
 								setAddress(e.target.value);
 								setError(false);
+								setErrorMessage("");
 							}} />
 						</div>
 						<div className="flex flex-row gap-[13px]">
 							<div className="flex flex-col gap-[6px]">
 								<div className="caption text-white-500">City</div>
-								<TextInput placeholder="Redmond" value={nCity} onChange={(e) => { setError(false); setCity(e.target.value) }} />
+								<TextInput placeholder="Redmond" value={nCity} onChange={(e) => { 
+									setError(false); 
+									setErrorMessage("");
+									setCity(e.target.value) 
+								}} />
 							</div>
 							<div className="flex flex-col gap-[6px]">
 								<div className="caption text-white-500">State</div>
-								<TextInput placeholder="WA" value={nState} onChange={(e) =>{setError(false); setState(e.target.value)}} />
+								<TextInput placeholder="WA" value={nState} onChange={(e) =>{
+									setError(false); 
+									setErrorMessage("");
+									setState(e.target.value)
+								}} />
 							</div>
 							<div className="flex flex-col gap-[6px]">
 								<div className="caption text-white-500">Zip</div>
-								<TextInput placeholder="98052" value={nZip} onChange={(e) => { setError(false); setZip(e.target.value)}} />
+								<TextInput placeholder="98052" value={nZip} onChange={(e) => { 
+									setError(false); 
+									setErrorMessage("");
+									setZip(e.target.value)
+								}} />
 							</div>
 						</div>
-						{error && <p className="caption text-error">Something went wrong. Please try another address or try again later.</p>}
+						{error && <p className="caption text-error">{errorMessage}</p>}
 						<Button disabled={loading} onClick={async (e) => await onSubmit(e)}>
 							{loading ? "Loading..." : "GO"}
 						</Button>
