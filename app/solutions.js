@@ -683,7 +683,7 @@ const solutions = {
             alt: "A rooftop with solar panels installed, soaking up the sun's rays.",
             gov: 11000,
             utility: 5000,
-            price: 2400,
+            price: 20400,
             setup: 2,
             image: "/solutions/solar_panel.jpg",
             imageNoBg: "/solution_models/solar_panel.png",
